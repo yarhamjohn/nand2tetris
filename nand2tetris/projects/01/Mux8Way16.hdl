@@ -18,5 +18,34 @@ CHIP Mux8Way16 {
     OUT out[16];
 
     PARTS:
-    // Put your code here:
+    Not(in=sel[0], out=notselfirst);
+    Not(in=sel[1], out=notselsecond);
+    Not(in=sel[2], out=notselthird);
+
+    And(a=notselfirst, b=notselsecond, out=notselfirstandnotselsecond);
+    And(a=notselfirst, b=notselthird, out=notselfirstandnotselthird);
+    And(a=notselsecond, b=notselthird, out=notselsecondandnotselthird);
+
+    And(a=sel[0], b=sel[1], out=selfirstandselsecond);
+    And(a=sel[0], b=sel[2], out=selfirstandselthird);
+    And(a=sel[1], b=sel[2], out=selsecondandselthird);
+    
+    And(a=notselfirstandnotselsecond, b=notselthird, out=inputa);
+    And(a=notselsecondandnotselthird, b=sel[0], out=inputb);
+    And(a=notselfirstandnotselthird, b=sel[1], out=inputc);
+    And(a=notselthird, b=selfirstandselsecond, out=inputd);
+    And(a=sel[2], b=notselfirstandnotselsecond, out=inpute);
+    And(a=selfirstandselthird, b=notselsecond, out=inputf);
+    And(a=selsecondandselthird, b=notselfirst, out=inputg);
+    And(a=selfirstandselsecond, b=sel[2], out=inputh);
+    
+    Mux16(a=a, b=e, sel=sel[2], out=aesplitonthirdsel);
+    Mux16(a=b, b=f, sel=sel[2], out=bfsplitonthirdsel);
+    Mux16(a=c, b=g, sel=sel[2], out=cgsplitonthirdsel);
+    Mux16(a=d, b=h, sel=sel[2], out=dhsplitonthirdsel);
+
+    Mux16(a=aesplitonthirdsel, b=cgsplitonthirdsel, sel=sel[1], out=acegsplitonsecondsel);
+    Mux16(a=bfsplitonthirdsel, b=dhsplitonthirdsel, sel=sel[1], out=bfdhsplitonsecondsel);
+
+    Mux16(a=acegsplitonsecondsel, b=bfdhsplitonsecondsel, sel=sel[0], out=out);
 }

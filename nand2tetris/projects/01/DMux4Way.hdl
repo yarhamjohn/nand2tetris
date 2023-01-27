@@ -16,5 +16,17 @@ CHIP DMux4Way {
     OUT a, b, c, d;
 
     PARTS:
-    // Put your code here:
+    // Indexing is right to left
+    Not(in=sel[0], out=notselfirst);
+    Not(in=sel[1], out=notselsecond);
+
+    And(a=notselfirst, b=notselsecond, out=outa);
+    And(a=notselsecond, b=sel[0], out=outb);
+    And(a=sel[1], b=notselfirst, out=outc);
+    And(a=sel[0], b=sel[1], out=outd);
+
+    And(a=in, b=outa, out=a);
+    And(a=in, b=outb, out=b);
+    And(a=in, b=outc, out=c);
+    And(a=in, b=outd, out=d);
 }
