@@ -42,5 +42,38 @@ CHIP ALU {
         ng; // 1 if (out < 0),  0 otherwise
 
     PARTS:
-   // Put you code here:
+    Mux16(a=x, b[0..15]=false, sel=zx, out=zxout);
+    Not16(in=zxout, out=notzxout);
+    Mux16(a=zxout, b=notzxout, sel=nx, out=nxout);
+
+    Mux16(a=y, b[0..15]=false, sel=zy, out=zyout);
+    Not16(in=zyout, out=notzyout);
+    Mux16(a=zyout, b=notzyout, sel=ny, out=nyout);
+
+    Add16(a=nxout, b=nyout, out=xplusy);
+    And16(a=nxout, b=nyout, out=xandy);
+    
+    Mux16(a=xandy, b=xplusy, sel=f, out=fout);
+    Not16(in=fout, out=notfout);
+    Mux16(a=fout, b=notfout, sel=no, out=out, out=extraout, out[15]=ngout);
+
+    Not16(in=extraout, out=notout, out[0]=out0, out[1]=out1, out[2]=out2, out[3]=out3, out[4]=out4, out[5]=out5, out[6]=out6, out[7]=out7, out[8]=out8, out[9]=out9, out[10]=out10, out[11]=out11, out[12]=out12, out[13]=out13, out[14]=out14, out[15]=out15);
+
+    And(a=out0, b=out1, out=and0);
+    And(a=and0, b=out2, out=and1);
+    And(a=and1, b=out3, out=and2);
+    And(a=and2, b=out4, out=and3);
+    And(a=and3, b=out5, out=and4);
+    And(a=and4, b=out6, out=and5);
+    And(a=and5, b=out7, out=and6);
+    And(a=and6, b=out8, out=and7);
+    And(a=and7, b=out9, out=and8);
+    And(a=and8, b=out10, out=and9);
+    And(a=and9, b=out11, out=and10);
+    And(a=and10, b=out12, out=and11);
+    And(a=and11, b=out13, out=and12);
+    And(a=and12, b=out14, out=and13);
+    And(a=and13, b=out15, out=zr);
+
+    And(a=ngout, b=true, out=ng);
 }
