@@ -9,4 +9,44 @@
 // This program only needs to handle arguments that satisfy
 // R0 >= 0, R1 >= 0, and R0*R1 < 32768.
 
-// Put your code here.
+// Initialize variables
+@counter
+M=0
+@sum
+M=0
+
+// Perform multiply by repeatedly adding
+(LOOP)
+    // if counter = R1 goto STOP
+    @R1
+    D=M
+    @counter
+    D=D-M
+    @STOP
+    D;JEQ
+
+    // Add R0 to sum
+    @R0
+    D=M
+    @sum
+    M=D+M
+
+    // increment counter
+    @counter
+    M=M+1
+
+    // goto LOOP
+    @LOOP
+    0;JMP
+
+// set R2 to the sum
+(STOP)
+    @sum
+    D=M
+    @R2
+    M=D
+
+// End program
+(END)
+    @END
+    0;JMP
