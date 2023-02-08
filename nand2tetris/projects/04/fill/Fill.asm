@@ -14,6 +14,9 @@
 @target
 M=0
 
+@colour
+M=0
+
 (LOOP)
     // Reset the target
     @target
@@ -24,65 +27,63 @@ M=0
     D=M
 
     // If input then set screen to black
-    @BLACK
+    @colour
+    M=-1
+    @WRITE
     D;JNE
 
     // If no input set screen to white
-    @WHITE
+    @colour
+    M=0
+    @WRITE
     D;JEQ
 
     // Repeat
     @LOOP
     0;JMP
 
-(BLACK)
-    // Set current 'word' to black
+(WRITE)
+    // Save screen address to D
     @SCREEN
     D=A
-    @target
-    A=D+M
-    M=-1
 
-    // If at end of screen, return to LOOP
+    // Get target address for word
+    @target
+    D=D+M
+
+    // Save target address
+    @R0
+    M=D
+
+    // Read required colour
+    @colour
+    D=M
+
+    // Set target address to required colour
+    @R0
+    A=M
+    M=D
+
+    // Retrieve target address
     @target
     D=M
+
+    // If at end of screen (8192 - 1)
     @8191
     D=D-A
+
+    // Jump back to main loop
     @LOOP
     D;JEQ
 
-    // Increment target
+    // Otherwise, increment target
     @target
     M=M+1
 
     // Continue to next 'word'
-    @BLACK
+    @WRITE
     0;JMP
 
-(WHITE)
-    // Set current 'word' to white
-    @SCREEN
-    D=A
-    @target
-    A=D+M
-    M=0
-
-    // If at end of screen, return to LOOP
-    @target
-    D=M
-    @8191
-    D=D-A
-    @LOOP
-    D;JEQ
-
-    // Increment target
-    @target
-    M=M+1
-
-    // Continue to next 'word'
-    @WHITE
-    0;JMP
-    
 (END)
     @END
     0;JMP
