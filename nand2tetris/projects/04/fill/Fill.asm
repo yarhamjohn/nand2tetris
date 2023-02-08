@@ -11,4 +11,82 @@
 // "white" in every pixel;
 // the screen should remain fully clear as long as no key is pressed.
 
-// Put your code here.
+@target
+M=0
+
+(LOOP)
+    // Reset the target
+    @target
+    M=0
+
+    // Check for keyboard input
+    @KBD
+    D=M
+
+    // If input then set screen to black
+    @BLACK
+    D;JNE
+
+    // If no input set screen to white
+    @WHITE
+    D;JEQ
+
+    // Repeat
+    @LOOP
+    0;JMP
+
+(BLACK)
+    // Set current 'word' to black
+    @SCREEN
+    D=A
+    @target
+    A=D+M
+    M=-1
+
+    // If at end of screen, return to LOOP
+    @target
+    D=M
+    @8191
+    D=D-A
+    @LOOP
+    D;JEQ
+
+    // Increment target
+    @target
+    M=M+1
+
+    // Continue to next 'word'
+    @BLACK
+    0;JMP
+
+(WHITE)
+    // Set current 'word' to white
+    @SCREEN
+    D=A
+    @target
+    A=D+M
+    M=0
+
+    // If at end of screen, return to LOOP
+    @target
+    D=M
+    @8191
+    D=D-A
+    @LOOP
+    D;JEQ
+
+    // Increment target
+    @target
+    M=M+1
+
+    // Continue to next 'word'
+    @WHITE
+    0;JMP
+    
+(END)
+    @END
+    0;JMP
+
+
+
+
