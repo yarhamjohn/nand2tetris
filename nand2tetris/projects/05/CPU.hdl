@@ -39,5 +39,50 @@ CHIP CPU {
         pc[15];          // address of next instruction
 
     PARTS:
-    // Put your code here:
+    Not(in=instruction[15], out=typeA);
+    Not(in=typeA, out=typeC);
+
+    // If instruction is type A, select the value (i.e. address or constant).
+    // If instruction is typeC, select the value from the ALU (i.e. pointer address).
+    Mux16(a=instruction, b=aluOut, sel=typeC, out=aRegIn);
+
+    // If instruction is type A, store it in the A register.
+    // If instruction is type C, pass the appropriate control bit.
+    Or(a=typeA, b=instruction[5], out=aRegLoad);
+    ARegister(in=aRegIn, load=aRegLoad, out=aRegOut, out[0..14]=addressM);
+
+    // Determine whether to pass the A register value or the inM value to the ALU.
+    // If its an A instruction then it doesn't matter since the addressM output is clocked. <--- IS THIS TRUE?
+    Mux16(a=aRegOut, b=inM, sel=instruction[12], out=aRegOrInM);
+
+    // If instruction is type C, use control bit to decide whether to load ALU output into the D register.
+    And(a=typeC, b=instruction[4], out=dRegLoad);
+    DRegister(in=aluOut, load=dRegLoad, out=dRegOut);
+
+    // Do the calculation (again if its a type A instruction, the calculation doesn't matter).
+    ALU(x=dRegOut, y=aRegOrInM, zx=instruction[11], nx=instruction[10], zy=instruction[9], ny=instruction[8], f=instruction[7], no=instruction[6], out=aluOut, out=outM, zr=zrout, ng=ngout);
+
+    // Set to write if type C and control bit is true.
+    And(a=typeC, b=instruction[3], out=writeM);
+
+    // Load if Type C and ng == 1 and zr == 0 and instruction[2] == 1
+    DMux8Way(in=typeC, sel[2]=ngout, sel[1]=zrout, sel[0]=instruction[2], f=negativeJump);
+
+    // Load if Type C and ng == 0 and zr == 1 and instruction[1] == 1
+    DMux8Way(in=typeC, sel[2]=ngout, sel[1]=zrout, sel[0]=instruction[1], d=zeroJump);
+
+    // Load if Type C and ng == 0 and zr == 0 and instruction[0] == 1
+    DMux8Way(in=typeC, sel[2]=ngout, sel[1]=zrout, sel[0]=instruction[0], b=positiveJump);
+
+    // Determine if a jump should be performed
+    Or(a=positiveJump, b=negativeJump, out=nonZeroJump);
+    Or(a=zeroJump, b=nonZeroJump, out=jump);
+
+    // Increment if Type A
+    // Increment if Type not Load
+    Not(in=jump, out=notJump);
+    Or(a=typeA, b=notJump, out=inc);
+
+    // Set counter output
+    PC(in=aRegOut, reset=reset, load=jump, inc=inc, out[0..14]=pc);
 }
