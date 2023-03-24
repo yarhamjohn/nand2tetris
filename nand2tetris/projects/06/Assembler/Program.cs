@@ -19,10 +19,10 @@ var symbolTable = new SymbolTable();
 var parser = new Parser(input, symbolTable);
 
 // First pass to add label symbols to the symbol table
-parser.FirstPass();
+parser.AddLabelSymbols();
 
 // Second pass to parse each instruction
-var instructions = parser.SecondPass();
+var instructions = parser.ParseInstructions();
 
 // Initialize coder and get assembled binary
 var coder = new Coder(instructions);

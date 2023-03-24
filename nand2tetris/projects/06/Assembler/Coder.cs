@@ -33,27 +33,20 @@ public class Coder
         _instructions = instructions;
     }
 
-    public IEnumerable<string> Assemble()
-    {
-        foreach (var line in _instructions)
-        {
-            // Ignore LInstructions as they are placeholders rather than 'real' code
-            if (line is LInstruction)
-            {
-                continue;
-            }
-            
-            if (line is AInstruction aInstruction) {
-                yield return Convert.ToString(aInstruction.Value, 2).PadLeft(16, '0');
-            }
+    public IEnumerable<string> Assemble() =>
+        _instructions.Select(instruction => 
+            instruction is AInstruction aInstruction
+                ? AInstructionToBinary(aInstruction)
+                : CInstructionToBinary((CInstruction) instruction));
 
-            if (line is CInstruction cInstruction)
-            {
-                var comp = _compBinaryMap[cInstruction.Comp];
-                var dest = cInstruction.Dest is null ? "000" : _destBinaryMap[cInstruction.Dest];
-                var jump = cInstruction.Jump is null ? "000" : _jumpBinaryMap[cInstruction.Jump];
-                yield return "111" + comp + dest + jump;
-            }
-        }
+    private static string AInstructionToBinary(AInstruction aInstruction) =>
+        Convert.ToString(aInstruction.Value, 2).PadLeft(16, '0');
+
+    private string CInstructionToBinary(CInstruction cInstruction)
+    {
+        var comp = _compBinaryMap[cInstruction.Comp];
+        var dest = cInstruction.Dest is null ? "000" : _destBinaryMap[cInstruction.Dest];
+        var jump = cInstruction.Jump is null ? "000" : _jumpBinaryMap[cInstruction.Jump];
+        return "111" + comp + dest + jump;
     }
 }

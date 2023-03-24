@@ -11,7 +11,7 @@ public class Parser
         _input = input;
     }
 
-    public void FirstPass()
+    public void AddLabelSymbols()
     {
         var counter = 0;
         foreach (var line in _input)
@@ -28,62 +28,28 @@ public class Parser
         }
     }
 
-    public IEnumerable<IInstruction> SecondPass() =>
-        _input.Select(line => (IInstruction)(line.First() switch
-        {
-            '@' => new AInstruction(_symbolTable, line.Replace("@", "")),
-            '(' => new LInstruction(line.Replace("(", "").Replace(")", "")),
-            _ => new CInstruction(line)
-        }));
-}
-
-public interface IInstruction { }
-
-public class AInstruction : IInstruction
-{
-    public readonly int Value;
-    
-    public AInstruction(SymbolTable symbolTable, string instruction)
+    public IEnumerable<IInstruction> ParseInstructions()
     {
-        Value = int.TryParse(instruction, out var val) ? val : symbolTable.GetAddress(instruction);
+        foreach (var line in _input)
+        {
+            switch (line.First())
+            {
+                case '(':
+                    // LInstruction is a placeholder rather than "real" code
+                    continue;
+                case '@':
+                    yield return new AInstruction(GetARegisterValue(line));
+                    break;
+                default:
+                    yield return new CInstruction(line);
+                    break;
+            }
+        }
     }
-}
 
-public class CInstruction : IInstruction
-{
-    public string? Dest;
-    public string Comp;
-    public string? Jump;
-    
-    public CInstruction(string instruction)
+    private int GetARegisterValue(string line)
     {
-        string workingComp;
-        if (instruction.Contains('='))
-        {
-            Dest = instruction.Split("=").First().Trim();
-            workingComp = instruction.Split("=").Last().Trim();
-        }
-        else
-        {
-            workingComp = instruction;
-        }
-
-        if (instruction.Contains(';'))
-        {
-            Jump = instruction.Split(";").Last().Trim();
-            workingComp = workingComp.Split(";").First().Trim();
-        }
-
-        Comp = workingComp;
-    }
-}
-
-public class LInstruction : IInstruction
-{
-    public readonly string Symbol;
-    
-    public LInstruction(string instruction)
-    {
-        Symbol = instruction;
+        var instruction = line.Replace("@", "");
+        return int.TryParse(instruction, out var val) ? val : _symbolTable.GetAddress(instruction);
     }
 }
