@@ -15,17 +15,67 @@ public class CPush : ICommand
         _value = value;
     }
     
-    public IEnumerable<string> Translate(int _) =>
-        new List<string>
+    public IEnumerable<string> Translate(int _)
+    {
+        if (_target is "constant")
+        {
+            return new List<string>
+            {
+                $"// push {_target} {_value}",
+                $"  @{_value}",
+                "  D=A",
+                "  @SP",
+                "  A=M",
+                "  M=D",
+                "  @SP",
+                "  M=M+1"
+            };
+        }
+        
+        return new List<string>
         {
             $"// push {_target} {_value}",
             $"  @{_value}",
             "  D=A",
+            $"  @{_target}",
+            "  A=M+D",
+            "  D=M",
             "  @SP",
             "  A=M",
             "  M=D",
             "  @SP",
             "  M=M+1"
+        };
+    }
+}
+
+public class CPop : ICommand
+{
+    private readonly string _target;
+    private readonly int _value;
+
+    public CPop(string target, int value)
+    {
+        _target = target;
+        _value = value;
+    }
+    
+    public IEnumerable<string> Translate(int _) =>
+        new List<string>
+        {
+            $"// pop {_target} {_value}",
+            $"  @{_value}",
+            "  D=A",
+            $"  @{_target}", // TODO: Handle TEMP
+            "  D=M+D",
+            "  @R13",
+            "  M=D",
+            "  @SP",
+            "  AM=M-1",
+            "  D=M",
+            "  @R13",
+            "  A=M",
+            "  M=D"
         };
 }
 

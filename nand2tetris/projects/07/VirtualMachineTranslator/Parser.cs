@@ -20,7 +20,10 @@ public class Parser
             switch (firstChunk)
             {
                 case "push":
-                    commands.Add(new CPush(chunks[1], Convert.ToInt32(chunks[2])));
+                    commands.Add(new CPush(GetSegment(chunks[1]), Convert.ToInt32(chunks[2])));
+                    break;
+                case "pop":
+                    commands.Add(new CPop(GetSegment(chunks[1]), Convert.ToInt32(chunks[2])));
                     break;
                 case "add":
                     commands.Add(new CAdd());
@@ -53,5 +56,21 @@ public class Parser
         }
 
         return commands;
+    }
+
+    private static string GetSegment(string target)
+    {
+        return target switch
+        {
+            "local" => "LCL",
+            "argument" => "ARG",
+            "this" => "THIS",
+            "that" => "THAT",
+            "constant" => "constant",
+            "static" => "static",
+            "pointer" => "pointer",
+            "temp" => "temp",
+            _ => throw new Exception("Invalid segment")
+        };
     }
 }
