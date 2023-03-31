@@ -2,9 +2,9 @@ namespace VirtualMachineTranslator;
 
 public class CodeWriter
 {
-    private readonly IEnumerable<ICommand> _commands;
+    private readonly List<ICommand> _commands;
 
-    public CodeWriter(IEnumerable<ICommand> commands)
+    public CodeWriter(List<ICommand> commands)
     {
         _commands = commands;
     }
@@ -12,17 +12,10 @@ public class CodeWriter
     public IEnumerable<string> Translate()
     {
         var result = new List<string>();
-        foreach (var cmd in _commands)
+        for (var i = 0; i < _commands.Count; i++)
         {
-            if (cmd is CPush cPush)
-            {
-                result.AddRange(TranslateCPush(cPush));
-            }
-
-            if (cmd is CAdd)
-            {
-                result.AddRange(TranslateCAdd());
-            }
+            result.AddRange(_commands[i].Translate(i));
+            result.Add("");
         }
         
         result.AddRange(InfiniteLoop());
@@ -30,36 +23,9 @@ public class CodeWriter
         return result;
     }
 
-    private List<string> TranslateCPush(CPush cPush) =>
-        new() 
+    private static IEnumerable<string> InfiniteLoop() =>
+        new List<string>
         {
-            "",
-            $"// {cPush}",
-            $"  @{cPush.Value}",
-            "  D=A",
-            "  @SP",
-            "  A=M",
-            "  M=D",
-            "  @SP",
-            "  M=M+1"
-        };
-
-    private List<string> TranslateCAdd() =>
-        new ()
-        {
-            "",
-            "// add",
-            "  @SP",
-            "  AM=M-1",
-            "  D=M",
-            "  A=A-1",
-            "  M=M+D"
-        };
-
-    private List<string> InfiniteLoop() =>
-        new ()
-        {
-            "",
             "// infinite loop",
             "(END)",
             "  @END",

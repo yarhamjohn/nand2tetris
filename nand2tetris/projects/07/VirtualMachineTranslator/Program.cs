@@ -12,8 +12,6 @@ input = input
     .Select(x => x.Split("//").First().Trim())
     .ToArray();
 
-foreach (var x in input) Console.WriteLine(x);
-
 // Initialise parser
 var parser = new Parser(input);
 
