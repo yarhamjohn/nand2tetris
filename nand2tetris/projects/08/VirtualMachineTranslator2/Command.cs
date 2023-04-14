@@ -4,6 +4,112 @@ public interface ICommand {
     public IEnumerable<string> Translate(int index);
 }
 
+public class CFunction : ICommand
+{
+    private readonly string _functionName;
+    private readonly int _numArgs;
+
+    public CFunction(string functionName, int numArgs)
+    {
+        _functionName = functionName;
+        _numArgs = numArgs;
+    }
+
+    public IEnumerable<string> Translate(int _)
+    {
+        var result = new List<string>
+        {
+            $"// function {_functionName} {_numArgs}"
+        };
+
+        for (var i = 0; i < _numArgs; i++)
+        {
+            // For each argument, push 0 onto the stack
+            result.AddRange(new List<string>
+            {
+                "  @SP",
+                "  A=M",
+                "  M=0",
+                "  @SP",
+                "  M=M+1"
+            });
+        }
+
+        return result;
+    }
+}
+
+public class CReturn : ICommand
+{
+    public IEnumerable<string> Translate(int _)
+    {
+        return new List<string>
+        {
+            "// return",
+            
+            "// Store the start of the local stack (i.e. 'frame') in a temp variable",
+            "  @LCL",
+            "  D=M",
+            "  @R13",
+            "  M=D",
+            
+            "// Store the return address in a temp variable",
+            "  @5",
+            "  A=D-A",
+            "  D=M",
+            "  @R14",
+            "  M=D",
+            
+            "// Store the return value in the first argument (i.e. top of caller stack)",
+            "  @SP",
+            "  AM=M-1",
+            "  D=M",
+            "  @ARG",
+            "  A=M",
+            "  M=D",
+            
+            "// Restore the caller's stack pointer (one after the return value)",
+            "  @ARG",
+            "  D=M+1",
+            "  @SP",
+            "  M=D",
+            
+            "// Restore the caller's THAT segment",
+            "  @R13",
+            "  AM=M-1",
+            "  D=M",
+            "  @THAT",
+            "  M=D",
+            
+            "// Restore the caller's THIS segment",
+            "  @R13",
+            "  AM=M-1",
+            "  D=M",
+            "  @THIS",
+            "  M=D",
+            
+            "// Restore the caller's ARG segment",
+            "  @R13",
+            "  AM=M-1",
+            "  D=M",
+            "  @ARG",
+            "  M=D",
+            
+            "// Restore the caller's LCL segment",
+            "  @R13",
+            "  AM=M-1",
+            "  D=M",
+            "  @LCL",
+            "  M=D",
+            
+            "// Jump to the return address",
+            "  @R14",
+            "  A=M",
+            "  0;JMP"
+        };
+    }
+}
+
 public class CLabel : ICommand
 {
     private readonly string _label;

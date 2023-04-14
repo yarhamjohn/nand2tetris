@@ -63,6 +63,12 @@ public class Parser
                 case "goto":
                     commands.Add(new CGoto(chunks[1]));
                     break;
+                case "function":
+                    commands.Add(new CFunction(chunks[1], Convert.ToInt32(chunks[2])));
+                    break;
+                case "return":
+                    commands.Add(new CReturn());
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException(firstChunk);
             }
