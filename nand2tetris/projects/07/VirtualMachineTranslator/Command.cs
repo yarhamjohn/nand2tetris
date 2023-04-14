@@ -2,7 +2,7 @@
 
 public interface ICommand {
     public IEnumerable<string> Translate(int index);
- }
+}
 
 public class CPush : ICommand
 {
@@ -15,11 +15,10 @@ public class CPush : ICommand
         _value = value;
     }
     
-    public IEnumerable<string> Translate(int _)
-    {
-        if (_target is "constant")
+    public IEnumerable<string> Translate(int _) =>
+        _target switch
         {
-            return new List<string>
+            "constant" => new List<string>
             {
                 $"// push {_target} {_value}",
                 $"  @{_value}",
@@ -29,24 +28,22 @@ public class CPush : ICommand
                 "  M=D",
                 "  @SP",
                 "  M=M+1"
-            };
-        }
-        
-        return new List<string>
-        {
-            $"// push {_target} {_value}",
-            $"  @{_value}",
-            "  D=A",
-            $"  @{_target}",
-            "  A=M+D",
-            "  D=M",
-            "  @SP",
-            "  A=M",
-            "  M=D",
-            "  @SP",
-            "  M=M+1"
+            },
+            _ => new List<string>
+            {
+                $"// push {_target} {_value}",
+                $"  @{(_target == "TEMP" ? _value + 5 : _value)}",
+                "  D=A",
+                $"  @{_target}",
+                "  A=M+D",
+                "  D=M",
+                "  @SP",
+                "  A=M",
+                "  M=D",
+                "  @SP",
+                "  M=M+1"
+            }
         };
-    }
 }
 
 public class CPop : ICommand
@@ -59,14 +56,14 @@ public class CPop : ICommand
         _target = target;
         _value = value;
     }
-    
+
     public IEnumerable<string> Translate(int _) =>
         new List<string>
         {
             $"// pop {_target} {_value}",
-            $"  @{_value}",
+            $"  @{(_target == "TEMP" ? _value + 5 : _value)}",
             "  D=A",
-            $"  @{_target}", // TODO: Handle TEMP
+            $"  @{_target}",
             "  D=M+D",
             "  @R13",
             "  M=D",

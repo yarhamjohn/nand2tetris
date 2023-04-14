@@ -145,10 +145,10 @@
   @SP
   M=M+1
 
-// pop temp 6
-  @6
+// pop TEMP 6
+  @11
   D=A
-  @temp
+  @TEMP
   D=M+D
   @R13
   M=D
@@ -247,10 +247,10 @@
   A=A-1
   M=M-D
 
-// push temp 6
-  @6
+// push TEMP 6
+  @11
   D=A
-  @temp
+  @TEMP
   A=M+D
   D=M
   @SP

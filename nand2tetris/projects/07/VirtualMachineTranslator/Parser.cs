@@ -69,7 +69,7 @@ public class Parser
             "constant" => "constant",
             "static" => "static",
             "pointer" => "pointer",
-            "temp" => "temp",
+            "temp" => "TEMP",
             _ => throw new Exception("Invalid segment")
         };
     }
