@@ -4,6 +4,7 @@ var inputFilePath = args[0];
 
 // Read the input file into memory
 var input = File.ReadAllLines(inputFilePath);
+var fileName = Path.GetFileNameWithoutExtension(inputFilePath);
 
 // Exclude blank lines, comments and whitespace
 input = input
@@ -13,7 +14,7 @@ input = input
     .ToArray();
 
 // Initialise parser
-var parser = new Parser(input);
+var parser = new Parser(input, fileName);
 
 // Parse commands
 var commands = parser.ParseCommands();

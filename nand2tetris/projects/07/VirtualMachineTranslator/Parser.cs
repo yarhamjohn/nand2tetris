@@ -3,10 +3,12 @@ namespace VirtualMachineTranslator;
 public class Parser
 {
     private readonly string[] _input;
+    private readonly string _fileName;
 
-    public Parser(string[] input)
+    public Parser(string[] input, string fileName)
     {
         _input = input;
+        _fileName = fileName;
     }
 
     public List<ICommand> ParseCommands()
@@ -20,10 +22,10 @@ public class Parser
             switch (firstChunk)
             {
                 case "push":
-                    commands.Add(new CPush(GetSegment(chunks[1]), Convert.ToInt32(chunks[2])));
+                    commands.Add(new CPush(GetSegment(chunks[1]), Convert.ToInt32(chunks[2]), _fileName));
                     break;
                 case "pop":
-                    commands.Add(new CPop(GetSegment(chunks[1]), Convert.ToInt32(chunks[2])));
+                    commands.Add(new CPop(GetSegment(chunks[1]), Convert.ToInt32(chunks[2]), _fileName));
                     break;
                 case "add":
                     commands.Add(new CAdd());

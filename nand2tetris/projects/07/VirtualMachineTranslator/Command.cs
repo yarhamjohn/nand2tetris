@@ -8,11 +8,13 @@ public class CPush : ICommand
 {
     private readonly string _target;
     private readonly int _value;
+    private readonly string _fileName;
 
-    public CPush(string target, int value)
+    public CPush(string target, int value, string fileName)
     {
         _target = target;
         _value = value;
+        _fileName = fileName;
     }
     
     public IEnumerable<string> Translate(int _) =>
@@ -33,6 +35,17 @@ public class CPush : ICommand
             {
                 $"// push {_target} {_value}",
                 $"  @{(_value == 0 ? "THIS" : "THAT")}",
+                "  D=M",
+                "  @SP",
+                "  A=M",
+                "  M=D",
+                "  @SP",
+                "  M=M+1"
+            },
+            "static" => new List<string>
+            {
+                $"// push {_target} {_value}",
+                $"  @{_fileName}.{_value}",
                 "  D=M",
                 "  @SP",
                 "  A=M",
@@ -61,11 +74,13 @@ public class CPop : ICommand
 {
     private readonly string _target;
     private readonly int _value;
+    private readonly string _fileName;
 
-    public CPop(string target, int value)
+    public CPop(string target, int value, string fileName)
     {
         _target = target;
         _value = value;
+        _fileName = fileName;
     }
 
     public IEnumerable<string> Translate(int _) =>
@@ -78,6 +93,15 @@ public class CPop : ICommand
                 "  AM=M-1",
                 "  D=M",
                 $"  @{(_value == 0 ? "THIS" : "THAT")}",
+                "  M=D"
+            },
+            "static" => new List<string>
+            {
+                $"// pop {_target} {_value}",
+                "  @SP",
+                "  AM=M-1",
+                "  D=M",
+                $"  @{_fileName}.{_value}",
                 "  M=D"
             },
             _ =>
