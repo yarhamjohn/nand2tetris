@@ -29,6 +29,17 @@ public class CPush : ICommand
                 "  @SP",
                 "  M=M+1"
             },
+            "pointer" => new List<string>
+            {
+                $"// push {_target} {_value}",
+                $"  @{(_value == 0 ? "THIS" : "THAT")}",
+                "  D=M",
+                "  @SP",
+                "  A=M",
+                "  M=D",
+                "  @SP",
+                "  M=M+1"
+            },
             _ => new List<string>
             {
                 $"// push {_target} {_value}",
@@ -58,21 +69,34 @@ public class CPop : ICommand
     }
 
     public IEnumerable<string> Translate(int _) =>
-        new List<string>
+        _target switch
         {
-            $"// pop {_target} {_value}",
-            $"  @{(_target == "TEMP" ? _value + 5 : _value)}",
-            "  D=A",
-            $"  @{_target}",
-            "  D=M+D",
-            "  @R13",
-            "  M=D",
-            "  @SP",
-            "  AM=M-1",
-            "  D=M",
-            "  @R13",
-            "  A=M",
-            "  M=D"
+            "pointer" => new List<string>
+            {
+                $"// pop {_target} {_value}",
+                "  @SP",
+                "  AM=M-1",
+                "  D=M",
+                $"  @{(_value == 0 ? "THIS" : "THAT")}",
+                "  M=D"
+            },
+            _ =>
+                new List<string>
+                {
+                    $"// pop {_target} {_value}",
+                    $"  @{(_target == "TEMP" ? _value + 5 : _value)}",
+                    "  D=A",
+                    $"  @{_target}",
+                    "  D=M+D",
+                    "  @R13",
+                    "  M=D",
+                    "  @SP",
+                    "  AM=M-1",
+                    "  D=M",
+                    "  @R13",
+                    "  A=M",
+                    "  M=D"
+                }
         };
 }
 
