@@ -60,6 +60,9 @@ public class Parser
                 case "if-goto":
                     commands.Add(new CIfGoto(chunks[1]));
                     break;
+                case "goto":
+                    commands.Add(new CGoto(chunks[1]));
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException(firstChunk);
             }

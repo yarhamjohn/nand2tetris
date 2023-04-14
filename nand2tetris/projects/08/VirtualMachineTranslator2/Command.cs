@@ -46,6 +46,26 @@ public class CIfGoto : ICommand
     }
 }
 
+public class CGoto : ICommand
+{
+    private readonly string _label;
+
+    public CGoto(string label)
+    {
+        _label = label;
+    }
+
+    public IEnumerable<string> Translate(int _)
+    {
+        return new List<string>
+        {
+            $"// goto {_label}",
+            $"  @{_label}",
+            "  0;JMP"
+        };
+    }
+}
+
 public class CPush : ICommand
 {
     private readonly string _target;
