@@ -2,19 +2,40 @@ namespace VirtualMachineTranslator2;
 
 public class Parser
 {
-    private readonly string[] _input;
-    private readonly string _fileName;
-
-    public Parser(string[] input, string fileName)
+    private readonly string[] _paths;
+    private readonly Dictionary<string, int> _functionCallCount = new();
+    
+    public Parser(string path)
     {
-        _input = input;
-        _fileName = fileName;
+        _paths = File.Exists(path) ? new[] { path } : Directory.GetFiles(path, "*.vm");// GetFilesInDirectory(path);
     }
 
-    public List<ICommand> ParseCommands()
+    private static string[] GetFilesInDirectory(string path)
+    {
+        var allFiles = Directory.GetFiles(path, "*.vm");
+        var startFile = new [] {allFiles.Single(x => x.Contains("Sys.vm")) };
+
+        return startFile.Concat(allFiles.Except(startFile)).ToArray();
+    }
+
+    public List<ICommand> Parse() => _paths.SelectMany(ParseFile).ToList();
+    
+    private List<ICommand> ParseFile(string filePath)
+    {
+        // Exclude blank lines, comments and whitespace
+        var input = File.ReadAllLines(filePath)
+            .Where(line => !string.IsNullOrWhiteSpace(line))
+            .Where(line => line.Trim()[..2] != "//")
+            .Select(x => x.Split("//").First().Trim())
+            .ToArray();
+    
+        return ParseCommands(input, Path.GetFileNameWithoutExtension(filePath));
+    }
+
+    private List<ICommand> ParseCommands(string[] input, string fileName)
     {
         var commands = new List<ICommand>();
-        foreach (var line in _input)
+        foreach (var line in input)
         {
             var chunks = line.Split(" ");
             var firstChunk = chunks.First();
@@ -22,10 +43,10 @@ public class Parser
             switch (firstChunk)
             {
                 case "push":
-                    commands.Add(new CPush(GetSegment(chunks[1]), Convert.ToInt32(chunks[2]), _fileName));
+                    commands.Add(new CPush(GetSegment(chunks[1]), Convert.ToInt32(chunks[2]), fileName));
                     break;
                 case "pop":
-                    commands.Add(new CPop(GetSegment(chunks[1]), Convert.ToInt32(chunks[2]), _fileName));
+                    commands.Add(new CPop(GetSegment(chunks[1]), Convert.ToInt32(chunks[2]), fileName));
                     break;
                 case "add":
                     commands.Add(new CAdd());
@@ -69,12 +90,30 @@ public class Parser
                 case "return":
                     commands.Add(new CReturn());
                     break;
+                case "call":
+                    var functionName = chunks[1];
+                    IncrementCallCount(functionName);
+                    
+                    commands.Add(new CCall(functionName, Convert.ToInt32(chunks[2]), _functionCallCount[functionName]));
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException(firstChunk);
             }
         }
 
         return commands;
+    }
+
+    private void IncrementCallCount(string functionName)
+    {
+        if (_functionCallCount.ContainsKey(functionName))
+        {
+            _functionCallCount[functionName]++;
+        }
+        else
+        {
+            _functionCallCount[functionName] = 0;
+        }
     }
 
     private static string GetSegment(string target)

@@ -1,28 +1,19 @@
 ﻿using VirtualMachineTranslator2;
 
-var inputFilePath = args[0];
+string GetOutputPath(string s)
+{
+    if (File.Exists(s))
+    {
+        return s.Replace(".vm", ".asm");
+    }
 
-// Read the input file into memory
-var input = File.ReadAllLines(inputFilePath);
-var fileName = Path.GetFileNameWithoutExtension(inputFilePath);
+    return s + "\\" + Path.GetFileNameWithoutExtension(s) + ".asm";
+}
 
-// Exclude blank lines, comments and whitespace
-input = input
-    .Where(line => !string.IsNullOrWhiteSpace(line))
-    .Where(line => line.Trim()[..2] != "//")
-    .Select(x => x.Split("//").First().Trim())
-    .ToArray();
+var path = args[0];
 
-// Initialise parser
-var parser = new Parser(input, fileName);
+var commands = new Parser(path).Parse();
 
-// Parse commands
-var commands = parser.ParseCommands();
+var output = new CodeWriter(commands).Translate();
 
-// Initialize codeWriter and get hack assembly code
-var codeWriter = new CodeWriter(commands);
-var output = codeWriter.Translate();
-
-// Output the binary to a file
-var outputFilePath = inputFilePath.Replace(".vm", ".asm");
-File.WriteAllLines(outputFilePath, output);
+File.WriteAllLines(GetOutputPath(path), output);

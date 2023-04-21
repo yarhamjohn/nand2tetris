@@ -4,25 +4,118 @@ public interface ICommand {
     public IEnumerable<string> Translate(int index);
 }
 
-public class CFunction : ICommand
+public class CCall : ICommand
 {
     private readonly string _functionName;
     private readonly int _numArgs;
+    private readonly int _callNum;
 
-    public CFunction(string functionName, int numArgs)
+    public CCall(string functionName, int numArgs, int callNum)
     {
         _functionName = functionName;
         _numArgs = numArgs;
+        _callNum = callNum;
     }
 
     public IEnumerable<string> Translate(int _)
     {
         var result = new List<string>
         {
-            $"// function {_functionName} {_numArgs}"
+            $"// call {_functionName} {_numArgs}",
+            
+            "// push return address onto stack",
+            $"  @{_functionName}$ret.{_callNum}",
+            "  D=A",
+            "  @SP",
+            "  A=M",
+            "  M=D",
+            "  @SP",
+            "  M=M+1",
+            
+            "// store the pointer to the caller's LCL to the stack",
+            "  @LCL",
+            "  D=M",
+            "  @SP",
+            "  A=M",
+            "  M=D",
+            "  @SP",
+            "  M=M+1",
+            
+            "// store the pointer to the caller's ARG to the stack",
+            "  @ARG",
+            "  D=M",
+            "  @SP",
+            "  A=M",
+            "  M=D",
+            "  @SP",
+            "  M=M+1",
+            
+            "// store the pointer to the caller's THIS to the stack",
+            "  @THIS",
+            "  D=M",
+            "  @SP",
+            "  A=M",
+            "  M=D",
+            "  @SP",
+            "  M=M+1",
+            
+            "// store the pointer to the caller's THAT to the stack",
+            "  @THAT",
+            "  D=M",
+            "  @SP",
+            "  A=M",
+            "  M=D",
+            "  @SP",
+            "  M=M+1",
+            
+            "// set the callee ARG to point at the first arg passed to the function",
+            "  @SP",
+            "  D=M",
+            "  @5",
+            "  D=D-A",
+            $"  @{_numArgs}",
+            "  D=D-A",
+            "  @ARG",
+            "  M=D",
+            
+            "// set the callee LCL point at the top of the stack",
+            "  @SP",
+            "  D=M",
+            "  @LCL",
+            "  M=D",
+
+            $"// goto {_functionName}",
+            $"  @{_functionName}",
+            "  0;JMP",
+            
+            "// create return address label",
+            $"({_functionName}$ret.{_callNum})"
         };
 
-        for (var i = 0; i < _numArgs; i++)
+        return result;
+    }
+}
+
+public class CFunction : ICommand
+{
+    private readonly string _functionName;
+    private readonly int _numLocalVars;
+
+    public CFunction(string functionName, int numLocalVars)
+    {
+        _functionName = functionName;
+        _numLocalVars = numLocalVars;
+    }
+
+    public IEnumerable<string> Translate(int _)
+    {
+        var result = new List<string>
+        {
+            $"// function {_functionName} {_numLocalVars}",
+            $"  ({_functionName})"
+        };
+
+        for (var i = 0; i < _numLocalVars; i++)
         {
             // For each argument, push 0 onto the stack
             result.AddRange(new List<string>
