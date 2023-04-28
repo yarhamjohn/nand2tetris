@@ -73,16 +73,23 @@
   @SP
   M=D
   @R13
-  AD=M-1
+  AM=M-1
+  D=M
   @THAT
   M=D
-  AD=D-1
+  @R13
+  AM=D-1
+  D=M
   @THIS
   M=D
-  AD=D-1
+  @R13
+  AM=D-1
+  D=M
   @ARG
   M=D
-  AD=D-1
+  @R13
+  AM=D-1
+  D=M
   @LCL
   M=D
   @R14

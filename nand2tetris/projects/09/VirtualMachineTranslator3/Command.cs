@@ -112,7 +112,9 @@ public class CFunction : ICommand
         var result = new List<string>
         {
             // function {_functionName} {_numLocalVars}
-            $"  ({_functionName})"
+            $"  ({_functionName})",
+            "  @SP",
+            "  A=M",
         };
 
         for (var i = 0; i < _numLocalVars; i++)
@@ -120,13 +122,16 @@ public class CFunction : ICommand
             // For each argument, push 0 onto the stack
             result.AddRange(new List<string>
             {
-                "  @SP",
-                "  A=M",
                 "  M=0",
-                "  @SP",
-                "  M=M+1"
+                "  A=A+1"
             });
         }
+
+        result.AddRange(new List<string> 
+        {
+            "  @SP",
+            "  M=A"
+        });
 
         return result;
     }

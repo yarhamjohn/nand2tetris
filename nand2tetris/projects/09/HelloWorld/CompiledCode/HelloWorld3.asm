@@ -78,17 +78,17 @@
   @THAT
   M=D
   @R13
-  AM=D-1
+  AM=M-1
   D=M
   @THIS
   M=D
   @R13
-  AM=D-1
+  AM=M-1
   D=M
   @ARG
   M=D
   @R13
-  AM=D-1
+  AM=M-1
   D=M
   @LCL
   M=D
@@ -96,10 +96,7 @@
   A=M
   0;JMP
   (Array.new)
-  @SP
-  A=M
-  @SP
-  M=A
+
   @0
   D=A
   @ARG
@@ -110,6 +107,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -117,6 +115,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -134,17 +133,22 @@
   A=M-1
   M=-1
 (CONTINUE3)
+
   @SP
   A=M-1
   M=!M
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE0
   D;JNE
+
   @IF_FALSE0
   0;JMP
+
   (IF_TRUE0)
+
   @2
   D=A
   @SP
@@ -152,6 +156,7 @@
   M=D
   @SP
   M=M+1
+
   @Sys.error$ret.0
   D=A
   @SP
@@ -202,6 +207,7 @@
   @Sys.error
   0;JMP
 (Sys.error$ret.0)
+
   @5
   D=A
   @TEMP
@@ -214,7 +220,9 @@
   @R13
   A=M
   M=D
+
   (IF_FALSE0)
+
   @0
   D=A
   @ARG
@@ -225,6 +233,7 @@
   M=D
   @SP
   M=M+1
+
   @Memory.alloc$ret.0
   D=A
   @SP
@@ -275,13 +284,12 @@
   @Memory.alloc
   0;JMP
 (Memory.alloc$ret.0)
+
   @FUNCTION_RETURN
   0;JMP
+
   (Array.dispose)
-  @SP
-  A=M
-  @SP
-  M=A
+
   @0
   D=A
   @ARG
@@ -292,11 +300,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   @THIS
   M=D
+
   @THIS
   D=M
   @SP
@@ -304,6 +314,7 @@
   M=D
   @SP
   M=M+1
+
   @Memory.deAlloc$ret.0
   D=A
   @SP
@@ -354,6 +365,7 @@
   @Memory.deAlloc
   0;JMP
 (Memory.deAlloc$ret.0)
+
   @5
   D=A
   @TEMP
@@ -366,6 +378,7 @@
   @R13
   A=M
   M=D
+
   @0
   D=A
   @SP
@@ -373,13 +386,12 @@
   M=D
   @SP
   M=M+1
+
   @FUNCTION_RETURN
   0;JMP
+
   (Keyboard.init)
-  @SP
-  A=M
-  @SP
-  M=A
+
   @0
   D=A
   @SP
@@ -387,13 +399,12 @@
   M=D
   @SP
   M=M+1
+
   @FUNCTION_RETURN
   0;JMP
+
   (Keyboard.keyPressed)
-  @SP
-  A=M
-  @SP
-  M=A
+
   @24576
   D=A
   @SP
@@ -401,6 +412,7 @@
   M=D
   @SP
   M=M+1
+
   @Memory.peek$ret.0
   D=A
   @SP
@@ -451,17 +463,22 @@
   @Memory.peek
   0;JMP
 (Memory.peek$ret.0)
+
   @FUNCTION_RETURN
   0;JMP
+
   (Keyboard.readChar)
   @SP
   A=M
   M=0
-  A=A+1
-  M=0
-  A=A+1
   @SP
-  M=A
+  M=M+1
+  @SP
+  A=M
+  M=0
+  @SP
+  M=M+1
+
   @0
   D=A
   @SP
@@ -469,6 +486,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.printChar$ret.0
   D=A
   @SP
@@ -519,6 +537,7 @@
   @Output.printChar
   0;JMP
 (Output.printChar$ret.0)
+
   @5
   D=A
   @TEMP
@@ -531,7 +550,9 @@
   @R13
   A=M
   M=D
+
   (WHILE_EXP0)
+
   @1
   D=A
   @LCL
@@ -542,6 +563,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -549,6 +571,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -566,6 +589,7 @@
   A=M-1
   M=-1
 (CONTINUE37)
+
   @0
   D=A
   @LCL
@@ -576,6 +600,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -583,6 +608,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -600,19 +626,23 @@
   A=M-1
   M=-1
 (CONTINUE40)
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M|D
+
   @SP
   A=M-1
   M=!M
+
   @SP
   AM=M-1
   D=M
   @WHILE_END0
   D;JNE
+
   @Keyboard.keyPressed$ret.0
   D=A
   @SP
@@ -663,6 +693,7 @@
   @Keyboard.keyPressed
   0;JMP
 (Keyboard.keyPressed$ret.0)
+
   @0
   D=A
   @LCL
@@ -675,6 +706,7 @@
   @R13
   A=M
   M=D
+
   @0
   D=A
   @LCL
@@ -685,6 +717,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -692,6 +725,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -709,14 +743,18 @@
   A=M-1
   M=-1
 (CONTINUE48)
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE0
   D;JNE
+
   @IF_FALSE0
   0;JMP
+
   (IF_TRUE0)
+
   @0
   D=A
   @LCL
@@ -727,6 +765,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @LCL
@@ -739,10 +778,14 @@
   @R13
   A=M
   M=D
+
   (IF_FALSE0)
+
   @WHILE_EXP0
   0;JMP
+
   (WHILE_END0)
+
   @String.backSpace$ret.0
   D=A
   @SP
@@ -793,6 +836,7 @@
   @String.backSpace
   0;JMP
 (String.backSpace$ret.0)
+
   @Output.printChar$ret.1
   D=A
   @SP
@@ -843,6 +887,7 @@
   @Output.printChar
   0;JMP
 (Output.printChar$ret.1)
+
   @5
   D=A
   @TEMP
@@ -855,6 +900,7 @@
   @R13
   A=M
   M=D
+
   @1
   D=A
   @LCL
@@ -865,6 +911,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.printChar$ret.2
   D=A
   @SP
@@ -915,6 +962,7 @@
   @Output.printChar
   0;JMP
 (Output.printChar$ret.2)
+
   @5
   D=A
   @TEMP
@@ -927,6 +975,7 @@
   @R13
   A=M
   M=D
+
   @1
   D=A
   @LCL
@@ -937,23 +986,37 @@
   M=D
   @SP
   M=M+1
+
   @FUNCTION_RETURN
   0;JMP
+
   (Keyboard.readLine)
   @SP
   A=M
   M=0
-  A=A+1
-  M=0
-  A=A+1
-  M=0
-  A=A+1
-  M=0
-  A=A+1
-  M=0
-  A=A+1
   @SP
-  M=A
+  M=M+1
+  @SP
+  A=M
+  M=0
+  @SP
+  M=M+1
+  @SP
+  A=M
+  M=0
+  @SP
+  M=M+1
+  @SP
+  A=M
+  M=0
+  @SP
+  M=M+1
+  @SP
+  A=M
+  M=0
+  @SP
+  M=M+1
+
   @80
   D=A
   @SP
@@ -961,6 +1024,7 @@
   M=D
   @SP
   M=M+1
+
   @String.new$ret.0
   D=A
   @SP
@@ -1011,6 +1075,7 @@
   @String.new
   0;JMP
 (String.new$ret.0)
+
   @3
   D=A
   @LCL
@@ -1023,6 +1088,7 @@
   @R13
   A=M
   M=D
+
   @0
   D=A
   @ARG
@@ -1033,6 +1099,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.printString$ret.0
   D=A
   @SP
@@ -1083,6 +1150,7 @@
   @Output.printString
   0;JMP
 (Output.printString$ret.0)
+
   @5
   D=A
   @TEMP
@@ -1095,6 +1163,7 @@
   @R13
   A=M
   M=D
+
   @String.newLine$ret.0
   D=A
   @SP
@@ -1145,6 +1214,7 @@
   @String.newLine
   0;JMP
 (String.newLine$ret.0)
+
   @1
   D=A
   @LCL
@@ -1157,6 +1227,7 @@
   @R13
   A=M
   M=D
+
   @String.backSpace$ret.1
   D=A
   @SP
@@ -1207,6 +1278,7 @@
   @String.backSpace
   0;JMP
 (String.backSpace$ret.1)
+
   @2
   D=A
   @LCL
@@ -1219,7 +1291,9 @@
   @R13
   A=M
   M=D
+
   (WHILE_EXP0)
+
   @4
   D=A
   @LCL
@@ -1230,17 +1304,21 @@
   M=D
   @SP
   M=M+1
+
   @SP
   A=M-1
   M=!M
+
   @SP
   A=M-1
   M=!M
+
   @SP
   AM=M-1
   D=M
   @WHILE_END0
   D;JNE
+
   @Keyboard.readChar$ret.0
   D=A
   @SP
@@ -1291,6 +1369,7 @@
   @Keyboard.readChar
   0;JMP
 (Keyboard.readChar$ret.0)
+
   @0
   D=A
   @LCL
@@ -1303,6 +1382,7 @@
   @R13
   A=M
   M=D
+
   @0
   D=A
   @LCL
@@ -1313,6 +1393,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @LCL
@@ -1323,6 +1404,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -1340,6 +1422,7 @@
   A=M-1
   M=-1
 (CONTINUE85)
+
   @4
   D=A
   @LCL
@@ -1352,6 +1435,7 @@
   @R13
   A=M
   M=D
+
   @4
   D=A
   @LCL
@@ -1362,17 +1446,22 @@
   M=D
   @SP
   M=M+1
+
   @SP
   A=M-1
   M=!M
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE0
   D;JNE
+
   @IF_FALSE0
   0;JMP
+
   (IF_TRUE0)
+
   @0
   D=A
   @LCL
@@ -1383,6 +1472,7 @@
   M=D
   @SP
   M=M+1
+
   @2
   D=A
   @LCL
@@ -1393,6 +1483,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -1410,14 +1501,18 @@
   A=M-1
   M=-1
 (CONTINUE94)
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE1
   D;JNE
+
   @IF_FALSE1
   0;JMP
+
   (IF_TRUE1)
+
   @3
   D=A
   @LCL
@@ -1428,6 +1523,7 @@
   M=D
   @SP
   M=M+1
+
   @String.eraseLastChar$ret.0
   D=A
   @SP
@@ -1478,6 +1574,7 @@
   @String.eraseLastChar
   0;JMP
 (String.eraseLastChar$ret.0)
+
   @5
   D=A
   @TEMP
@@ -1490,9 +1587,12 @@
   @R13
   A=M
   M=D
+
   @IF_END1
   0;JMP
+
   (IF_FALSE1)
+
   @3
   D=A
   @LCL
@@ -1503,6 +1603,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -1513,6 +1614,7 @@
   M=D
   @SP
   M=M+1
+
   @String.appendChar$ret.0
   D=A
   @SP
@@ -1563,6 +1665,7 @@
   @String.appendChar
   0;JMP
 (String.appendChar$ret.0)
+
   @3
   D=A
   @LCL
@@ -1575,11 +1678,16 @@
   @R13
   A=M
   M=D
+
   (IF_END1)
+
   (IF_FALSE0)
+
   @WHILE_EXP0
   0;JMP
+
   (WHILE_END0)
+
   @3
   D=A
   @LCL
@@ -1590,17 +1698,22 @@
   M=D
   @SP
   M=M+1
+
   @FUNCTION_RETURN
   0;JMP
+
   (Keyboard.readInt)
   @SP
   A=M
   M=0
-  A=A+1
-  M=0
-  A=A+1
   @SP
-  M=A
+  M=M+1
+  @SP
+  A=M
+  M=0
+  @SP
+  M=M+1
+
   @0
   D=A
   @ARG
@@ -1611,6 +1724,7 @@
   M=D
   @SP
   M=M+1
+
   @Keyboard.readLine$ret.0
   D=A
   @SP
@@ -1661,6 +1775,7 @@
   @Keyboard.readLine
   0;JMP
 (Keyboard.readLine$ret.0)
+
   @0
   D=A
   @LCL
@@ -1673,6 +1788,7 @@
   @R13
   A=M
   M=D
+
   @0
   D=A
   @LCL
@@ -1683,6 +1799,7 @@
   M=D
   @SP
   M=M+1
+
   @String.intValue$ret.0
   D=A
   @SP
@@ -1733,6 +1850,7 @@
   @String.intValue
   0;JMP
 (String.intValue$ret.0)
+
   @1
   D=A
   @LCL
@@ -1745,6 +1863,7 @@
   @R13
   A=M
   M=D
+
   @0
   D=A
   @LCL
@@ -1755,6 +1874,7 @@
   M=D
   @SP
   M=M+1
+
   @String.dispose$ret.0
   D=A
   @SP
@@ -1805,6 +1925,7 @@
   @String.dispose
   0;JMP
 (String.dispose$ret.0)
+
   @5
   D=A
   @TEMP
@@ -1817,6 +1938,7 @@
   @R13
   A=M
   M=D
+
   @1
   D=A
   @LCL
@@ -1827,13 +1949,12 @@
   M=D
   @SP
   M=M+1
+
   @FUNCTION_RETURN
   0;JMP
+
   (Main.main)
-  @SP
-  A=M
-  @SP
-  M=A
+
   @12
   D=A
   @SP
@@ -1841,6 +1962,7 @@
   M=D
   @SP
   M=M+1
+
   @String.new$ret.1
   D=A
   @SP
@@ -1891,6 +2013,7 @@
   @String.new
   0;JMP
 (String.new$ret.1)
+
   @72
   D=A
   @SP
@@ -1898,6 +2021,7 @@
   M=D
   @SP
   M=M+1
+
   @String.appendChar$ret.1
   D=A
   @SP
@@ -1948,6 +2072,7 @@
   @String.appendChar
   0;JMP
 (String.appendChar$ret.1)
+
   @101
   D=A
   @SP
@@ -1955,6 +2080,7 @@
   M=D
   @SP
   M=M+1
+
   @String.appendChar$ret.2
   D=A
   @SP
@@ -2005,6 +2131,7 @@
   @String.appendChar
   0;JMP
 (String.appendChar$ret.2)
+
   @108
   D=A
   @SP
@@ -2012,6 +2139,7 @@
   M=D
   @SP
   M=M+1
+
   @String.appendChar$ret.3
   D=A
   @SP
@@ -2062,6 +2190,7 @@
   @String.appendChar
   0;JMP
 (String.appendChar$ret.3)
+
   @108
   D=A
   @SP
@@ -2069,6 +2198,7 @@
   M=D
   @SP
   M=M+1
+
   @String.appendChar$ret.4
   D=A
   @SP
@@ -2119,6 +2249,7 @@
   @String.appendChar
   0;JMP
 (String.appendChar$ret.4)
+
   @111
   D=A
   @SP
@@ -2126,6 +2257,7 @@
   M=D
   @SP
   M=M+1
+
   @String.appendChar$ret.5
   D=A
   @SP
@@ -2176,6 +2308,7 @@
   @String.appendChar
   0;JMP
 (String.appendChar$ret.5)
+
   @32
   D=A
   @SP
@@ -2183,6 +2316,7 @@
   M=D
   @SP
   M=M+1
+
   @String.appendChar$ret.6
   D=A
   @SP
@@ -2233,6 +2367,7 @@
   @String.appendChar
   0;JMP
 (String.appendChar$ret.6)
+
   @119
   D=A
   @SP
@@ -2240,6 +2375,7 @@
   M=D
   @SP
   M=M+1
+
   @String.appendChar$ret.7
   D=A
   @SP
@@ -2290,6 +2426,7 @@
   @String.appendChar
   0;JMP
 (String.appendChar$ret.7)
+
   @111
   D=A
   @SP
@@ -2297,6 +2434,7 @@
   M=D
   @SP
   M=M+1
+
   @String.appendChar$ret.8
   D=A
   @SP
@@ -2347,6 +2485,7 @@
   @String.appendChar
   0;JMP
 (String.appendChar$ret.8)
+
   @114
   D=A
   @SP
@@ -2354,6 +2493,7 @@
   M=D
   @SP
   M=M+1
+
   @String.appendChar$ret.9
   D=A
   @SP
@@ -2404,6 +2544,7 @@
   @String.appendChar
   0;JMP
 (String.appendChar$ret.9)
+
   @108
   D=A
   @SP
@@ -2411,6 +2552,7 @@
   M=D
   @SP
   M=M+1
+
   @String.appendChar$ret.10
   D=A
   @SP
@@ -2461,6 +2603,7 @@
   @String.appendChar
   0;JMP
 (String.appendChar$ret.10)
+
   @100
   D=A
   @SP
@@ -2468,6 +2611,7 @@
   M=D
   @SP
   M=M+1
+
   @String.appendChar$ret.11
   D=A
   @SP
@@ -2518,6 +2662,7 @@
   @String.appendChar
   0;JMP
 (String.appendChar$ret.11)
+
   @33
   D=A
   @SP
@@ -2525,6 +2670,7 @@
   M=D
   @SP
   M=M+1
+
   @String.appendChar$ret.12
   D=A
   @SP
@@ -2575,6 +2721,7 @@
   @String.appendChar
   0;JMP
 (String.appendChar$ret.12)
+
   @Output.printString$ret.1
   D=A
   @SP
@@ -2625,6 +2772,7 @@
   @Output.printString
   0;JMP
 (Output.printString$ret.1)
+
   @5
   D=A
   @TEMP
@@ -2637,6 +2785,7 @@
   @R13
   A=M
   M=D
+
   @Output.println$ret.0
   D=A
   @SP
@@ -2687,6 +2836,7 @@
   @Output.println
   0;JMP
 (Output.println$ret.0)
+
   @5
   D=A
   @TEMP
@@ -2699,6 +2849,7 @@
   @R13
   A=M
   M=D
+
   @0
   D=A
   @SP
@@ -2706,15 +2857,17 @@
   M=D
   @SP
   M=M+1
+
   @FUNCTION_RETURN
   0;JMP
+
   (Math.init)
   @SP
   A=M
   M=0
-  A=A+1
   @SP
-  M=A
+  M=M+1
+
   @16
   D=A
   @SP
@@ -2722,6 +2875,7 @@
   M=D
   @SP
   M=M+1
+
   @Array.new$ret.0
   D=A
   @SP
@@ -2772,11 +2926,13 @@
   @Array.new
   0;JMP
 (Array.new$ret.0)
+
   @SP
   AM=M-1
   D=M
   @Math.1
   M=D
+
   @16
   D=A
   @SP
@@ -2784,6 +2940,7 @@
   M=D
   @SP
   M=M+1
+
   @Array.new$ret.1
   D=A
   @SP
@@ -2834,11 +2991,13 @@
   @Array.new
   0;JMP
 (Array.new$ret.1)
+
   @SP
   AM=M-1
   D=M
   @Math.0
   M=D
+
   @0
   D=A
   @SP
@@ -2846,6 +3005,7 @@
   M=D
   @SP
   M=M+1
+
   @Math.0
   D=M
   @SP
@@ -2853,11 +3013,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @1
   D=A
   @SP
@@ -2865,6 +3027,7 @@
   M=D
   @SP
   M=M+1
+
   @5
   D=A
   @TEMP
@@ -2877,11 +3040,13 @@
   @R13
   A=M
   M=D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @5
   D=A
   @TEMP
@@ -2892,6 +3057,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @THAT
@@ -2904,7 +3070,9 @@
   @R13
   A=M
   M=D
+
   (WHILE_EXP0)
+
   @0
   D=A
   @LCL
@@ -2915,6 +3083,7 @@
   M=D
   @SP
   M=M+1
+
   @15
   D=A
   @SP
@@ -2922,6 +3091,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -2939,14 +3109,17 @@
   A=M-1
   M=-1
 (CONTINUE176)
+
   @SP
   A=M-1
   M=!M
+
   @SP
   AM=M-1
   D=M
   @WHILE_END0
   D;JNE
+
   @0
   D=A
   @LCL
@@ -2957,6 +3130,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @SP
@@ -2964,11 +3138,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @0
   D=A
   @LCL
@@ -2981,6 +3157,7 @@
   @R13
   A=M
   M=D
+
   @0
   D=A
   @LCL
@@ -2991,6 +3168,7 @@
   M=D
   @SP
   M=M+1
+
   @Math.0
   D=M
   @SP
@@ -2998,11 +3176,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @0
   D=A
   @LCL
@@ -3013,6 +3193,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @SP
@@ -3020,11 +3201,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M-D
+
   @Math.0
   D=M
   @SP
@@ -3032,16 +3215,19 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @0
   D=A
   @THAT
@@ -3052,6 +3238,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -3062,6 +3249,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @SP
@@ -3069,11 +3257,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M-D
+
   @Math.0
   D=M
   @SP
@@ -3081,16 +3271,19 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @0
   D=A
   @THAT
@@ -3101,11 +3294,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @5
   D=A
   @TEMP
@@ -3118,11 +3313,13 @@
   @R13
   A=M
   M=D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @5
   D=A
   @TEMP
@@ -3133,6 +3330,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @THAT
@@ -3145,9 +3343,12 @@
   @R13
   A=M
   M=D
+
   @WHILE_EXP0
   0;JMP
+
   (WHILE_END0)
+
   @0
   D=A
   @SP
@@ -3155,13 +3356,12 @@
   M=D
   @SP
   M=M+1
+
   @FUNCTION_RETURN
   0;JMP
+
   (Math.abs)
-  @SP
-  A=M
-  @SP
-  M=A
+
   @0
   D=A
   @ARG
@@ -3172,6 +3372,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -3179,6 +3380,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -3196,14 +3398,18 @@
   A=M-1
   M=-1
 (CONTINUE212)
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE0
   D;JNE
+
   @IF_FALSE0
   0;JMP
+
   (IF_TRUE0)
+
   @0
   D=A
   @ARG
@@ -3214,9 +3420,11 @@
   M=D
   @SP
   M=M+1
+
   @SP
   A=M-1
   M=-M
+
   @0
   D=A
   @ARG
@@ -3229,7 +3437,9 @@
   @R13
   A=M
   M=D
+
   (IF_FALSE0)
+
   @0
   D=A
   @ARG
@@ -3240,23 +3450,37 @@
   M=D
   @SP
   M=M+1
+
   @FUNCTION_RETURN
   0;JMP
+
   (Math.multiply)
   @SP
   A=M
   M=0
-  A=A+1
-  M=0
-  A=A+1
-  M=0
-  A=A+1
-  M=0
-  A=A+1
-  M=0
-  A=A+1
   @SP
-  M=A
+  M=M+1
+  @SP
+  A=M
+  M=0
+  @SP
+  M=M+1
+  @SP
+  A=M
+  M=0
+  @SP
+  M=M+1
+  @SP
+  A=M
+  M=0
+  @SP
+  M=M+1
+  @SP
+  A=M
+  M=0
+  @SP
+  M=M+1
+
   @0
   D=A
   @ARG
@@ -3267,6 +3491,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -3274,6 +3499,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -3291,6 +3517,7 @@
   A=M-1
   M=-1
 (CONTINUE225)
+
   @1
   D=A
   @ARG
@@ -3301,6 +3528,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -3308,6 +3536,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -3325,11 +3554,13 @@
   A=M-1
   M=-1
 (CONTINUE228)
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M&D
+
   @0
   D=A
   @ARG
@@ -3340,6 +3571,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -3347,6 +3579,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -3364,6 +3597,7 @@
   A=M-1
   M=-1
 (CONTINUE232)
+
   @1
   D=A
   @ARG
@@ -3374,6 +3608,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -3381,6 +3616,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -3398,16 +3634,19 @@
   A=M-1
   M=-1
 (CONTINUE235)
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M&D
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M|D
+
   @4
   D=A
   @LCL
@@ -3420,6 +3659,7 @@
   @R13
   A=M
   M=D
+
   @0
   D=A
   @ARG
@@ -3430,6 +3670,7 @@
   M=D
   @SP
   M=M+1
+
   @Math.abs$ret.0
   D=A
   @SP
@@ -3480,6 +3721,7 @@
   @Math.abs
   0;JMP
 (Math.abs$ret.0)
+
   @0
   D=A
   @ARG
@@ -3492,6 +3734,7 @@
   @R13
   A=M
   M=D
+
   @1
   D=A
   @ARG
@@ -3502,6 +3745,7 @@
   M=D
   @SP
   M=M+1
+
   @Math.abs$ret.1
   D=A
   @SP
@@ -3552,6 +3796,7 @@
   @Math.abs
   0;JMP
 (Math.abs$ret.1)
+
   @1
   D=A
   @ARG
@@ -3564,6 +3809,7 @@
   @R13
   A=M
   M=D
+
   @0
   D=A
   @ARG
@@ -3574,6 +3820,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @ARG
@@ -3584,6 +3831,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -3601,14 +3849,18 @@
   A=M-1
   M=-1
 (CONTINUE247)
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE0
   D;JNE
+
   @IF_FALSE0
   0;JMP
+
   (IF_TRUE0)
+
   @0
   D=A
   @ARG
@@ -3619,6 +3871,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @LCL
@@ -3631,6 +3884,7 @@
   @R13
   A=M
   M=D
+
   @1
   D=A
   @ARG
@@ -3641,6 +3895,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @ARG
@@ -3653,6 +3908,7 @@
   @R13
   A=M
   M=D
+
   @1
   D=A
   @LCL
@@ -3663,6 +3919,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @ARG
@@ -3675,8 +3932,11 @@
   @R13
   A=M
   M=D
+
   (IF_FALSE0)
+
   (WHILE_EXP0)
+
   @2
   D=A
   @LCL
@@ -3687,6 +3947,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @SP
@@ -3694,11 +3955,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M-D
+
   @1
   D=A
   @ARG
@@ -3709,6 +3972,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @SP
@@ -3716,11 +3980,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M-D
+
   @SP
   AM=M-1
   D=M
@@ -3738,14 +4004,17 @@
   A=M-1
   M=-1
 (CONTINUE265)
+
   @SP
   A=M-1
   M=!M
+
   @SP
   AM=M-1
   D=M
   @WHILE_END0
   D;JNE
+
   @3
   D=A
   @LCL
@@ -3756,6 +4025,7 @@
   M=D
   @SP
   M=M+1
+
   @Math.0
   D=M
   @SP
@@ -3763,16 +4033,19 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @0
   D=A
   @THAT
@@ -3783,6 +4056,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @ARG
@@ -3793,11 +4067,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M&D
+
   @0
   D=A
   @SP
@@ -3805,6 +4081,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -3822,17 +4099,22 @@
   A=M-1
   M=-1
 (CONTINUE276)
+
   @SP
   A=M-1
   M=!M
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE1
   D;JNE
+
   @IF_FALSE1
   0;JMP
+
   (IF_TRUE1)
+
   @0
   D=A
   @LCL
@@ -3843,6 +4125,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @ARG
@@ -3853,11 +4136,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @0
   D=A
   @LCL
@@ -3870,6 +4155,7 @@
   @R13
   A=M
   M=D
+
   @2
   D=A
   @LCL
@@ -3880,6 +4166,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @LCL
@@ -3890,6 +4177,7 @@
   M=D
   @SP
   M=M+1
+
   @Math.0
   D=M
   @SP
@@ -3897,16 +4185,19 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @0
   D=A
   @THAT
@@ -3917,11 +4208,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @2
   D=A
   @LCL
@@ -3934,7 +4227,9 @@
   @R13
   A=M
   M=D
+
   (IF_FALSE1)
+
   @0
   D=A
   @ARG
@@ -3945,6 +4240,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @ARG
@@ -3955,11 +4251,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @0
   D=A
   @ARG
@@ -3972,6 +4270,7 @@
   @R13
   A=M
   M=D
+
   @3
   D=A
   @LCL
@@ -3982,6 +4281,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @SP
@@ -3989,11 +4289,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @3
   D=A
   @LCL
@@ -4006,9 +4308,12 @@
   @R13
   A=M
   M=D
+
   @WHILE_EXP0
   0;JMP
+
   (WHILE_END0)
+
   @4
   D=A
   @LCL
@@ -4019,14 +4324,18 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE2
   D;JNE
+
   @IF_FALSE2
   0;JMP
+
   (IF_TRUE2)
+
   @0
   D=A
   @LCL
@@ -4037,9 +4346,11 @@
   M=D
   @SP
   M=M+1
+
   @SP
   A=M-1
   M=-M
+
   @0
   D=A
   @LCL
@@ -4052,7 +4363,9 @@
   @R13
   A=M
   M=D
+
   (IF_FALSE2)
+
   @0
   D=A
   @LCL
@@ -4063,21 +4376,32 @@
   M=D
   @SP
   M=M+1
+
   @FUNCTION_RETURN
   0;JMP
+
   (Math.divide)
   @SP
   A=M
   M=0
-  A=A+1
-  M=0
-  A=A+1
-  M=0
-  A=A+1
-  M=0
-  A=A+1
   @SP
-  M=A
+  M=M+1
+  @SP
+  A=M
+  M=0
+  @SP
+  M=M+1
+  @SP
+  A=M
+  M=0
+  @SP
+  M=M+1
+  @SP
+  A=M
+  M=0
+  @SP
+  M=M+1
+
   @1
   D=A
   @ARG
@@ -4088,6 +4412,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -4095,6 +4420,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -4112,14 +4438,18 @@
   A=M-1
   M=-1
 (CONTINUE317)
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE0
   D;JNE
+
   @IF_FALSE0
   0;JMP
+
   (IF_TRUE0)
+
   @3
   D=A
   @SP
@@ -4127,6 +4457,7 @@
   M=D
   @SP
   M=M+1
+
   @Sys.error$ret.1
   D=A
   @SP
@@ -4177,6 +4508,7 @@
   @Sys.error
   0;JMP
 (Sys.error$ret.1)
+
   @5
   D=A
   @TEMP
@@ -4189,7 +4521,9 @@
   @R13
   A=M
   M=D
+
   (IF_FALSE0)
+
   @0
   D=A
   @ARG
@@ -4200,6 +4534,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -4207,6 +4542,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -4224,6 +4560,7 @@
   A=M-1
   M=-1
 (CONTINUE327)
+
   @1
   D=A
   @ARG
@@ -4234,6 +4571,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -4241,6 +4579,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -4258,11 +4597,13 @@
   A=M-1
   M=-1
 (CONTINUE330)
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M&D
+
   @0
   D=A
   @ARG
@@ -4273,6 +4614,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -4280,6 +4622,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -4297,6 +4640,7 @@
   A=M-1
   M=-1
 (CONTINUE334)
+
   @1
   D=A
   @ARG
@@ -4307,6 +4651,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -4314,6 +4659,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -4331,16 +4677,19 @@
   A=M-1
   M=-1
 (CONTINUE337)
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M&D
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M|D
+
   @2
   D=A
   @LCL
@@ -4353,6 +4702,7 @@
   @R13
   A=M
   M=D
+
   @0
   D=A
   @SP
@@ -4360,6 +4710,7 @@
   M=D
   @SP
   M=M+1
+
   @Math.1
   D=M
   @SP
@@ -4367,11 +4718,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @1
   D=A
   @ARG
@@ -4382,6 +4735,7 @@
   M=D
   @SP
   M=M+1
+
   @Math.abs$ret.2
   D=A
   @SP
@@ -4432,6 +4786,7 @@
   @Math.abs
   0;JMP
 (Math.abs$ret.2)
+
   @5
   D=A
   @TEMP
@@ -4444,11 +4799,13 @@
   @R13
   A=M
   M=D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @5
   D=A
   @TEMP
@@ -4459,6 +4816,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @THAT
@@ -4471,6 +4829,7 @@
   @R13
   A=M
   M=D
+
   @0
   D=A
   @ARG
@@ -4481,6 +4840,7 @@
   M=D
   @SP
   M=M+1
+
   @Math.abs$ret.3
   D=A
   @SP
@@ -4531,6 +4891,7 @@
   @Math.abs
   0;JMP
 (Math.abs$ret.3)
+
   @0
   D=A
   @ARG
@@ -4543,7 +4904,9 @@
   @R13
   A=M
   M=D
+
   (WHILE_EXP0)
+
   @0
   D=A
   @LCL
@@ -4554,6 +4917,7 @@
   M=D
   @SP
   M=M+1
+
   @15
   D=A
   @SP
@@ -4561,6 +4925,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -4578,6 +4943,7 @@
   A=M-1
   M=-1
 (CONTINUE356)
+
   @3
   D=A
   @LCL
@@ -4588,22 +4954,27 @@
   M=D
   @SP
   M=M+1
+
   @SP
   A=M-1
   M=!M
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M&D
+
   @SP
   A=M-1
   M=!M
+
   @SP
   AM=M-1
   D=M
   @WHILE_END0
   D;JNE
+
   @32767
   D=A
   @SP
@@ -4611,6 +4982,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -4621,6 +4993,7 @@
   M=D
   @SP
   M=M+1
+
   @Math.1
   D=M
   @SP
@@ -4628,16 +5001,19 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @0
   D=A
   @THAT
@@ -4648,6 +5024,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @SP
@@ -4655,16 +5032,19 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M-D
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M-D
+
   @0
   D=A
   @LCL
@@ -4675,6 +5055,7 @@
   M=D
   @SP
   M=M+1
+
   @Math.1
   D=M
   @SP
@@ -4682,16 +5063,19 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @0
   D=A
   @THAT
@@ -4702,6 +5086,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @SP
@@ -4709,11 +5094,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M-D
+
   @SP
   AM=M-1
   D=M
@@ -4731,6 +5118,7 @@
   A=M-1
   M=-1
 (CONTINUE378)
+
   @3
   D=A
   @LCL
@@ -4743,6 +5131,7 @@
   @R13
   A=M
   M=D
+
   @3
   D=A
   @LCL
@@ -4753,17 +5142,22 @@
   M=D
   @SP
   M=M+1
+
   @SP
   A=M-1
   M=!M
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE1
   D;JNE
+
   @IF_FALSE1
   0;JMP
+
   (IF_TRUE1)
+
   @0
   D=A
   @LCL
@@ -4774,6 +5168,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @SP
@@ -4781,11 +5176,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @Math.1
   D=M
   @SP
@@ -4793,11 +5190,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @0
   D=A
   @LCL
@@ -4808,6 +5207,7 @@
   M=D
   @SP
   M=M+1
+
   @Math.1
   D=M
   @SP
@@ -4815,16 +5215,19 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @0
   D=A
   @THAT
@@ -4835,6 +5238,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -4845,6 +5249,7 @@
   M=D
   @SP
   M=M+1
+
   @Math.1
   D=M
   @SP
@@ -4852,16 +5257,19 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @0
   D=A
   @THAT
@@ -4872,11 +5280,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @5
   D=A
   @TEMP
@@ -4889,11 +5299,13 @@
   @R13
   A=M
   M=D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @5
   D=A
   @TEMP
@@ -4904,6 +5316,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @THAT
@@ -4916,6 +5329,7 @@
   @R13
   A=M
   M=D
+
   @0
   D=A
   @LCL
@@ -4926,6 +5340,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @SP
@@ -4933,11 +5348,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @Math.1
   D=M
   @SP
@@ -4945,16 +5362,19 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @0
   D=A
   @THAT
@@ -4965,6 +5385,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @SP
@@ -4972,11 +5393,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M-D
+
   @0
   D=A
   @ARG
@@ -4987,6 +5410,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @SP
@@ -4994,11 +5418,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M-D
+
   @SP
   AM=M-1
   D=M
@@ -5016,6 +5442,7 @@
   A=M-1
   M=-1
 (CONTINUE417)
+
   @3
   D=A
   @LCL
@@ -5028,6 +5455,7 @@
   @R13
   A=M
   M=D
+
   @3
   D=A
   @LCL
@@ -5038,17 +5466,22 @@
   M=D
   @SP
   M=M+1
+
   @SP
   A=M-1
   M=!M
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE2
   D;JNE
+
   @IF_FALSE2
   0;JMP
+
   (IF_TRUE2)
+
   @0
   D=A
   @LCL
@@ -5059,6 +5492,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @SP
@@ -5066,11 +5500,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @0
   D=A
   @LCL
@@ -5083,12 +5519,18 @@
   @R13
   A=M
   M=D
+
   (IF_FALSE2)
+
   (IF_FALSE1)
+
   @WHILE_EXP0
   0;JMP
+
   (WHILE_END0)
+
   (WHILE_EXP1)
+
   @0
   D=A
   @LCL
@@ -5099,6 +5541,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @SP
@@ -5106,9 +5549,11 @@
   M=D
   @SP
   M=M+1
+
   @SP
   A=M-1
   M=-M
+
   @SP
   AM=M-1
   D=M
@@ -5126,14 +5571,17 @@
   A=M-1
   M=-1
 (CONTINUE436)
+
   @SP
   A=M-1
   M=!M
+
   @SP
   AM=M-1
   D=M
   @WHILE_END1
   D;JNE
+
   @0
   D=A
   @LCL
@@ -5144,6 +5592,7 @@
   M=D
   @SP
   M=M+1
+
   @Math.1
   D=M
   @SP
@@ -5151,16 +5600,19 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @0
   D=A
   @THAT
@@ -5171,6 +5623,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @SP
@@ -5178,11 +5631,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M-D
+
   @0
   D=A
   @ARG
@@ -5193,6 +5648,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @SP
@@ -5200,11 +5656,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M-D
+
   @SP
   AM=M-1
   D=M
@@ -5222,17 +5680,22 @@
   A=M-1
   M=-1
 (CONTINUE449)
+
   @SP
   A=M-1
   M=!M
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE3
   D;JNE
+
   @IF_FALSE3
   0;JMP
+
   (IF_TRUE3)
+
   @1
   D=A
   @LCL
@@ -5243,6 +5706,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -5253,6 +5717,7 @@
   M=D
   @SP
   M=M+1
+
   @Math.0
   D=M
   @SP
@@ -5260,16 +5725,19 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @0
   D=A
   @THAT
@@ -5280,11 +5748,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @1
   D=A
   @LCL
@@ -5297,6 +5767,7 @@
   @R13
   A=M
   M=D
+
   @0
   D=A
   @ARG
@@ -5307,6 +5778,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -5317,6 +5789,7 @@
   M=D
   @SP
   M=M+1
+
   @Math.1
   D=M
   @SP
@@ -5324,16 +5797,19 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @0
   D=A
   @THAT
@@ -5344,11 +5820,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M-D
+
   @0
   D=A
   @ARG
@@ -5361,7 +5839,9 @@
   @R13
   A=M
   M=D
+
   (IF_FALSE3)
+
   @0
   D=A
   @LCL
@@ -5372,6 +5852,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @SP
@@ -5379,11 +5860,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M-D
+
   @0
   D=A
   @LCL
@@ -5396,9 +5879,12 @@
   @R13
   A=M
   M=D
+
   @WHILE_EXP1
   0;JMP
+
   (WHILE_END1)
+
   @2
   D=A
   @LCL
@@ -5409,14 +5895,18 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE4
   D;JNE
+
   @IF_FALSE4
   0;JMP
+
   (IF_TRUE4)
+
   @1
   D=A
   @LCL
@@ -5427,9 +5917,11 @@
   M=D
   @SP
   M=M+1
+
   @SP
   A=M-1
   M=-M
+
   @1
   D=A
   @LCL
@@ -5442,7 +5934,9 @@
   @R13
   A=M
   M=D
+
   (IF_FALSE4)
+
   @1
   D=A
   @LCL
@@ -5453,21 +5947,32 @@
   M=D
   @SP
   M=M+1
+
   @FUNCTION_RETURN
   0;JMP
+
   (Math.sqrt)
   @SP
   A=M
   M=0
-  A=A+1
-  M=0
-  A=A+1
-  M=0
-  A=A+1
-  M=0
-  A=A+1
   @SP
-  M=A
+  M=M+1
+  @SP
+  A=M
+  M=0
+  @SP
+  M=M+1
+  @SP
+  A=M
+  M=0
+  @SP
+  M=M+1
+  @SP
+  A=M
+  M=0
+  @SP
+  M=M+1
+
   @0
   D=A
   @ARG
@@ -5478,6 +5983,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -5485,6 +5991,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -5502,14 +6009,18 @@
   A=M-1
   M=-1
 (CONTINUE490)
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE0
   D;JNE
+
   @IF_FALSE0
   0;JMP
+
   (IF_TRUE0)
+
   @4
   D=A
   @SP
@@ -5517,6 +6028,7 @@
   M=D
   @SP
   M=M+1
+
   @Sys.error$ret.2
   D=A
   @SP
@@ -5567,6 +6079,7 @@
   @Sys.error
   0;JMP
 (Sys.error$ret.2)
+
   @5
   D=A
   @TEMP
@@ -5579,7 +6092,9 @@
   @R13
   A=M
   M=D
+
   (IF_FALSE0)
+
   @7
   D=A
   @SP
@@ -5587,6 +6102,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -5599,7 +6115,9 @@
   @R13
   A=M
   M=D
+
   (WHILE_EXP0)
+
   @0
   D=A
   @LCL
@@ -5610,6 +6128,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @SP
@@ -5617,9 +6136,11 @@
   M=D
   @SP
   M=M+1
+
   @SP
   A=M-1
   M=-M
+
   @SP
   AM=M-1
   D=M
@@ -5637,14 +6158,17 @@
   A=M-1
   M=-1
 (CONTINUE504)
+
   @SP
   A=M-1
   M=!M
+
   @SP
   AM=M-1
   D=M
   @WHILE_END0
   D;JNE
+
   @3
   D=A
   @LCL
@@ -5655,6 +6179,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -5665,6 +6190,7 @@
   M=D
   @SP
   M=M+1
+
   @Math.0
   D=M
   @SP
@@ -5672,16 +6198,19 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @0
   D=A
   @THAT
@@ -5692,11 +6221,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @1
   D=A
   @LCL
@@ -5709,6 +6240,7 @@
   @R13
   A=M
   M=D
+
   @1
   D=A
   @LCL
@@ -5719,6 +6251,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @LCL
@@ -5729,6 +6262,7 @@
   M=D
   @SP
   M=M+1
+
   @Math.multiply$ret.0
   D=A
   @SP
@@ -5779,6 +6313,7 @@
   @Math.multiply
   0;JMP
 (Math.multiply$ret.0)
+
   @2
   D=A
   @LCL
@@ -5791,6 +6326,7 @@
   @R13
   A=M
   M=D
+
   @2
   D=A
   @LCL
@@ -5801,6 +6337,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @ARG
@@ -5811,6 +6348,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -5828,9 +6366,11 @@
   A=M-1
   M=-1
 (CONTINUE521)
+
   @SP
   A=M-1
   M=!M
+
   @2
   D=A
   @LCL
@@ -5841,6 +6381,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -5848,6 +6389,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -5865,22 +6407,28 @@
   A=M-1
   M=-1
 (CONTINUE525)
+
   @SP
   A=M-1
   M=!M
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M&D
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE1
   D;JNE
+
   @IF_FALSE1
   0;JMP
+
   (IF_TRUE1)
+
   @1
   D=A
   @LCL
@@ -5891,6 +6439,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @LCL
@@ -5903,7 +6452,9 @@
   @R13
   A=M
   M=D
+
   (IF_FALSE1)
+
   @0
   D=A
   @LCL
@@ -5914,6 +6465,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @SP
@@ -5921,11 +6473,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M-D
+
   @0
   D=A
   @LCL
@@ -5938,9 +6492,12 @@
   @R13
   A=M
   M=D
+
   @WHILE_EXP0
   0;JMP
+
   (WHILE_END0)
+
   @3
   D=A
   @LCL
@@ -5951,13 +6508,12 @@
   M=D
   @SP
   M=M+1
+
   @FUNCTION_RETURN
   0;JMP
+
   (Math.max)
-  @SP
-  A=M
-  @SP
-  M=A
+
   @0
   D=A
   @ARG
@@ -5968,6 +6524,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @ARG
@@ -5978,6 +6535,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -5995,14 +6553,18 @@
   A=M-1
   M=-1
 (CONTINUE545)
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE0
   D;JNE
+
   @IF_FALSE0
   0;JMP
+
   (IF_TRUE0)
+
   @0
   D=A
   @ARG
@@ -6013,6 +6575,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @ARG
@@ -6025,7 +6588,9 @@
   @R13
   A=M
   M=D
+
   (IF_FALSE0)
+
   @1
   D=A
   @ARG
@@ -6036,13 +6601,12 @@
   M=D
   @SP
   M=M+1
+
   @FUNCTION_RETURN
   0;JMP
+
   (Math.min)
-  @SP
-  A=M
-  @SP
-  M=A
+
   @0
   D=A
   @ARG
@@ -6053,6 +6617,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @ARG
@@ -6063,6 +6628,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -6080,14 +6646,18 @@
   A=M-1
   M=-1
 (CONTINUE557)
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE0
   D;JNE
+
   @IF_FALSE0
   0;JMP
+
   (IF_TRUE0)
+
   @0
   D=A
   @ARG
@@ -6098,6 +6668,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @ARG
@@ -6110,7 +6681,9 @@
   @R13
   A=M
   M=D
+
   (IF_FALSE0)
+
   @1
   D=A
   @ARG
@@ -6121,13 +6694,12 @@
   M=D
   @SP
   M=M+1
+
   @FUNCTION_RETURN
   0;JMP
+
   (Memory.init)
-  @SP
-  A=M
-  @SP
-  M=A
+
   @0
   D=A
   @SP
@@ -6135,11 +6707,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   @Memory.0
   M=D
+
   @2048
   D=A
   @SP
@@ -6147,6 +6721,7 @@
   M=D
   @SP
   M=M+1
+
   @Memory.0
   D=M
   @SP
@@ -6154,11 +6729,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @14334
   D=A
   @SP
@@ -6166,6 +6743,7 @@
   M=D
   @SP
   M=M+1
+
   @5
   D=A
   @TEMP
@@ -6178,11 +6756,13 @@
   @R13
   A=M
   M=D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @5
   D=A
   @TEMP
@@ -6193,6 +6773,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @THAT
@@ -6205,6 +6786,7 @@
   @R13
   A=M
   M=D
+
   @2049
   D=A
   @SP
@@ -6212,6 +6794,7 @@
   M=D
   @SP
   M=M+1
+
   @Memory.0
   D=M
   @SP
@@ -6219,11 +6802,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @2050
   D=A
   @SP
@@ -6231,6 +6816,7 @@
   M=D
   @SP
   M=M+1
+
   @5
   D=A
   @TEMP
@@ -6243,11 +6829,13 @@
   @R13
   A=M
   M=D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @5
   D=A
   @TEMP
@@ -6258,6 +6846,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @THAT
@@ -6270,6 +6859,7 @@
   @R13
   A=M
   M=D
+
   @0
   D=A
   @SP
@@ -6277,13 +6867,12 @@
   M=D
   @SP
   M=M+1
+
   @FUNCTION_RETURN
   0;JMP
+
   (Memory.peek)
-  @SP
-  A=M
-  @SP
-  M=A
+
   @0
   D=A
   @ARG
@@ -6294,6 +6883,7 @@
   M=D
   @SP
   M=M+1
+
   @Memory.0
   D=M
   @SP
@@ -6301,16 +6891,19 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @0
   D=A
   @THAT
@@ -6321,13 +6914,12 @@
   M=D
   @SP
   M=M+1
+
   @FUNCTION_RETURN
   0;JMP
+
   (Memory.poke)
-  @SP
-  A=M
-  @SP
-  M=A
+
   @0
   D=A
   @ARG
@@ -6338,6 +6930,7 @@
   M=D
   @SP
   M=M+1
+
   @Memory.0
   D=M
   @SP
@@ -6345,11 +6938,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @1
   D=A
   @ARG
@@ -6360,6 +6955,7 @@
   M=D
   @SP
   M=M+1
+
   @5
   D=A
   @TEMP
@@ -6372,11 +6968,13 @@
   @R13
   A=M
   M=D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @5
   D=A
   @TEMP
@@ -6387,6 +6985,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @THAT
@@ -6399,6 +6998,7 @@
   @R13
   A=M
   M=D
+
   @0
   D=A
   @SP
@@ -6406,17 +7006,22 @@
   M=D
   @SP
   M=M+1
+
   @FUNCTION_RETURN
   0;JMP
+
   (Memory.alloc)
   @SP
   A=M
   M=0
-  A=A+1
-  M=0
-  A=A+1
   @SP
-  M=A
+  M=M+1
+  @SP
+  A=M
+  M=0
+  @SP
+  M=M+1
+
   @0
   D=A
   @ARG
@@ -6427,6 +7032,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -6434,6 +7040,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -6451,14 +7058,18 @@
   A=M-1
   M=-1
 (CONTINUE608)
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE0
   D;JNE
+
   @IF_FALSE0
   0;JMP
+
   (IF_TRUE0)
+
   @5
   D=A
   @SP
@@ -6466,6 +7077,7 @@
   M=D
   @SP
   M=M+1
+
   @Sys.error$ret.3
   D=A
   @SP
@@ -6516,6 +7128,7 @@
   @Sys.error
   0;JMP
 (Sys.error$ret.3)
+
   @5
   D=A
   @TEMP
@@ -6528,7 +7141,9 @@
   @R13
   A=M
   M=D
+
   (IF_FALSE0)
+
   @0
   D=A
   @ARG
@@ -6539,6 +7154,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -6546,6 +7162,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -6563,14 +7180,18 @@
   A=M-1
   M=-1
 (CONTINUE618)
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE1
   D;JNE
+
   @IF_FALSE1
   0;JMP
+
   (IF_TRUE1)
+
   @1
   D=A
   @SP
@@ -6578,6 +7199,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @ARG
@@ -6590,7 +7212,9 @@
   @R13
   A=M
   M=D
+
   (IF_FALSE1)
+
   @2048
   D=A
   @SP
@@ -6598,6 +7222,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -6610,7 +7235,9 @@
   @R13
   A=M
   M=D
+
   (WHILE_EXP0)
+
   @0
   D=A
   @LCL
@@ -6621,6 +7248,7 @@
   M=D
   @SP
   M=M+1
+
   @16383
   D=A
   @SP
@@ -6628,6 +7256,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -6645,6 +7274,7 @@
   A=M-1
   M=-1
 (CONTINUE630)
+
   @0
   D=A
   @SP
@@ -6652,6 +7282,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -6662,16 +7293,19 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @0
   D=A
   @THAT
@@ -6682,6 +7316,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @ARG
@@ -6692,6 +7327,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -6709,19 +7345,23 @@
   A=M-1
   M=-1
 (CONTINUE637)
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M&D
+
   @SP
   A=M-1
   M=!M
+
   @SP
   AM=M-1
   D=M
   @WHILE_END0
   D;JNE
+
   @1
   D=A
   @SP
@@ -6729,6 +7369,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -6739,16 +7380,19 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @0
   D=A
   @THAT
@@ -6759,6 +7403,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @LCL
@@ -6771,6 +7416,7 @@
   @R13
   A=M
   M=D
+
   @0
   D=A
   @SP
@@ -6778,6 +7424,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -6788,16 +7435,19 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @0
   D=A
   @THAT
@@ -6808,6 +7458,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -6815,6 +7466,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -6832,6 +7484,7 @@
   A=M-1
   M=-1
 (CONTINUE653)
+
   @1
   D=A
   @LCL
@@ -6842,6 +7495,7 @@
   M=D
   @SP
   M=M+1
+
   @16382
   D=A
   @SP
@@ -6849,6 +7503,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -6866,11 +7521,13 @@
   A=M-1
   M=-1
 (CONTINUE656)
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M|D
+
   @0
   D=A
   @SP
@@ -6878,6 +7535,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @LCL
@@ -6888,16 +7546,19 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @0
   D=A
   @THAT
@@ -6908,6 +7569,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -6915,6 +7577,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -6932,19 +7595,24 @@
   A=M-1
   M=-1
 (CONTINUE664)
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M|D
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE2
   D;JNE
+
   @IF_FALSE2
   0;JMP
+
   (IF_TRUE2)
+
   @1
   D=A
   @LCL
@@ -6955,6 +7623,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -6967,9 +7636,12 @@
   @R13
   A=M
   M=D
+
   @IF_END2
   0;JMP
+
   (IF_FALSE2)
+
   @0
   D=A
   @SP
@@ -6977,6 +7649,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -6987,11 +7660,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @1
   D=A
   @SP
@@ -6999,6 +7674,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -7009,16 +7685,19 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @0
   D=A
   @THAT
@@ -7029,6 +7708,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -7039,11 +7719,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M-D
+
   @0
   D=A
   @SP
@@ -7051,6 +7733,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @LCL
@@ -7061,16 +7744,19 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @0
   D=A
   @THAT
@@ -7081,11 +7767,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @5
   D=A
   @TEMP
@@ -7098,11 +7786,13 @@
   @R13
   A=M
   M=D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @5
   D=A
   @TEMP
@@ -7113,6 +7803,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @THAT
@@ -7125,6 +7816,7 @@
   @R13
   A=M
   M=D
+
   @1
   D=A
   @SP
@@ -7132,6 +7824,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @LCL
@@ -7142,16 +7835,19 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @0
   D=A
   @THAT
@@ -7162,6 +7858,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @LCL
@@ -7172,6 +7869,7 @@
   M=D
   @SP
   M=M+1
+
   @2
   D=A
   @SP
@@ -7179,11 +7877,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @SP
   AM=M-1
   D=M
@@ -7201,14 +7901,18 @@
   A=M-1
   M=-1
 (CONTINUE701)
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE3
   D;JNE
+
   @IF_FALSE3
   0;JMP
+
   (IF_TRUE3)
+
   @1
   D=A
   @SP
@@ -7216,6 +7920,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -7226,11 +7931,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @0
   D=A
   @LCL
@@ -7241,6 +7948,7 @@
   M=D
   @SP
   M=M+1
+
   @2
   D=A
   @SP
@@ -7248,11 +7956,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @5
   D=A
   @TEMP
@@ -7265,11 +7975,13 @@
   @R13
   A=M
   M=D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @5
   D=A
   @TEMP
@@ -7280,6 +7992,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @THAT
@@ -7292,9 +8005,12 @@
   @R13
   A=M
   M=D
+
   @IF_END3
   0;JMP
+
   (IF_FALSE3)
+
   @1
   D=A
   @SP
@@ -7302,6 +8018,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -7312,11 +8029,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @1
   D=A
   @SP
@@ -7324,6 +8043,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @LCL
@@ -7334,16 +8054,19 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @0
   D=A
   @THAT
@@ -7354,6 +8077,7 @@
   M=D
   @SP
   M=M+1
+
   @5
   D=A
   @TEMP
@@ -7366,11 +8090,13 @@
   @R13
   A=M
   M=D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @5
   D=A
   @TEMP
@@ -7381,6 +8107,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @THAT
@@ -7393,11 +8120,16 @@
   @R13
   A=M
   M=D
+
   (IF_END3)
+
   (IF_END2)
+
   @WHILE_EXP0
   0;JMP
+
   (WHILE_END0)
+
   @0
   D=A
   @LCL
@@ -7408,6 +8140,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @ARG
@@ -7418,11 +8151,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @16379
   D=A
   @SP
@@ -7430,6 +8165,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -7447,14 +8183,18 @@
   A=M-1
   M=-1
 (CONTINUE737)
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE4
   D;JNE
+
   @IF_FALSE4
   0;JMP
+
   (IF_TRUE4)
+
   @6
   D=A
   @SP
@@ -7462,6 +8202,7 @@
   M=D
   @SP
   M=M+1
+
   @Sys.error$ret.4
   D=A
   @SP
@@ -7512,6 +8253,7 @@
   @Sys.error
   0;JMP
 (Sys.error$ret.4)
+
   @5
   D=A
   @TEMP
@@ -7524,7 +8266,9 @@
   @R13
   A=M
   M=D
+
   (IF_FALSE4)
+
   @0
   D=A
   @SP
@@ -7532,6 +8276,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -7542,16 +8287,19 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @0
   D=A
   @THAT
@@ -7562,6 +8310,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @ARG
@@ -7572,6 +8321,7 @@
   M=D
   @SP
   M=M+1
+
   @2
   D=A
   @SP
@@ -7579,11 +8329,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @SP
   AM=M-1
   D=M
@@ -7601,14 +8353,18 @@
   A=M-1
   M=-1
 (CONTINUE753)
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE5
   D;JNE
+
   @IF_FALSE5
   0;JMP
+
   (IF_TRUE5)
+
   @0
   D=A
   @ARG
@@ -7619,6 +8375,7 @@
   M=D
   @SP
   M=M+1
+
   @2
   D=A
   @SP
@@ -7626,11 +8383,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @0
   D=A
   @LCL
@@ -7641,11 +8400,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @0
   D=A
   @SP
@@ -7653,6 +8414,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -7663,16 +8425,19 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @0
   D=A
   @THAT
@@ -7683,6 +8448,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @ARG
@@ -7693,11 +8459,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M-D
+
   @2
   D=A
   @SP
@@ -7705,11 +8473,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M-D
+
   @5
   D=A
   @TEMP
@@ -7722,11 +8492,13 @@
   @R13
   A=M
   M=D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @5
   D=A
   @TEMP
@@ -7737,6 +8509,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @THAT
@@ -7749,6 +8522,7 @@
   @R13
   A=M
   M=D
+
   @1
   D=A
   @SP
@@ -7756,6 +8530,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -7766,16 +8541,19 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @0
   D=A
   @THAT
@@ -7786,6 +8564,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -7796,6 +8575,7 @@
   M=D
   @SP
   M=M+1
+
   @2
   D=A
   @SP
@@ -7803,11 +8583,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @SP
   AM=M-1
   D=M
@@ -7825,14 +8607,18 @@
   A=M-1
   M=-1
 (CONTINUE783)
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE6
   D;JNE
+
   @IF_FALSE6
   0;JMP
+
   (IF_TRUE6)
+
   @0
   D=A
   @ARG
@@ -7843,6 +8629,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @SP
@@ -7850,11 +8637,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @0
   D=A
   @LCL
@@ -7865,11 +8654,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @0
   D=A
   @LCL
@@ -7880,6 +8671,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @ARG
@@ -7890,11 +8682,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @4
   D=A
   @SP
@@ -7902,11 +8696,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @5
   D=A
   @TEMP
@@ -7919,11 +8715,13 @@
   @R13
   A=M
   M=D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @5
   D=A
   @TEMP
@@ -7934,6 +8732,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @THAT
@@ -7946,9 +8745,12 @@
   @R13
   A=M
   M=D
+
   @IF_END6
   0;JMP
+
   (IF_FALSE6)
+
   @0
   D=A
   @ARG
@@ -7959,6 +8761,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @SP
@@ -7966,11 +8769,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @0
   D=A
   @LCL
@@ -7981,11 +8786,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @1
   D=A
   @SP
@@ -7993,6 +8800,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -8003,16 +8811,19 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @0
   D=A
   @THAT
@@ -8023,6 +8834,7 @@
   M=D
   @SP
   M=M+1
+
   @5
   D=A
   @TEMP
@@ -8035,11 +8847,13 @@
   @R13
   A=M
   M=D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @5
   D=A
   @TEMP
@@ -8050,6 +8864,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @THAT
@@ -8062,7 +8877,9 @@
   @R13
   A=M
   M=D
+
   (IF_END6)
+
   @1
   D=A
   @SP
@@ -8070,6 +8887,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -8080,11 +8898,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @0
   D=A
   @LCL
@@ -8095,6 +8915,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @ARG
@@ -8105,11 +8926,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @2
   D=A
   @SP
@@ -8117,11 +8940,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @5
   D=A
   @TEMP
@@ -8134,11 +8959,13 @@
   @R13
   A=M
   M=D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @5
   D=A
   @TEMP
@@ -8149,6 +8976,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @THAT
@@ -8161,7 +8989,9 @@
   @R13
   A=M
   M=D
+
   (IF_FALSE5)
+
   @0
   D=A
   @SP
@@ -8169,6 +8999,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -8179,11 +9010,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @0
   D=A
   @SP
@@ -8191,6 +9024,7 @@
   M=D
   @SP
   M=M+1
+
   @5
   D=A
   @TEMP
@@ -8203,11 +9037,13 @@
   @R13
   A=M
   M=D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @5
   D=A
   @TEMP
@@ -8218,6 +9054,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @THAT
@@ -8230,6 +9067,7 @@
   @R13
   A=M
   M=D
+
   @0
   D=A
   @LCL
@@ -8240,6 +9078,7 @@
   M=D
   @SP
   M=M+1
+
   @2
   D=A
   @SP
@@ -8247,22 +9086,28 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @FUNCTION_RETURN
   0;JMP
+
   (Memory.deAlloc)
   @SP
   A=M
   M=0
-  A=A+1
-  M=0
-  A=A+1
   @SP
-  M=A
+  M=M+1
+  @SP
+  A=M
+  M=0
+  @SP
+  M=M+1
+
   @0
   D=A
   @ARG
@@ -8273,6 +9118,7 @@
   M=D
   @SP
   M=M+1
+
   @2
   D=A
   @SP
@@ -8280,11 +9126,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M-D
+
   @0
   D=A
   @LCL
@@ -8297,6 +9145,7 @@
   @R13
   A=M
   M=D
+
   @1
   D=A
   @SP
@@ -8304,6 +9153,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -8314,16 +9164,19 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @0
   D=A
   @THAT
@@ -8334,6 +9187,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @LCL
@@ -8346,6 +9200,7 @@
   @R13
   A=M
   M=D
+
   @0
   D=A
   @SP
@@ -8353,6 +9208,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @LCL
@@ -8363,16 +9219,19 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @0
   D=A
   @THAT
@@ -8383,6 +9242,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -8390,6 +9250,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -8407,14 +9268,18 @@
   A=M-1
   M=-1
 (CONTINUE860)
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE0
   D;JNE
+
   @IF_FALSE0
   0;JMP
+
   (IF_TRUE0)
+
   @0
   D=A
   @SP
@@ -8422,6 +9287,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -8432,11 +9298,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @1
   D=A
   @SP
@@ -8444,6 +9312,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -8454,16 +9323,19 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @0
   D=A
   @THAT
@@ -8474,6 +9346,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -8484,11 +9357,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M-D
+
   @2
   D=A
   @SP
@@ -8496,11 +9371,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M-D
+
   @5
   D=A
   @TEMP
@@ -8513,11 +9390,13 @@
   @R13
   A=M
   M=D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @5
   D=A
   @TEMP
@@ -8528,6 +9407,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @THAT
@@ -8540,9 +9420,12 @@
   @R13
   A=M
   M=D
+
   @IF_END0
   0;JMP
+
   (IF_FALSE0)
+
   @0
   D=A
   @SP
@@ -8550,6 +9433,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -8560,11 +9444,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @1
   D=A
   @SP
@@ -8572,6 +9458,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -8582,16 +9469,19 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @0
   D=A
   @THAT
@@ -8602,6 +9492,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -8612,11 +9503,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M-D
+
   @0
   D=A
   @SP
@@ -8624,6 +9517,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @LCL
@@ -8634,16 +9528,19 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @0
   D=A
   @THAT
@@ -8654,11 +9551,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @5
   D=A
   @TEMP
@@ -8671,11 +9570,13 @@
   @R13
   A=M
   M=D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @5
   D=A
   @TEMP
@@ -8686,6 +9587,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @THAT
@@ -8698,6 +9600,7 @@
   @R13
   A=M
   M=D
+
   @1
   D=A
   @SP
@@ -8705,6 +9608,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @LCL
@@ -8715,16 +9619,19 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @0
   D=A
   @THAT
@@ -8735,6 +9642,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @LCL
@@ -8745,6 +9653,7 @@
   M=D
   @SP
   M=M+1
+
   @2
   D=A
   @SP
@@ -8752,11 +9661,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @SP
   AM=M-1
   D=M
@@ -8774,14 +9685,18 @@
   A=M-1
   M=-1
 (CONTINUE910)
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE1
   D;JNE
+
   @IF_FALSE1
   0;JMP
+
   (IF_TRUE1)
+
   @1
   D=A
   @SP
@@ -8789,6 +9704,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -8799,11 +9715,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @0
   D=A
   @LCL
@@ -8814,6 +9732,7 @@
   M=D
   @SP
   M=M+1
+
   @2
   D=A
   @SP
@@ -8821,11 +9740,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @5
   D=A
   @TEMP
@@ -8838,11 +9759,13 @@
   @R13
   A=M
   M=D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @5
   D=A
   @TEMP
@@ -8853,6 +9776,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @THAT
@@ -8865,9 +9789,12 @@
   @R13
   A=M
   M=D
+
   @IF_END1
   0;JMP
+
   (IF_FALSE1)
+
   @1
   D=A
   @SP
@@ -8875,6 +9802,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -8885,11 +9813,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @1
   D=A
   @SP
@@ -8897,6 +9827,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @LCL
@@ -8907,16 +9838,19 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @0
   D=A
   @THAT
@@ -8927,6 +9861,7 @@
   M=D
   @SP
   M=M+1
+
   @5
   D=A
   @TEMP
@@ -8939,11 +9874,13 @@
   @R13
   A=M
   M=D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @5
   D=A
   @TEMP
@@ -8954,6 +9891,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @THAT
@@ -8966,8 +9904,11 @@
   @R13
   A=M
   M=D
+
   (IF_END1)
+
   (IF_END0)
+
   @0
   D=A
   @SP
@@ -8975,13 +9916,12 @@
   M=D
   @SP
   M=M+1
+
   @FUNCTION_RETURN
   0;JMP
+
   (Output.init)
-  @SP
-  A=M
-  @SP
-  M=A
+
   @16384
   D=A
   @SP
@@ -8989,11 +9929,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   @Output.4
   M=D
+
   @0
   D=A
   @SP
@@ -9001,14 +9943,17 @@
   M=D
   @SP
   M=M+1
+
   @SP
   A=M-1
   M=!M
+
   @SP
   AM=M-1
   D=M
   @Output.2
   M=D
+
   @32
   D=A
   @SP
@@ -9016,11 +9961,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   @Output.1
   M=D
+
   @0
   D=A
   @SP
@@ -9028,11 +9975,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   @Output.0
   M=D
+
   @6
   D=A
   @SP
@@ -9040,6 +9989,7 @@
   M=D
   @SP
   M=M+1
+
   @String.new$ret.2
   D=A
   @SP
@@ -9090,11 +10040,13 @@
   @String.new
   0;JMP
 (String.new$ret.2)
+
   @SP
   AM=M-1
   D=M
   @Output.3
   M=D
+
   @Output.initMap$ret.0
   D=A
   @SP
@@ -9145,6 +10097,7 @@
   @Output.initMap
   0;JMP
 (Output.initMap$ret.0)
+
   @5
   D=A
   @TEMP
@@ -9157,6 +10110,7 @@
   @R13
   A=M
   M=D
+
   @Output.createShiftedMap$ret.0
   D=A
   @SP
@@ -9207,6 +10161,7 @@
   @Output.createShiftedMap
   0;JMP
 (Output.createShiftedMap$ret.0)
+
   @5
   D=A
   @TEMP
@@ -9219,6 +10174,7 @@
   @R13
   A=M
   M=D
+
   @0
   D=A
   @SP
@@ -9226,13 +10182,12 @@
   M=D
   @SP
   M=M+1
+
   @FUNCTION_RETURN
   0;JMP
+
   (Output.initMap)
-  @SP
-  A=M
-  @SP
-  M=A
+
   @127
   D=A
   @SP
@@ -9240,6 +10195,7 @@
   M=D
   @SP
   M=M+1
+
   @Array.new$ret.2
   D=A
   @SP
@@ -9290,11 +10246,13 @@
   @Array.new
   0;JMP
 (Array.new$ret.2)
+
   @SP
   AM=M-1
   D=M
   @Output.5
   M=D
+
   @0
   D=A
   @SP
@@ -9302,6 +10260,7 @@
   M=D
   @SP
   M=M+1
+
   @63
   D=A
   @SP
@@ -9309,6 +10268,7 @@
   M=D
   @SP
   M=M+1
+
   @63
   D=A
   @SP
@@ -9316,6 +10276,7 @@
   M=D
   @SP
   M=M+1
+
   @63
   D=A
   @SP
@@ -9323,6 +10284,7 @@
   M=D
   @SP
   M=M+1
+
   @63
   D=A
   @SP
@@ -9330,6 +10292,7 @@
   M=D
   @SP
   M=M+1
+
   @63
   D=A
   @SP
@@ -9337,6 +10300,7 @@
   M=D
   @SP
   M=M+1
+
   @63
   D=A
   @SP
@@ -9344,6 +10308,7 @@
   M=D
   @SP
   M=M+1
+
   @63
   D=A
   @SP
@@ -9351,6 +10316,7 @@
   M=D
   @SP
   M=M+1
+
   @63
   D=A
   @SP
@@ -9358,6 +10324,7 @@
   M=D
   @SP
   M=M+1
+
   @63
   D=A
   @SP
@@ -9365,6 +10332,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -9372,6 +10340,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -9379,6 +10348,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.0
   D=A
   @SP
@@ -9429,6 +10399,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.0)
+
   @5
   D=A
   @TEMP
@@ -9441,6 +10412,7 @@
   @R13
   A=M
   M=D
+
   @32
   D=A
   @SP
@@ -9448,6 +10420,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -9455,6 +10428,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -9462,6 +10436,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -9469,6 +10444,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -9476,6 +10452,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -9483,6 +10460,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -9490,6 +10468,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -9497,6 +10476,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -9504,6 +10484,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -9511,6 +10492,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -9518,6 +10500,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -9525,6 +10508,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.1
   D=A
   @SP
@@ -9575,6 +10559,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.1)
+
   @5
   D=A
   @TEMP
@@ -9587,6 +10572,7 @@
   @R13
   A=M
   M=D
+
   @33
   D=A
   @SP
@@ -9594,6 +10580,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -9601,6 +10588,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -9608,6 +10596,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -9615,6 +10604,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -9622,6 +10612,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -9629,6 +10620,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -9636,6 +10628,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -9643,6 +10636,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -9650,6 +10644,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -9657,6 +10652,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -9664,6 +10660,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -9671,6 +10668,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.2
   D=A
   @SP
@@ -9721,6 +10719,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.2)
+
   @5
   D=A
   @TEMP
@@ -9733,6 +10732,7 @@
   @R13
   A=M
   M=D
+
   @34
   D=A
   @SP
@@ -9740,6 +10740,7 @@
   M=D
   @SP
   M=M+1
+
   @54
   D=A
   @SP
@@ -9747,6 +10748,7 @@
   M=D
   @SP
   M=M+1
+
   @54
   D=A
   @SP
@@ -9754,6 +10756,7 @@
   M=D
   @SP
   M=M+1
+
   @20
   D=A
   @SP
@@ -9761,6 +10764,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -9768,6 +10772,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -9775,6 +10780,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -9782,6 +10788,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -9789,6 +10796,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -9796,6 +10804,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -9803,6 +10812,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -9810,6 +10820,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -9817,6 +10828,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.3
   D=A
   @SP
@@ -9867,6 +10879,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.3)
+
   @5
   D=A
   @TEMP
@@ -9879,6 +10892,7 @@
   @R13
   A=M
   M=D
+
   @35
   D=A
   @SP
@@ -9886,6 +10900,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -9893,6 +10908,7 @@
   M=D
   @SP
   M=M+1
+
   @18
   D=A
   @SP
@@ -9900,6 +10916,7 @@
   M=D
   @SP
   M=M+1
+
   @18
   D=A
   @SP
@@ -9907,6 +10924,7 @@
   M=D
   @SP
   M=M+1
+
   @63
   D=A
   @SP
@@ -9914,6 +10932,7 @@
   M=D
   @SP
   M=M+1
+
   @18
   D=A
   @SP
@@ -9921,6 +10940,7 @@
   M=D
   @SP
   M=M+1
+
   @18
   D=A
   @SP
@@ -9928,6 +10948,7 @@
   M=D
   @SP
   M=M+1
+
   @63
   D=A
   @SP
@@ -9935,6 +10956,7 @@
   M=D
   @SP
   M=M+1
+
   @18
   D=A
   @SP
@@ -9942,6 +10964,7 @@
   M=D
   @SP
   M=M+1
+
   @18
   D=A
   @SP
@@ -9949,6 +10972,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -9956,6 +10980,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -9963,6 +10988,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.4
   D=A
   @SP
@@ -10013,6 +11039,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.4)
+
   @5
   D=A
   @TEMP
@@ -10025,6 +11052,7 @@
   @R13
   A=M
   M=D
+
   @36
   D=A
   @SP
@@ -10032,6 +11060,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -10039,6 +11068,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -10046,6 +11076,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -10053,6 +11084,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @SP
@@ -10060,6 +11092,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -10067,6 +11100,7 @@
   M=D
   @SP
   M=M+1
+
   @48
   D=A
   @SP
@@ -10074,6 +11108,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -10081,6 +11116,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -10088,6 +11124,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -10095,6 +11132,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -10102,6 +11140,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -10109,6 +11148,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.5
   D=A
   @SP
@@ -10159,6 +11199,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.5)
+
   @5
   D=A
   @TEMP
@@ -10171,6 +11212,7 @@
   @R13
   A=M
   M=D
+
   @37
   D=A
   @SP
@@ -10178,6 +11220,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -10185,6 +11228,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -10192,6 +11236,7 @@
   M=D
   @SP
   M=M+1
+
   @35
   D=A
   @SP
@@ -10199,6 +11244,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -10206,6 +11252,7 @@
   M=D
   @SP
   M=M+1
+
   @24
   D=A
   @SP
@@ -10213,6 +11260,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -10220,6 +11268,7 @@
   M=D
   @SP
   M=M+1
+
   @6
   D=A
   @SP
@@ -10227,6 +11276,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -10234,6 +11284,7 @@
   M=D
   @SP
   M=M+1
+
   @49
   D=A
   @SP
@@ -10241,6 +11292,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -10248,6 +11300,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -10255,6 +11308,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.6
   D=A
   @SP
@@ -10305,6 +11359,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.6)
+
   @5
   D=A
   @TEMP
@@ -10317,6 +11372,7 @@
   @R13
   A=M
   M=D
+
   @38
   D=A
   @SP
@@ -10324,6 +11380,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -10331,6 +11388,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -10338,6 +11396,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -10345,6 +11404,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -10352,6 +11412,7 @@
   M=D
   @SP
   M=M+1
+
   @54
   D=A
   @SP
@@ -10359,6 +11420,7 @@
   M=D
   @SP
   M=M+1
+
   @27
   D=A
   @SP
@@ -10366,6 +11428,7 @@
   M=D
   @SP
   M=M+1
+
   @27
   D=A
   @SP
@@ -10373,6 +11436,7 @@
   M=D
   @SP
   M=M+1
+
   @27
   D=A
   @SP
@@ -10380,6 +11444,7 @@
   M=D
   @SP
   M=M+1
+
   @54
   D=A
   @SP
@@ -10387,6 +11452,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -10394,6 +11460,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -10401,6 +11468,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.7
   D=A
   @SP
@@ -10451,6 +11519,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.7)
+
   @5
   D=A
   @TEMP
@@ -10463,6 +11532,7 @@
   @R13
   A=M
   M=D
+
   @39
   D=A
   @SP
@@ -10470,6 +11540,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -10477,6 +11548,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -10484,6 +11556,7 @@
   M=D
   @SP
   M=M+1
+
   @6
   D=A
   @SP
@@ -10491,6 +11564,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -10498,6 +11572,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -10505,6 +11580,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -10512,6 +11588,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -10519,6 +11596,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -10526,6 +11604,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -10533,6 +11612,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -10540,6 +11620,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -10547,6 +11628,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.8
   D=A
   @SP
@@ -10597,6 +11679,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.8)
+
   @5
   D=A
   @TEMP
@@ -10609,6 +11692,7 @@
   @R13
   A=M
   M=D
+
   @40
   D=A
   @SP
@@ -10616,6 +11700,7 @@
   M=D
   @SP
   M=M+1
+
   @24
   D=A
   @SP
@@ -10623,6 +11708,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -10630,6 +11716,7 @@
   M=D
   @SP
   M=M+1
+
   @6
   D=A
   @SP
@@ -10637,6 +11724,7 @@
   M=D
   @SP
   M=M+1
+
   @6
   D=A
   @SP
@@ -10644,6 +11732,7 @@
   M=D
   @SP
   M=M+1
+
   @6
   D=A
   @SP
@@ -10651,6 +11740,7 @@
   M=D
   @SP
   M=M+1
+
   @6
   D=A
   @SP
@@ -10658,6 +11748,7 @@
   M=D
   @SP
   M=M+1
+
   @6
   D=A
   @SP
@@ -10665,6 +11756,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -10672,6 +11764,7 @@
   M=D
   @SP
   M=M+1
+
   @24
   D=A
   @SP
@@ -10679,6 +11772,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -10686,6 +11780,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -10693,6 +11788,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.9
   D=A
   @SP
@@ -10743,6 +11839,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.9)
+
   @5
   D=A
   @TEMP
@@ -10755,6 +11852,7 @@
   @R13
   A=M
   M=D
+
   @41
   D=A
   @SP
@@ -10762,6 +11860,7 @@
   M=D
   @SP
   M=M+1
+
   @6
   D=A
   @SP
@@ -10769,6 +11868,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -10776,6 +11876,7 @@
   M=D
   @SP
   M=M+1
+
   @24
   D=A
   @SP
@@ -10783,6 +11884,7 @@
   M=D
   @SP
   M=M+1
+
   @24
   D=A
   @SP
@@ -10790,6 +11892,7 @@
   M=D
   @SP
   M=M+1
+
   @24
   D=A
   @SP
@@ -10797,6 +11900,7 @@
   M=D
   @SP
   M=M+1
+
   @24
   D=A
   @SP
@@ -10804,6 +11908,7 @@
   M=D
   @SP
   M=M+1
+
   @24
   D=A
   @SP
@@ -10811,6 +11916,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -10818,6 +11924,7 @@
   M=D
   @SP
   M=M+1
+
   @6
   D=A
   @SP
@@ -10825,6 +11932,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -10832,6 +11940,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -10839,6 +11948,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.10
   D=A
   @SP
@@ -10889,6 +11999,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.10)
+
   @5
   D=A
   @TEMP
@@ -10901,6 +12012,7 @@
   @R13
   A=M
   M=D
+
   @42
   D=A
   @SP
@@ -10908,6 +12020,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -10915,6 +12028,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -10922,6 +12036,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -10929,6 +12044,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -10936,6 +12052,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -10943,6 +12060,7 @@
   M=D
   @SP
   M=M+1
+
   @63
   D=A
   @SP
@@ -10950,6 +12068,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -10957,6 +12076,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -10964,6 +12084,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -10971,6 +12092,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -10978,6 +12100,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -10985,6 +12108,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.11
   D=A
   @SP
@@ -11035,6 +12159,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.11)
+
   @5
   D=A
   @TEMP
@@ -11047,6 +12172,7 @@
   @R13
   A=M
   M=D
+
   @43
   D=A
   @SP
@@ -11054,6 +12180,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -11061,6 +12188,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -11068,6 +12196,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -11075,6 +12204,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -11082,6 +12212,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -11089,6 +12220,7 @@
   M=D
   @SP
   M=M+1
+
   @63
   D=A
   @SP
@@ -11096,6 +12228,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -11103,6 +12236,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -11110,6 +12244,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -11117,6 +12252,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -11124,6 +12260,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -11131,6 +12268,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.12
   D=A
   @SP
@@ -11181,6 +12319,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.12)
+
   @5
   D=A
   @TEMP
@@ -11193,6 +12332,7 @@
   @R13
   A=M
   M=D
+
   @44
   D=A
   @SP
@@ -11200,6 +12340,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -11207,6 +12348,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -11214,6 +12356,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -11221,6 +12364,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -11228,6 +12372,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -11235,6 +12380,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -11242,6 +12388,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -11249,6 +12396,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -11256,6 +12404,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -11263,6 +12412,7 @@
   M=D
   @SP
   M=M+1
+
   @6
   D=A
   @SP
@@ -11270,6 +12420,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -11277,6 +12428,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.13
   D=A
   @SP
@@ -11327,6 +12479,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.13)
+
   @5
   D=A
   @TEMP
@@ -11339,6 +12492,7 @@
   @R13
   A=M
   M=D
+
   @45
   D=A
   @SP
@@ -11346,6 +12500,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -11353,6 +12508,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -11360,6 +12516,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -11367,6 +12524,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -11374,6 +12532,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -11381,6 +12540,7 @@
   M=D
   @SP
   M=M+1
+
   @63
   D=A
   @SP
@@ -11388,6 +12548,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -11395,6 +12556,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -11402,6 +12564,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -11409,6 +12572,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -11416,6 +12580,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -11423,6 +12588,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.14
   D=A
   @SP
@@ -11473,6 +12639,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.14)
+
   @5
   D=A
   @TEMP
@@ -11485,6 +12652,7 @@
   @R13
   A=M
   M=D
+
   @46
   D=A
   @SP
@@ -11492,6 +12660,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -11499,6 +12668,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -11506,6 +12676,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -11513,6 +12684,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -11520,6 +12692,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -11527,6 +12700,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -11534,6 +12708,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -11541,6 +12716,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -11548,6 +12724,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -11555,6 +12732,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -11562,6 +12740,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -11569,6 +12748,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.15
   D=A
   @SP
@@ -11619,6 +12799,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.15)
+
   @5
   D=A
   @TEMP
@@ -11631,6 +12812,7 @@
   @R13
   A=M
   M=D
+
   @47
   D=A
   @SP
@@ -11638,6 +12820,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -11645,6 +12828,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -11652,6 +12836,7 @@
   M=D
   @SP
   M=M+1
+
   @32
   D=A
   @SP
@@ -11659,6 +12844,7 @@
   M=D
   @SP
   M=M+1
+
   @48
   D=A
   @SP
@@ -11666,6 +12852,7 @@
   M=D
   @SP
   M=M+1
+
   @24
   D=A
   @SP
@@ -11673,6 +12860,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -11680,6 +12868,7 @@
   M=D
   @SP
   M=M+1
+
   @6
   D=A
   @SP
@@ -11687,6 +12876,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @SP
@@ -11694,6 +12884,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @SP
@@ -11701,6 +12892,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -11708,6 +12900,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -11715,6 +12908,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.16
   D=A
   @SP
@@ -11765,6 +12959,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.16)
+
   @5
   D=A
   @TEMP
@@ -11777,6 +12972,7 @@
   @R13
   A=M
   M=D
+
   @48
   D=A
   @SP
@@ -11784,6 +12980,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -11791,6 +12988,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -11798,6 +12996,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -11805,6 +13004,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -11812,6 +13012,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -11819,6 +13020,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -11826,6 +13028,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -11833,6 +13036,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -11840,6 +13044,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -11847,6 +13052,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -11854,6 +13060,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -11861,6 +13068,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.17
   D=A
   @SP
@@ -11911,6 +13119,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.17)
+
   @5
   D=A
   @TEMP
@@ -11923,6 +13132,7 @@
   @R13
   A=M
   M=D
+
   @49
   D=A
   @SP
@@ -11930,6 +13140,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -11937,6 +13148,7 @@
   M=D
   @SP
   M=M+1
+
   @14
   D=A
   @SP
@@ -11944,6 +13156,7 @@
   M=D
   @SP
   M=M+1
+
   @15
   D=A
   @SP
@@ -11951,6 +13164,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -11958,6 +13172,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -11965,6 +13180,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -11972,6 +13188,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -11979,6 +13196,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -11986,6 +13204,7 @@
   M=D
   @SP
   M=M+1
+
   @63
   D=A
   @SP
@@ -11993,6 +13212,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -12000,6 +13220,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -12007,6 +13228,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.18
   D=A
   @SP
@@ -12057,6 +13279,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.18)
+
   @5
   D=A
   @TEMP
@@ -12069,6 +13292,7 @@
   @R13
   A=M
   M=D
+
   @50
   D=A
   @SP
@@ -12076,6 +13300,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -12083,6 +13308,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -12090,6 +13316,7 @@
   M=D
   @SP
   M=M+1
+
   @48
   D=A
   @SP
@@ -12097,6 +13324,7 @@
   M=D
   @SP
   M=M+1
+
   @24
   D=A
   @SP
@@ -12104,6 +13332,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -12111,6 +13340,7 @@
   M=D
   @SP
   M=M+1
+
   @6
   D=A
   @SP
@@ -12118,6 +13348,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @SP
@@ -12125,6 +13356,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -12132,6 +13364,7 @@
   M=D
   @SP
   M=M+1
+
   @63
   D=A
   @SP
@@ -12139,6 +13372,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -12146,6 +13380,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -12153,6 +13388,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.19
   D=A
   @SP
@@ -12203,6 +13439,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.19)
+
   @5
   D=A
   @TEMP
@@ -12215,6 +13452,7 @@
   @R13
   A=M
   M=D
+
   @51
   D=A
   @SP
@@ -12222,6 +13460,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -12229,6 +13468,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -12236,6 +13476,7 @@
   M=D
   @SP
   M=M+1
+
   @48
   D=A
   @SP
@@ -12243,6 +13484,7 @@
   M=D
   @SP
   M=M+1
+
   @48
   D=A
   @SP
@@ -12250,6 +13492,7 @@
   M=D
   @SP
   M=M+1
+
   @28
   D=A
   @SP
@@ -12257,6 +13500,7 @@
   M=D
   @SP
   M=M+1
+
   @48
   D=A
   @SP
@@ -12264,6 +13508,7 @@
   M=D
   @SP
   M=M+1
+
   @48
   D=A
   @SP
@@ -12271,6 +13516,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -12278,6 +13524,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -12285,6 +13532,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -12292,6 +13540,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -12299,6 +13548,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.20
   D=A
   @SP
@@ -12349,6 +13599,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.20)
+
   @5
   D=A
   @TEMP
@@ -12361,6 +13612,7 @@
   @R13
   A=M
   M=D
+
   @52
   D=A
   @SP
@@ -12368,6 +13620,7 @@
   M=D
   @SP
   M=M+1
+
   @16
   D=A
   @SP
@@ -12375,6 +13628,7 @@
   M=D
   @SP
   M=M+1
+
   @24
   D=A
   @SP
@@ -12382,6 +13636,7 @@
   M=D
   @SP
   M=M+1
+
   @28
   D=A
   @SP
@@ -12389,6 +13644,7 @@
   M=D
   @SP
   M=M+1
+
   @26
   D=A
   @SP
@@ -12396,6 +13652,7 @@
   M=D
   @SP
   M=M+1
+
   @25
   D=A
   @SP
@@ -12403,6 +13660,7 @@
   M=D
   @SP
   M=M+1
+
   @63
   D=A
   @SP
@@ -12410,6 +13668,7 @@
   M=D
   @SP
   M=M+1
+
   @24
   D=A
   @SP
@@ -12417,6 +13676,7 @@
   M=D
   @SP
   M=M+1
+
   @24
   D=A
   @SP
@@ -12424,6 +13684,7 @@
   M=D
   @SP
   M=M+1
+
   @60
   D=A
   @SP
@@ -12431,6 +13692,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -12438,6 +13700,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -12445,6 +13708,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.21
   D=A
   @SP
@@ -12495,6 +13759,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.21)
+
   @5
   D=A
   @TEMP
@@ -12507,6 +13772,7 @@
   @R13
   A=M
   M=D
+
   @53
   D=A
   @SP
@@ -12514,6 +13780,7 @@
   M=D
   @SP
   M=M+1
+
   @63
   D=A
   @SP
@@ -12521,6 +13788,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @SP
@@ -12528,6 +13796,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @SP
@@ -12535,6 +13804,7 @@
   M=D
   @SP
   M=M+1
+
   @31
   D=A
   @SP
@@ -12542,6 +13812,7 @@
   M=D
   @SP
   M=M+1
+
   @48
   D=A
   @SP
@@ -12549,6 +13820,7 @@
   M=D
   @SP
   M=M+1
+
   @48
   D=A
   @SP
@@ -12556,6 +13828,7 @@
   M=D
   @SP
   M=M+1
+
   @48
   D=A
   @SP
@@ -12563,6 +13836,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -12570,6 +13844,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -12577,6 +13852,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -12584,6 +13860,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -12591,6 +13868,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.22
   D=A
   @SP
@@ -12641,6 +13919,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.22)
+
   @5
   D=A
   @TEMP
@@ -12653,6 +13932,7 @@
   @R13
   A=M
   M=D
+
   @54
   D=A
   @SP
@@ -12660,6 +13940,7 @@
   M=D
   @SP
   M=M+1
+
   @28
   D=A
   @SP
@@ -12667,6 +13948,7 @@
   M=D
   @SP
   M=M+1
+
   @6
   D=A
   @SP
@@ -12674,6 +13956,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @SP
@@ -12681,6 +13964,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @SP
@@ -12688,6 +13972,7 @@
   M=D
   @SP
   M=M+1
+
   @31
   D=A
   @SP
@@ -12695,6 +13980,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -12702,6 +13988,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -12709,6 +13996,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -12716,6 +14004,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -12723,6 +14012,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -12730,6 +14020,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -12737,6 +14028,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.23
   D=A
   @SP
@@ -12787,6 +14079,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.23)
+
   @5
   D=A
   @TEMP
@@ -12799,6 +14092,7 @@
   @R13
   A=M
   M=D
+
   @55
   D=A
   @SP
@@ -12806,6 +14100,7 @@
   M=D
   @SP
   M=M+1
+
   @63
   D=A
   @SP
@@ -12813,6 +14108,7 @@
   M=D
   @SP
   M=M+1
+
   @49
   D=A
   @SP
@@ -12820,6 +14116,7 @@
   M=D
   @SP
   M=M+1
+
   @48
   D=A
   @SP
@@ -12827,6 +14124,7 @@
   M=D
   @SP
   M=M+1
+
   @48
   D=A
   @SP
@@ -12834,6 +14132,7 @@
   M=D
   @SP
   M=M+1
+
   @24
   D=A
   @SP
@@ -12841,6 +14140,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -12848,6 +14148,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -12855,6 +14156,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -12862,6 +14164,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -12869,6 +14172,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -12876,6 +14180,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -12883,6 +14188,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.24
   D=A
   @SP
@@ -12933,6 +14239,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.24)
+
   @5
   D=A
   @TEMP
@@ -12945,6 +14252,7 @@
   @R13
   A=M
   M=D
+
   @56
   D=A
   @SP
@@ -12952,6 +14260,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -12959,6 +14268,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -12966,6 +14276,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -12973,6 +14284,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -12980,6 +14292,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -12987,6 +14300,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -12994,6 +14308,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -13001,6 +14316,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -13008,6 +14324,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -13015,6 +14332,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -13022,6 +14340,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -13029,6 +14348,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.25
   D=A
   @SP
@@ -13079,6 +14399,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.25)
+
   @5
   D=A
   @TEMP
@@ -13091,6 +14412,7 @@
   @R13
   A=M
   M=D
+
   @57
   D=A
   @SP
@@ -13098,6 +14420,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -13105,6 +14428,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -13112,6 +14436,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -13119,6 +14444,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -13126,6 +14452,7 @@
   M=D
   @SP
   M=M+1
+
   @62
   D=A
   @SP
@@ -13133,6 +14460,7 @@
   M=D
   @SP
   M=M+1
+
   @48
   D=A
   @SP
@@ -13140,6 +14468,7 @@
   M=D
   @SP
   M=M+1
+
   @48
   D=A
   @SP
@@ -13147,6 +14476,7 @@
   M=D
   @SP
   M=M+1
+
   @24
   D=A
   @SP
@@ -13154,6 +14484,7 @@
   M=D
   @SP
   M=M+1
+
   @14
   D=A
   @SP
@@ -13161,6 +14492,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -13168,6 +14500,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -13175,6 +14508,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.26
   D=A
   @SP
@@ -13225,6 +14559,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.26)
+
   @5
   D=A
   @TEMP
@@ -13237,6 +14572,7 @@
   @R13
   A=M
   M=D
+
   @58
   D=A
   @SP
@@ -13244,6 +14580,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -13251,6 +14588,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -13258,6 +14596,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -13265,6 +14604,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -13272,6 +14612,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -13279,6 +14620,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -13286,6 +14628,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -13293,6 +14636,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -13300,6 +14644,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -13307,6 +14652,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -13314,6 +14660,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -13321,6 +14668,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.27
   D=A
   @SP
@@ -13371,6 +14719,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.27)
+
   @5
   D=A
   @TEMP
@@ -13383,6 +14732,7 @@
   @R13
   A=M
   M=D
+
   @59
   D=A
   @SP
@@ -13390,6 +14740,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -13397,6 +14748,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -13404,6 +14756,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -13411,6 +14764,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -13418,6 +14772,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -13425,6 +14780,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -13432,6 +14788,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -13439,6 +14796,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -13446,6 +14804,7 @@
   M=D
   @SP
   M=M+1
+
   @6
   D=A
   @SP
@@ -13453,6 +14812,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -13460,6 +14820,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -13467,6 +14828,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.28
   D=A
   @SP
@@ -13517,6 +14879,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.28)
+
   @5
   D=A
   @TEMP
@@ -13529,6 +14892,7 @@
   @R13
   A=M
   M=D
+
   @60
   D=A
   @SP
@@ -13536,6 +14900,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -13543,6 +14908,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -13550,6 +14916,7 @@
   M=D
   @SP
   M=M+1
+
   @24
   D=A
   @SP
@@ -13557,6 +14924,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -13564,6 +14932,7 @@
   M=D
   @SP
   M=M+1
+
   @6
   D=A
   @SP
@@ -13571,6 +14940,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @SP
@@ -13578,6 +14948,7 @@
   M=D
   @SP
   M=M+1
+
   @6
   D=A
   @SP
@@ -13585,6 +14956,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -13592,6 +14964,7 @@
   M=D
   @SP
   M=M+1
+
   @24
   D=A
   @SP
@@ -13599,6 +14972,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -13606,6 +14980,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -13613,6 +14988,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.29
   D=A
   @SP
@@ -13663,6 +15039,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.29)
+
   @5
   D=A
   @TEMP
@@ -13675,6 +15052,7 @@
   @R13
   A=M
   M=D
+
   @61
   D=A
   @SP
@@ -13682,6 +15060,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -13689,6 +15068,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -13696,6 +15076,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -13703,6 +15084,7 @@
   M=D
   @SP
   M=M+1
+
   @63
   D=A
   @SP
@@ -13710,6 +15092,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -13717,6 +15100,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -13724,6 +15108,7 @@
   M=D
   @SP
   M=M+1
+
   @63
   D=A
   @SP
@@ -13731,6 +15116,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -13738,6 +15124,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -13745,6 +15132,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -13752,6 +15140,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -13759,6 +15148,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.30
   D=A
   @SP
@@ -13809,6 +15199,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.30)
+
   @5
   D=A
   @TEMP
@@ -13821,6 +15212,7 @@
   @R13
   A=M
   M=D
+
   @62
   D=A
   @SP
@@ -13828,6 +15220,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -13835,6 +15228,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -13842,6 +15236,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @SP
@@ -13849,6 +15244,7 @@
   M=D
   @SP
   M=M+1
+
   @6
   D=A
   @SP
@@ -13856,6 +15252,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -13863,6 +15260,7 @@
   M=D
   @SP
   M=M+1
+
   @24
   D=A
   @SP
@@ -13870,6 +15268,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -13877,6 +15276,7 @@
   M=D
   @SP
   M=M+1
+
   @6
   D=A
   @SP
@@ -13884,6 +15284,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @SP
@@ -13891,6 +15292,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -13898,6 +15300,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -13905,6 +15308,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.31
   D=A
   @SP
@@ -13955,6 +15359,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.31)
+
   @5
   D=A
   @TEMP
@@ -13967,6 +15372,7 @@
   @R13
   A=M
   M=D
+
   @64
   D=A
   @SP
@@ -13974,6 +15380,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -13981,6 +15388,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -13988,6 +15396,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -13995,6 +15404,7 @@
   M=D
   @SP
   M=M+1
+
   @59
   D=A
   @SP
@@ -14002,6 +15412,7 @@
   M=D
   @SP
   M=M+1
+
   @59
   D=A
   @SP
@@ -14009,6 +15420,7 @@
   M=D
   @SP
   M=M+1
+
   @59
   D=A
   @SP
@@ -14016,6 +15428,7 @@
   M=D
   @SP
   M=M+1
+
   @27
   D=A
   @SP
@@ -14023,6 +15436,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @SP
@@ -14030,6 +15444,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -14037,6 +15452,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -14044,6 +15460,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -14051,6 +15468,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.32
   D=A
   @SP
@@ -14101,6 +15519,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.32)
+
   @5
   D=A
   @TEMP
@@ -14113,6 +15532,7 @@
   @R13
   A=M
   M=D
+
   @63
   D=A
   @SP
@@ -14120,6 +15540,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -14127,6 +15548,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -14134,6 +15556,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -14141,6 +15564,7 @@
   M=D
   @SP
   M=M+1
+
   @24
   D=A
   @SP
@@ -14148,6 +15572,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -14155,6 +15580,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -14162,6 +15588,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -14169,6 +15596,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -14176,6 +15604,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -14183,6 +15612,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -14190,6 +15620,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -14197,6 +15628,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.33
   D=A
   @SP
@@ -14247,6 +15679,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.33)
+
   @5
   D=A
   @TEMP
@@ -14259,6 +15692,7 @@
   @R13
   A=M
   M=D
+
   @65
   D=A
   @SP
@@ -14266,6 +15700,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -14273,6 +15708,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -14280,6 +15716,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -14287,6 +15724,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -14294,6 +15732,7 @@
   M=D
   @SP
   M=M+1
+
   @63
   D=A
   @SP
@@ -14301,6 +15740,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -14308,6 +15748,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -14315,6 +15756,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -14322,6 +15764,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -14329,6 +15772,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -14336,6 +15780,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -14343,6 +15788,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.34
   D=A
   @SP
@@ -14393,6 +15839,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.34)
+
   @5
   D=A
   @TEMP
@@ -14405,6 +15852,7 @@
   @R13
   A=M
   M=D
+
   @66
   D=A
   @SP
@@ -14412,6 +15860,7 @@
   M=D
   @SP
   M=M+1
+
   @31
   D=A
   @SP
@@ -14419,6 +15868,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -14426,6 +15876,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -14433,6 +15884,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -14440,6 +15892,7 @@
   M=D
   @SP
   M=M+1
+
   @31
   D=A
   @SP
@@ -14447,6 +15900,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -14454,6 +15908,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -14461,6 +15916,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -14468,6 +15924,7 @@
   M=D
   @SP
   M=M+1
+
   @31
   D=A
   @SP
@@ -14475,6 +15932,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -14482,6 +15940,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -14489,6 +15948,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.35
   D=A
   @SP
@@ -14539,6 +15999,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.35)
+
   @5
   D=A
   @TEMP
@@ -14551,6 +16012,7 @@
   @R13
   A=M
   M=D
+
   @67
   D=A
   @SP
@@ -14558,6 +16020,7 @@
   M=D
   @SP
   M=M+1
+
   @28
   D=A
   @SP
@@ -14565,6 +16028,7 @@
   M=D
   @SP
   M=M+1
+
   @54
   D=A
   @SP
@@ -14572,6 +16036,7 @@
   M=D
   @SP
   M=M+1
+
   @35
   D=A
   @SP
@@ -14579,6 +16044,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @SP
@@ -14586,6 +16052,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @SP
@@ -14593,6 +16060,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @SP
@@ -14600,6 +16068,7 @@
   M=D
   @SP
   M=M+1
+
   @35
   D=A
   @SP
@@ -14607,6 +16076,7 @@
   M=D
   @SP
   M=M+1
+
   @54
   D=A
   @SP
@@ -14614,6 +16084,7 @@
   M=D
   @SP
   M=M+1
+
   @28
   D=A
   @SP
@@ -14621,6 +16092,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -14628,6 +16100,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -14635,6 +16108,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.36
   D=A
   @SP
@@ -14685,6 +16159,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.36)
+
   @5
   D=A
   @TEMP
@@ -14697,6 +16172,7 @@
   @R13
   A=M
   M=D
+
   @68
   D=A
   @SP
@@ -14704,6 +16180,7 @@
   M=D
   @SP
   M=M+1
+
   @15
   D=A
   @SP
@@ -14711,6 +16188,7 @@
   M=D
   @SP
   M=M+1
+
   @27
   D=A
   @SP
@@ -14718,6 +16196,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -14725,6 +16204,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -14732,6 +16212,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -14739,6 +16220,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -14746,6 +16228,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -14753,6 +16236,7 @@
   M=D
   @SP
   M=M+1
+
   @27
   D=A
   @SP
@@ -14760,6 +16244,7 @@
   M=D
   @SP
   M=M+1
+
   @15
   D=A
   @SP
@@ -14767,6 +16252,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -14774,6 +16260,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -14781,6 +16268,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.37
   D=A
   @SP
@@ -14831,6 +16319,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.37)
+
   @5
   D=A
   @TEMP
@@ -14843,6 +16332,7 @@
   @R13
   A=M
   M=D
+
   @69
   D=A
   @SP
@@ -14850,6 +16340,7 @@
   M=D
   @SP
   M=M+1
+
   @63
   D=A
   @SP
@@ -14857,6 +16348,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -14864,6 +16356,7 @@
   M=D
   @SP
   M=M+1
+
   @35
   D=A
   @SP
@@ -14871,6 +16364,7 @@
   M=D
   @SP
   M=M+1
+
   @11
   D=A
   @SP
@@ -14878,6 +16372,7 @@
   M=D
   @SP
   M=M+1
+
   @15
   D=A
   @SP
@@ -14885,6 +16380,7 @@
   M=D
   @SP
   M=M+1
+
   @11
   D=A
   @SP
@@ -14892,6 +16388,7 @@
   M=D
   @SP
   M=M+1
+
   @35
   D=A
   @SP
@@ -14899,6 +16396,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -14906,6 +16404,7 @@
   M=D
   @SP
   M=M+1
+
   @63
   D=A
   @SP
@@ -14913,6 +16412,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -14920,6 +16420,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -14927,6 +16428,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.38
   D=A
   @SP
@@ -14977,6 +16479,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.38)
+
   @5
   D=A
   @TEMP
@@ -14989,6 +16492,7 @@
   @R13
   A=M
   M=D
+
   @70
   D=A
   @SP
@@ -14996,6 +16500,7 @@
   M=D
   @SP
   M=M+1
+
   @63
   D=A
   @SP
@@ -15003,6 +16508,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -15010,6 +16516,7 @@
   M=D
   @SP
   M=M+1
+
   @35
   D=A
   @SP
@@ -15017,6 +16524,7 @@
   M=D
   @SP
   M=M+1
+
   @11
   D=A
   @SP
@@ -15024,6 +16532,7 @@
   M=D
   @SP
   M=M+1
+
   @15
   D=A
   @SP
@@ -15031,6 +16540,7 @@
   M=D
   @SP
   M=M+1
+
   @11
   D=A
   @SP
@@ -15038,6 +16548,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @SP
@@ -15045,6 +16556,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @SP
@@ -15052,6 +16564,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @SP
@@ -15059,6 +16572,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -15066,6 +16580,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -15073,6 +16588,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.39
   D=A
   @SP
@@ -15123,6 +16639,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.39)
+
   @5
   D=A
   @TEMP
@@ -15135,6 +16652,7 @@
   @R13
   A=M
   M=D
+
   @71
   D=A
   @SP
@@ -15142,6 +16660,7 @@
   M=D
   @SP
   M=M+1
+
   @28
   D=A
   @SP
@@ -15149,6 +16668,7 @@
   M=D
   @SP
   M=M+1
+
   @54
   D=A
   @SP
@@ -15156,6 +16676,7 @@
   M=D
   @SP
   M=M+1
+
   @35
   D=A
   @SP
@@ -15163,6 +16684,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @SP
@@ -15170,6 +16692,7 @@
   M=D
   @SP
   M=M+1
+
   @59
   D=A
   @SP
@@ -15177,6 +16700,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -15184,6 +16708,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -15191,6 +16716,7 @@
   M=D
   @SP
   M=M+1
+
   @54
   D=A
   @SP
@@ -15198,6 +16724,7 @@
   M=D
   @SP
   M=M+1
+
   @44
   D=A
   @SP
@@ -15205,6 +16732,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -15212,6 +16740,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -15219,6 +16748,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.40
   D=A
   @SP
@@ -15269,6 +16799,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.40)
+
   @5
   D=A
   @TEMP
@@ -15281,6 +16812,7 @@
   @R13
   A=M
   M=D
+
   @72
   D=A
   @SP
@@ -15288,6 +16820,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -15295,6 +16828,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -15302,6 +16836,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -15309,6 +16844,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -15316,6 +16852,7 @@
   M=D
   @SP
   M=M+1
+
   @63
   D=A
   @SP
@@ -15323,6 +16860,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -15330,6 +16868,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -15337,6 +16876,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -15344,6 +16884,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -15351,6 +16892,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -15358,6 +16900,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -15365,6 +16908,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.41
   D=A
   @SP
@@ -15415,6 +16959,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.41)
+
   @5
   D=A
   @TEMP
@@ -15427,6 +16972,7 @@
   @R13
   A=M
   M=D
+
   @73
   D=A
   @SP
@@ -15434,6 +16980,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -15441,6 +16988,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -15448,6 +16996,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -15455,6 +17004,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -15462,6 +17012,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -15469,6 +17020,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -15476,6 +17028,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -15483,6 +17036,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -15490,6 +17044,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -15497,6 +17052,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -15504,6 +17060,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -15511,6 +17068,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.42
   D=A
   @SP
@@ -15561,6 +17119,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.42)
+
   @5
   D=A
   @TEMP
@@ -15573,6 +17132,7 @@
   @R13
   A=M
   M=D
+
   @74
   D=A
   @SP
@@ -15580,6 +17140,7 @@
   M=D
   @SP
   M=M+1
+
   @60
   D=A
   @SP
@@ -15587,6 +17148,7 @@
   M=D
   @SP
   M=M+1
+
   @24
   D=A
   @SP
@@ -15594,6 +17156,7 @@
   M=D
   @SP
   M=M+1
+
   @24
   D=A
   @SP
@@ -15601,6 +17164,7 @@
   M=D
   @SP
   M=M+1
+
   @24
   D=A
   @SP
@@ -15608,6 +17172,7 @@
   M=D
   @SP
   M=M+1
+
   @24
   D=A
   @SP
@@ -15615,6 +17180,7 @@
   M=D
   @SP
   M=M+1
+
   @24
   D=A
   @SP
@@ -15622,6 +17188,7 @@
   M=D
   @SP
   M=M+1
+
   @27
   D=A
   @SP
@@ -15629,6 +17196,7 @@
   M=D
   @SP
   M=M+1
+
   @27
   D=A
   @SP
@@ -15636,6 +17204,7 @@
   M=D
   @SP
   M=M+1
+
   @14
   D=A
   @SP
@@ -15643,6 +17212,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -15650,6 +17220,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -15657,6 +17228,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.43
   D=A
   @SP
@@ -15707,6 +17279,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.43)
+
   @5
   D=A
   @TEMP
@@ -15719,6 +17292,7 @@
   @R13
   A=M
   M=D
+
   @75
   D=A
   @SP
@@ -15726,6 +17300,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -15733,6 +17308,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -15740,6 +17316,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -15747,6 +17324,7 @@
   M=D
   @SP
   M=M+1
+
   @27
   D=A
   @SP
@@ -15754,6 +17332,7 @@
   M=D
   @SP
   M=M+1
+
   @15
   D=A
   @SP
@@ -15761,6 +17340,7 @@
   M=D
   @SP
   M=M+1
+
   @27
   D=A
   @SP
@@ -15768,6 +17348,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -15775,6 +17356,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -15782,6 +17364,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -15789,6 +17372,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -15796,6 +17380,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -15803,6 +17388,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.44
   D=A
   @SP
@@ -15853,6 +17439,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.44)
+
   @5
   D=A
   @TEMP
@@ -15865,6 +17452,7 @@
   @R13
   A=M
   M=D
+
   @76
   D=A
   @SP
@@ -15872,6 +17460,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @SP
@@ -15879,6 +17468,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @SP
@@ -15886,6 +17476,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @SP
@@ -15893,6 +17484,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @SP
@@ -15900,6 +17492,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @SP
@@ -15907,6 +17500,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @SP
@@ -15914,6 +17508,7 @@
   M=D
   @SP
   M=M+1
+
   @35
   D=A
   @SP
@@ -15921,6 +17516,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -15928,6 +17524,7 @@
   M=D
   @SP
   M=M+1
+
   @63
   D=A
   @SP
@@ -15935,6 +17532,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -15942,6 +17540,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -15949,6 +17548,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.45
   D=A
   @SP
@@ -15999,6 +17599,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.45)
+
   @5
   D=A
   @TEMP
@@ -16011,6 +17612,7 @@
   @R13
   A=M
   M=D
+
   @77
   D=A
   @SP
@@ -16018,6 +17620,7 @@
   M=D
   @SP
   M=M+1
+
   @33
   D=A
   @SP
@@ -16025,6 +17628,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -16032,6 +17636,7 @@
   M=D
   @SP
   M=M+1
+
   @63
   D=A
   @SP
@@ -16039,6 +17644,7 @@
   M=D
   @SP
   M=M+1
+
   @63
   D=A
   @SP
@@ -16046,6 +17652,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -16053,6 +17660,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -16060,6 +17668,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -16067,6 +17676,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -16074,6 +17684,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -16081,6 +17692,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -16088,6 +17700,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -16095,6 +17708,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.46
   D=A
   @SP
@@ -16145,6 +17759,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.46)
+
   @5
   D=A
   @TEMP
@@ -16157,6 +17772,7 @@
   @R13
   A=M
   M=D
+
   @78
   D=A
   @SP
@@ -16164,6 +17780,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -16171,6 +17788,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -16178,6 +17796,7 @@
   M=D
   @SP
   M=M+1
+
   @55
   D=A
   @SP
@@ -16185,6 +17804,7 @@
   M=D
   @SP
   M=M+1
+
   @55
   D=A
   @SP
@@ -16192,6 +17812,7 @@
   M=D
   @SP
   M=M+1
+
   @63
   D=A
   @SP
@@ -16199,6 +17820,7 @@
   M=D
   @SP
   M=M+1
+
   @59
   D=A
   @SP
@@ -16206,6 +17828,7 @@
   M=D
   @SP
   M=M+1
+
   @59
   D=A
   @SP
@@ -16213,6 +17836,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -16220,6 +17844,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -16227,6 +17852,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -16234,6 +17860,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -16241,6 +17868,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.47
   D=A
   @SP
@@ -16291,6 +17919,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.47)
+
   @5
   D=A
   @TEMP
@@ -16303,6 +17932,7 @@
   @R13
   A=M
   M=D
+
   @79
   D=A
   @SP
@@ -16310,6 +17940,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -16317,6 +17948,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -16324,6 +17956,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -16331,6 +17964,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -16338,6 +17972,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -16345,6 +17980,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -16352,6 +17988,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -16359,6 +17996,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -16366,6 +18004,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -16373,6 +18012,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -16380,6 +18020,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -16387,6 +18028,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.48
   D=A
   @SP
@@ -16437,6 +18079,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.48)
+
   @5
   D=A
   @TEMP
@@ -16449,6 +18092,7 @@
   @R13
   A=M
   M=D
+
   @80
   D=A
   @SP
@@ -16456,6 +18100,7 @@
   M=D
   @SP
   M=M+1
+
   @31
   D=A
   @SP
@@ -16463,6 +18108,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -16470,6 +18116,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -16477,6 +18124,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -16484,6 +18132,7 @@
   M=D
   @SP
   M=M+1
+
   @31
   D=A
   @SP
@@ -16491,6 +18140,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @SP
@@ -16498,6 +18148,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @SP
@@ -16505,6 +18156,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @SP
@@ -16512,6 +18164,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @SP
@@ -16519,6 +18172,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -16526,6 +18180,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -16533,6 +18188,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.49
   D=A
   @SP
@@ -16583,6 +18239,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.49)
+
   @5
   D=A
   @TEMP
@@ -16595,6 +18252,7 @@
   @R13
   A=M
   M=D
+
   @81
   D=A
   @SP
@@ -16602,6 +18260,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -16609,6 +18268,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -16616,6 +18276,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -16623,6 +18284,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -16630,6 +18292,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -16637,6 +18300,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -16644,6 +18308,7 @@
   M=D
   @SP
   M=M+1
+
   @63
   D=A
   @SP
@@ -16651,6 +18316,7 @@
   M=D
   @SP
   M=M+1
+
   @59
   D=A
   @SP
@@ -16658,6 +18324,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -16665,6 +18332,7 @@
   M=D
   @SP
   M=M+1
+
   @48
   D=A
   @SP
@@ -16672,6 +18340,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -16679,6 +18348,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.50
   D=A
   @SP
@@ -16729,6 +18399,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.50)
+
   @5
   D=A
   @TEMP
@@ -16741,6 +18412,7 @@
   @R13
   A=M
   M=D
+
   @82
   D=A
   @SP
@@ -16748,6 +18420,7 @@
   M=D
   @SP
   M=M+1
+
   @31
   D=A
   @SP
@@ -16755,6 +18428,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -16762,6 +18436,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -16769,6 +18444,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -16776,6 +18452,7 @@
   M=D
   @SP
   M=M+1
+
   @31
   D=A
   @SP
@@ -16783,6 +18460,7 @@
   M=D
   @SP
   M=M+1
+
   @27
   D=A
   @SP
@@ -16790,6 +18468,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -16797,6 +18476,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -16804,6 +18484,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -16811,6 +18492,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -16818,6 +18500,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -16825,6 +18508,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.51
   D=A
   @SP
@@ -16875,6 +18559,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.51)
+
   @5
   D=A
   @TEMP
@@ -16887,6 +18572,7 @@
   @R13
   A=M
   M=D
+
   @83
   D=A
   @SP
@@ -16894,6 +18580,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -16901,6 +18588,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -16908,6 +18596,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -16915,6 +18604,7 @@
   M=D
   @SP
   M=M+1
+
   @6
   D=A
   @SP
@@ -16922,6 +18612,7 @@
   M=D
   @SP
   M=M+1
+
   @28
   D=A
   @SP
@@ -16929,6 +18620,7 @@
   M=D
   @SP
   M=M+1
+
   @48
   D=A
   @SP
@@ -16936,6 +18628,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -16943,6 +18636,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -16950,6 +18644,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -16957,6 +18652,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -16964,6 +18660,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -16971,6 +18668,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.52
   D=A
   @SP
@@ -17021,6 +18719,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.52)
+
   @5
   D=A
   @TEMP
@@ -17033,6 +18732,7 @@
   @R13
   A=M
   M=D
+
   @84
   D=A
   @SP
@@ -17040,6 +18740,7 @@
   M=D
   @SP
   M=M+1
+
   @63
   D=A
   @SP
@@ -17047,6 +18748,7 @@
   M=D
   @SP
   M=M+1
+
   @63
   D=A
   @SP
@@ -17054,6 +18756,7 @@
   M=D
   @SP
   M=M+1
+
   @45
   D=A
   @SP
@@ -17061,6 +18764,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -17068,6 +18772,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -17075,6 +18780,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -17082,6 +18788,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -17089,6 +18796,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -17096,6 +18804,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -17103,6 +18812,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -17110,6 +18820,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -17117,6 +18828,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.53
   D=A
   @SP
@@ -17167,6 +18879,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.53)
+
   @5
   D=A
   @TEMP
@@ -17179,6 +18892,7 @@
   @R13
   A=M
   M=D
+
   @85
   D=A
   @SP
@@ -17186,6 +18900,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -17193,6 +18908,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -17200,6 +18916,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -17207,6 +18924,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -17214,6 +18932,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -17221,6 +18940,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -17228,6 +18948,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -17235,6 +18956,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -17242,6 +18964,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -17249,6 +18972,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -17256,6 +18980,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -17263,6 +18988,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.54
   D=A
   @SP
@@ -17313,6 +19039,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.54)
+
   @5
   D=A
   @TEMP
@@ -17325,6 +19052,7 @@
   @R13
   A=M
   M=D
+
   @86
   D=A
   @SP
@@ -17332,6 +19060,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -17339,6 +19068,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -17346,6 +19076,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -17353,6 +19084,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -17360,6 +19092,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -17367,6 +19100,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -17374,6 +19108,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -17381,6 +19116,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -17388,6 +19124,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -17395,6 +19132,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -17402,6 +19140,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -17409,6 +19148,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.55
   D=A
   @SP
@@ -17459,6 +19199,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.55)
+
   @5
   D=A
   @TEMP
@@ -17471,6 +19212,7 @@
   @R13
   A=M
   M=D
+
   @87
   D=A
   @SP
@@ -17478,6 +19220,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -17485,6 +19228,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -17492,6 +19236,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -17499,6 +19244,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -17506,6 +19252,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -17513,6 +19260,7 @@
   M=D
   @SP
   M=M+1
+
   @63
   D=A
   @SP
@@ -17520,6 +19268,7 @@
   M=D
   @SP
   M=M+1
+
   @63
   D=A
   @SP
@@ -17527,6 +19276,7 @@
   M=D
   @SP
   M=M+1
+
   @63
   D=A
   @SP
@@ -17534,6 +19284,7 @@
   M=D
   @SP
   M=M+1
+
   @18
   D=A
   @SP
@@ -17541,6 +19292,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -17548,6 +19300,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -17555,6 +19308,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.56
   D=A
   @SP
@@ -17605,6 +19359,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.56)
+
   @5
   D=A
   @TEMP
@@ -17617,6 +19372,7 @@
   @R13
   A=M
   M=D
+
   @88
   D=A
   @SP
@@ -17624,6 +19380,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -17631,6 +19388,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -17638,6 +19396,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -17645,6 +19404,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -17652,6 +19412,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -17659,6 +19420,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -17666,6 +19428,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -17673,6 +19436,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -17680,6 +19444,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -17687,6 +19452,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -17694,6 +19460,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -17701,6 +19468,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.57
   D=A
   @SP
@@ -17751,6 +19519,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.57)
+
   @5
   D=A
   @TEMP
@@ -17763,6 +19532,7 @@
   @R13
   A=M
   M=D
+
   @89
   D=A
   @SP
@@ -17770,6 +19540,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -17777,6 +19548,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -17784,6 +19556,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -17791,6 +19564,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -17798,6 +19572,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -17805,6 +19580,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -17812,6 +19588,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -17819,6 +19596,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -17826,6 +19604,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -17833,6 +19612,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -17840,6 +19620,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -17847,6 +19628,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.58
   D=A
   @SP
@@ -17897,6 +19679,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.58)
+
   @5
   D=A
   @TEMP
@@ -17909,6 +19692,7 @@
   @R13
   A=M
   M=D
+
   @90
   D=A
   @SP
@@ -17916,6 +19700,7 @@
   M=D
   @SP
   M=M+1
+
   @63
   D=A
   @SP
@@ -17923,6 +19708,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -17930,6 +19716,7 @@
   M=D
   @SP
   M=M+1
+
   @49
   D=A
   @SP
@@ -17937,6 +19724,7 @@
   M=D
   @SP
   M=M+1
+
   @24
   D=A
   @SP
@@ -17944,6 +19732,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -17951,6 +19740,7 @@
   M=D
   @SP
   M=M+1
+
   @6
   D=A
   @SP
@@ -17958,6 +19748,7 @@
   M=D
   @SP
   M=M+1
+
   @35
   D=A
   @SP
@@ -17965,6 +19756,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -17972,6 +19764,7 @@
   M=D
   @SP
   M=M+1
+
   @63
   D=A
   @SP
@@ -17979,6 +19772,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -17986,6 +19780,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -17993,6 +19788,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.59
   D=A
   @SP
@@ -18043,6 +19839,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.59)
+
   @5
   D=A
   @TEMP
@@ -18055,6 +19852,7 @@
   @R13
   A=M
   M=D
+
   @91
   D=A
   @SP
@@ -18062,6 +19860,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -18069,6 +19868,7 @@
   M=D
   @SP
   M=M+1
+
   @6
   D=A
   @SP
@@ -18076,6 +19876,7 @@
   M=D
   @SP
   M=M+1
+
   @6
   D=A
   @SP
@@ -18083,6 +19884,7 @@
   M=D
   @SP
   M=M+1
+
   @6
   D=A
   @SP
@@ -18090,6 +19892,7 @@
   M=D
   @SP
   M=M+1
+
   @6
   D=A
   @SP
@@ -18097,6 +19900,7 @@
   M=D
   @SP
   M=M+1
+
   @6
   D=A
   @SP
@@ -18104,6 +19908,7 @@
   M=D
   @SP
   M=M+1
+
   @6
   D=A
   @SP
@@ -18111,6 +19916,7 @@
   M=D
   @SP
   M=M+1
+
   @6
   D=A
   @SP
@@ -18118,6 +19924,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -18125,6 +19932,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -18132,6 +19940,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -18139,6 +19948,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.60
   D=A
   @SP
@@ -18189,6 +19999,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.60)
+
   @5
   D=A
   @TEMP
@@ -18201,6 +20012,7 @@
   @R13
   A=M
   M=D
+
   @92
   D=A
   @SP
@@ -18208,6 +20020,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -18215,6 +20028,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -18222,6 +20036,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @SP
@@ -18229,6 +20044,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @SP
@@ -18236,6 +20052,7 @@
   M=D
   @SP
   M=M+1
+
   @6
   D=A
   @SP
@@ -18243,6 +20060,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -18250,6 +20068,7 @@
   M=D
   @SP
   M=M+1
+
   @24
   D=A
   @SP
@@ -18257,6 +20076,7 @@
   M=D
   @SP
   M=M+1
+
   @48
   D=A
   @SP
@@ -18264,6 +20084,7 @@
   M=D
   @SP
   M=M+1
+
   @32
   D=A
   @SP
@@ -18271,6 +20092,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -18278,6 +20100,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -18285,6 +20108,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.61
   D=A
   @SP
@@ -18335,6 +20159,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.61)
+
   @5
   D=A
   @TEMP
@@ -18347,6 +20172,7 @@
   @R13
   A=M
   M=D
+
   @93
   D=A
   @SP
@@ -18354,6 +20180,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -18361,6 +20188,7 @@
   M=D
   @SP
   M=M+1
+
   @24
   D=A
   @SP
@@ -18368,6 +20196,7 @@
   M=D
   @SP
   M=M+1
+
   @24
   D=A
   @SP
@@ -18375,6 +20204,7 @@
   M=D
   @SP
   M=M+1
+
   @24
   D=A
   @SP
@@ -18382,6 +20212,7 @@
   M=D
   @SP
   M=M+1
+
   @24
   D=A
   @SP
@@ -18389,6 +20220,7 @@
   M=D
   @SP
   M=M+1
+
   @24
   D=A
   @SP
@@ -18396,6 +20228,7 @@
   M=D
   @SP
   M=M+1
+
   @24
   D=A
   @SP
@@ -18403,6 +20236,7 @@
   M=D
   @SP
   M=M+1
+
   @24
   D=A
   @SP
@@ -18410,6 +20244,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -18417,6 +20252,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -18424,6 +20260,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -18431,6 +20268,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.62
   D=A
   @SP
@@ -18481,6 +20319,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.62)
+
   @5
   D=A
   @TEMP
@@ -18493,6 +20332,7 @@
   @R13
   A=M
   M=D
+
   @94
   D=A
   @SP
@@ -18500,6 +20340,7 @@
   M=D
   @SP
   M=M+1
+
   @8
   D=A
   @SP
@@ -18507,6 +20348,7 @@
   M=D
   @SP
   M=M+1
+
   @28
   D=A
   @SP
@@ -18514,6 +20356,7 @@
   M=D
   @SP
   M=M+1
+
   @54
   D=A
   @SP
@@ -18521,6 +20364,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -18528,6 +20372,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -18535,6 +20380,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -18542,6 +20388,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -18549,6 +20396,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -18556,6 +20404,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -18563,6 +20412,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -18570,6 +20420,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -18577,6 +20428,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.63
   D=A
   @SP
@@ -18627,6 +20479,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.63)
+
   @5
   D=A
   @TEMP
@@ -18639,6 +20492,7 @@
   @R13
   A=M
   M=D
+
   @95
   D=A
   @SP
@@ -18646,6 +20500,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -18653,6 +20508,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -18660,6 +20516,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -18667,6 +20524,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -18674,6 +20532,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -18681,6 +20540,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -18688,6 +20548,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -18695,6 +20556,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -18702,6 +20564,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -18709,6 +20572,7 @@
   M=D
   @SP
   M=M+1
+
   @63
   D=A
   @SP
@@ -18716,6 +20580,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -18723,6 +20588,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.64
   D=A
   @SP
@@ -18773,6 +20639,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.64)
+
   @5
   D=A
   @TEMP
@@ -18785,6 +20652,7 @@
   @R13
   A=M
   M=D
+
   @96
   D=A
   @SP
@@ -18792,6 +20660,7 @@
   M=D
   @SP
   M=M+1
+
   @6
   D=A
   @SP
@@ -18799,6 +20668,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -18806,6 +20676,7 @@
   M=D
   @SP
   M=M+1
+
   @24
   D=A
   @SP
@@ -18813,6 +20684,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -18820,6 +20692,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -18827,6 +20700,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -18834,6 +20708,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -18841,6 +20716,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -18848,6 +20724,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -18855,6 +20732,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -18862,6 +20740,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -18869,6 +20748,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.65
   D=A
   @SP
@@ -18919,6 +20799,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.65)
+
   @5
   D=A
   @TEMP
@@ -18931,6 +20812,7 @@
   @R13
   A=M
   M=D
+
   @97
   D=A
   @SP
@@ -18938,6 +20820,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -18945,6 +20828,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -18952,6 +20836,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -18959,6 +20844,7 @@
   M=D
   @SP
   M=M+1
+
   @14
   D=A
   @SP
@@ -18966,6 +20852,7 @@
   M=D
   @SP
   M=M+1
+
   @24
   D=A
   @SP
@@ -18973,6 +20860,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -18980,6 +20868,7 @@
   M=D
   @SP
   M=M+1
+
   @27
   D=A
   @SP
@@ -18987,6 +20876,7 @@
   M=D
   @SP
   M=M+1
+
   @27
   D=A
   @SP
@@ -18994,6 +20884,7 @@
   M=D
   @SP
   M=M+1
+
   @54
   D=A
   @SP
@@ -19001,6 +20892,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -19008,6 +20900,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -19015,6 +20908,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.66
   D=A
   @SP
@@ -19065,6 +20959,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.66)
+
   @5
   D=A
   @TEMP
@@ -19077,6 +20972,7 @@
   @R13
   A=M
   M=D
+
   @98
   D=A
   @SP
@@ -19084,6 +20980,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @SP
@@ -19091,6 +20988,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @SP
@@ -19098,6 +20996,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @SP
@@ -19105,6 +21004,7 @@
   M=D
   @SP
   M=M+1
+
   @15
   D=A
   @SP
@@ -19112,6 +21012,7 @@
   M=D
   @SP
   M=M+1
+
   @27
   D=A
   @SP
@@ -19119,6 +21020,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -19126,6 +21028,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -19133,6 +21036,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -19140,6 +21044,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -19147,6 +21052,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -19154,6 +21060,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -19161,6 +21068,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.67
   D=A
   @SP
@@ -19211,6 +21119,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.67)
+
   @5
   D=A
   @TEMP
@@ -19223,6 +21132,7 @@
   @R13
   A=M
   M=D
+
   @99
   D=A
   @SP
@@ -19230,6 +21140,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -19237,6 +21148,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -19244,6 +21156,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -19251,6 +21164,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -19258,6 +21172,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -19265,6 +21180,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @SP
@@ -19272,6 +21188,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @SP
@@ -19279,6 +21196,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -19286,6 +21204,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -19293,6 +21212,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -19300,6 +21220,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -19307,6 +21228,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.68
   D=A
   @SP
@@ -19357,6 +21279,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.68)
+
   @5
   D=A
   @TEMP
@@ -19369,6 +21292,7 @@
   @R13
   A=M
   M=D
+
   @100
   D=A
   @SP
@@ -19376,6 +21300,7 @@
   M=D
   @SP
   M=M+1
+
   @48
   D=A
   @SP
@@ -19383,6 +21308,7 @@
   M=D
   @SP
   M=M+1
+
   @48
   D=A
   @SP
@@ -19390,6 +21316,7 @@
   M=D
   @SP
   M=M+1
+
   @48
   D=A
   @SP
@@ -19397,6 +21324,7 @@
   M=D
   @SP
   M=M+1
+
   @60
   D=A
   @SP
@@ -19404,6 +21332,7 @@
   M=D
   @SP
   M=M+1
+
   @54
   D=A
   @SP
@@ -19411,6 +21340,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -19418,6 +21348,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -19425,6 +21356,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -19432,6 +21364,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -19439,6 +21372,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -19446,6 +21380,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -19453,6 +21388,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.69
   D=A
   @SP
@@ -19503,6 +21439,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.69)
+
   @5
   D=A
   @TEMP
@@ -19515,6 +21452,7 @@
   @R13
   A=M
   M=D
+
   @101
   D=A
   @SP
@@ -19522,6 +21460,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -19529,6 +21468,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -19536,6 +21476,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -19543,6 +21484,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -19550,6 +21492,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -19557,6 +21500,7 @@
   M=D
   @SP
   M=M+1
+
   @63
   D=A
   @SP
@@ -19564,6 +21508,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @SP
@@ -19571,6 +21516,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -19578,6 +21524,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -19585,6 +21532,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -19592,6 +21540,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -19599,6 +21548,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.70
   D=A
   @SP
@@ -19649,6 +21599,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.70)
+
   @5
   D=A
   @TEMP
@@ -19661,6 +21612,7 @@
   @R13
   A=M
   M=D
+
   @102
   D=A
   @SP
@@ -19668,6 +21620,7 @@
   M=D
   @SP
   M=M+1
+
   @28
   D=A
   @SP
@@ -19675,6 +21628,7 @@
   M=D
   @SP
   M=M+1
+
   @54
   D=A
   @SP
@@ -19682,6 +21636,7 @@
   M=D
   @SP
   M=M+1
+
   @38
   D=A
   @SP
@@ -19689,6 +21644,7 @@
   M=D
   @SP
   M=M+1
+
   @6
   D=A
   @SP
@@ -19696,6 +21652,7 @@
   M=D
   @SP
   M=M+1
+
   @15
   D=A
   @SP
@@ -19703,6 +21660,7 @@
   M=D
   @SP
   M=M+1
+
   @6
   D=A
   @SP
@@ -19710,6 +21668,7 @@
   M=D
   @SP
   M=M+1
+
   @6
   D=A
   @SP
@@ -19717,6 +21676,7 @@
   M=D
   @SP
   M=M+1
+
   @6
   D=A
   @SP
@@ -19724,6 +21684,7 @@
   M=D
   @SP
   M=M+1
+
   @15
   D=A
   @SP
@@ -19731,6 +21692,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -19738,6 +21700,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -19745,6 +21708,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.71
   D=A
   @SP
@@ -19795,6 +21759,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.71)
+
   @5
   D=A
   @TEMP
@@ -19807,6 +21772,7 @@
   @R13
   A=M
   M=D
+
   @103
   D=A
   @SP
@@ -19814,6 +21780,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -19821,6 +21788,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -19828,6 +21796,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -19835,6 +21804,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -19842,6 +21812,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -19849,6 +21820,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -19856,6 +21828,7 @@
   M=D
   @SP
   M=M+1
+
   @62
   D=A
   @SP
@@ -19863,6 +21836,7 @@
   M=D
   @SP
   M=M+1
+
   @48
   D=A
   @SP
@@ -19870,6 +21844,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -19877,6 +21852,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -19884,6 +21860,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -19891,6 +21868,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.72
   D=A
   @SP
@@ -19941,6 +21919,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.72)
+
   @5
   D=A
   @TEMP
@@ -19953,6 +21932,7 @@
   @R13
   A=M
   M=D
+
   @104
   D=A
   @SP
@@ -19960,6 +21940,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @SP
@@ -19967,6 +21948,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @SP
@@ -19974,6 +21956,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @SP
@@ -19981,6 +21964,7 @@
   M=D
   @SP
   M=M+1
+
   @27
   D=A
   @SP
@@ -19988,6 +21972,7 @@
   M=D
   @SP
   M=M+1
+
   @55
   D=A
   @SP
@@ -19995,6 +21980,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -20002,6 +21988,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -20009,6 +21996,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -20016,6 +22004,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -20023,6 +22012,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -20030,6 +22020,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -20037,6 +22028,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.73
   D=A
   @SP
@@ -20087,6 +22079,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.73)
+
   @5
   D=A
   @TEMP
@@ -20099,6 +22092,7 @@
   @R13
   A=M
   M=D
+
   @105
   D=A
   @SP
@@ -20106,6 +22100,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -20113,6 +22108,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -20120,6 +22116,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -20127,6 +22124,7 @@
   M=D
   @SP
   M=M+1
+
   @14
   D=A
   @SP
@@ -20134,6 +22132,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -20141,6 +22140,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -20148,6 +22148,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -20155,6 +22156,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -20162,6 +22164,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -20169,6 +22172,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -20176,6 +22180,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -20183,6 +22188,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.74
   D=A
   @SP
@@ -20233,6 +22239,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.74)
+
   @5
   D=A
   @TEMP
@@ -20245,6 +22252,7 @@
   @R13
   A=M
   M=D
+
   @106
   D=A
   @SP
@@ -20252,6 +22260,7 @@
   M=D
   @SP
   M=M+1
+
   @48
   D=A
   @SP
@@ -20259,6 +22268,7 @@
   M=D
   @SP
   M=M+1
+
   @48
   D=A
   @SP
@@ -20266,6 +22276,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -20273,6 +22284,7 @@
   M=D
   @SP
   M=M+1
+
   @56
   D=A
   @SP
@@ -20280,6 +22292,7 @@
   M=D
   @SP
   M=M+1
+
   @48
   D=A
   @SP
@@ -20287,6 +22300,7 @@
   M=D
   @SP
   M=M+1
+
   @48
   D=A
   @SP
@@ -20294,6 +22308,7 @@
   M=D
   @SP
   M=M+1
+
   @48
   D=A
   @SP
@@ -20301,6 +22316,7 @@
   M=D
   @SP
   M=M+1
+
   @48
   D=A
   @SP
@@ -20308,6 +22324,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -20315,6 +22332,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -20322,6 +22340,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -20329,6 +22348,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.75
   D=A
   @SP
@@ -20379,6 +22399,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.75)
+
   @5
   D=A
   @TEMP
@@ -20391,6 +22412,7 @@
   @R13
   A=M
   M=D
+
   @107
   D=A
   @SP
@@ -20398,6 +22420,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @SP
@@ -20405,6 +22428,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @SP
@@ -20412,6 +22436,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @SP
@@ -20419,6 +22444,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -20426,6 +22452,7 @@
   M=D
   @SP
   M=M+1
+
   @27
   D=A
   @SP
@@ -20433,6 +22460,7 @@
   M=D
   @SP
   M=M+1
+
   @15
   D=A
   @SP
@@ -20440,6 +22468,7 @@
   M=D
   @SP
   M=M+1
+
   @15
   D=A
   @SP
@@ -20447,6 +22476,7 @@
   M=D
   @SP
   M=M+1
+
   @27
   D=A
   @SP
@@ -20454,6 +22484,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -20461,6 +22492,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -20468,6 +22500,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -20475,6 +22508,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.76
   D=A
   @SP
@@ -20525,6 +22559,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.76)
+
   @5
   D=A
   @TEMP
@@ -20537,6 +22572,7 @@
   @R13
   A=M
   M=D
+
   @108
   D=A
   @SP
@@ -20544,6 +22580,7 @@
   M=D
   @SP
   M=M+1
+
   @14
   D=A
   @SP
@@ -20551,6 +22588,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -20558,6 +22596,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -20565,6 +22604,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -20572,6 +22612,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -20579,6 +22620,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -20586,6 +22628,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -20593,6 +22636,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -20600,6 +22644,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -20607,6 +22652,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -20614,6 +22660,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -20621,6 +22668,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.77
   D=A
   @SP
@@ -20671,6 +22719,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.77)
+
   @5
   D=A
   @TEMP
@@ -20683,6 +22732,7 @@
   @R13
   A=M
   M=D
+
   @109
   D=A
   @SP
@@ -20690,6 +22740,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -20697,6 +22748,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -20704,6 +22756,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -20711,6 +22764,7 @@
   M=D
   @SP
   M=M+1
+
   @29
   D=A
   @SP
@@ -20718,6 +22772,7 @@
   M=D
   @SP
   M=M+1
+
   @63
   D=A
   @SP
@@ -20725,6 +22780,7 @@
   M=D
   @SP
   M=M+1
+
   @43
   D=A
   @SP
@@ -20732,6 +22788,7 @@
   M=D
   @SP
   M=M+1
+
   @43
   D=A
   @SP
@@ -20739,6 +22796,7 @@
   M=D
   @SP
   M=M+1
+
   @43
   D=A
   @SP
@@ -20746,6 +22804,7 @@
   M=D
   @SP
   M=M+1
+
   @43
   D=A
   @SP
@@ -20753,6 +22812,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -20760,6 +22820,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -20767,6 +22828,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.78
   D=A
   @SP
@@ -20817,6 +22879,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.78)
+
   @5
   D=A
   @TEMP
@@ -20829,6 +22892,7 @@
   @R13
   A=M
   M=D
+
   @110
   D=A
   @SP
@@ -20836,6 +22900,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -20843,6 +22908,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -20850,6 +22916,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -20857,6 +22924,7 @@
   M=D
   @SP
   M=M+1
+
   @29
   D=A
   @SP
@@ -20864,6 +22932,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -20871,6 +22940,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -20878,6 +22948,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -20885,6 +22956,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -20892,6 +22964,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -20899,6 +22972,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -20906,6 +22980,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -20913,6 +22988,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.79
   D=A
   @SP
@@ -20963,6 +23039,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.79)
+
   @5
   D=A
   @TEMP
@@ -20975,6 +23052,7 @@
   @R13
   A=M
   M=D
+
   @111
   D=A
   @SP
@@ -20982,6 +23060,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -20989,6 +23068,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -20996,6 +23076,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -21003,6 +23084,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -21010,6 +23092,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -21017,6 +23100,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -21024,6 +23108,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -21031,6 +23116,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -21038,6 +23124,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -21045,6 +23132,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -21052,6 +23140,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -21059,6 +23148,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.80
   D=A
   @SP
@@ -21109,6 +23199,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.80)
+
   @5
   D=A
   @TEMP
@@ -21121,6 +23212,7 @@
   @R13
   A=M
   M=D
+
   @112
   D=A
   @SP
@@ -21128,6 +23220,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -21135,6 +23228,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -21142,6 +23236,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -21149,6 +23244,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -21156,6 +23252,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -21163,6 +23260,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -21170,6 +23268,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -21177,6 +23276,7 @@
   M=D
   @SP
   M=M+1
+
   @31
   D=A
   @SP
@@ -21184,6 +23284,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @SP
@@ -21191,6 +23292,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @SP
@@ -21198,6 +23300,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -21205,6 +23308,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.81
   D=A
   @SP
@@ -21255,6 +23359,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.81)
+
   @5
   D=A
   @TEMP
@@ -21267,6 +23372,7 @@
   @R13
   A=M
   M=D
+
   @113
   D=A
   @SP
@@ -21274,6 +23380,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -21281,6 +23388,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -21288,6 +23396,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -21295,6 +23404,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -21302,6 +23412,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -21309,6 +23420,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -21316,6 +23428,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -21323,6 +23436,7 @@
   M=D
   @SP
   M=M+1
+
   @62
   D=A
   @SP
@@ -21330,6 +23444,7 @@
   M=D
   @SP
   M=M+1
+
   @48
   D=A
   @SP
@@ -21337,6 +23452,7 @@
   M=D
   @SP
   M=M+1
+
   @48
   D=A
   @SP
@@ -21344,6 +23460,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -21351,6 +23468,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.82
   D=A
   @SP
@@ -21401,6 +23519,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.82)
+
   @5
   D=A
   @TEMP
@@ -21413,6 +23532,7 @@
   @R13
   A=M
   M=D
+
   @114
   D=A
   @SP
@@ -21420,6 +23540,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -21427,6 +23548,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -21434,6 +23556,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -21441,6 +23564,7 @@
   M=D
   @SP
   M=M+1
+
   @29
   D=A
   @SP
@@ -21448,6 +23572,7 @@
   M=D
   @SP
   M=M+1
+
   @55
   D=A
   @SP
@@ -21455,6 +23580,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -21462,6 +23588,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @SP
@@ -21469,6 +23596,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @SP
@@ -21476,6 +23604,7 @@
   M=D
   @SP
   M=M+1
+
   @7
   D=A
   @SP
@@ -21483,6 +23612,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -21490,6 +23620,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -21497,6 +23628,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.83
   D=A
   @SP
@@ -21547,6 +23679,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.83)
+
   @5
   D=A
   @TEMP
@@ -21559,6 +23692,7 @@
   @R13
   A=M
   M=D
+
   @115
   D=A
   @SP
@@ -21566,6 +23700,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -21573,6 +23708,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -21580,6 +23716,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -21587,6 +23724,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -21594,6 +23732,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -21601,6 +23740,7 @@
   M=D
   @SP
   M=M+1
+
   @6
   D=A
   @SP
@@ -21608,6 +23748,7 @@
   M=D
   @SP
   M=M+1
+
   @24
   D=A
   @SP
@@ -21615,6 +23756,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -21622,6 +23764,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -21629,6 +23772,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -21636,6 +23780,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -21643,6 +23788,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.84
   D=A
   @SP
@@ -21693,6 +23839,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.84)
+
   @5
   D=A
   @TEMP
@@ -21705,6 +23852,7 @@
   @R13
   A=M
   M=D
+
   @116
   D=A
   @SP
@@ -21712,6 +23860,7 @@
   M=D
   @SP
   M=M+1
+
   @4
   D=A
   @SP
@@ -21719,6 +23868,7 @@
   M=D
   @SP
   M=M+1
+
   @6
   D=A
   @SP
@@ -21726,6 +23876,7 @@
   M=D
   @SP
   M=M+1
+
   @6
   D=A
   @SP
@@ -21733,6 +23884,7 @@
   M=D
   @SP
   M=M+1
+
   @15
   D=A
   @SP
@@ -21740,6 +23892,7 @@
   M=D
   @SP
   M=M+1
+
   @6
   D=A
   @SP
@@ -21747,6 +23900,7 @@
   M=D
   @SP
   M=M+1
+
   @6
   D=A
   @SP
@@ -21754,6 +23908,7 @@
   M=D
   @SP
   M=M+1
+
   @6
   D=A
   @SP
@@ -21761,6 +23916,7 @@
   M=D
   @SP
   M=M+1
+
   @54
   D=A
   @SP
@@ -21768,6 +23924,7 @@
   M=D
   @SP
   M=M+1
+
   @28
   D=A
   @SP
@@ -21775,6 +23932,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -21782,6 +23940,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -21789,6 +23948,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.85
   D=A
   @SP
@@ -21839,6 +23999,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.85)
+
   @5
   D=A
   @TEMP
@@ -21851,6 +24012,7 @@
   @R13
   A=M
   M=D
+
   @117
   D=A
   @SP
@@ -21858,6 +24020,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -21865,6 +24028,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -21872,6 +24036,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -21879,6 +24044,7 @@
   M=D
   @SP
   M=M+1
+
   @27
   D=A
   @SP
@@ -21886,6 +24052,7 @@
   M=D
   @SP
   M=M+1
+
   @27
   D=A
   @SP
@@ -21893,6 +24060,7 @@
   M=D
   @SP
   M=M+1
+
   @27
   D=A
   @SP
@@ -21900,6 +24068,7 @@
   M=D
   @SP
   M=M+1
+
   @27
   D=A
   @SP
@@ -21907,6 +24076,7 @@
   M=D
   @SP
   M=M+1
+
   @27
   D=A
   @SP
@@ -21914,6 +24084,7 @@
   M=D
   @SP
   M=M+1
+
   @54
   D=A
   @SP
@@ -21921,6 +24092,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -21928,6 +24100,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -21935,6 +24108,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.86
   D=A
   @SP
@@ -21985,6 +24159,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.86)
+
   @5
   D=A
   @TEMP
@@ -21997,6 +24172,7 @@
   @R13
   A=M
   M=D
+
   @118
   D=A
   @SP
@@ -22004,6 +24180,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -22011,6 +24188,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -22018,6 +24196,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -22025,6 +24204,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -22032,6 +24212,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -22039,6 +24220,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -22046,6 +24228,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -22053,6 +24236,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -22060,6 +24244,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -22067,6 +24252,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -22074,6 +24260,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -22081,6 +24268,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.87
   D=A
   @SP
@@ -22131,6 +24319,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.87)
+
   @5
   D=A
   @TEMP
@@ -22143,6 +24332,7 @@
   @R13
   A=M
   M=D
+
   @119
   D=A
   @SP
@@ -22150,6 +24340,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -22157,6 +24348,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -22164,6 +24356,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -22171,6 +24364,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -22178,6 +24372,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -22185,6 +24380,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -22192,6 +24388,7 @@
   M=D
   @SP
   M=M+1
+
   @63
   D=A
   @SP
@@ -22199,6 +24396,7 @@
   M=D
   @SP
   M=M+1
+
   @63
   D=A
   @SP
@@ -22206,6 +24404,7 @@
   M=D
   @SP
   M=M+1
+
   @18
   D=A
   @SP
@@ -22213,6 +24412,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -22220,6 +24420,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -22227,6 +24428,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.88
   D=A
   @SP
@@ -22277,6 +24479,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.88)
+
   @5
   D=A
   @TEMP
@@ -22289,6 +24492,7 @@
   @R13
   A=M
   M=D
+
   @120
   D=A
   @SP
@@ -22296,6 +24500,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -22303,6 +24508,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -22310,6 +24516,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -22317,6 +24524,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -22324,6 +24532,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -22331,6 +24540,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -22338,6 +24548,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -22345,6 +24556,7 @@
   M=D
   @SP
   M=M+1
+
   @30
   D=A
   @SP
@@ -22352,6 +24564,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -22359,6 +24572,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -22366,6 +24580,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -22373,6 +24588,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.89
   D=A
   @SP
@@ -22423,6 +24639,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.89)
+
   @5
   D=A
   @TEMP
@@ -22435,6 +24652,7 @@
   @R13
   A=M
   M=D
+
   @121
   D=A
   @SP
@@ -22442,6 +24660,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -22449,6 +24668,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -22456,6 +24676,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -22463,6 +24684,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -22470,6 +24692,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -22477,6 +24700,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -22484,6 +24708,7 @@
   M=D
   @SP
   M=M+1
+
   @62
   D=A
   @SP
@@ -22491,6 +24716,7 @@
   M=D
   @SP
   M=M+1
+
   @48
   D=A
   @SP
@@ -22498,6 +24724,7 @@
   M=D
   @SP
   M=M+1
+
   @24
   D=A
   @SP
@@ -22505,6 +24732,7 @@
   M=D
   @SP
   M=M+1
+
   @15
   D=A
   @SP
@@ -22512,6 +24740,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -22519,6 +24748,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.90
   D=A
   @SP
@@ -22569,6 +24799,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.90)
+
   @5
   D=A
   @TEMP
@@ -22581,6 +24812,7 @@
   @R13
   A=M
   M=D
+
   @122
   D=A
   @SP
@@ -22588,6 +24820,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -22595,6 +24828,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -22602,6 +24836,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -22609,6 +24844,7 @@
   M=D
   @SP
   M=M+1
+
   @63
   D=A
   @SP
@@ -22616,6 +24852,7 @@
   M=D
   @SP
   M=M+1
+
   @27
   D=A
   @SP
@@ -22623,6 +24860,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -22630,6 +24868,7 @@
   M=D
   @SP
   M=M+1
+
   @6
   D=A
   @SP
@@ -22637,6 +24876,7 @@
   M=D
   @SP
   M=M+1
+
   @51
   D=A
   @SP
@@ -22644,6 +24884,7 @@
   M=D
   @SP
   M=M+1
+
   @63
   D=A
   @SP
@@ -22651,6 +24892,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -22658,6 +24900,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -22665,6 +24908,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.91
   D=A
   @SP
@@ -22715,6 +24959,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.91)
+
   @5
   D=A
   @TEMP
@@ -22727,6 +24972,7 @@
   @R13
   A=M
   M=D
+
   @123
   D=A
   @SP
@@ -22734,6 +24980,7 @@
   M=D
   @SP
   M=M+1
+
   @56
   D=A
   @SP
@@ -22741,6 +24988,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -22748,6 +24996,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -22755,6 +25004,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -22762,6 +25012,7 @@
   M=D
   @SP
   M=M+1
+
   @7
   D=A
   @SP
@@ -22769,6 +25020,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -22776,6 +25028,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -22783,6 +25036,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -22790,6 +25044,7 @@
   M=D
   @SP
   M=M+1
+
   @56
   D=A
   @SP
@@ -22797,6 +25052,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -22804,6 +25060,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -22811,6 +25068,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.92
   D=A
   @SP
@@ -22861,6 +25119,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.92)
+
   @5
   D=A
   @TEMP
@@ -22873,6 +25132,7 @@
   @R13
   A=M
   M=D
+
   @124
   D=A
   @SP
@@ -22880,6 +25140,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -22887,6 +25148,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -22894,6 +25156,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -22901,6 +25164,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -22908,6 +25172,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -22915,6 +25180,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -22922,6 +25188,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -22929,6 +25196,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -22936,6 +25204,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -22943,6 +25212,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -22950,6 +25220,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -22957,6 +25228,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.93
   D=A
   @SP
@@ -23007,6 +25279,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.93)
+
   @5
   D=A
   @TEMP
@@ -23019,6 +25292,7 @@
   @R13
   A=M
   M=D
+
   @125
   D=A
   @SP
@@ -23026,6 +25300,7 @@
   M=D
   @SP
   M=M+1
+
   @7
   D=A
   @SP
@@ -23033,6 +25308,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -23040,6 +25316,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -23047,6 +25324,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -23054,6 +25332,7 @@
   M=D
   @SP
   M=M+1
+
   @56
   D=A
   @SP
@@ -23061,6 +25340,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -23068,6 +25348,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -23075,6 +25356,7 @@
   M=D
   @SP
   M=M+1
+
   @12
   D=A
   @SP
@@ -23082,6 +25364,7 @@
   M=D
   @SP
   M=M+1
+
   @7
   D=A
   @SP
@@ -23089,6 +25372,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -23096,6 +25380,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -23103,6 +25388,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.94
   D=A
   @SP
@@ -23153,6 +25439,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.94)
+
   @5
   D=A
   @TEMP
@@ -23165,6 +25452,7 @@
   @R13
   A=M
   M=D
+
   @126
   D=A
   @SP
@@ -23172,6 +25460,7 @@
   M=D
   @SP
   M=M+1
+
   @38
   D=A
   @SP
@@ -23179,6 +25468,7 @@
   M=D
   @SP
   M=M+1
+
   @45
   D=A
   @SP
@@ -23186,6 +25476,7 @@
   M=D
   @SP
   M=M+1
+
   @25
   D=A
   @SP
@@ -23193,6 +25484,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -23200,6 +25492,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -23207,6 +25500,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -23214,6 +25508,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -23221,6 +25516,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -23228,6 +25524,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -23235,6 +25532,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -23242,6 +25540,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -23249,6 +25548,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.create$ret.95
   D=A
   @SP
@@ -23299,6 +25599,7 @@
   @Output.create
   0;JMP
 (Output.create$ret.95)
+
   @5
   D=A
   @TEMP
@@ -23311,6 +25612,7 @@
   @R13
   A=M
   M=D
+
   @0
   D=A
   @SP
@@ -23318,15 +25620,17 @@
   M=D
   @SP
   M=M+1
+
   @FUNCTION_RETURN
   0;JMP
+
   (Output.create)
   @SP
   A=M
   M=0
-  A=A+1
   @SP
-  M=A
+  M=M+1
+
   @11
   D=A
   @SP
@@ -23334,6 +25638,7 @@
   M=D
   @SP
   M=M+1
+
   @Array.new$ret.3
   D=A
   @SP
@@ -23384,6 +25689,7 @@
   @Array.new
   0;JMP
 (Array.new$ret.3)
+
   @0
   D=A
   @LCL
@@ -23396,6 +25702,7 @@
   @R13
   A=M
   M=D
+
   @0
   D=A
   @ARG
@@ -23406,6 +25713,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.5
   D=M
   @SP
@@ -23413,11 +25721,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @0
   D=A
   @LCL
@@ -23428,6 +25738,7 @@
   M=D
   @SP
   M=M+1
+
   @5
   D=A
   @TEMP
@@ -23440,11 +25751,13 @@
   @R13
   A=M
   M=D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @5
   D=A
   @TEMP
@@ -23455,6 +25768,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @THAT
@@ -23467,6 +25781,7 @@
   @R13
   A=M
   M=D
+
   @0
   D=A
   @SP
@@ -23474,6 +25789,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -23484,11 +25800,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @1
   D=A
   @ARG
@@ -23499,6 +25817,7 @@
   M=D
   @SP
   M=M+1
+
   @5
   D=A
   @TEMP
@@ -23511,11 +25830,13 @@
   @R13
   A=M
   M=D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @5
   D=A
   @TEMP
@@ -23526,6 +25847,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @THAT
@@ -23538,6 +25860,7 @@
   @R13
   A=M
   M=D
+
   @1
   D=A
   @SP
@@ -23545,6 +25868,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -23555,11 +25879,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @2
   D=A
   @ARG
@@ -23570,6 +25896,7 @@
   M=D
   @SP
   M=M+1
+
   @5
   D=A
   @TEMP
@@ -23582,11 +25909,13 @@
   @R13
   A=M
   M=D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @5
   D=A
   @TEMP
@@ -23597,6 +25926,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @THAT
@@ -23609,6 +25939,7 @@
   @R13
   A=M
   M=D
+
   @2
   D=A
   @SP
@@ -23616,6 +25947,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -23626,11 +25958,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @3
   D=A
   @ARG
@@ -23641,6 +25975,7 @@
   M=D
   @SP
   M=M+1
+
   @5
   D=A
   @TEMP
@@ -23653,11 +25988,13 @@
   @R13
   A=M
   M=D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @5
   D=A
   @TEMP
@@ -23668,6 +26005,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @THAT
@@ -23680,6 +26018,7 @@
   @R13
   A=M
   M=D
+
   @3
   D=A
   @SP
@@ -23687,6 +26026,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -23697,11 +26037,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @4
   D=A
   @ARG
@@ -23712,6 +26054,7 @@
   M=D
   @SP
   M=M+1
+
   @5
   D=A
   @TEMP
@@ -23724,11 +26067,13 @@
   @R13
   A=M
   M=D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @5
   D=A
   @TEMP
@@ -23739,6 +26084,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @THAT
@@ -23751,6 +26097,7 @@
   @R13
   A=M
   M=D
+
   @4
   D=A
   @SP
@@ -23758,6 +26105,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -23768,11 +26116,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @5
   D=A
   @ARG
@@ -23783,6 +26133,7 @@
   M=D
   @SP
   M=M+1
+
   @5
   D=A
   @TEMP
@@ -23795,11 +26146,13 @@
   @R13
   A=M
   M=D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @5
   D=A
   @TEMP
@@ -23810,6 +26163,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @THAT
@@ -23822,6 +26176,7 @@
   @R13
   A=M
   M=D
+
   @5
   D=A
   @SP
@@ -23829,6 +26184,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -23839,11 +26195,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @6
   D=A
   @ARG
@@ -23854,6 +26212,7 @@
   M=D
   @SP
   M=M+1
+
   @5
   D=A
   @TEMP
@@ -23866,11 +26225,13 @@
   @R13
   A=M
   M=D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @5
   D=A
   @TEMP
@@ -23881,6 +26242,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @THAT
@@ -23893,6 +26255,7 @@
   @R13
   A=M
   M=D
+
   @6
   D=A
   @SP
@@ -23900,6 +26263,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -23910,11 +26274,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @7
   D=A
   @ARG
@@ -23925,6 +26291,7 @@
   M=D
   @SP
   M=M+1
+
   @5
   D=A
   @TEMP
@@ -23937,11 +26304,13 @@
   @R13
   A=M
   M=D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @5
   D=A
   @TEMP
@@ -23952,6 +26321,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @THAT
@@ -23964,6 +26334,7 @@
   @R13
   A=M
   M=D
+
   @7
   D=A
   @SP
@@ -23971,6 +26342,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -23981,11 +26353,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @8
   D=A
   @ARG
@@ -23996,6 +26370,7 @@
   M=D
   @SP
   M=M+1
+
   @5
   D=A
   @TEMP
@@ -24008,11 +26383,13 @@
   @R13
   A=M
   M=D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @5
   D=A
   @TEMP
@@ -24023,6 +26400,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @THAT
@@ -24035,6 +26413,7 @@
   @R13
   A=M
   M=D
+
   @8
   D=A
   @SP
@@ -24042,6 +26421,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -24052,11 +26432,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @9
   D=A
   @ARG
@@ -24067,6 +26449,7 @@
   M=D
   @SP
   M=M+1
+
   @5
   D=A
   @TEMP
@@ -24079,11 +26462,13 @@
   @R13
   A=M
   M=D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @5
   D=A
   @TEMP
@@ -24094,6 +26479,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @THAT
@@ -24106,6 +26492,7 @@
   @R13
   A=M
   M=D
+
   @9
   D=A
   @SP
@@ -24113,6 +26500,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -24123,11 +26511,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @10
   D=A
   @ARG
@@ -24138,6 +26528,7 @@
   M=D
   @SP
   M=M+1
+
   @5
   D=A
   @TEMP
@@ -24150,11 +26541,13 @@
   @R13
   A=M
   M=D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @5
   D=A
   @TEMP
@@ -24165,6 +26558,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @THAT
@@ -24177,6 +26571,7 @@
   @R13
   A=M
   M=D
+
   @10
   D=A
   @SP
@@ -24184,6 +26579,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -24194,11 +26590,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @11
   D=A
   @ARG
@@ -24209,6 +26607,7 @@
   M=D
   @SP
   M=M+1
+
   @5
   D=A
   @TEMP
@@ -24221,11 +26620,13 @@
   @R13
   A=M
   M=D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @5
   D=A
   @TEMP
@@ -24236,6 +26637,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @THAT
@@ -24248,6 +26650,7 @@
   @R13
   A=M
   M=D
+
   @0
   D=A
   @SP
@@ -24255,21 +26658,32 @@
   M=D
   @SP
   M=M+1
+
   @FUNCTION_RETURN
   0;JMP
+
   (Output.createShiftedMap)
   @SP
   A=M
   M=0
-  A=A+1
-  M=0
-  A=A+1
-  M=0
-  A=A+1
-  M=0
-  A=A+1
   @SP
-  M=A
+  M=M+1
+  @SP
+  A=M
+  M=0
+  @SP
+  M=M+1
+  @SP
+  A=M
+  M=0
+  @SP
+  M=M+1
+  @SP
+  A=M
+  M=0
+  @SP
+  M=M+1
+
   @127
   D=A
   @SP
@@ -24277,6 +26691,7 @@
   M=D
   @SP
   M=M+1
+
   @Array.new$ret.4
   D=A
   @SP
@@ -24327,11 +26742,13 @@
   @Array.new
   0;JMP
 (Array.new$ret.4)
+
   @SP
   AM=M-1
   D=M
   @Output.6
   M=D
+
   @0
   D=A
   @SP
@@ -24339,6 +26756,7 @@
   M=D
   @SP
   M=M+1
+
   @2
   D=A
   @LCL
@@ -24351,7 +26769,9 @@
   @R13
   A=M
   M=D
+
   (WHILE_EXP0)
+
   @2
   D=A
   @LCL
@@ -24362,6 +26782,7 @@
   M=D
   @SP
   M=M+1
+
   @127
   D=A
   @SP
@@ -24369,6 +26790,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -24386,14 +26808,17 @@
   A=M-1
   M=-1
 (CONTINUE2422)
+
   @SP
   A=M-1
   M=!M
+
   @SP
   AM=M-1
   D=M
   @WHILE_END0
   D;JNE
+
   @2
   D=A
   @LCL
@@ -24404,6 +26829,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.5
   D=M
   @SP
@@ -24411,16 +26837,19 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @0
   D=A
   @THAT
@@ -24431,6 +26860,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -24443,6 +26873,7 @@
   @R13
   A=M
   M=D
+
   @11
   D=A
   @SP
@@ -24450,6 +26881,7 @@
   M=D
   @SP
   M=M+1
+
   @Array.new$ret.5
   D=A
   @SP
@@ -24500,6 +26932,7 @@
   @Array.new
   0;JMP
 (Array.new$ret.5)
+
   @1
   D=A
   @LCL
@@ -24512,6 +26945,7 @@
   @R13
   A=M
   M=D
+
   @2
   D=A
   @LCL
@@ -24522,6 +26956,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.6
   D=M
   @SP
@@ -24529,11 +26964,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @1
   D=A
   @LCL
@@ -24544,6 +26981,7 @@
   M=D
   @SP
   M=M+1
+
   @5
   D=A
   @TEMP
@@ -24556,11 +26994,13 @@
   @R13
   A=M
   M=D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @5
   D=A
   @TEMP
@@ -24571,6 +27011,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @THAT
@@ -24583,6 +27024,7 @@
   @R13
   A=M
   M=D
+
   @0
   D=A
   @SP
@@ -24590,6 +27032,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @LCL
@@ -24602,7 +27045,9 @@
   @R13
   A=M
   M=D
+
   (WHILE_EXP1)
+
   @3
   D=A
   @LCL
@@ -24613,6 +27058,7 @@
   M=D
   @SP
   M=M+1
+
   @11
   D=A
   @SP
@@ -24620,6 +27066,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -24637,14 +27084,17 @@
   A=M-1
   M=-1
 (CONTINUE2447)
+
   @SP
   A=M-1
   M=!M
+
   @SP
   AM=M-1
   D=M
   @WHILE_END1
   D;JNE
+
   @3
   D=A
   @LCL
@@ -24655,6 +27105,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @LCL
@@ -24665,11 +27116,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @3
   D=A
   @LCL
@@ -24680,6 +27133,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -24690,16 +27144,19 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @0
   D=A
   @THAT
@@ -24710,6 +27167,7 @@
   M=D
   @SP
   M=M+1
+
   @256
   D=A
   @SP
@@ -24717,6 +27175,7 @@
   M=D
   @SP
   M=M+1
+
   @Math.multiply$ret.1
   D=A
   @SP
@@ -24767,6 +27226,7 @@
   @Math.multiply
   0;JMP
 (Math.multiply$ret.1)
+
   @5
   D=A
   @TEMP
@@ -24779,11 +27239,13 @@
   @R13
   A=M
   M=D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @5
   D=A
   @TEMP
@@ -24794,6 +27256,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @THAT
@@ -24806,6 +27269,7 @@
   @R13
   A=M
   M=D
+
   @3
   D=A
   @LCL
@@ -24816,6 +27280,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @SP
@@ -24823,11 +27288,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @3
   D=A
   @LCL
@@ -24840,9 +27307,12 @@
   @R13
   A=M
   M=D
+
   @WHILE_EXP1
   0;JMP
+
   (WHILE_END1)
+
   @2
   D=A
   @LCL
@@ -24853,6 +27323,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -24860,6 +27331,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -24877,14 +27349,18 @@
   A=M-1
   M=-1
 (CONTINUE2472)
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE0
   D;JNE
+
   @IF_FALSE0
   0;JMP
+
   (IF_TRUE0)
+
   @32
   D=A
   @SP
@@ -24892,6 +27368,7 @@
   M=D
   @SP
   M=M+1
+
   @2
   D=A
   @LCL
@@ -24904,9 +27381,12 @@
   @R13
   A=M
   M=D
+
   @IF_END0
   0;JMP
+
   (IF_FALSE0)
+
   @2
   D=A
   @LCL
@@ -24917,6 +27397,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @SP
@@ -24924,11 +27405,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @2
   D=A
   @LCL
@@ -24941,10 +27424,14 @@
   @R13
   A=M
   M=D
+
   (IF_END0)
+
   @WHILE_EXP0
   0;JMP
+
   (WHILE_END0)
+
   @0
   D=A
   @SP
@@ -24952,15 +27439,17 @@
   M=D
   @SP
   M=M+1
+
   @FUNCTION_RETURN
   0;JMP
+
   (Output.getMap)
   @SP
   A=M
   M=0
-  A=A+1
   @SP
-  M=A
+  M=M+1
+
   @0
   D=A
   @ARG
@@ -24971,6 +27460,7 @@
   M=D
   @SP
   M=M+1
+
   @32
   D=A
   @SP
@@ -24978,6 +27468,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -24995,6 +27486,7 @@
   A=M-1
   M=-1
 (CONTINUE2492)
+
   @0
   D=A
   @ARG
@@ -25005,6 +27497,7 @@
   M=D
   @SP
   M=M+1
+
   @126
   D=A
   @SP
@@ -25012,6 +27505,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -25029,19 +27523,24 @@
   A=M-1
   M=-1
 (CONTINUE2495)
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M|D
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE0
   D;JNE
+
   @IF_FALSE0
   0;JMP
+
   (IF_TRUE0)
+
   @0
   D=A
   @SP
@@ -25049,6 +27548,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @ARG
@@ -25061,7 +27561,9 @@
   @R13
   A=M
   M=D
+
   (IF_FALSE0)
+
   @Output.2
   D=M
   @SP
@@ -25069,14 +27571,18 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE1
   D;JNE
+
   @IF_FALSE1
   0;JMP
+
   (IF_TRUE1)
+
   @0
   D=A
   @ARG
@@ -25087,6 +27593,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.5
   D=M
   @SP
@@ -25094,16 +27601,19 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @0
   D=A
   @THAT
@@ -25114,6 +27624,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -25126,9 +27637,12 @@
   @R13
   A=M
   M=D
+
   @IF_END1
   0;JMP
+
   (IF_FALSE1)
+
   @0
   D=A
   @ARG
@@ -25139,6 +27653,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.6
   D=M
   @SP
@@ -25146,16 +27661,19 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @0
   D=A
   @THAT
@@ -25166,6 +27684,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -25178,7 +27697,9 @@
   @R13
   A=M
   M=D
+
   (IF_END1)
+
   @0
   D=A
   @LCL
@@ -25189,21 +27710,32 @@
   M=D
   @SP
   M=M+1
+
   @FUNCTION_RETURN
   0;JMP
+
   (Output.drawChar)
   @SP
   A=M
   M=0
-  A=A+1
-  M=0
-  A=A+1
-  M=0
-  A=A+1
-  M=0
-  A=A+1
   @SP
-  M=A
+  M=M+1
+  @SP
+  A=M
+  M=0
+  @SP
+  M=M+1
+  @SP
+  A=M
+  M=0
+  @SP
+  M=M+1
+  @SP
+  A=M
+  M=0
+  @SP
+  M=M+1
+
   @0
   D=A
   @ARG
@@ -25214,6 +27746,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.getMap$ret.0
   D=A
   @SP
@@ -25264,6 +27797,7 @@
   @Output.getMap
   0;JMP
 (Output.getMap$ret.0)
+
   @2
   D=A
   @LCL
@@ -25276,6 +27810,7 @@
   @R13
   A=M
   M=D
+
   @Output.1
   D=M
   @SP
@@ -25283,6 +27818,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -25295,7 +27831,9 @@
   @R13
   A=M
   M=D
+
   (WHILE_EXP0)
+
   @1
   D=A
   @LCL
@@ -25306,6 +27844,7 @@
   M=D
   @SP
   M=M+1
+
   @11
   D=A
   @SP
@@ -25313,6 +27852,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -25330,14 +27870,17 @@
   A=M-1
   M=-1
 (CONTINUE2533)
+
   @SP
   A=M-1
   M=!M
+
   @SP
   AM=M-1
   D=M
   @WHILE_END0
   D;JNE
+
   @Output.2
   D=M
   @SP
@@ -25345,14 +27888,18 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE0
   D;JNE
+
   @IF_FALSE0
   0;JMP
+
   (IF_TRUE0)
+
   @0
   D=A
   @LCL
@@ -25363,6 +27910,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.4
   D=M
   @SP
@@ -25370,16 +27918,19 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @0
   D=A
   @THAT
@@ -25390,6 +27941,7 @@
   M=D
   @SP
   M=M+1
+
   @256
   D=A
   @SP
@@ -25397,14 +27949,17 @@
   M=D
   @SP
   M=M+1
+
   @SP
   A=M-1
   M=-M
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M&D
+
   @3
   D=A
   @LCL
@@ -25417,9 +27972,12 @@
   @R13
   A=M
   M=D
+
   @IF_END0
   0;JMP
+
   (IF_FALSE0)
+
   @0
   D=A
   @LCL
@@ -25430,6 +27988,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.4
   D=M
   @SP
@@ -25437,16 +27996,19 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @0
   D=A
   @THAT
@@ -25457,6 +28019,7 @@
   M=D
   @SP
   M=M+1
+
   @255
   D=A
   @SP
@@ -25464,11 +28027,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M&D
+
   @3
   D=A
   @LCL
@@ -25481,7 +28046,9 @@
   @R13
   A=M
   M=D
+
   (IF_END0)
+
   @0
   D=A
   @LCL
@@ -25492,6 +28059,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.4
   D=M
   @SP
@@ -25499,11 +28067,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @1
   D=A
   @LCL
@@ -25514,6 +28084,7 @@
   M=D
   @SP
   M=M+1
+
   @2
   D=A
   @LCL
@@ -25524,16 +28095,19 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @0
   D=A
   @THAT
@@ -25544,6 +28118,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @LCL
@@ -25554,11 +28129,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M|D
+
   @5
   D=A
   @TEMP
@@ -25571,11 +28148,13 @@
   @R13
   A=M
   M=D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @5
   D=A
   @TEMP
@@ -25586,6 +28165,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @THAT
@@ -25598,6 +28178,7 @@
   @R13
   A=M
   M=D
+
   @0
   D=A
   @LCL
@@ -25608,6 +28189,7 @@
   M=D
   @SP
   M=M+1
+
   @32
   D=A
   @SP
@@ -25615,11 +28197,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @0
   D=A
   @LCL
@@ -25632,6 +28216,7 @@
   @R13
   A=M
   M=D
+
   @1
   D=A
   @LCL
@@ -25642,6 +28227,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @SP
@@ -25649,11 +28235,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @1
   D=A
   @LCL
@@ -25666,9 +28254,12 @@
   @R13
   A=M
   M=D
+
   @WHILE_EXP0
   0;JMP
+
   (WHILE_END0)
+
   @0
   D=A
   @SP
@@ -25676,13 +28267,12 @@
   M=D
   @SP
   M=M+1
+
   @FUNCTION_RETURN
   0;JMP
+
   (Output.moveCursor)
-  @SP
-  A=M
-  @SP
-  M=A
+
   @0
   D=A
   @ARG
@@ -25693,6 +28283,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -25700,6 +28291,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -25717,6 +28309,7 @@
   A=M-1
   M=-1
 (CONTINUE2589)
+
   @0
   D=A
   @ARG
@@ -25727,6 +28320,7 @@
   M=D
   @SP
   M=M+1
+
   @22
   D=A
   @SP
@@ -25734,6 +28328,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -25751,11 +28346,13 @@
   A=M-1
   M=-1
 (CONTINUE2592)
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M|D
+
   @1
   D=A
   @ARG
@@ -25766,6 +28363,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -25773,6 +28371,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -25790,11 +28389,13 @@
   A=M-1
   M=-1
 (CONTINUE2596)
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M|D
+
   @1
   D=A
   @ARG
@@ -25805,6 +28406,7 @@
   M=D
   @SP
   M=M+1
+
   @63
   D=A
   @SP
@@ -25812,6 +28414,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -25829,19 +28432,24 @@
   A=M-1
   M=-1
 (CONTINUE2600)
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M|D
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE0
   D;JNE
+
   @IF_FALSE0
   0;JMP
+
   (IF_TRUE0)
+
   @20
   D=A
   @SP
@@ -25849,6 +28457,7 @@
   M=D
   @SP
   M=M+1
+
   @Sys.error$ret.5
   D=A
   @SP
@@ -25899,6 +28508,7 @@
   @Sys.error
   0;JMP
 (Sys.error$ret.5)
+
   @5
   D=A
   @TEMP
@@ -25911,7 +28521,9 @@
   @R13
   A=M
   M=D
+
   (IF_FALSE0)
+
   @1
   D=A
   @ARG
@@ -25922,6 +28534,7 @@
   M=D
   @SP
   M=M+1
+
   @2
   D=A
   @SP
@@ -25929,6 +28542,7 @@
   M=D
   @SP
   M=M+1
+
   @Math.divide$ret.0
   D=A
   @SP
@@ -25979,11 +28593,13 @@
   @Math.divide
   0;JMP
 (Math.divide$ret.0)
+
   @SP
   AM=M-1
   D=M
   @Output.0
   M=D
+
   @32
   D=A
   @SP
@@ -25991,6 +28607,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @ARG
@@ -26001,6 +28618,7 @@
   M=D
   @SP
   M=M+1
+
   @352
   D=A
   @SP
@@ -26008,6 +28626,7 @@
   M=D
   @SP
   M=M+1
+
   @Math.multiply$ret.2
   D=A
   @SP
@@ -26058,11 +28677,13 @@
   @Math.multiply
   0;JMP
 (Math.multiply$ret.2)
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @Output.0
   D=M
   @SP
@@ -26070,16 +28691,19 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @SP
   AM=M-1
   D=M
   @Output.1
   M=D
+
   @1
   D=A
   @ARG
@@ -26090,6 +28714,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.0
   D=M
   @SP
@@ -26097,6 +28722,7 @@
   M=D
   @SP
   M=M+1
+
   @2
   D=A
   @SP
@@ -26104,6 +28730,7 @@
   M=D
   @SP
   M=M+1
+
   @Math.multiply$ret.3
   D=A
   @SP
@@ -26154,6 +28781,7 @@
   @Math.multiply
   0;JMP
 (Math.multiply$ret.3)
+
   @SP
   AM=M-1
   D=M
@@ -26171,11 +28799,13 @@
   A=M-1
   M=-1
 (CONTINUE2625)
+
   @SP
   AM=M-1
   D=M
   @Output.2
   M=D
+
   @32
   D=A
   @SP
@@ -26183,6 +28813,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.drawChar$ret.0
   D=A
   @SP
@@ -26233,6 +28864,7 @@
   @Output.drawChar
   0;JMP
 (Output.drawChar$ret.0)
+
   @5
   D=A
   @TEMP
@@ -26245,6 +28877,7 @@
   @R13
   A=M
   M=D
+
   @0
   D=A
   @SP
@@ -26252,13 +28885,12 @@
   M=D
   @SP
   M=M+1
+
   @FUNCTION_RETURN
   0;JMP
+
   (Output.printChar)
-  @SP
-  A=M
-  @SP
-  M=A
+
   @0
   D=A
   @ARG
@@ -26269,6 +28901,7 @@
   M=D
   @SP
   M=M+1
+
   @String.newLine$ret.1
   D=A
   @SP
@@ -26319,6 +28952,7 @@
   @String.newLine
   0;JMP
 (String.newLine$ret.1)
+
   @SP
   AM=M-1
   D=M
@@ -26336,14 +28970,18 @@
   A=M-1
   M=-1
 (CONTINUE2635)
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE0
   D;JNE
+
   @IF_FALSE0
   0;JMP
+
   (IF_TRUE0)
+
   @Output.println$ret.1
   D=A
   @SP
@@ -26394,6 +29032,7 @@
   @Output.println
   0;JMP
 (Output.println$ret.1)
+
   @5
   D=A
   @TEMP
@@ -26406,9 +29045,12 @@
   @R13
   A=M
   M=D
+
   @IF_END0
   0;JMP
+
   (IF_FALSE0)
+
   @0
   D=A
   @ARG
@@ -26419,6 +29061,7 @@
   M=D
   @SP
   M=M+1
+
   @String.backSpace$ret.2
   D=A
   @SP
@@ -26469,6 +29112,7 @@
   @String.backSpace
   0;JMP
 (String.backSpace$ret.2)
+
   @SP
   AM=M-1
   D=M
@@ -26486,14 +29130,18 @@
   A=M-1
   M=-1
 (CONTINUE2645)
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE1
   D;JNE
+
   @IF_FALSE1
   0;JMP
+
   (IF_TRUE1)
+
   @Output.backSpace$ret.0
   D=A
   @SP
@@ -26544,6 +29192,7 @@
   @Output.backSpace
   0;JMP
 (Output.backSpace$ret.0)
+
   @5
   D=A
   @TEMP
@@ -26556,9 +29205,12 @@
   @R13
   A=M
   M=D
+
   @IF_END1
   0;JMP
+
   (IF_FALSE1)
+
   @0
   D=A
   @ARG
@@ -26569,6 +29221,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.drawChar$ret.1
   D=A
   @SP
@@ -26619,6 +29272,7 @@
   @Output.drawChar
   0;JMP
 (Output.drawChar$ret.1)
+
   @5
   D=A
   @TEMP
@@ -26631,6 +29285,7 @@
   @R13
   A=M
   M=D
+
   @Output.2
   D=M
   @SP
@@ -26638,17 +29293,22 @@
   M=D
   @SP
   M=M+1
+
   @SP
   A=M-1
   M=!M
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE2
   D;JNE
+
   @IF_FALSE2
   0;JMP
+
   (IF_TRUE2)
+
   @Output.0
   D=M
   @SP
@@ -26656,6 +29316,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @SP
@@ -26663,16 +29324,19 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @SP
   AM=M-1
   D=M
   @Output.0
   M=D
+
   @Output.1
   D=M
   @SP
@@ -26680,6 +29344,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @SP
@@ -26687,17 +29352,21 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @SP
   AM=M-1
   D=M
   @Output.1
   M=D
+
   (IF_FALSE2)
+
   @Output.0
   D=M
   @SP
@@ -26705,6 +29374,7 @@
   M=D
   @SP
   M=M+1
+
   @32
   D=A
   @SP
@@ -26712,6 +29382,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -26729,14 +29400,18 @@
   A=M-1
   M=-1
 (CONTINUE2672)
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE3
   D;JNE
+
   @IF_FALSE3
   0;JMP
+
   (IF_TRUE3)
+
   @Output.println$ret.2
   D=A
   @SP
@@ -26787,6 +29462,7 @@
   @Output.println
   0;JMP
 (Output.println$ret.2)
+
   @5
   D=A
   @TEMP
@@ -26799,9 +29475,12 @@
   @R13
   A=M
   M=D
+
   @IF_END3
   0;JMP
+
   (IF_FALSE3)
+
   @Output.2
   D=M
   @SP
@@ -26809,17 +29488,23 @@
   M=D
   @SP
   M=M+1
+
   @SP
   A=M-1
   M=!M
+
   @SP
   AM=M-1
   D=M
   @Output.2
   M=D
+
   (IF_END3)
+
   (IF_END1)
+
   (IF_END0)
+
   @0
   D=A
   @SP
@@ -26827,17 +29512,22 @@
   M=D
   @SP
   M=M+1
+
   @FUNCTION_RETURN
   0;JMP
+
   (Output.printString)
   @SP
   A=M
   M=0
-  A=A+1
-  M=0
-  A=A+1
   @SP
-  M=A
+  M=M+1
+  @SP
+  A=M
+  M=0
+  @SP
+  M=M+1
+
   @0
   D=A
   @ARG
@@ -26848,6 +29538,7 @@
   M=D
   @SP
   M=M+1
+
   @String.length$ret.0
   D=A
   @SP
@@ -26898,6 +29589,7 @@
   @String.length
   0;JMP
 (String.length$ret.0)
+
   @1
   D=A
   @LCL
@@ -26910,7 +29602,9 @@
   @R13
   A=M
   M=D
+
   (WHILE_EXP0)
+
   @0
   D=A
   @LCL
@@ -26921,6 +29615,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @LCL
@@ -26931,6 +29626,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -26948,14 +29644,17 @@
   A=M-1
   M=-1
 (CONTINUE2695)
+
   @SP
   A=M-1
   M=!M
+
   @SP
   AM=M-1
   D=M
   @WHILE_END0
   D;JNE
+
   @0
   D=A
   @ARG
@@ -26966,6 +29665,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -26976,6 +29676,7 @@
   M=D
   @SP
   M=M+1
+
   @String.charAt$ret.0
   D=A
   @SP
@@ -27026,6 +29727,7 @@
   @String.charAt
   0;JMP
 (String.charAt$ret.0)
+
   @Output.printChar$ret.3
   D=A
   @SP
@@ -27076,6 +29778,7 @@
   @Output.printChar
   0;JMP
 (Output.printChar$ret.3)
+
   @5
   D=A
   @TEMP
@@ -27088,6 +29791,7 @@
   @R13
   A=M
   M=D
+
   @0
   D=A
   @LCL
@@ -27098,6 +29802,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @SP
@@ -27105,11 +29810,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @0
   D=A
   @LCL
@@ -27122,9 +29829,12 @@
   @R13
   A=M
   M=D
+
   @WHILE_EXP0
   0;JMP
+
   (WHILE_END0)
+
   @0
   D=A
   @SP
@@ -27132,13 +29842,12 @@
   M=D
   @SP
   M=M+1
+
   @FUNCTION_RETURN
   0;JMP
+
   (Output.printInt)
-  @SP
-  A=M
-  @SP
-  M=A
+
   @Output.3
   D=M
   @SP
@@ -27146,6 +29855,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @ARG
@@ -27156,6 +29866,7 @@
   M=D
   @SP
   M=M+1
+
   @String.setInt$ret.0
   D=A
   @SP
@@ -27206,6 +29917,7 @@
   @String.setInt
   0;JMP
 (String.setInt$ret.0)
+
   @5
   D=A
   @TEMP
@@ -27218,6 +29930,7 @@
   @R13
   A=M
   M=D
+
   @Output.3
   D=M
   @SP
@@ -27225,6 +29938,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.printString$ret.2
   D=A
   @SP
@@ -27275,6 +29989,7 @@
   @Output.printString
   0;JMP
 (Output.printString$ret.2)
+
   @5
   D=A
   @TEMP
@@ -27287,6 +30002,7 @@
   @R13
   A=M
   M=D
+
   @0
   D=A
   @SP
@@ -27294,13 +30010,12 @@
   M=D
   @SP
   M=M+1
+
   @FUNCTION_RETURN
   0;JMP
+
   (Output.println)
-  @SP
-  A=M
-  @SP
-  M=A
+
   @Output.1
   D=M
   @SP
@@ -27308,6 +30023,7 @@
   M=D
   @SP
   M=M+1
+
   @352
   D=A
   @SP
@@ -27315,11 +30031,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @Output.0
   D=M
   @SP
@@ -27327,16 +30045,19 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M-D
+
   @SP
   AM=M-1
   D=M
   @Output.1
   M=D
+
   @0
   D=A
   @SP
@@ -27344,11 +30065,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   @Output.0
   M=D
+
   @0
   D=A
   @SP
@@ -27356,14 +30079,17 @@
   M=D
   @SP
   M=M+1
+
   @SP
   A=M-1
   M=!M
+
   @SP
   AM=M-1
   D=M
   @Output.2
   M=D
+
   @Output.1
   D=M
   @SP
@@ -27371,6 +30097,7 @@
   M=D
   @SP
   M=M+1
+
   @8128
   D=A
   @SP
@@ -27378,6 +30105,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -27395,14 +30123,18 @@
   A=M-1
   M=-1
 (CONTINUE2735)
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE0
   D;JNE
+
   @IF_FALSE0
   0;JMP
+
   (IF_TRUE0)
+
   @32
   D=A
   @SP
@@ -27410,12 +30142,15 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   @Output.1
   M=D
+
   (IF_FALSE0)
+
   @0
   D=A
   @SP
@@ -27423,13 +30158,12 @@
   M=D
   @SP
   M=M+1
+
   @FUNCTION_RETURN
   0;JMP
+
   (Output.backSpace)
-  @SP
-  A=M
-  @SP
-  M=A
+
   @Output.2
   D=M
   @SP
@@ -27437,14 +30171,18 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE0
   D;JNE
+
   @IF_FALSE0
   0;JMP
+
   (IF_TRUE0)
+
   @Output.0
   D=M
   @SP
@@ -27452,6 +30190,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -27459,6 +30198,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -27476,14 +30216,18 @@
   A=M-1
   M=-1
 (CONTINUE2751)
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE1
   D;JNE
+
   @IF_FALSE1
   0;JMP
+
   (IF_TRUE1)
+
   @Output.0
   D=M
   @SP
@@ -27491,6 +30235,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @SP
@@ -27498,16 +30243,19 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M-D
+
   @SP
   AM=M-1
   D=M
   @Output.0
   M=D
+
   @Output.1
   D=M
   @SP
@@ -27515,6 +30263,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @SP
@@ -27522,19 +30271,24 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M-D
+
   @SP
   AM=M-1
   D=M
   @Output.1
   M=D
+
   @IF_END1
   0;JMP
+
   (IF_FALSE1)
+
   @31
   D=A
   @SP
@@ -27542,11 +30296,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   @Output.0
   M=D
+
   @Output.1
   D=M
   @SP
@@ -27554,6 +30310,7 @@
   M=D
   @SP
   M=M+1
+
   @32
   D=A
   @SP
@@ -27561,6 +30318,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -27578,14 +30336,18 @@
   A=M-1
   M=-1
 (CONTINUE2769)
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE2
   D;JNE
+
   @IF_FALSE2
   0;JMP
+
   (IF_TRUE2)
+
   @8128
   D=A
   @SP
@@ -27593,12 +30355,15 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   @Output.1
   M=D
+
   (IF_FALSE2)
+
   @Output.1
   D=M
   @SP
@@ -27606,6 +30371,7 @@
   M=D
   @SP
   M=M+1
+
   @321
   D=A
   @SP
@@ -27613,17 +30379,21 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M-D
+
   @SP
   AM=M-1
   D=M
   @Output.1
   M=D
+
   (IF_END1)
+
   @0
   D=A
   @SP
@@ -27631,14 +30401,18 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   @Output.2
   M=D
+
   @IF_END0
   0;JMP
+
   (IF_FALSE0)
+
   @0
   D=A
   @SP
@@ -27646,15 +30420,19 @@
   M=D
   @SP
   M=M+1
+
   @SP
   A=M-1
   M=!M
+
   @SP
   AM=M-1
   D=M
   @Output.2
   M=D
+
   (IF_END0)
+
   @32
   D=A
   @SP
@@ -27662,6 +30440,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.drawChar$ret.2
   D=A
   @SP
@@ -27712,6 +30491,7 @@
   @Output.drawChar
   0;JMP
 (Output.drawChar$ret.2)
+
   @5
   D=A
   @TEMP
@@ -27724,6 +30504,7 @@
   @R13
   A=M
   M=D
+
   @0
   D=A
   @SP
@@ -27731,15 +30512,17 @@
   M=D
   @SP
   M=M+1
+
   @FUNCTION_RETURN
   0;JMP
+
   (Screen.init)
   @SP
   A=M
   M=0
-  A=A+1
   @SP
-  M=A
+  M=M+1
+
   @16384
   D=A
   @SP
@@ -27747,11 +30530,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   @Screen.1
   M=D
+
   @0
   D=A
   @SP
@@ -27759,14 +30544,17 @@
   M=D
   @SP
   M=M+1
+
   @SP
   A=M-1
   M=!M
+
   @SP
   AM=M-1
   D=M
   @Screen.2
   M=D
+
   @17
   D=A
   @SP
@@ -27774,6 +30562,7 @@
   M=D
   @SP
   M=M+1
+
   @Array.new$ret.6
   D=A
   @SP
@@ -27824,11 +30613,13 @@
   @Array.new
   0;JMP
 (Array.new$ret.6)
+
   @SP
   AM=M-1
   D=M
   @Screen.0
   M=D
+
   @0
   D=A
   @SP
@@ -27836,6 +30627,7 @@
   M=D
   @SP
   M=M+1
+
   @Screen.0
   D=M
   @SP
@@ -27843,11 +30635,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @1
   D=A
   @SP
@@ -27855,6 +30649,7 @@
   M=D
   @SP
   M=M+1
+
   @5
   D=A
   @TEMP
@@ -27867,11 +30662,13 @@
   @R13
   A=M
   M=D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @5
   D=A
   @TEMP
@@ -27882,6 +30679,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @THAT
@@ -27894,7 +30692,9 @@
   @R13
   A=M
   M=D
+
   (WHILE_EXP0)
+
   @0
   D=A
   @LCL
@@ -27905,6 +30705,7 @@
   M=D
   @SP
   M=M+1
+
   @16
   D=A
   @SP
@@ -27912,6 +30713,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -27929,14 +30731,17 @@
   A=M-1
   M=-1
 (CONTINUE2814)
+
   @SP
   A=M-1
   M=!M
+
   @SP
   AM=M-1
   D=M
   @WHILE_END0
   D;JNE
+
   @0
   D=A
   @LCL
@@ -27947,6 +30752,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @SP
@@ -27954,11 +30760,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @0
   D=A
   @LCL
@@ -27971,6 +30779,7 @@
   @R13
   A=M
   M=D
+
   @0
   D=A
   @LCL
@@ -27981,6 +30790,7 @@
   M=D
   @SP
   M=M+1
+
   @Screen.0
   D=M
   @SP
@@ -27988,11 +30798,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @0
   D=A
   @LCL
@@ -28003,6 +30815,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @SP
@@ -28010,11 +30823,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M-D
+
   @Screen.0
   D=M
   @SP
@@ -28022,16 +30837,19 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @0
   D=A
   @THAT
@@ -28042,6 +30860,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -28052,6 +30871,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @SP
@@ -28059,11 +30879,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M-D
+
   @Screen.0
   D=M
   @SP
@@ -28071,16 +30893,19 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @0
   D=A
   @THAT
@@ -28091,11 +30916,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @5
   D=A
   @TEMP
@@ -28108,11 +30935,13 @@
   @R13
   A=M
   M=D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @5
   D=A
   @TEMP
@@ -28123,6 +30952,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @THAT
@@ -28135,9 +30965,12 @@
   @R13
   A=M
   M=D
+
   @WHILE_EXP0
   0;JMP
+
   (WHILE_END0)
+
   @0
   D=A
   @SP
@@ -28145,16 +30978,19 @@
   M=D
   @SP
   M=M+1
+
   @FUNCTION_RETURN
   0;JMP
+
   (Screen.clearScreen)
   @SP
   A=M
   M=0
-  A=A+1
   @SP
-  M=A
+  M=M+1
+
   (WHILE_EXP0)
+
   @0
   D=A
   @LCL
@@ -28165,6 +31001,7 @@
   M=D
   @SP
   M=M+1
+
   @8192
   D=A
   @SP
@@ -28172,6 +31009,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -28189,14 +31027,17 @@
   A=M-1
   M=-1
 (CONTINUE2851)
+
   @SP
   A=M-1
   M=!M
+
   @SP
   AM=M-1
   D=M
   @WHILE_END0
   D;JNE
+
   @0
   D=A
   @LCL
@@ -28207,6 +31048,7 @@
   M=D
   @SP
   M=M+1
+
   @Screen.1
   D=M
   @SP
@@ -28214,11 +31056,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @0
   D=A
   @SP
@@ -28226,6 +31070,7 @@
   M=D
   @SP
   M=M+1
+
   @5
   D=A
   @TEMP
@@ -28238,11 +31083,13 @@
   @R13
   A=M
   M=D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @5
   D=A
   @TEMP
@@ -28253,6 +31100,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @THAT
@@ -28265,6 +31113,7 @@
   @R13
   A=M
   M=D
+
   @0
   D=A
   @LCL
@@ -28275,6 +31124,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @SP
@@ -28282,11 +31132,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @0
   D=A
   @LCL
@@ -28299,9 +31151,12 @@
   @R13
   A=M
   M=D
+
   @WHILE_EXP0
   0;JMP
+
   (WHILE_END0)
+
   @0
   D=A
   @SP
@@ -28309,13 +31164,12 @@
   M=D
   @SP
   M=M+1
+
   @FUNCTION_RETURN
   0;JMP
+
   (Screen.updateLocation)
-  @SP
-  A=M
-  @SP
-  M=A
+
   @Screen.2
   D=M
   @SP
@@ -28323,14 +31177,18 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE0
   D;JNE
+
   @IF_FALSE0
   0;JMP
+
   (IF_TRUE0)
+
   @0
   D=A
   @ARG
@@ -28341,6 +31199,7 @@
   M=D
   @SP
   M=M+1
+
   @Screen.1
   D=M
   @SP
@@ -28348,11 +31207,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @0
   D=A
   @ARG
@@ -28363,6 +31224,7 @@
   M=D
   @SP
   M=M+1
+
   @Screen.1
   D=M
   @SP
@@ -28370,16 +31232,19 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @0
   D=A
   @THAT
@@ -28390,6 +31255,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @ARG
@@ -28400,11 +31266,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M|D
+
   @5
   D=A
   @TEMP
@@ -28417,11 +31285,13 @@
   @R13
   A=M
   M=D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @5
   D=A
   @TEMP
@@ -28432,6 +31302,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @THAT
@@ -28444,9 +31315,12 @@
   @R13
   A=M
   M=D
+
   @IF_END0
   0;JMP
+
   (IF_FALSE0)
+
   @0
   D=A
   @ARG
@@ -28457,6 +31331,7 @@
   M=D
   @SP
   M=M+1
+
   @Screen.1
   D=M
   @SP
@@ -28464,11 +31339,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @0
   D=A
   @ARG
@@ -28479,6 +31356,7 @@
   M=D
   @SP
   M=M+1
+
   @Screen.1
   D=M
   @SP
@@ -28486,16 +31364,19 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @0
   D=A
   @THAT
@@ -28506,6 +31387,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @ARG
@@ -28516,14 +31398,17 @@
   M=D
   @SP
   M=M+1
+
   @SP
   A=M-1
   M=!M
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M&D
+
   @5
   D=A
   @TEMP
@@ -28536,11 +31421,13 @@
   @R13
   A=M
   M=D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @5
   D=A
   @TEMP
@@ -28551,6 +31438,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @THAT
@@ -28563,7 +31451,9 @@
   @R13
   A=M
   M=D
+
   (IF_END0)
+
   @0
   D=A
   @SP
@@ -28571,13 +31461,12 @@
   M=D
   @SP
   M=M+1
+
   @FUNCTION_RETURN
   0;JMP
+
   (Screen.setColor)
-  @SP
-  A=M
-  @SP
-  M=A
+
   @0
   D=A
   @ARG
@@ -28588,11 +31477,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   @Screen.2
   M=D
+
   @0
   D=A
   @SP
@@ -28600,19 +31491,27 @@
   M=D
   @SP
   M=M+1
+
   @FUNCTION_RETURN
   0;JMP
+
   (Screen.drawPixel)
   @SP
   A=M
   M=0
-  A=A+1
-  M=0
-  A=A+1
-  M=0
-  A=A+1
   @SP
-  M=A
+  M=M+1
+  @SP
+  A=M
+  M=0
+  @SP
+  M=M+1
+  @SP
+  A=M
+  M=0
+  @SP
+  M=M+1
+
   @0
   D=A
   @ARG
@@ -28623,6 +31522,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -28630,6 +31530,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -28647,6 +31548,7 @@
   A=M-1
   M=-1
 (CONTINUE2917)
+
   @0
   D=A
   @ARG
@@ -28657,6 +31559,7 @@
   M=D
   @SP
   M=M+1
+
   @511
   D=A
   @SP
@@ -28664,6 +31567,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -28681,11 +31585,13 @@
   A=M-1
   M=-1
 (CONTINUE2920)
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M|D
+
   @1
   D=A
   @ARG
@@ -28696,6 +31602,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -28703,6 +31610,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -28720,11 +31628,13 @@
   A=M-1
   M=-1
 (CONTINUE2924)
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M|D
+
   @1
   D=A
   @ARG
@@ -28735,6 +31645,7 @@
   M=D
   @SP
   M=M+1
+
   @255
   D=A
   @SP
@@ -28742,6 +31653,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -28759,19 +31671,24 @@
   A=M-1
   M=-1
 (CONTINUE2928)
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M|D
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE0
   D;JNE
+
   @IF_FALSE0
   0;JMP
+
   (IF_TRUE0)
+
   @7
   D=A
   @SP
@@ -28779,6 +31696,7 @@
   M=D
   @SP
   M=M+1
+
   @Sys.error$ret.6
   D=A
   @SP
@@ -28829,6 +31747,7 @@
   @Sys.error
   0;JMP
 (Sys.error$ret.6)
+
   @5
   D=A
   @TEMP
@@ -28841,7 +31760,9 @@
   @R13
   A=M
   M=D
+
   (IF_FALSE0)
+
   @0
   D=A
   @ARG
@@ -28852,6 +31773,7 @@
   M=D
   @SP
   M=M+1
+
   @16
   D=A
   @SP
@@ -28859,6 +31781,7 @@
   M=D
   @SP
   M=M+1
+
   @Math.divide$ret.1
   D=A
   @SP
@@ -28909,6 +31832,7 @@
   @Math.divide
   0;JMP
 (Math.divide$ret.1)
+
   @0
   D=A
   @LCL
@@ -28921,6 +31845,7 @@
   @R13
   A=M
   M=D
+
   @0
   D=A
   @ARG
@@ -28931,6 +31856,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -28941,6 +31867,7 @@
   M=D
   @SP
   M=M+1
+
   @16
   D=A
   @SP
@@ -28948,6 +31875,7 @@
   M=D
   @SP
   M=M+1
+
   @Math.multiply$ret.4
   D=A
   @SP
@@ -28998,11 +31926,13 @@
   @Math.multiply
   0;JMP
 (Math.multiply$ret.4)
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M-D
+
   @1
   D=A
   @LCL
@@ -29015,6 +31945,7 @@
   @R13
   A=M
   M=D
+
   @1
   D=A
   @ARG
@@ -29025,6 +31956,7 @@
   M=D
   @SP
   M=M+1
+
   @32
   D=A
   @SP
@@ -29032,6 +31964,7 @@
   M=D
   @SP
   M=M+1
+
   @Math.multiply$ret.5
   D=A
   @SP
@@ -29082,6 +32015,7 @@
   @Math.multiply
   0;JMP
 (Math.multiply$ret.5)
+
   @0
   D=A
   @LCL
@@ -29092,11 +32026,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @2
   D=A
   @LCL
@@ -29109,6 +32045,7 @@
   @R13
   A=M
   M=D
+
   @2
   D=A
   @LCL
@@ -29119,6 +32056,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @LCL
@@ -29129,6 +32067,7 @@
   M=D
   @SP
   M=M+1
+
   @Screen.0
   D=M
   @SP
@@ -29136,16 +32075,19 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @0
   D=A
   @THAT
@@ -29156,6 +32098,7 @@
   M=D
   @SP
   M=M+1
+
   @Screen.updateLocation$ret.0
   D=A
   @SP
@@ -29206,6 +32149,7 @@
   @Screen.updateLocation
   0;JMP
 (Screen.updateLocation$ret.0)
+
   @5
   D=A
   @TEMP
@@ -29218,6 +32162,7 @@
   @R13
   A=M
   M=D
+
   @0
   D=A
   @SP
@@ -29225,13 +32170,12 @@
   M=D
   @SP
   M=M+1
+
   @FUNCTION_RETURN
   0;JMP
+
   (Screen.drawConditional)
-  @SP
-  A=M
-  @SP
-  M=A
+
   @2
   D=A
   @ARG
@@ -29242,14 +32186,18 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE0
   D;JNE
+
   @IF_FALSE0
   0;JMP
+
   (IF_TRUE0)
+
   @1
   D=A
   @ARG
@@ -29260,6 +32208,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @ARG
@@ -29270,6 +32219,7 @@
   M=D
   @SP
   M=M+1
+
   @Screen.drawPixel$ret.0
   D=A
   @SP
@@ -29320,6 +32270,7 @@
   @Screen.drawPixel
   0;JMP
 (Screen.drawPixel$ret.0)
+
   @5
   D=A
   @TEMP
@@ -29332,9 +32283,12 @@
   @R13
   A=M
   M=D
+
   @IF_END0
   0;JMP
+
   (IF_FALSE0)
+
   @0
   D=A
   @ARG
@@ -29345,6 +32299,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @ARG
@@ -29355,6 +32310,7 @@
   M=D
   @SP
   M=M+1
+
   @Screen.drawPixel$ret.1
   D=A
   @SP
@@ -29405,6 +32361,7 @@
   @Screen.drawPixel
   0;JMP
 (Screen.drawPixel$ret.1)
+
   @5
   D=A
   @TEMP
@@ -29417,7 +32374,9 @@
   @R13
   A=M
   M=D
+
   (IF_END0)
+
   @0
   D=A
   @SP
@@ -29425,35 +32384,67 @@
   M=D
   @SP
   M=M+1
+
   @FUNCTION_RETURN
   0;JMP
+
   (Screen.drawLine)
   @SP
   A=M
   M=0
-  A=A+1
-  M=0
-  A=A+1
-  M=0
-  A=A+1
-  M=0
-  A=A+1
-  M=0
-  A=A+1
-  M=0
-  A=A+1
-  M=0
-  A=A+1
-  M=0
-  A=A+1
-  M=0
-  A=A+1
-  M=0
-  A=A+1
-  M=0
-  A=A+1
   @SP
-  M=A
+  M=M+1
+  @SP
+  A=M
+  M=0
+  @SP
+  M=M+1
+  @SP
+  A=M
+  M=0
+  @SP
+  M=M+1
+  @SP
+  A=M
+  M=0
+  @SP
+  M=M+1
+  @SP
+  A=M
+  M=0
+  @SP
+  M=M+1
+  @SP
+  A=M
+  M=0
+  @SP
+  M=M+1
+  @SP
+  A=M
+  M=0
+  @SP
+  M=M+1
+  @SP
+  A=M
+  M=0
+  @SP
+  M=M+1
+  @SP
+  A=M
+  M=0
+  @SP
+  M=M+1
+  @SP
+  A=M
+  M=0
+  @SP
+  M=M+1
+  @SP
+  A=M
+  M=0
+  @SP
+  M=M+1
+
   @0
   D=A
   @ARG
@@ -29464,6 +32455,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -29471,6 +32463,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -29488,6 +32481,7 @@
   A=M-1
   M=-1
 (CONTINUE2984)
+
   @2
   D=A
   @ARG
@@ -29498,6 +32492,7 @@
   M=D
   @SP
   M=M+1
+
   @511
   D=A
   @SP
@@ -29505,6 +32500,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -29522,11 +32518,13 @@
   A=M-1
   M=-1
 (CONTINUE2987)
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M|D
+
   @1
   D=A
   @ARG
@@ -29537,6 +32535,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -29544,6 +32543,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -29561,11 +32561,13 @@
   A=M-1
   M=-1
 (CONTINUE2991)
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M|D
+
   @3
   D=A
   @ARG
@@ -29576,6 +32578,7 @@
   M=D
   @SP
   M=M+1
+
   @255
   D=A
   @SP
@@ -29583,6 +32586,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -29600,19 +32604,24 @@
   A=M-1
   M=-1
 (CONTINUE2995)
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M|D
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE0
   D;JNE
+
   @IF_FALSE0
   0;JMP
+
   (IF_TRUE0)
+
   @8
   D=A
   @SP
@@ -29620,6 +32629,7 @@
   M=D
   @SP
   M=M+1
+
   @Sys.error$ret.7
   D=A
   @SP
@@ -29670,6 +32680,7 @@
   @Sys.error
   0;JMP
 (Sys.error$ret.7)
+
   @5
   D=A
   @TEMP
@@ -29682,7 +32693,9 @@
   @R13
   A=M
   M=D
+
   (IF_FALSE0)
+
   @2
   D=A
   @ARG
@@ -29693,6 +32706,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @ARG
@@ -29703,11 +32717,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M-D
+
   @Math.abs$ret.4
   D=A
   @SP
@@ -29758,6 +32774,7 @@
   @Math.abs
   0;JMP
 (Math.abs$ret.4)
+
   @3
   D=A
   @LCL
@@ -29770,6 +32787,7 @@
   @R13
   A=M
   M=D
+
   @3
   D=A
   @ARG
@@ -29780,6 +32798,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @ARG
@@ -29790,11 +32809,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M-D
+
   @Math.abs$ret.5
   D=A
   @SP
@@ -29845,6 +32866,7 @@
   @Math.abs
   0;JMP
 (Math.abs$ret.5)
+
   @2
   D=A
   @LCL
@@ -29857,6 +32879,7 @@
   @R13
   A=M
   M=D
+
   @3
   D=A
   @LCL
@@ -29867,6 +32890,7 @@
   M=D
   @SP
   M=M+1
+
   @2
   D=A
   @LCL
@@ -29877,6 +32901,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -29894,6 +32919,7 @@
   A=M-1
   M=-1
 (CONTINUE3016)
+
   @6
   D=A
   @LCL
@@ -29906,6 +32932,7 @@
   @R13
   A=M
   M=D
+
   @6
   D=A
   @LCL
@@ -29916,6 +32943,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @ARG
@@ -29926,6 +32954,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @ARG
@@ -29936,6 +32965,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -29953,11 +32983,13 @@
   A=M-1
   M=-1
 (CONTINUE3021)
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M&D
+
   @6
   D=A
   @LCL
@@ -29968,9 +33000,11 @@
   M=D
   @SP
   M=M+1
+
   @SP
   A=M-1
   M=!M
+
   @2
   D=A
   @ARG
@@ -29981,6 +33015,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @ARG
@@ -29991,6 +33026,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -30008,24 +33044,30 @@
   A=M-1
   M=-1
 (CONTINUE3027)
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M&D
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M|D
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE1
   D;JNE
+
   @IF_FALSE1
   0;JMP
+
   (IF_TRUE1)
+
   @0
   D=A
   @ARG
@@ -30036,6 +33078,7 @@
   M=D
   @SP
   M=M+1
+
   @4
   D=A
   @LCL
@@ -30048,6 +33091,7 @@
   @R13
   A=M
   M=D
+
   @2
   D=A
   @ARG
@@ -30058,6 +33102,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @ARG
@@ -30070,6 +33115,7 @@
   @R13
   A=M
   M=D
+
   @4
   D=A
   @LCL
@@ -30080,6 +33126,7 @@
   M=D
   @SP
   M=M+1
+
   @2
   D=A
   @ARG
@@ -30092,6 +33139,7 @@
   @R13
   A=M
   M=D
+
   @1
   D=A
   @ARG
@@ -30102,6 +33150,7 @@
   M=D
   @SP
   M=M+1
+
   @4
   D=A
   @LCL
@@ -30114,6 +33163,7 @@
   @R13
   A=M
   M=D
+
   @3
   D=A
   @ARG
@@ -30124,6 +33174,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @ARG
@@ -30136,6 +33187,7 @@
   @R13
   A=M
   M=D
+
   @4
   D=A
   @LCL
@@ -30146,6 +33198,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @ARG
@@ -30158,7 +33211,9 @@
   @R13
   A=M
   M=D
+
   (IF_FALSE1)
+
   @6
   D=A
   @LCL
@@ -30169,14 +33224,18 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE2
   D;JNE
+
   @IF_FALSE2
   0;JMP
+
   (IF_TRUE2)
+
   @3
   D=A
   @LCL
@@ -30187,6 +33246,7 @@
   M=D
   @SP
   M=M+1
+
   @4
   D=A
   @LCL
@@ -30199,6 +33259,7 @@
   @R13
   A=M
   M=D
+
   @2
   D=A
   @LCL
@@ -30209,6 +33270,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @LCL
@@ -30221,6 +33283,7 @@
   @R13
   A=M
   M=D
+
   @4
   D=A
   @LCL
@@ -30231,6 +33294,7 @@
   M=D
   @SP
   M=M+1
+
   @2
   D=A
   @LCL
@@ -30243,6 +33307,7 @@
   @R13
   A=M
   M=D
+
   @1
   D=A
   @ARG
@@ -30253,6 +33318,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @LCL
@@ -30265,6 +33331,7 @@
   @R13
   A=M
   M=D
+
   @0
   D=A
   @ARG
@@ -30275,6 +33342,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -30287,6 +33355,7 @@
   @R13
   A=M
   M=D
+
   @3
   D=A
   @ARG
@@ -30297,6 +33366,7 @@
   M=D
   @SP
   M=M+1
+
   @8
   D=A
   @LCL
@@ -30309,6 +33379,7 @@
   @R13
   A=M
   M=D
+
   @0
   D=A
   @ARG
@@ -30319,6 +33390,7 @@
   M=D
   @SP
   M=M+1
+
   @2
   D=A
   @ARG
@@ -30329,6 +33401,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -30346,6 +33419,7 @@
   A=M-1
   M=-1
 (CONTINUE3064)
+
   @7
   D=A
   @LCL
@@ -30358,9 +33432,12 @@
   @R13
   A=M
   M=D
+
   @IF_END2
   0;JMP
+
   (IF_FALSE2)
+
   @0
   D=A
   @ARG
@@ -30371,6 +33448,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @LCL
@@ -30383,6 +33461,7 @@
   @R13
   A=M
   M=D
+
   @1
   D=A
   @ARG
@@ -30393,6 +33472,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -30405,6 +33485,7 @@
   @R13
   A=M
   M=D
+
   @2
   D=A
   @ARG
@@ -30415,6 +33496,7 @@
   M=D
   @SP
   M=M+1
+
   @8
   D=A
   @LCL
@@ -30427,6 +33509,7 @@
   @R13
   A=M
   M=D
+
   @1
   D=A
   @ARG
@@ -30437,6 +33520,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @ARG
@@ -30447,6 +33531,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -30464,6 +33549,7 @@
   A=M-1
   M=-1
 (CONTINUE3076)
+
   @7
   D=A
   @LCL
@@ -30476,7 +33562,9 @@
   @R13
   A=M
   M=D
+
   (IF_END2)
+
   @2
   D=A
   @SP
@@ -30484,6 +33572,7 @@
   M=D
   @SP
   M=M+1
+
   @2
   D=A
   @LCL
@@ -30494,6 +33583,7 @@
   M=D
   @SP
   M=M+1
+
   @Math.multiply$ret.6
   D=A
   @SP
@@ -30544,6 +33634,7 @@
   @Math.multiply
   0;JMP
 (Math.multiply$ret.6)
+
   @3
   D=A
   @LCL
@@ -30554,11 +33645,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M-D
+
   @5
   D=A
   @LCL
@@ -30571,6 +33664,7 @@
   @R13
   A=M
   M=D
+
   @2
   D=A
   @SP
@@ -30578,6 +33672,7 @@
   M=D
   @SP
   M=M+1
+
   @2
   D=A
   @LCL
@@ -30588,6 +33683,7 @@
   M=D
   @SP
   M=M+1
+
   @Math.multiply$ret.7
   D=A
   @SP
@@ -30638,6 +33734,7 @@
   @Math.multiply
   0;JMP
 (Math.multiply$ret.7)
+
   @9
   D=A
   @LCL
@@ -30650,6 +33747,7 @@
   @R13
   A=M
   M=D
+
   @2
   D=A
   @SP
@@ -30657,6 +33755,7 @@
   M=D
   @SP
   M=M+1
+
   @2
   D=A
   @LCL
@@ -30667,6 +33766,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @LCL
@@ -30677,11 +33777,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M-D
+
   @Math.multiply$ret.8
   D=A
   @SP
@@ -30732,6 +33834,7 @@
   @Math.multiply
   0;JMP
 (Math.multiply$ret.8)
+
   @10
   D=A
   @LCL
@@ -30744,6 +33847,7 @@
   @R13
   A=M
   M=D
+
   @1
   D=A
   @LCL
@@ -30754,6 +33858,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -30764,6 +33869,7 @@
   M=D
   @SP
   M=M+1
+
   @6
   D=A
   @LCL
@@ -30774,6 +33880,7 @@
   M=D
   @SP
   M=M+1
+
   @Screen.drawConditional$ret.0
   D=A
   @SP
@@ -30824,6 +33931,7 @@
   @Screen.drawConditional
   0;JMP
 (Screen.drawConditional$ret.0)
+
   @5
   D=A
   @TEMP
@@ -30836,7 +33944,9 @@
   @R13
   A=M
   M=D
+
   (WHILE_EXP0)
+
   @1
   D=A
   @LCL
@@ -30847,6 +33957,7 @@
   M=D
   @SP
   M=M+1
+
   @8
   D=A
   @LCL
@@ -30857,6 +33968,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -30874,14 +33986,17 @@
   A=M-1
   M=-1
 (CONTINUE3103)
+
   @SP
   A=M-1
   M=!M
+
   @SP
   AM=M-1
   D=M
   @WHILE_END0
   D;JNE
+
   @5
   D=A
   @LCL
@@ -30892,6 +34007,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -30899,6 +34015,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -30916,14 +34033,18 @@
   A=M-1
   M=-1
 (CONTINUE3108)
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE3
   D;JNE
+
   @IF_FALSE3
   0;JMP
+
   (IF_TRUE3)
+
   @5
   D=A
   @LCL
@@ -30934,6 +34055,7 @@
   M=D
   @SP
   M=M+1
+
   @9
   D=A
   @LCL
@@ -30944,11 +34066,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @5
   D=A
   @LCL
@@ -30961,9 +34085,12 @@
   @R13
   A=M
   M=D
+
   @IF_END3
   0;JMP
+
   (IF_FALSE3)
+
   @5
   D=A
   @LCL
@@ -30974,6 +34101,7 @@
   M=D
   @SP
   M=M+1
+
   @10
   D=A
   @LCL
@@ -30984,11 +34112,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @5
   D=A
   @LCL
@@ -31001,6 +34131,7 @@
   @R13
   A=M
   M=D
+
   @7
   D=A
   @LCL
@@ -31011,14 +34142,18 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE4
   D;JNE
+
   @IF_FALSE4
   0;JMP
+
   (IF_TRUE4)
+
   @0
   D=A
   @LCL
@@ -31029,6 +34164,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @SP
@@ -31036,11 +34172,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M-D
+
   @0
   D=A
   @LCL
@@ -31053,9 +34191,12 @@
   @R13
   A=M
   M=D
+
   @IF_END4
   0;JMP
+
   (IF_FALSE4)
+
   @0
   D=A
   @LCL
@@ -31066,6 +34207,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @SP
@@ -31073,11 +34215,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @0
   D=A
   @LCL
@@ -31090,8 +34234,11 @@
   @R13
   A=M
   M=D
+
   (IF_END4)
+
   (IF_END3)
+
   @1
   D=A
   @LCL
@@ -31102,6 +34249,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @SP
@@ -31109,11 +34257,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @1
   D=A
   @LCL
@@ -31126,6 +34276,7 @@
   @R13
   A=M
   M=D
+
   @1
   D=A
   @LCL
@@ -31136,6 +34287,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -31146,6 +34298,7 @@
   M=D
   @SP
   M=M+1
+
   @6
   D=A
   @LCL
@@ -31156,6 +34309,7 @@
   M=D
   @SP
   M=M+1
+
   @Screen.drawConditional$ret.1
   D=A
   @SP
@@ -31206,6 +34360,7 @@
   @Screen.drawConditional
   0;JMP
 (Screen.drawConditional$ret.1)
+
   @5
   D=A
   @TEMP
@@ -31218,9 +34373,12 @@
   @R13
   A=M
   M=D
+
   @WHILE_EXP0
   0;JMP
+
   (WHILE_END0)
+
   @0
   D=A
   @SP
@@ -31228,31 +34386,57 @@
   M=D
   @SP
   M=M+1
+
   @FUNCTION_RETURN
   0;JMP
+
   (Screen.drawRectangle)
   @SP
   A=M
   M=0
-  A=A+1
-  M=0
-  A=A+1
-  M=0
-  A=A+1
-  M=0
-  A=A+1
-  M=0
-  A=A+1
-  M=0
-  A=A+1
-  M=0
-  A=A+1
-  M=0
-  A=A+1
-  M=0
-  A=A+1
   @SP
-  M=A
+  M=M+1
+  @SP
+  A=M
+  M=0
+  @SP
+  M=M+1
+  @SP
+  A=M
+  M=0
+  @SP
+  M=M+1
+  @SP
+  A=M
+  M=0
+  @SP
+  M=M+1
+  @SP
+  A=M
+  M=0
+  @SP
+  M=M+1
+  @SP
+  A=M
+  M=0
+  @SP
+  M=M+1
+  @SP
+  A=M
+  M=0
+  @SP
+  M=M+1
+  @SP
+  A=M
+  M=0
+  @SP
+  M=M+1
+  @SP
+  A=M
+  M=0
+  @SP
+  M=M+1
+
   @0
   D=A
   @ARG
@@ -31263,6 +34447,7 @@
   M=D
   @SP
   M=M+1
+
   @2
   D=A
   @ARG
@@ -31273,6 +34458,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -31290,6 +34476,7 @@
   A=M-1
   M=-1
 (CONTINUE3154)
+
   @1
   D=A
   @ARG
@@ -31300,6 +34487,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @ARG
@@ -31310,6 +34498,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -31327,11 +34516,13 @@
   A=M-1
   M=-1
 (CONTINUE3157)
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M|D
+
   @0
   D=A
   @ARG
@@ -31342,6 +34533,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -31349,6 +34541,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -31366,11 +34559,13 @@
   A=M-1
   M=-1
 (CONTINUE3161)
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M|D
+
   @2
   D=A
   @ARG
@@ -31381,6 +34576,7 @@
   M=D
   @SP
   M=M+1
+
   @511
   D=A
   @SP
@@ -31388,6 +34584,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -31405,11 +34602,13 @@
   A=M-1
   M=-1
 (CONTINUE3165)
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M|D
+
   @1
   D=A
   @ARG
@@ -31420,6 +34619,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -31427,6 +34627,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -31444,11 +34645,13 @@
   A=M-1
   M=-1
 (CONTINUE3169)
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M|D
+
   @3
   D=A
   @ARG
@@ -31459,6 +34662,7 @@
   M=D
   @SP
   M=M+1
+
   @255
   D=A
   @SP
@@ -31466,6 +34670,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -31483,19 +34688,24 @@
   A=M-1
   M=-1
 (CONTINUE3173)
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M|D
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE0
   D;JNE
+
   @IF_FALSE0
   0;JMP
+
   (IF_TRUE0)
+
   @9
   D=A
   @SP
@@ -31503,6 +34713,7 @@
   M=D
   @SP
   M=M+1
+
   @Sys.error$ret.8
   D=A
   @SP
@@ -31553,6 +34764,7 @@
   @Sys.error
   0;JMP
 (Sys.error$ret.8)
+
   @5
   D=A
   @TEMP
@@ -31565,7 +34777,9 @@
   @R13
   A=M
   M=D
+
   (IF_FALSE0)
+
   @0
   D=A
   @ARG
@@ -31576,6 +34790,7 @@
   M=D
   @SP
   M=M+1
+
   @16
   D=A
   @SP
@@ -31583,6 +34798,7 @@
   M=D
   @SP
   M=M+1
+
   @Math.divide$ret.2
   D=A
   @SP
@@ -31633,6 +34849,7 @@
   @Math.divide
   0;JMP
 (Math.divide$ret.2)
+
   @3
   D=A
   @LCL
@@ -31645,6 +34862,7 @@
   @R13
   A=M
   M=D
+
   @0
   D=A
   @ARG
@@ -31655,6 +34873,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @LCL
@@ -31665,6 +34884,7 @@
   M=D
   @SP
   M=M+1
+
   @16
   D=A
   @SP
@@ -31672,6 +34892,7 @@
   M=D
   @SP
   M=M+1
+
   @Math.multiply$ret.9
   D=A
   @SP
@@ -31722,11 +34943,13 @@
   @Math.multiply
   0;JMP
 (Math.multiply$ret.9)
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M-D
+
   @7
   D=A
   @LCL
@@ -31739,6 +34962,7 @@
   @R13
   A=M
   M=D
+
   @2
   D=A
   @ARG
@@ -31749,6 +34973,7 @@
   M=D
   @SP
   M=M+1
+
   @16
   D=A
   @SP
@@ -31756,6 +34981,7 @@
   M=D
   @SP
   M=M+1
+
   @Math.divide$ret.3
   D=A
   @SP
@@ -31806,6 +35032,7 @@
   @Math.divide
   0;JMP
 (Math.divide$ret.3)
+
   @4
   D=A
   @LCL
@@ -31818,6 +35045,7 @@
   @R13
   A=M
   M=D
+
   @2
   D=A
   @ARG
@@ -31828,6 +35056,7 @@
   M=D
   @SP
   M=M+1
+
   @4
   D=A
   @LCL
@@ -31838,6 +35067,7 @@
   M=D
   @SP
   M=M+1
+
   @16
   D=A
   @SP
@@ -31845,6 +35075,7 @@
   M=D
   @SP
   M=M+1
+
   @Math.multiply$ret.10
   D=A
   @SP
@@ -31895,11 +35126,13 @@
   @Math.multiply
   0;JMP
 (Math.multiply$ret.10)
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M-D
+
   @8
   D=A
   @LCL
@@ -31912,6 +35145,7 @@
   @R13
   A=M
   M=D
+
   @7
   D=A
   @LCL
@@ -31922,6 +35156,7 @@
   M=D
   @SP
   M=M+1
+
   @Screen.0
   D=M
   @SP
@@ -31929,16 +35164,19 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @0
   D=A
   @THAT
@@ -31949,6 +35187,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @SP
@@ -31956,14 +35195,17 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M-D
+
   @SP
   A=M-1
   M=!M
+
   @6
   D=A
   @LCL
@@ -31976,6 +35218,7 @@
   @R13
   A=M
   M=D
+
   @8
   D=A
   @LCL
@@ -31986,6 +35229,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @SP
@@ -31993,11 +35237,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @Screen.0
   D=M
   @SP
@@ -32005,16 +35251,19 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @0
   D=A
   @THAT
@@ -32025,6 +35274,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @SP
@@ -32032,11 +35282,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M-D
+
   @5
   D=A
   @LCL
@@ -32049,6 +35301,7 @@
   @R13
   A=M
   M=D
+
   @1
   D=A
   @ARG
@@ -32059,6 +35312,7 @@
   M=D
   @SP
   M=M+1
+
   @32
   D=A
   @SP
@@ -32066,6 +35320,7 @@
   M=D
   @SP
   M=M+1
+
   @Math.multiply$ret.11
   D=A
   @SP
@@ -32116,6 +35371,7 @@
   @Math.multiply
   0;JMP
 (Math.multiply$ret.11)
+
   @3
   D=A
   @LCL
@@ -32126,11 +35382,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @0
   D=A
   @LCL
@@ -32143,6 +35401,7 @@
   @R13
   A=M
   M=D
+
   @4
   D=A
   @LCL
@@ -32153,6 +35412,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @LCL
@@ -32163,11 +35423,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M-D
+
   @2
   D=A
   @LCL
@@ -32180,7 +35442,9 @@
   @R13
   A=M
   M=D
+
   (WHILE_EXP0)
+
   @1
   D=A
   @ARG
@@ -32191,6 +35455,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @ARG
@@ -32201,6 +35466,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -32218,17 +35484,21 @@
   A=M-1
   M=-1
 (CONTINUE3234)
+
   @SP
   A=M-1
   M=!M
+
   @SP
   A=M-1
   M=!M
+
   @SP
   AM=M-1
   D=M
   @WHILE_END0
   D;JNE
+
   @0
   D=A
   @LCL
@@ -32239,6 +35509,7 @@
   M=D
   @SP
   M=M+1
+
   @2
   D=A
   @LCL
@@ -32249,11 +35520,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @1
   D=A
   @LCL
@@ -32266,6 +35539,7 @@
   @R13
   A=M
   M=D
+
   @2
   D=A
   @LCL
@@ -32276,6 +35550,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -32283,6 +35558,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -32300,14 +35576,18 @@
   A=M-1
   M=-1
 (CONTINUE3244)
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE1
   D;JNE
+
   @IF_FALSE1
   0;JMP
+
   (IF_TRUE1)
+
   @0
   D=A
   @LCL
@@ -32318,6 +35598,7 @@
   M=D
   @SP
   M=M+1
+
   @5
   D=A
   @LCL
@@ -32328,6 +35609,7 @@
   M=D
   @SP
   M=M+1
+
   @6
   D=A
   @LCL
@@ -32338,11 +35620,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M&D
+
   @Screen.updateLocation$ret.1
   D=A
   @SP
@@ -32393,6 +35677,7 @@
   @Screen.updateLocation
   0;JMP
 (Screen.updateLocation$ret.1)
+
   @5
   D=A
   @TEMP
@@ -32405,9 +35690,12 @@
   @R13
   A=M
   M=D
+
   @IF_END1
   0;JMP
+
   (IF_FALSE1)
+
   @0
   D=A
   @LCL
@@ -32418,6 +35706,7 @@
   M=D
   @SP
   M=M+1
+
   @6
   D=A
   @LCL
@@ -32428,6 +35717,7 @@
   M=D
   @SP
   M=M+1
+
   @Screen.updateLocation$ret.2
   D=A
   @SP
@@ -32478,6 +35768,7 @@
   @Screen.updateLocation
   0;JMP
 (Screen.updateLocation$ret.2)
+
   @5
   D=A
   @TEMP
@@ -32490,6 +35781,7 @@
   @R13
   A=M
   M=D
+
   @0
   D=A
   @LCL
@@ -32500,6 +35792,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @SP
@@ -32507,11 +35800,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @0
   D=A
   @LCL
@@ -32524,7 +35819,9 @@
   @R13
   A=M
   M=D
+
   (WHILE_EXP1)
+
   @0
   D=A
   @LCL
@@ -32535,6 +35832,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @LCL
@@ -32545,6 +35843,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -32562,14 +35861,17 @@
   A=M-1
   M=-1
 (CONTINUE3267)
+
   @SP
   A=M-1
   M=!M
+
   @SP
   AM=M-1
   D=M
   @WHILE_END1
   D;JNE
+
   @0
   D=A
   @LCL
@@ -32580,6 +35882,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @SP
@@ -32587,9 +35890,11 @@
   M=D
   @SP
   M=M+1
+
   @SP
   A=M-1
   M=-M
+
   @Screen.updateLocation$ret.3
   D=A
   @SP
@@ -32640,6 +35945,7 @@
   @Screen.updateLocation
   0;JMP
 (Screen.updateLocation$ret.3)
+
   @5
   D=A
   @TEMP
@@ -32652,6 +35958,7 @@
   @R13
   A=M
   M=D
+
   @0
   D=A
   @LCL
@@ -32662,6 +35969,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @SP
@@ -32669,11 +35977,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @0
   D=A
   @LCL
@@ -32686,9 +35996,12 @@
   @R13
   A=M
   M=D
+
   @WHILE_EXP1
   0;JMP
+
   (WHILE_END1)
+
   @1
   D=A
   @LCL
@@ -32699,6 +36012,7 @@
   M=D
   @SP
   M=M+1
+
   @5
   D=A
   @LCL
@@ -32709,6 +36023,7 @@
   M=D
   @SP
   M=M+1
+
   @Screen.updateLocation$ret.4
   D=A
   @SP
@@ -32759,6 +36074,7 @@
   @Screen.updateLocation
   0;JMP
 (Screen.updateLocation$ret.4)
+
   @5
   D=A
   @TEMP
@@ -32771,7 +36087,9 @@
   @R13
   A=M
   M=D
+
   (IF_END1)
+
   @1
   D=A
   @ARG
@@ -32782,6 +36100,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @SP
@@ -32789,11 +36108,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @1
   D=A
   @ARG
@@ -32806,6 +36127,7 @@
   @R13
   A=M
   M=D
+
   @1
   D=A
   @LCL
@@ -32816,6 +36138,7 @@
   M=D
   @SP
   M=M+1
+
   @32
   D=A
   @SP
@@ -32823,11 +36146,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @2
   D=A
   @LCL
@@ -32838,11 +36163,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M-D
+
   @0
   D=A
   @LCL
@@ -32855,9 +36182,12 @@
   @R13
   A=M
   M=D
+
   @WHILE_EXP0
   0;JMP
+
   (WHILE_END0)
+
   @0
   D=A
   @SP
@@ -32865,35 +36195,67 @@
   M=D
   @SP
   M=M+1
+
   @FUNCTION_RETURN
   0;JMP
+
   (Screen.drawHorizontal)
   @SP
   A=M
   M=0
-  A=A+1
-  M=0
-  A=A+1
-  M=0
-  A=A+1
-  M=0
-  A=A+1
-  M=0
-  A=A+1
-  M=0
-  A=A+1
-  M=0
-  A=A+1
-  M=0
-  A=A+1
-  M=0
-  A=A+1
-  M=0
-  A=A+1
-  M=0
-  A=A+1
   @SP
-  M=A
+  M=M+1
+  @SP
+  A=M
+  M=0
+  @SP
+  M=M+1
+  @SP
+  A=M
+  M=0
+  @SP
+  M=M+1
+  @SP
+  A=M
+  M=0
+  @SP
+  M=M+1
+  @SP
+  A=M
+  M=0
+  @SP
+  M=M+1
+  @SP
+  A=M
+  M=0
+  @SP
+  M=M+1
+  @SP
+  A=M
+  M=0
+  @SP
+  M=M+1
+  @SP
+  A=M
+  M=0
+  @SP
+  M=M+1
+  @SP
+  A=M
+  M=0
+  @SP
+  M=M+1
+  @SP
+  A=M
+  M=0
+  @SP
+  M=M+1
+  @SP
+  A=M
+  M=0
+  @SP
+  M=M+1
+
   @1
   D=A
   @ARG
@@ -32904,6 +36266,7 @@
   M=D
   @SP
   M=M+1
+
   @2
   D=A
   @ARG
@@ -32914,6 +36277,7 @@
   M=D
   @SP
   M=M+1
+
   @Math.min$ret.0
   D=A
   @SP
@@ -32964,6 +36328,7 @@
   @Math.min
   0;JMP
 (Math.min$ret.0)
+
   @7
   D=A
   @LCL
@@ -32976,6 +36341,7 @@
   @R13
   A=M
   M=D
+
   @1
   D=A
   @ARG
@@ -32986,6 +36352,7 @@
   M=D
   @SP
   M=M+1
+
   @2
   D=A
   @ARG
@@ -32996,6 +36363,7 @@
   M=D
   @SP
   M=M+1
+
   @Math.max$ret.0
   D=A
   @SP
@@ -33046,6 +36414,7 @@
   @Math.max
   0;JMP
 (Math.max$ret.0)
+
   @8
   D=A
   @LCL
@@ -33058,6 +36427,7 @@
   @R13
   A=M
   M=D
+
   @0
   D=A
   @ARG
@@ -33068,6 +36438,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @SP
@@ -33075,9 +36446,11 @@
   M=D
   @SP
   M=M+1
+
   @SP
   A=M-1
   M=-M
+
   @SP
   AM=M-1
   D=M
@@ -33095,6 +36468,7 @@
   A=M-1
   M=-1
 (CONTINUE3312)
+
   @0
   D=A
   @ARG
@@ -33105,6 +36479,7 @@
   M=D
   @SP
   M=M+1
+
   @256
   D=A
   @SP
@@ -33112,6 +36487,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -33129,11 +36505,13 @@
   A=M-1
   M=-1
 (CONTINUE3315)
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M&D
+
   @7
   D=A
   @LCL
@@ -33144,6 +36522,7 @@
   M=D
   @SP
   M=M+1
+
   @512
   D=A
   @SP
@@ -33151,6 +36530,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -33168,11 +36548,13 @@
   A=M-1
   M=-1
 (CONTINUE3319)
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M&D
+
   @8
   D=A
   @LCL
@@ -33183,6 +36565,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @SP
@@ -33190,9 +36573,11 @@
   M=D
   @SP
   M=M+1
+
   @SP
   A=M-1
   M=-M
+
   @SP
   AM=M-1
   D=M
@@ -33210,19 +36595,24 @@
   A=M-1
   M=-1
 (CONTINUE3324)
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M&D
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE0
   D;JNE
+
   @IF_FALSE0
   0;JMP
+
   (IF_TRUE0)
+
   @7
   D=A
   @LCL
@@ -33233,6 +36623,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -33240,6 +36631,7 @@
   M=D
   @SP
   M=M+1
+
   @Math.max$ret.1
   D=A
   @SP
@@ -33290,6 +36682,7 @@
   @Math.max
   0;JMP
 (Math.max$ret.1)
+
   @7
   D=A
   @LCL
@@ -33302,6 +36695,7 @@
   @R13
   A=M
   M=D
+
   @8
   D=A
   @LCL
@@ -33312,6 +36706,7 @@
   M=D
   @SP
   M=M+1
+
   @511
   D=A
   @SP
@@ -33319,6 +36714,7 @@
   M=D
   @SP
   M=M+1
+
   @Math.min$ret.1
   D=A
   @SP
@@ -33369,6 +36765,7 @@
   @Math.min
   0;JMP
 (Math.min$ret.1)
+
   @8
   D=A
   @LCL
@@ -33381,6 +36778,7 @@
   @R13
   A=M
   M=D
+
   @7
   D=A
   @LCL
@@ -33391,6 +36789,7 @@
   M=D
   @SP
   M=M+1
+
   @16
   D=A
   @SP
@@ -33398,6 +36797,7 @@
   M=D
   @SP
   M=M+1
+
   @Math.divide$ret.4
   D=A
   @SP
@@ -33448,6 +36848,7 @@
   @Math.divide
   0;JMP
 (Math.divide$ret.4)
+
   @1
   D=A
   @LCL
@@ -33460,6 +36861,7 @@
   @R13
   A=M
   M=D
+
   @7
   D=A
   @LCL
@@ -33470,6 +36872,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @LCL
@@ -33480,6 +36883,7 @@
   M=D
   @SP
   M=M+1
+
   @16
   D=A
   @SP
@@ -33487,6 +36891,7 @@
   M=D
   @SP
   M=M+1
+
   @Math.multiply$ret.12
   D=A
   @SP
@@ -33537,11 +36942,13 @@
   @Math.multiply
   0;JMP
 (Math.multiply$ret.12)
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M-D
+
   @9
   D=A
   @LCL
@@ -33554,6 +36961,7 @@
   @R13
   A=M
   M=D
+
   @8
   D=A
   @LCL
@@ -33564,6 +36972,7 @@
   M=D
   @SP
   M=M+1
+
   @16
   D=A
   @SP
@@ -33571,6 +36980,7 @@
   M=D
   @SP
   M=M+1
+
   @Math.divide$ret.5
   D=A
   @SP
@@ -33621,6 +37031,7 @@
   @Math.divide
   0;JMP
 (Math.divide$ret.5)
+
   @2
   D=A
   @LCL
@@ -33633,6 +37044,7 @@
   @R13
   A=M
   M=D
+
   @8
   D=A
   @LCL
@@ -33643,6 +37055,7 @@
   M=D
   @SP
   M=M+1
+
   @2
   D=A
   @LCL
@@ -33653,6 +37066,7 @@
   M=D
   @SP
   M=M+1
+
   @16
   D=A
   @SP
@@ -33660,6 +37074,7 @@
   M=D
   @SP
   M=M+1
+
   @Math.multiply$ret.13
   D=A
   @SP
@@ -33710,11 +37125,13 @@
   @Math.multiply
   0;JMP
 (Math.multiply$ret.13)
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M-D
+
   @10
   D=A
   @LCL
@@ -33727,6 +37144,7 @@
   @R13
   A=M
   M=D
+
   @9
   D=A
   @LCL
@@ -33737,6 +37155,7 @@
   M=D
   @SP
   M=M+1
+
   @Screen.0
   D=M
   @SP
@@ -33744,16 +37163,19 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @0
   D=A
   @THAT
@@ -33764,6 +37186,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @SP
@@ -33771,14 +37194,17 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M-D
+
   @SP
   A=M-1
   M=!M
+
   @5
   D=A
   @LCL
@@ -33791,6 +37217,7 @@
   @R13
   A=M
   M=D
+
   @10
   D=A
   @LCL
@@ -33801,6 +37228,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @SP
@@ -33808,11 +37236,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @Screen.0
   D=M
   @SP
@@ -33820,16 +37250,19 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @0
   D=A
   @THAT
@@ -33840,6 +37273,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @SP
@@ -33847,11 +37281,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M-D
+
   @4
   D=A
   @LCL
@@ -33864,6 +37300,7 @@
   @R13
   A=M
   M=D
+
   @0
   D=A
   @ARG
@@ -33874,6 +37311,7 @@
   M=D
   @SP
   M=M+1
+
   @32
   D=A
   @SP
@@ -33881,6 +37319,7 @@
   M=D
   @SP
   M=M+1
+
   @Math.multiply$ret.14
   D=A
   @SP
@@ -33931,6 +37370,7 @@
   @Math.multiply
   0;JMP
 (Math.multiply$ret.14)
+
   @1
   D=A
   @LCL
@@ -33941,11 +37381,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @0
   D=A
   @LCL
@@ -33958,6 +37400,7 @@
   @R13
   A=M
   M=D
+
   @2
   D=A
   @LCL
@@ -33968,6 +37411,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @LCL
@@ -33978,11 +37422,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M-D
+
   @6
   D=A
   @LCL
@@ -33995,6 +37441,7 @@
   @R13
   A=M
   M=D
+
   @0
   D=A
   @LCL
@@ -34005,6 +37452,7 @@
   M=D
   @SP
   M=M+1
+
   @6
   D=A
   @LCL
@@ -34015,11 +37463,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @3
   D=A
   @LCL
@@ -34032,6 +37482,7 @@
   @R13
   A=M
   M=D
+
   @6
   D=A
   @LCL
@@ -34042,6 +37493,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -34049,6 +37501,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -34066,14 +37519,18 @@
   A=M-1
   M=-1
 (CONTINUE3392)
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE1
   D;JNE
+
   @IF_FALSE1
   0;JMP
+
   (IF_TRUE1)
+
   @0
   D=A
   @LCL
@@ -34084,6 +37541,7 @@
   M=D
   @SP
   M=M+1
+
   @4
   D=A
   @LCL
@@ -34094,6 +37552,7 @@
   M=D
   @SP
   M=M+1
+
   @5
   D=A
   @LCL
@@ -34104,11 +37563,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M&D
+
   @Screen.updateLocation$ret.5
   D=A
   @SP
@@ -34159,6 +37620,7 @@
   @Screen.updateLocation
   0;JMP
 (Screen.updateLocation$ret.5)
+
   @5
   D=A
   @TEMP
@@ -34171,9 +37633,12 @@
   @R13
   A=M
   M=D
+
   @IF_END1
   0;JMP
+
   (IF_FALSE1)
+
   @0
   D=A
   @LCL
@@ -34184,6 +37649,7 @@
   M=D
   @SP
   M=M+1
+
   @5
   D=A
   @LCL
@@ -34194,6 +37660,7 @@
   M=D
   @SP
   M=M+1
+
   @Screen.updateLocation$ret.6
   D=A
   @SP
@@ -34244,6 +37711,7 @@
   @Screen.updateLocation
   0;JMP
 (Screen.updateLocation$ret.6)
+
   @5
   D=A
   @TEMP
@@ -34256,6 +37724,7 @@
   @R13
   A=M
   M=D
+
   @0
   D=A
   @LCL
@@ -34266,6 +37735,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @SP
@@ -34273,11 +37743,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @0
   D=A
   @LCL
@@ -34290,7 +37762,9 @@
   @R13
   A=M
   M=D
+
   (WHILE_EXP0)
+
   @0
   D=A
   @LCL
@@ -34301,6 +37775,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @LCL
@@ -34311,6 +37786,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -34328,14 +37804,17 @@
   A=M-1
   M=-1
 (CONTINUE3415)
+
   @SP
   A=M-1
   M=!M
+
   @SP
   AM=M-1
   D=M
   @WHILE_END0
   D;JNE
+
   @0
   D=A
   @LCL
@@ -34346,6 +37825,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @SP
@@ -34353,9 +37833,11 @@
   M=D
   @SP
   M=M+1
+
   @SP
   A=M-1
   M=-M
+
   @Screen.updateLocation$ret.7
   D=A
   @SP
@@ -34406,6 +37888,7 @@
   @Screen.updateLocation
   0;JMP
 (Screen.updateLocation$ret.7)
+
   @5
   D=A
   @TEMP
@@ -34418,6 +37901,7 @@
   @R13
   A=M
   M=D
+
   @0
   D=A
   @LCL
@@ -34428,6 +37912,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @SP
@@ -34435,11 +37920,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @0
   D=A
   @LCL
@@ -34452,9 +37939,12 @@
   @R13
   A=M
   M=D
+
   @WHILE_EXP0
   0;JMP
+
   (WHILE_END0)
+
   @3
   D=A
   @LCL
@@ -34465,6 +37955,7 @@
   M=D
   @SP
   M=M+1
+
   @4
   D=A
   @LCL
@@ -34475,6 +37966,7 @@
   M=D
   @SP
   M=M+1
+
   @Screen.updateLocation$ret.8
   D=A
   @SP
@@ -34525,6 +38017,7 @@
   @Screen.updateLocation
   0;JMP
 (Screen.updateLocation$ret.8)
+
   @5
   D=A
   @TEMP
@@ -34537,8 +38030,11 @@
   @R13
   A=M
   M=D
+
   (IF_END1)
+
   (IF_FALSE0)
+
   @0
   D=A
   @SP
@@ -34546,13 +38042,12 @@
   M=D
   @SP
   M=M+1
+
   @FUNCTION_RETURN
   0;JMP
+
   (Screen.drawSymetric)
-  @SP
-  A=M
-  @SP
-  M=A
+
   @1
   D=A
   @ARG
@@ -34563,6 +38058,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @ARG
@@ -34573,11 +38069,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M-D
+
   @0
   D=A
   @ARG
@@ -34588,6 +38086,7 @@
   M=D
   @SP
   M=M+1
+
   @2
   D=A
   @ARG
@@ -34598,11 +38097,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @0
   D=A
   @ARG
@@ -34613,6 +38114,7 @@
   M=D
   @SP
   M=M+1
+
   @2
   D=A
   @ARG
@@ -34623,11 +38125,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M-D
+
   @Screen.drawHorizontal$ret.0
   D=A
   @SP
@@ -34678,6 +38182,7 @@
   @Screen.drawHorizontal
   0;JMP
 (Screen.drawHorizontal$ret.0)
+
   @5
   D=A
   @TEMP
@@ -34690,6 +38195,7 @@
   @R13
   A=M
   M=D
+
   @1
   D=A
   @ARG
@@ -34700,6 +38206,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @ARG
@@ -34710,11 +38217,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @0
   D=A
   @ARG
@@ -34725,6 +38234,7 @@
   M=D
   @SP
   M=M+1
+
   @2
   D=A
   @ARG
@@ -34735,11 +38245,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @0
   D=A
   @ARG
@@ -34750,6 +38262,7 @@
   M=D
   @SP
   M=M+1
+
   @2
   D=A
   @ARG
@@ -34760,11 +38273,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M-D
+
   @Screen.drawHorizontal$ret.1
   D=A
   @SP
@@ -34815,6 +38330,7 @@
   @Screen.drawHorizontal
   0;JMP
 (Screen.drawHorizontal$ret.1)
+
   @5
   D=A
   @TEMP
@@ -34827,6 +38343,7 @@
   @R13
   A=M
   M=D
+
   @1
   D=A
   @ARG
@@ -34837,6 +38354,7 @@
   M=D
   @SP
   M=M+1
+
   @2
   D=A
   @ARG
@@ -34847,11 +38365,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M-D
+
   @0
   D=A
   @ARG
@@ -34862,6 +38382,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @ARG
@@ -34872,11 +38393,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M-D
+
   @0
   D=A
   @ARG
@@ -34887,6 +38410,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @ARG
@@ -34897,11 +38421,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @Screen.drawHorizontal$ret.2
   D=A
   @SP
@@ -34952,6 +38478,7 @@
   @Screen.drawHorizontal
   0;JMP
 (Screen.drawHorizontal$ret.2)
+
   @5
   D=A
   @TEMP
@@ -34964,6 +38491,7 @@
   @R13
   A=M
   M=D
+
   @1
   D=A
   @ARG
@@ -34974,6 +38502,7 @@
   M=D
   @SP
   M=M+1
+
   @2
   D=A
   @ARG
@@ -34984,11 +38513,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @0
   D=A
   @ARG
@@ -34999,6 +38530,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @ARG
@@ -35009,11 +38541,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M-D
+
   @0
   D=A
   @ARG
@@ -35024,6 +38558,7 @@
   M=D
   @SP
   M=M+1
+
   @3
   D=A
   @ARG
@@ -35034,11 +38569,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @Screen.drawHorizontal$ret.3
   D=A
   @SP
@@ -35089,6 +38626,7 @@
   @Screen.drawHorizontal
   0;JMP
 (Screen.drawHorizontal$ret.3)
+
   @5
   D=A
   @TEMP
@@ -35101,6 +38639,7 @@
   @R13
   A=M
   M=D
+
   @0
   D=A
   @SP
@@ -35108,19 +38647,27 @@
   M=D
   @SP
   M=M+1
+
   @FUNCTION_RETURN
   0;JMP
+
   (Screen.drawCircle)
   @SP
   A=M
   M=0
-  A=A+1
-  M=0
-  A=A+1
-  M=0
-  A=A+1
   @SP
-  M=A
+  M=M+1
+  @SP
+  A=M
+  M=0
+  @SP
+  M=M+1
+  @SP
+  A=M
+  M=0
+  @SP
+  M=M+1
+
   @0
   D=A
   @ARG
@@ -35131,6 +38678,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -35138,6 +38686,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -35155,6 +38704,7 @@
   A=M-1
   M=-1
 (CONTINUE3487)
+
   @0
   D=A
   @ARG
@@ -35165,6 +38715,7 @@
   M=D
   @SP
   M=M+1
+
   @511
   D=A
   @SP
@@ -35172,6 +38723,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -35189,11 +38741,13 @@
   A=M-1
   M=-1
 (CONTINUE3490)
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M|D
+
   @1
   D=A
   @ARG
@@ -35204,6 +38758,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -35211,6 +38766,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -35228,11 +38784,13 @@
   A=M-1
   M=-1
 (CONTINUE3494)
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M|D
+
   @1
   D=A
   @ARG
@@ -35243,6 +38801,7 @@
   M=D
   @SP
   M=M+1
+
   @255
   D=A
   @SP
@@ -35250,6 +38809,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -35267,19 +38827,24 @@
   A=M-1
   M=-1
 (CONTINUE3498)
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M|D
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE0
   D;JNE
+
   @IF_FALSE0
   0;JMP
+
   (IF_TRUE0)
+
   @12
   D=A
   @SP
@@ -35287,6 +38852,7 @@
   M=D
   @SP
   M=M+1
+
   @Sys.error$ret.9
   D=A
   @SP
@@ -35337,6 +38903,7 @@
   @Sys.error
   0;JMP
 (Sys.error$ret.9)
+
   @5
   D=A
   @TEMP
@@ -35349,7 +38916,9 @@
   @R13
   A=M
   M=D
+
   (IF_FALSE0)
+
   @0
   D=A
   @ARG
@@ -35360,6 +38929,7 @@
   M=D
   @SP
   M=M+1
+
   @2
   D=A
   @ARG
@@ -35370,11 +38940,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M-D
+
   @0
   D=A
   @SP
@@ -35382,6 +38954,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -35399,6 +38972,7 @@
   A=M-1
   M=-1
 (CONTINUE3511)
+
   @0
   D=A
   @ARG
@@ -35409,6 +38983,7 @@
   M=D
   @SP
   M=M+1
+
   @2
   D=A
   @ARG
@@ -35419,11 +38994,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @511
   D=A
   @SP
@@ -35431,6 +39008,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -35448,11 +39026,13 @@
   A=M-1
   M=-1
 (CONTINUE3516)
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M|D
+
   @1
   D=A
   @ARG
@@ -35463,6 +39043,7 @@
   M=D
   @SP
   M=M+1
+
   @2
   D=A
   @ARG
@@ -35473,11 +39054,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M-D
+
   @0
   D=A
   @SP
@@ -35485,6 +39068,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -35502,11 +39086,13 @@
   A=M-1
   M=-1
 (CONTINUE3522)
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M|D
+
   @1
   D=A
   @ARG
@@ -35517,6 +39103,7 @@
   M=D
   @SP
   M=M+1
+
   @2
   D=A
   @ARG
@@ -35527,11 +39114,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @255
   D=A
   @SP
@@ -35539,6 +39128,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -35556,19 +39146,24 @@
   A=M-1
   M=-1
 (CONTINUE3528)
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M|D
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE1
   D;JNE
+
   @IF_FALSE1
   0;JMP
+
   (IF_TRUE1)
+
   @13
   D=A
   @SP
@@ -35576,6 +39171,7 @@
   M=D
   @SP
   M=M+1
+
   @Sys.error$ret.10
   D=A
   @SP
@@ -35626,6 +39222,7 @@
   @Sys.error
   0;JMP
 (Sys.error$ret.10)
+
   @5
   D=A
   @TEMP
@@ -35638,7 +39235,9 @@
   @R13
   A=M
   M=D
+
   (IF_FALSE1)
+
   @2
   D=A
   @ARG
@@ -35649,6 +39248,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @LCL
@@ -35661,6 +39261,7 @@
   @R13
   A=M
   M=D
+
   @1
   D=A
   @SP
@@ -35668,6 +39269,7 @@
   M=D
   @SP
   M=M+1
+
   @2
   D=A
   @ARG
@@ -35678,11 +39280,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M-D
+
   @2
   D=A
   @LCL
@@ -35695,6 +39299,7 @@
   @R13
   A=M
   M=D
+
   @0
   D=A
   @ARG
@@ -35705,6 +39310,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @ARG
@@ -35715,6 +39321,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -35725,6 +39332,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @LCL
@@ -35735,6 +39343,7 @@
   M=D
   @SP
   M=M+1
+
   @Screen.drawSymetric$ret.0
   D=A
   @SP
@@ -35785,6 +39394,7 @@
   @Screen.drawSymetric
   0;JMP
 (Screen.drawSymetric$ret.0)
+
   @5
   D=A
   @TEMP
@@ -35797,7 +39407,9 @@
   @R13
   A=M
   M=D
+
   (WHILE_EXP0)
+
   @1
   D=A
   @LCL
@@ -35808,6 +39420,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -35818,6 +39431,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -35835,14 +39449,17 @@
   A=M-1
   M=-1
 (CONTINUE3552)
+
   @SP
   A=M-1
   M=!M
+
   @SP
   AM=M-1
   D=M
   @WHILE_END0
   D;JNE
+
   @2
   D=A
   @LCL
@@ -35853,6 +39470,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -35860,6 +39478,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -35877,14 +39496,18 @@
   A=M-1
   M=-1
 (CONTINUE3557)
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE2
   D;JNE
+
   @IF_FALSE2
   0;JMP
+
   (IF_TRUE2)
+
   @2
   D=A
   @LCL
@@ -35895,6 +39518,7 @@
   M=D
   @SP
   M=M+1
+
   @2
   D=A
   @SP
@@ -35902,6 +39526,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -35912,6 +39537,7 @@
   M=D
   @SP
   M=M+1
+
   @Math.multiply$ret.15
   D=A
   @SP
@@ -35962,11 +39588,13 @@
   @Math.multiply
   0;JMP
 (Math.multiply$ret.15)
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @3
   D=A
   @SP
@@ -35974,11 +39602,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @2
   D=A
   @LCL
@@ -35991,9 +39621,12 @@
   @R13
   A=M
   M=D
+
   @IF_END2
   0;JMP
+
   (IF_FALSE2)
+
   @2
   D=A
   @LCL
@@ -36004,6 +39637,7 @@
   M=D
   @SP
   M=M+1
+
   @2
   D=A
   @SP
@@ -36011,6 +39645,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -36021,6 +39656,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @LCL
@@ -36031,11 +39667,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M-D
+
   @Math.multiply$ret.16
   D=A
   @SP
@@ -36086,11 +39724,13 @@
   @Math.multiply
   0;JMP
 (Math.multiply$ret.16)
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @5
   D=A
   @SP
@@ -36098,11 +39738,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @2
   D=A
   @LCL
@@ -36115,6 +39757,7 @@
   @R13
   A=M
   M=D
+
   @1
   D=A
   @LCL
@@ -36125,6 +39768,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @SP
@@ -36132,11 +39776,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M-D
+
   @1
   D=A
   @LCL
@@ -36149,7 +39795,9 @@
   @R13
   A=M
   M=D
+
   (IF_END2)
+
   @0
   D=A
   @LCL
@@ -36160,6 +39808,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @SP
@@ -36167,11 +39816,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @0
   D=A
   @LCL
@@ -36184,6 +39835,7 @@
   @R13
   A=M
   M=D
+
   @0
   D=A
   @ARG
@@ -36194,6 +39846,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @ARG
@@ -36204,6 +39857,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -36214,6 +39868,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @LCL
@@ -36224,6 +39879,7 @@
   M=D
   @SP
   M=M+1
+
   @Screen.drawSymetric$ret.1
   D=A
   @SP
@@ -36274,6 +39930,7 @@
   @Screen.drawSymetric
   0;JMP
 (Screen.drawSymetric$ret.1)
+
   @5
   D=A
   @TEMP
@@ -36286,9 +39943,12 @@
   @R13
   A=M
   M=D
+
   @WHILE_EXP0
   0;JMP
+
   (WHILE_END0)
+
   @0
   D=A
   @SP
@@ -36296,13 +39956,12 @@
   M=D
   @SP
   M=M+1
+
   @FUNCTION_RETURN
   0;JMP
+
   (String.new)
-  @SP
-  A=M
-  @SP
-  M=A
+
   @3
   D=A
   @SP
@@ -36310,6 +39969,7 @@
   M=D
   @SP
   M=M+1
+
   @Memory.alloc$ret.1
   D=A
   @SP
@@ -36360,11 +40020,13 @@
   @Memory.alloc
   0;JMP
 (Memory.alloc$ret.1)
+
   @SP
   AM=M-1
   D=M
   @THIS
   M=D
+
   @0
   D=A
   @ARG
@@ -36375,6 +40037,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -36382,6 +40045,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -36399,14 +40063,18 @@
   A=M-1
   M=-1
 (CONTINUE3606)
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE0
   D;JNE
+
   @IF_FALSE0
   0;JMP
+
   (IF_TRUE0)
+
   @14
   D=A
   @SP
@@ -36414,6 +40082,7 @@
   M=D
   @SP
   M=M+1
+
   @Sys.error$ret.11
   D=A
   @SP
@@ -36464,6 +40133,7 @@
   @Sys.error
   0;JMP
 (Sys.error$ret.11)
+
   @5
   D=A
   @TEMP
@@ -36476,7 +40146,9 @@
   @R13
   A=M
   M=D
+
   (IF_FALSE0)
+
   @0
   D=A
   @ARG
@@ -36487,6 +40159,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -36494,6 +40167,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -36511,14 +40185,18 @@
   A=M-1
   M=-1
 (CONTINUE3616)
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE1
   D;JNE
+
   @IF_FALSE1
   0;JMP
+
   (IF_TRUE1)
+
   @0
   D=A
   @ARG
@@ -36529,6 +40207,7 @@
   M=D
   @SP
   M=M+1
+
   @Array.new$ret.7
   D=A
   @SP
@@ -36579,6 +40258,7 @@
   @Array.new
   0;JMP
 (Array.new$ret.7)
+
   @1
   D=A
   @THIS
@@ -36591,7 +40271,9 @@
   @R13
   A=M
   M=D
+
   (IF_FALSE1)
+
   @0
   D=A
   @ARG
@@ -36602,6 +40284,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @THIS
@@ -36614,6 +40297,7 @@
   @R13
   A=M
   M=D
+
   @0
   D=A
   @SP
@@ -36621,6 +40305,7 @@
   M=D
   @SP
   M=M+1
+
   @2
   D=A
   @THIS
@@ -36633,6 +40318,7 @@
   @R13
   A=M
   M=D
+
   @THIS
   D=M
   @SP
@@ -36640,13 +40326,12 @@
   M=D
   @SP
   M=M+1
+
   @FUNCTION_RETURN
   0;JMP
+
   (String.dispose)
-  @SP
-  A=M
-  @SP
-  M=A
+
   @0
   D=A
   @ARG
@@ -36657,11 +40342,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   @THIS
   M=D
+
   @0
   D=A
   @THIS
@@ -36672,6 +40359,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -36679,6 +40367,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -36696,14 +40385,18 @@
   A=M-1
   M=-1
 (CONTINUE3635)
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE0
   D;JNE
+
   @IF_FALSE0
   0;JMP
+
   (IF_TRUE0)
+
   @1
   D=A
   @THIS
@@ -36714,6 +40407,7 @@
   M=D
   @SP
   M=M+1
+
   @Array.dispose$ret.0
   D=A
   @SP
@@ -36764,6 +40458,7 @@
   @Array.dispose
   0;JMP
 (Array.dispose$ret.0)
+
   @5
   D=A
   @TEMP
@@ -36776,7 +40471,9 @@
   @R13
   A=M
   M=D
+
   (IF_FALSE0)
+
   @THIS
   D=M
   @SP
@@ -36784,6 +40481,7 @@
   M=D
   @SP
   M=M+1
+
   @Memory.deAlloc$ret.1
   D=A
   @SP
@@ -36834,6 +40532,7 @@
   @Memory.deAlloc
   0;JMP
 (Memory.deAlloc$ret.1)
+
   @5
   D=A
   @TEMP
@@ -36846,6 +40545,7 @@
   @R13
   A=M
   M=D
+
   @0
   D=A
   @SP
@@ -36853,13 +40553,12 @@
   M=D
   @SP
   M=M+1
+
   @FUNCTION_RETURN
   0;JMP
+
   (String.length)
-  @SP
-  A=M
-  @SP
-  M=A
+
   @0
   D=A
   @ARG
@@ -36870,11 +40569,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   @THIS
   M=D
+
   @2
   D=A
   @THIS
@@ -36885,13 +40586,12 @@
   M=D
   @SP
   M=M+1
+
   @FUNCTION_RETURN
   0;JMP
+
   (String.charAt)
-  @SP
-  A=M
-  @SP
-  M=A
+
   @0
   D=A
   @ARG
@@ -36902,11 +40602,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   @THIS
   M=D
+
   @1
   D=A
   @ARG
@@ -36917,6 +40619,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -36924,6 +40627,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -36941,6 +40645,7 @@
   A=M-1
   M=-1
 (CONTINUE3658)
+
   @1
   D=A
   @ARG
@@ -36951,6 +40656,7 @@
   M=D
   @SP
   M=M+1
+
   @2
   D=A
   @THIS
@@ -36961,6 +40667,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -36978,11 +40685,13 @@
   A=M-1
   M=-1
 (CONTINUE3661)
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M|D
+
   @1
   D=A
   @ARG
@@ -36993,6 +40702,7 @@
   M=D
   @SP
   M=M+1
+
   @2
   D=A
   @THIS
@@ -37003,6 +40713,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -37020,19 +40731,24 @@
   A=M-1
   M=-1
 (CONTINUE3665)
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M|D
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE0
   D;JNE
+
   @IF_FALSE0
   0;JMP
+
   (IF_TRUE0)
+
   @15
   D=A
   @SP
@@ -37040,6 +40756,7 @@
   M=D
   @SP
   M=M+1
+
   @Sys.error$ret.12
   D=A
   @SP
@@ -37090,6 +40807,7 @@
   @Sys.error
   0;JMP
 (Sys.error$ret.12)
+
   @5
   D=A
   @TEMP
@@ -37102,7 +40820,9 @@
   @R13
   A=M
   M=D
+
   (IF_FALSE0)
+
   @1
   D=A
   @ARG
@@ -37113,6 +40833,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @THIS
@@ -37123,16 +40844,19 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @0
   D=A
   @THAT
@@ -37143,13 +40867,12 @@
   M=D
   @SP
   M=M+1
+
   @FUNCTION_RETURN
   0;JMP
+
   (String.setCharAt)
-  @SP
-  A=M
-  @SP
-  M=A
+
   @0
   D=A
   @ARG
@@ -37160,11 +40883,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   @THIS
   M=D
+
   @1
   D=A
   @ARG
@@ -37175,6 +40900,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -37182,6 +40908,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -37199,6 +40926,7 @@
   A=M-1
   M=-1
 (CONTINUE3685)
+
   @1
   D=A
   @ARG
@@ -37209,6 +40937,7 @@
   M=D
   @SP
   M=M+1
+
   @2
   D=A
   @THIS
@@ -37219,6 +40948,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -37236,11 +40966,13 @@
   A=M-1
   M=-1
 (CONTINUE3688)
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M|D
+
   @1
   D=A
   @ARG
@@ -37251,6 +40983,7 @@
   M=D
   @SP
   M=M+1
+
   @2
   D=A
   @THIS
@@ -37261,6 +40994,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -37278,19 +41012,24 @@
   A=M-1
   M=-1
 (CONTINUE3692)
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M|D
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE0
   D;JNE
+
   @IF_FALSE0
   0;JMP
+
   (IF_TRUE0)
+
   @16
   D=A
   @SP
@@ -37298,6 +41037,7 @@
   M=D
   @SP
   M=M+1
+
   @Sys.error$ret.13
   D=A
   @SP
@@ -37348,6 +41088,7 @@
   @Sys.error
   0;JMP
 (Sys.error$ret.13)
+
   @5
   D=A
   @TEMP
@@ -37360,7 +41101,9 @@
   @R13
   A=M
   M=D
+
   (IF_FALSE0)
+
   @1
   D=A
   @ARG
@@ -37371,6 +41114,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @THIS
@@ -37381,11 +41125,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @2
   D=A
   @ARG
@@ -37396,6 +41142,7 @@
   M=D
   @SP
   M=M+1
+
   @5
   D=A
   @TEMP
@@ -37408,11 +41155,13 @@
   @R13
   A=M
   M=D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @5
   D=A
   @TEMP
@@ -37423,6 +41172,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @THAT
@@ -37435,6 +41185,7 @@
   @R13
   A=M
   M=D
+
   @0
   D=A
   @SP
@@ -37442,13 +41193,12 @@
   M=D
   @SP
   M=M+1
+
   @FUNCTION_RETURN
   0;JMP
+
   (String.appendChar)
-  @SP
-  A=M
-  @SP
-  M=A
+
   @0
   D=A
   @ARG
@@ -37459,11 +41209,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   @THIS
   M=D
+
   @2
   D=A
   @THIS
@@ -37474,6 +41226,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @THIS
@@ -37484,6 +41237,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -37501,14 +41255,18 @@
   A=M-1
   M=-1
 (CONTINUE3716)
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE0
   D;JNE
+
   @IF_FALSE0
   0;JMP
+
   (IF_TRUE0)
+
   @17
   D=A
   @SP
@@ -37516,6 +41274,7 @@
   M=D
   @SP
   M=M+1
+
   @Sys.error$ret.14
   D=A
   @SP
@@ -37566,6 +41325,7 @@
   @Sys.error
   0;JMP
 (Sys.error$ret.14)
+
   @5
   D=A
   @TEMP
@@ -37578,7 +41338,9 @@
   @R13
   A=M
   M=D
+
   (IF_FALSE0)
+
   @2
   D=A
   @THIS
@@ -37589,6 +41351,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @THIS
@@ -37599,11 +41362,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @1
   D=A
   @ARG
@@ -37614,6 +41379,7 @@
   M=D
   @SP
   M=M+1
+
   @5
   D=A
   @TEMP
@@ -37626,11 +41392,13 @@
   @R13
   A=M
   M=D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @5
   D=A
   @TEMP
@@ -37641,6 +41409,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @THAT
@@ -37653,6 +41422,7 @@
   @R13
   A=M
   M=D
+
   @2
   D=A
   @THIS
@@ -37663,6 +41433,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @SP
@@ -37670,11 +41441,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @2
   D=A
   @THIS
@@ -37687,6 +41460,7 @@
   @R13
   A=M
   M=D
+
   @THIS
   D=M
   @SP
@@ -37694,13 +41468,12 @@
   M=D
   @SP
   M=M+1
+
   @FUNCTION_RETURN
   0;JMP
+
   (String.eraseLastChar)
-  @SP
-  A=M
-  @SP
-  M=A
+
   @0
   D=A
   @ARG
@@ -37711,11 +41484,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   @THIS
   M=D
+
   @2
   D=A
   @THIS
@@ -37726,6 +41501,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -37733,6 +41509,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -37750,14 +41527,18 @@
   A=M-1
   M=-1
 (CONTINUE3743)
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE0
   D;JNE
+
   @IF_FALSE0
   0;JMP
+
   (IF_TRUE0)
+
   @18
   D=A
   @SP
@@ -37765,6 +41546,7 @@
   M=D
   @SP
   M=M+1
+
   @Sys.error$ret.15
   D=A
   @SP
@@ -37815,6 +41597,7 @@
   @Sys.error
   0;JMP
 (Sys.error$ret.15)
+
   @5
   D=A
   @TEMP
@@ -37827,7 +41610,9 @@
   @R13
   A=M
   M=D
+
   (IF_FALSE0)
+
   @2
   D=A
   @THIS
@@ -37838,6 +41623,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @SP
@@ -37845,11 +41631,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M-D
+
   @2
   D=A
   @THIS
@@ -37862,6 +41650,7 @@
   @R13
   A=M
   M=D
+
   @0
   D=A
   @SP
@@ -37869,23 +41658,37 @@
   M=D
   @SP
   M=M+1
+
   @FUNCTION_RETURN
   0;JMP
+
   (String.intValue)
   @SP
   A=M
   M=0
-  A=A+1
-  M=0
-  A=A+1
-  M=0
-  A=A+1
-  M=0
-  A=A+1
-  M=0
-  A=A+1
   @SP
-  M=A
+  M=M+1
+  @SP
+  A=M
+  M=0
+  @SP
+  M=M+1
+  @SP
+  A=M
+  M=0
+  @SP
+  M=M+1
+  @SP
+  A=M
+  M=0
+  @SP
+  M=M+1
+  @SP
+  A=M
+  M=0
+  @SP
+  M=M+1
+
   @0
   D=A
   @ARG
@@ -37896,11 +41699,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   @THIS
   M=D
+
   @2
   D=A
   @THIS
@@ -37911,6 +41716,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -37918,6 +41724,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -37935,14 +41742,18 @@
   A=M-1
   M=-1
 (CONTINUE3762)
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE0
   D;JNE
+
   @IF_FALSE0
   0;JMP
+
   (IF_TRUE0)
+
   @0
   D=A
   @SP
@@ -37950,9 +41761,12 @@
   M=D
   @SP
   M=M+1
+
   @FUNCTION_RETURN
   0;JMP
+
   (IF_FALSE0)
+
   @0
   D=A
   @SP
@@ -37960,9 +41774,11 @@
   M=D
   @SP
   M=M+1
+
   @SP
   A=M-1
   M=!M
+
   @3
   D=A
   @LCL
@@ -37975,6 +41791,7 @@
   @R13
   A=M
   M=D
+
   @0
   D=A
   @SP
@@ -37982,6 +41799,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @THIS
@@ -37992,16 +41810,19 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @0
   D=A
   @THAT
@@ -38012,6 +41833,7 @@
   M=D
   @SP
   M=M+1
+
   @45
   D=A
   @SP
@@ -38019,6 +41841,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -38036,14 +41859,18 @@
   A=M-1
   M=-1
 (CONTINUE3778)
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE1
   D;JNE
+
   @IF_FALSE1
   0;JMP
+
   (IF_TRUE1)
+
   @0
   D=A
   @SP
@@ -38051,9 +41878,11 @@
   M=D
   @SP
   M=M+1
+
   @SP
   A=M-1
   M=!M
+
   @4
   D=A
   @LCL
@@ -38066,6 +41895,7 @@
   @R13
   A=M
   M=D
+
   @1
   D=A
   @SP
@@ -38073,6 +41903,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -38085,8 +41916,11 @@
   @R13
   A=M
   M=D
+
   (IF_FALSE1)
+
   (WHILE_EXP0)
+
   @0
   D=A
   @LCL
@@ -38097,6 +41931,7 @@
   M=D
   @SP
   M=M+1
+
   @2
   D=A
   @THIS
@@ -38107,6 +41942,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -38124,6 +41960,7 @@
   A=M-1
   M=-1
 (CONTINUE3791)
+
   @3
   D=A
   @LCL
@@ -38134,19 +41971,23 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M&D
+
   @SP
   A=M-1
   M=!M
+
   @SP
   AM=M-1
   D=M
   @WHILE_END0
   D;JNE
+
   @0
   D=A
   @LCL
@@ -38157,6 +41998,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @THIS
@@ -38167,16 +42009,19 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @0
   D=A
   @THAT
@@ -38187,6 +42032,7 @@
   M=D
   @SP
   M=M+1
+
   @48
   D=A
   @SP
@@ -38194,11 +42040,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M-D
+
   @2
   D=A
   @LCL
@@ -38211,6 +42059,7 @@
   @R13
   A=M
   M=D
+
   @2
   D=A
   @LCL
@@ -38221,6 +42070,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -38228,6 +42078,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -38245,6 +42096,7 @@
   A=M-1
   M=-1
 (CONTINUE3806)
+
   @2
   D=A
   @LCL
@@ -38255,6 +42107,7 @@
   M=D
   @SP
   M=M+1
+
   @9
   D=A
   @SP
@@ -38262,6 +42115,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -38279,14 +42133,17 @@
   A=M-1
   M=-1
 (CONTINUE3809)
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M|D
+
   @SP
   A=M-1
   M=!M
+
   @3
   D=A
   @LCL
@@ -38299,6 +42156,7 @@
   @R13
   A=M
   M=D
+
   @3
   D=A
   @LCL
@@ -38309,14 +42167,18 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE2
   D;JNE
+
   @IF_FALSE2
   0;JMP
+
   (IF_TRUE2)
+
   @1
   D=A
   @LCL
@@ -38327,6 +42189,7 @@
   M=D
   @SP
   M=M+1
+
   @10
   D=A
   @SP
@@ -38334,6 +42197,7 @@
   M=D
   @SP
   M=M+1
+
   @Math.multiply$ret.17
   D=A
   @SP
@@ -38384,6 +42248,7 @@
   @Math.multiply
   0;JMP
 (Math.multiply$ret.17)
+
   @2
   D=A
   @LCL
@@ -38394,11 +42259,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @1
   D=A
   @LCL
@@ -38411,6 +42278,7 @@
   @R13
   A=M
   M=D
+
   @0
   D=A
   @LCL
@@ -38421,6 +42289,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @SP
@@ -38428,11 +42297,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @0
   D=A
   @LCL
@@ -38445,10 +42316,14 @@
   @R13
   A=M
   M=D
+
   (IF_FALSE2)
+
   @WHILE_EXP0
   0;JMP
+
   (WHILE_END0)
+
   @4
   D=A
   @LCL
@@ -38459,14 +42334,18 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE3
   D;JNE
+
   @IF_FALSE3
   0;JMP
+
   (IF_TRUE3)
+
   @1
   D=A
   @LCL
@@ -38477,9 +42356,11 @@
   M=D
   @SP
   M=M+1
+
   @SP
   A=M-1
   M=-M
+
   @1
   D=A
   @LCL
@@ -38492,7 +42373,9 @@
   @R13
   A=M
   M=D
+
   (IF_FALSE3)
+
   @1
   D=A
   @LCL
@@ -38503,21 +42386,32 @@
   M=D
   @SP
   M=M+1
+
   @FUNCTION_RETURN
   0;JMP
+
   (String.setInt)
   @SP
   A=M
   M=0
-  A=A+1
-  M=0
-  A=A+1
-  M=0
-  A=A+1
-  M=0
-  A=A+1
   @SP
-  M=A
+  M=M+1
+  @SP
+  A=M
+  M=0
+  @SP
+  M=M+1
+  @SP
+  A=M
+  M=0
+  @SP
+  M=M+1
+  @SP
+  A=M
+  M=0
+  @SP
+  M=M+1
+
   @0
   D=A
   @ARG
@@ -38528,11 +42422,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   @THIS
   M=D
+
   @0
   D=A
   @THIS
@@ -38543,6 +42439,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -38550,6 +42447,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -38567,14 +42465,18 @@
   A=M-1
   M=-1
 (CONTINUE3845)
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE0
   D;JNE
+
   @IF_FALSE0
   0;JMP
+
   (IF_TRUE0)
+
   @19
   D=A
   @SP
@@ -38582,6 +42484,7 @@
   M=D
   @SP
   M=M+1
+
   @Sys.error$ret.16
   D=A
   @SP
@@ -38632,6 +42535,7 @@
   @Sys.error
   0;JMP
 (Sys.error$ret.16)
+
   @5
   D=A
   @TEMP
@@ -38644,7 +42548,9 @@
   @R13
   A=M
   M=D
+
   (IF_FALSE0)
+
   @6
   D=A
   @SP
@@ -38652,6 +42558,7 @@
   M=D
   @SP
   M=M+1
+
   @Array.new$ret.8
   D=A
   @SP
@@ -38702,6 +42609,7 @@
   @Array.new
   0;JMP
 (Array.new$ret.8)
+
   @2
   D=A
   @LCL
@@ -38714,6 +42622,7 @@
   @R13
   A=M
   M=D
+
   @1
   D=A
   @ARG
@@ -38724,6 +42633,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -38731,6 +42641,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -38748,14 +42659,18 @@
   A=M-1
   M=-1
 (CONTINUE3858)
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE1
   D;JNE
+
   @IF_FALSE1
   0;JMP
+
   (IF_TRUE1)
+
   @0
   D=A
   @SP
@@ -38763,9 +42678,11 @@
   M=D
   @SP
   M=M+1
+
   @SP
   A=M-1
   M=!M
+
   @3
   D=A
   @LCL
@@ -38778,6 +42695,7 @@
   @R13
   A=M
   M=D
+
   @1
   D=A
   @ARG
@@ -38788,9 +42706,11 @@
   M=D
   @SP
   M=M+1
+
   @SP
   A=M-1
   M=-M
+
   @1
   D=A
   @ARG
@@ -38803,7 +42723,9 @@
   @R13
   A=M
   M=D
+
   (IF_FALSE1)
+
   @1
   D=A
   @ARG
@@ -38814,6 +42736,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @LCL
@@ -38826,7 +42749,9 @@
   @R13
   A=M
   M=D
+
   (WHILE_EXP0)
+
   @1
   D=A
   @LCL
@@ -38837,6 +42762,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -38844,6 +42770,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -38861,14 +42788,17 @@
   A=M-1
   M=-1
 (CONTINUE3874)
+
   @SP
   A=M-1
   M=!M
+
   @SP
   AM=M-1
   D=M
   @WHILE_END0
   D;JNE
+
   @1
   D=A
   @ARG
@@ -38879,6 +42809,7 @@
   M=D
   @SP
   M=M+1
+
   @10
   D=A
   @SP
@@ -38886,6 +42817,7 @@
   M=D
   @SP
   M=M+1
+
   @Math.divide$ret.6
   D=A
   @SP
@@ -38936,6 +42868,7 @@
   @Math.divide
   0;JMP
 (Math.divide$ret.6)
+
   @1
   D=A
   @LCL
@@ -38948,6 +42881,7 @@
   @R13
   A=M
   M=D
+
   @0
   D=A
   @LCL
@@ -38958,6 +42892,7 @@
   M=D
   @SP
   M=M+1
+
   @2
   D=A
   @LCL
@@ -38968,11 +42903,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @48
   D=A
   @SP
@@ -38980,6 +42917,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @ARG
@@ -38990,6 +42928,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @LCL
@@ -39000,6 +42939,7 @@
   M=D
   @SP
   M=M+1
+
   @10
   D=A
   @SP
@@ -39007,6 +42947,7 @@
   M=D
   @SP
   M=M+1
+
   @Math.multiply$ret.18
   D=A
   @SP
@@ -39057,16 +42998,19 @@
   @Math.multiply
   0;JMP
 (Math.multiply$ret.18)
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M-D
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @5
   D=A
   @TEMP
@@ -39079,11 +43023,13 @@
   @R13
   A=M
   M=D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @5
   D=A
   @TEMP
@@ -39094,6 +43040,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @THAT
@@ -39106,6 +43053,7 @@
   @R13
   A=M
   M=D
+
   @0
   D=A
   @LCL
@@ -39116,6 +43064,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @SP
@@ -39123,11 +43072,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @0
   D=A
   @LCL
@@ -39140,6 +43091,7 @@
   @R13
   A=M
   M=D
+
   @1
   D=A
   @LCL
@@ -39150,6 +43102,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @ARG
@@ -39162,9 +43115,12 @@
   @R13
   A=M
   M=D
+
   @WHILE_EXP0
   0;JMP
+
   (WHILE_END0)
+
   @3
   D=A
   @LCL
@@ -39175,14 +43131,18 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE2
   D;JNE
+
   @IF_FALSE2
   0;JMP
+
   (IF_TRUE2)
+
   @0
   D=A
   @LCL
@@ -39193,6 +43153,7 @@
   M=D
   @SP
   M=M+1
+
   @2
   D=A
   @LCL
@@ -39203,11 +43164,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @45
   D=A
   @SP
@@ -39215,6 +43178,7 @@
   M=D
   @SP
   M=M+1
+
   @5
   D=A
   @TEMP
@@ -39227,11 +43191,13 @@
   @R13
   A=M
   M=D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @5
   D=A
   @TEMP
@@ -39242,6 +43208,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @THAT
@@ -39254,6 +43221,7 @@
   @R13
   A=M
   M=D
+
   @0
   D=A
   @LCL
@@ -39264,6 +43232,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @SP
@@ -39271,11 +43240,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @0
   D=A
   @LCL
@@ -39288,7 +43259,9 @@
   @R13
   A=M
   M=D
+
   (IF_FALSE2)
+
   @0
   D=A
   @THIS
@@ -39299,6 +43272,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -39309,6 +43283,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -39326,14 +43301,18 @@
   A=M-1
   M=-1
 (CONTINUE3922)
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE3
   D;JNE
+
   @IF_FALSE3
   0;JMP
+
   (IF_TRUE3)
+
   @19
   D=A
   @SP
@@ -39341,6 +43320,7 @@
   M=D
   @SP
   M=M+1
+
   @Sys.error$ret.17
   D=A
   @SP
@@ -39391,6 +43371,7 @@
   @Sys.error
   0;JMP
 (Sys.error$ret.17)
+
   @5
   D=A
   @TEMP
@@ -39403,7 +43384,9 @@
   @R13
   A=M
   M=D
+
   (IF_FALSE3)
+
   @0
   D=A
   @LCL
@@ -39414,6 +43397,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -39421,6 +43405,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -39438,14 +43423,18 @@
   A=M-1
   M=-1
 (CONTINUE3932)
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE4
   D;JNE
+
   @IF_FALSE4
   0;JMP
+
   (IF_TRUE4)
+
   @0
   D=A
   @SP
@@ -39453,6 +43442,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @THIS
@@ -39463,11 +43453,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @48
   D=A
   @SP
@@ -39475,6 +43467,7 @@
   M=D
   @SP
   M=M+1
+
   @5
   D=A
   @TEMP
@@ -39487,11 +43480,13 @@
   @R13
   A=M
   M=D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @5
   D=A
   @TEMP
@@ -39502,6 +43497,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @THAT
@@ -39514,6 +43510,7 @@
   @R13
   A=M
   M=D
+
   @1
   D=A
   @SP
@@ -39521,6 +43518,7 @@
   M=D
   @SP
   M=M+1
+
   @2
   D=A
   @THIS
@@ -39533,9 +43531,12 @@
   @R13
   A=M
   M=D
+
   @IF_END4
   0;JMP
+
   (IF_FALSE4)
+
   @0
   D=A
   @SP
@@ -39543,6 +43544,7 @@
   M=D
   @SP
   M=M+1
+
   @2
   D=A
   @THIS
@@ -39555,7 +43557,9 @@
   @R13
   A=M
   M=D
+
   (WHILE_EXP1)
+
   @2
   D=A
   @THIS
@@ -39566,6 +43570,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -39576,6 +43581,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -39593,14 +43599,17 @@
   A=M-1
   M=-1
 (CONTINUE3953)
+
   @SP
   A=M-1
   M=!M
+
   @SP
   AM=M-1
   D=M
   @WHILE_END1
   D;JNE
+
   @2
   D=A
   @THIS
@@ -39611,6 +43620,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @THIS
@@ -39621,11 +43631,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @0
   D=A
   @LCL
@@ -39636,6 +43648,7 @@
   M=D
   @SP
   M=M+1
+
   @2
   D=A
   @THIS
@@ -39646,6 +43659,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @SP
@@ -39653,16 +43667,19 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M-D
+
   @2
   D=A
   @LCL
@@ -39673,16 +43690,19 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @0
   D=A
   @THAT
@@ -39693,6 +43713,7 @@
   M=D
   @SP
   M=M+1
+
   @5
   D=A
   @TEMP
@@ -39705,11 +43726,13 @@
   @R13
   A=M
   M=D
+
   @SP
   AM=M-1
   D=M
   @THAT
   M=D
+
   @5
   D=A
   @TEMP
@@ -39720,6 +43743,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @THAT
@@ -39732,6 +43756,7 @@
   @R13
   A=M
   M=D
+
   @2
   D=A
   @THIS
@@ -39742,6 +43767,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @SP
@@ -39749,11 +43775,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M+D
+
   @2
   D=A
   @THIS
@@ -39766,10 +43794,14 @@
   @R13
   A=M
   M=D
+
   @WHILE_EXP1
   0;JMP
+
   (WHILE_END1)
+
   (IF_END4)
+
   @2
   D=A
   @LCL
@@ -39780,6 +43812,7 @@
   M=D
   @SP
   M=M+1
+
   @Array.dispose$ret.1
   D=A
   @SP
@@ -39830,6 +43863,7 @@
   @Array.dispose
   0;JMP
 (Array.dispose$ret.1)
+
   @5
   D=A
   @TEMP
@@ -39842,6 +43876,7 @@
   @R13
   A=M
   M=D
+
   @0
   D=A
   @SP
@@ -39849,13 +43884,12 @@
   M=D
   @SP
   M=M+1
+
   @FUNCTION_RETURN
   0;JMP
+
   (String.newLine)
-  @SP
-  A=M
-  @SP
-  M=A
+
   @128
   D=A
   @SP
@@ -39863,13 +43897,12 @@
   M=D
   @SP
   M=M+1
+
   @FUNCTION_RETURN
   0;JMP
+
   (String.backSpace)
-  @SP
-  A=M
-  @SP
-  M=A
+
   @129
   D=A
   @SP
@@ -39877,13 +43910,12 @@
   M=D
   @SP
   M=M+1
+
   @FUNCTION_RETURN
   0;JMP
+
   (String.doubleQuote)
-  @SP
-  A=M
-  @SP
-  M=A
+
   @34
   D=A
   @SP
@@ -39891,13 +43923,12 @@
   M=D
   @SP
   M=M+1
+
   @FUNCTION_RETURN
   0;JMP
+
   (Sys.init)
-  @SP
-  A=M
-  @SP
-  M=A
+
   @Memory.init$ret.0
   D=A
   @SP
@@ -39948,6 +43979,7 @@
   @Memory.init
   0;JMP
 (Memory.init$ret.0)
+
   @5
   D=A
   @TEMP
@@ -39960,6 +43992,7 @@
   @R13
   A=M
   M=D
+
   @Math.init$ret.0
   D=A
   @SP
@@ -40010,6 +44043,7 @@
   @Math.init
   0;JMP
 (Math.init$ret.0)
+
   @5
   D=A
   @TEMP
@@ -40022,6 +44056,7 @@
   @R13
   A=M
   M=D
+
   @Screen.init$ret.0
   D=A
   @SP
@@ -40072,6 +44107,7 @@
   @Screen.init
   0;JMP
 (Screen.init$ret.0)
+
   @5
   D=A
   @TEMP
@@ -40084,6 +44120,7 @@
   @R13
   A=M
   M=D
+
   @Output.init$ret.0
   D=A
   @SP
@@ -40134,6 +44171,7 @@
   @Output.init
   0;JMP
 (Output.init$ret.0)
+
   @5
   D=A
   @TEMP
@@ -40146,6 +44184,7 @@
   @R13
   A=M
   M=D
+
   @Keyboard.init$ret.0
   D=A
   @SP
@@ -40196,6 +44235,7 @@
   @Keyboard.init
   0;JMP
 (Keyboard.init$ret.0)
+
   @5
   D=A
   @TEMP
@@ -40208,6 +44248,7 @@
   @R13
   A=M
   M=D
+
   @Main.main$ret.0
   D=A
   @SP
@@ -40258,6 +44299,7 @@
   @Main.main
   0;JMP
 (Main.main$ret.0)
+
   @5
   D=A
   @TEMP
@@ -40270,6 +44312,7 @@
   @R13
   A=M
   M=D
+
   @Sys.halt$ret.0
   D=A
   @SP
@@ -40320,6 +44363,7 @@
   @Sys.halt
   0;JMP
 (Sys.halt$ret.0)
+
   @5
   D=A
   @TEMP
@@ -40332,6 +44376,7 @@
   @R13
   A=M
   M=D
+
   @0
   D=A
   @SP
@@ -40339,14 +44384,14 @@
   M=D
   @SP
   M=M+1
+
   @FUNCTION_RETURN
   0;JMP
+
   (Sys.halt)
-  @SP
-  A=M
-  @SP
-  M=A
+
   (WHILE_EXP0)
+
   @0
   D=A
   @SP
@@ -40354,20 +44399,26 @@
   M=D
   @SP
   M=M+1
+
   @SP
   A=M-1
   M=!M
+
   @SP
   A=M-1
   M=!M
+
   @SP
   AM=M-1
   D=M
   @WHILE_END0
   D;JNE
+
   @WHILE_EXP0
   0;JMP
+
   (WHILE_END0)
+
   @0
   D=A
   @SP
@@ -40375,15 +44426,17 @@
   M=D
   @SP
   M=M+1
+
   @FUNCTION_RETURN
   0;JMP
+
   (Sys.wait)
   @SP
   A=M
   M=0
-  A=A+1
   @SP
-  M=A
+  M=M+1
+
   @0
   D=A
   @ARG
@@ -40394,6 +44447,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -40401,6 +44455,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -40418,14 +44473,18 @@
   A=M-1
   M=-1
 (CONTINUE4023)
+
   @SP
   AM=M-1
   D=M
   @IF_TRUE0
   D;JNE
+
   @IF_FALSE0
   0;JMP
+
   (IF_TRUE0)
+
   @1
   D=A
   @SP
@@ -40433,6 +44492,7 @@
   M=D
   @SP
   M=M+1
+
   @Sys.error$ret.18
   D=A
   @SP
@@ -40483,6 +44543,7 @@
   @Sys.error
   0;JMP
 (Sys.error$ret.18)
+
   @5
   D=A
   @TEMP
@@ -40495,8 +44556,11 @@
   @R13
   A=M
   M=D
+
   (IF_FALSE0)
+
   (WHILE_EXP0)
+
   @0
   D=A
   @ARG
@@ -40507,6 +44571,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -40514,6 +44579,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -40531,14 +44597,17 @@
   A=M-1
   M=-1
 (CONTINUE4034)
+
   @SP
   A=M-1
   M=!M
+
   @SP
   AM=M-1
   D=M
   @WHILE_END0
   D;JNE
+
   @50
   D=A
   @SP
@@ -40546,6 +44615,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @LCL
@@ -40558,7 +44628,9 @@
   @R13
   A=M
   M=D
+
   (WHILE_EXP1)
+
   @0
   D=A
   @LCL
@@ -40569,6 +44641,7 @@
   M=D
   @SP
   M=M+1
+
   @0
   D=A
   @SP
@@ -40576,6 +44649,7 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
@@ -40593,14 +44667,17 @@
   A=M-1
   M=-1
 (CONTINUE4042)
+
   @SP
   A=M-1
   M=!M
+
   @SP
   AM=M-1
   D=M
   @WHILE_END1
   D;JNE
+
   @0
   D=A
   @LCL
@@ -40611,6 +44688,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @SP
@@ -40618,11 +44696,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M-D
+
   @0
   D=A
   @LCL
@@ -40635,9 +44715,12 @@
   @R13
   A=M
   M=D
+
   @WHILE_EXP1
   0;JMP
+
   (WHILE_END1)
+
   @0
   D=A
   @ARG
@@ -40648,6 +44731,7 @@
   M=D
   @SP
   M=M+1
+
   @1
   D=A
   @SP
@@ -40655,11 +44739,13 @@
   M=D
   @SP
   M=M+1
+
   @SP
   AM=M-1
   D=M
   A=A-1
   M=M-D
+
   @0
   D=A
   @ARG
@@ -40672,9 +44758,12 @@
   @R13
   A=M
   M=D
+
   @WHILE_EXP0
   0;JMP
+
   (WHILE_END0)
+
   @0
   D=A
   @SP
@@ -40682,13 +44771,12 @@
   M=D
   @SP
   M=M+1
+
   @FUNCTION_RETURN
   0;JMP
+
   (Sys.error)
-  @SP
-  A=M
-  @SP
-  M=A
+
   @69
   D=A
   @SP
@@ -40696,6 +44784,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.printChar$ret.4
   D=A
   @SP
@@ -40746,6 +44835,7 @@
   @Output.printChar
   0;JMP
 (Output.printChar$ret.4)
+
   @5
   D=A
   @TEMP
@@ -40758,6 +44848,7 @@
   @R13
   A=M
   M=D
+
   @82
   D=A
   @SP
@@ -40765,6 +44856,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.printChar$ret.5
   D=A
   @SP
@@ -40815,6 +44907,7 @@
   @Output.printChar
   0;JMP
 (Output.printChar$ret.5)
+
   @5
   D=A
   @TEMP
@@ -40827,6 +44920,7 @@
   @R13
   A=M
   M=D
+
   @82
   D=A
   @SP
@@ -40834,6 +44928,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.printChar$ret.6
   D=A
   @SP
@@ -40884,6 +44979,7 @@
   @Output.printChar
   0;JMP
 (Output.printChar$ret.6)
+
   @5
   D=A
   @TEMP
@@ -40896,6 +44992,7 @@
   @R13
   A=M
   M=D
+
   @0
   D=A
   @ARG
@@ -40906,6 +45003,7 @@
   M=D
   @SP
   M=M+1
+
   @Output.printInt$ret.0
   D=A
   @SP
@@ -40956,6 +45054,7 @@
   @Output.printInt
   0;JMP
 (Output.printInt$ret.0)
+
   @5
   D=A
   @TEMP
@@ -40968,6 +45067,7 @@
   @R13
   A=M
   M=D
+
   @Sys.halt$ret.1
   D=A
   @SP
@@ -41018,6 +45118,7 @@
   @Sys.halt
   0;JMP
 (Sys.halt$ret.1)
+
   @5
   D=A
   @TEMP
@@ -41030,6 +45131,7 @@
   @R13
   A=M
   M=D
+
   @0
   D=A
   @SP
@@ -41037,8 +45139,10 @@
   M=D
   @SP
   M=M+1
+
   @FUNCTION_RETURN
   0;JMP
+
 (END)
   @END
   0;JMP
