@@ -29,44 +29,34 @@ public class CCall : ICommand
             "  @SP",
             "  A=M",
             "  M=D",
-            "  @SP",
-            "  M=M+1",
             
             // store the pointer to the caller's LCL to the stack
             "  @LCL",
             "  D=M",
             "  @SP",
-            "  A=M",
+            "  AM=M+1",
             "  M=D",
-            "  @SP",
-            "  M=M+1",
             
             // store the pointer to the caller's ARG to the stack
             "  @ARG",
             "  D=M",
             "  @SP",
-            "  A=M",
+            "  AM=M+1",
             "  M=D",
-            "  @SP",
-            "  M=M+1",
             
             // store the pointer to the caller's THIS to the stack
             "  @THIS",
             "  D=M",
             "  @SP",
-            "  A=M",
+            "  AM=M+1",
             "  M=D",
-            "  @SP",
-            "  M=M+1",
             
             // store the pointer to the caller's THAT to the stack
             "  @THAT",
             "  D=M",
             "  @SP",
-            "  A=M",
+            "  AM=M+1",
             "  M=D",
-            "  @SP",
-            "  M=M+1",
             
             // set the callee ARG to point at the first arg passed to the function
             "  @SP",

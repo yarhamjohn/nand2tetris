@@ -7,26 +7,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -147,26 +157,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -210,26 +230,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -279,26 +309,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -366,26 +406,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -424,26 +474,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -558,26 +618,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -678,26 +748,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -718,26 +798,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -780,26 +870,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -866,26 +966,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -928,26 +1038,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -980,26 +1100,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -1032,26 +1162,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -1106,26 +1246,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -1283,26 +1433,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -1358,26 +1518,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -1446,26 +1616,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -1508,26 +1688,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -1570,26 +1760,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -1646,26 +1846,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -1693,26 +1903,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -1740,26 +1960,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -1787,26 +2017,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -1834,26 +2074,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -1881,26 +2131,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -1928,26 +2188,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -1975,26 +2245,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -2022,26 +2302,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -2069,26 +2359,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -2116,26 +2416,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -2163,26 +2473,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -2210,26 +2530,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -2250,26 +2580,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -2302,26 +2642,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -2377,26 +2727,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -2429,26 +2789,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -3065,26 +3435,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -3127,26 +3507,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -3742,26 +4132,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -3987,26 +4387,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -4076,26 +4486,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -5102,26 +5522,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -5304,26 +5734,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -6031,26 +6471,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -7017,26 +7467,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -8585,26 +9045,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -8630,26 +9100,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -8682,26 +9162,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -8755,26 +9245,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -8884,26 +9384,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -9020,26 +9530,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -9156,26 +9676,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -9292,26 +9822,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -9428,26 +9968,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -9564,26 +10114,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -9700,26 +10260,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -9836,26 +10406,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -9972,26 +10552,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -10108,26 +10698,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -10244,26 +10844,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -10380,26 +10990,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -10516,26 +11136,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -10652,26 +11282,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -10788,26 +11428,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -10924,26 +11574,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -11060,26 +11720,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -11196,26 +11866,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -11332,26 +12012,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -11468,26 +12158,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -11604,26 +12304,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -11740,26 +12450,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -11876,26 +12596,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -12012,26 +12742,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -12148,26 +12888,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -12284,26 +13034,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -12420,26 +13180,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -12556,26 +13326,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -12692,26 +13472,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -12828,26 +13618,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -12964,26 +13764,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -13100,26 +13910,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -13236,26 +14056,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -13372,26 +14202,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -13508,26 +14348,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -13644,26 +14494,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -13780,26 +14640,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -13916,26 +14786,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -14052,26 +14932,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -14188,26 +15078,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -14324,26 +15224,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -14460,26 +15370,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -14596,26 +15516,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -14732,26 +15662,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -14868,26 +15808,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -15004,26 +15954,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -15140,26 +16100,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -15276,26 +16246,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -15412,26 +16392,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -15548,26 +16538,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -15684,26 +16684,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -15820,26 +16830,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -15956,26 +16976,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -16092,26 +17122,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -16228,26 +17268,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -16364,26 +17414,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -16500,26 +17560,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -16636,26 +17706,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -16772,26 +17852,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -16908,26 +17998,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -17044,26 +18144,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -17180,26 +18290,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -17316,26 +18436,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -17452,26 +18582,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -17588,26 +18728,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -17724,26 +18874,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -17860,26 +19020,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -17996,26 +19166,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -18132,26 +19312,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -18268,26 +19458,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -18404,26 +19604,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -18540,26 +19750,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -18676,26 +19896,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -18812,26 +20042,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -18948,26 +20188,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -19084,26 +20334,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -19220,26 +20480,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -19356,26 +20626,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -19492,26 +20772,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -19628,26 +20918,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -19764,26 +21064,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -19900,26 +21210,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -20036,26 +21356,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -20172,26 +21502,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -20308,26 +21648,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -20444,26 +21794,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -20580,26 +21940,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -20716,26 +22086,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -20852,26 +22232,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -20988,26 +22378,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -21124,26 +22524,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -21260,26 +22670,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -21396,26 +22816,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -21532,26 +22962,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -21668,26 +23108,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -21804,26 +23254,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -21879,26 +23339,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -22812,26 +24282,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -22975,26 +24455,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -23232,26 +24722,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -23719,26 +25219,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -24344,26 +25854,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -24414,26 +25934,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -24483,26 +26013,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -24569,26 +26109,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -24638,26 +26188,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -24714,26 +26274,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -24779,26 +26349,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -24844,26 +26424,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -24909,26 +26499,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -24974,26 +26574,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -25132,26 +26742,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -25233,26 +26853,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -25351,26 +26981,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -25391,26 +27031,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -25511,26 +27161,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -25570,26 +27230,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -25997,26 +27667,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -26099,26 +27779,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -27094,26 +28784,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -27164,26 +28864,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -27243,26 +28953,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -27317,26 +29037,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -27431,26 +29161,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -27535,26 +29275,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -27610,26 +29360,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -27865,26 +29625,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -27943,26 +29713,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -28020,26 +29800,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -28709,26 +30499,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -28793,26 +30593,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -28877,26 +30687,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -28959,26 +30779,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -29331,26 +31161,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -29668,26 +31508,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -29738,26 +31588,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -29817,26 +31677,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -29891,26 +31761,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -29970,26 +31850,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -30181,26 +32071,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -30448,26 +32348,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -30523,26 +32433,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -30675,26 +32595,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -30784,26 +32714,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -30979,26 +32919,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -31051,26 +33001,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -31285,26 +33245,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -31354,26 +33324,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -31423,26 +33403,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -31502,26 +33492,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -31576,26 +33576,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -31655,26 +33665,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -31866,26 +33886,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -32084,26 +34114,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -32159,26 +34199,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -32311,26 +34361,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -32420,26 +34480,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -32563,26 +34633,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -32690,26 +34770,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -32817,26 +34907,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -32944,26 +35044,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -33182,26 +35292,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -33461,26 +35581,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -33610,26 +35740,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -33777,26 +35917,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -33891,26 +36041,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -34069,26 +36229,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -34145,26 +36315,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -34239,26 +36419,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -34344,26 +36534,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -34519,26 +36719,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -34579,26 +36789,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -34825,26 +37045,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -35073,26 +37303,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -35281,26 +37521,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -35520,26 +37770,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -36079,26 +38339,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -36317,26 +38587,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -36377,26 +38657,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -36601,26 +38891,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -36712,26 +39012,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -37036,26 +39346,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -37465,26 +39785,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -37573,26 +39903,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -37625,26 +39965,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -37677,26 +40027,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -37729,26 +40089,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -37781,26 +40151,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -37833,26 +40213,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -37885,26 +40275,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -38038,26 +40438,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -38291,26 +40701,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -38350,26 +40770,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -38409,26 +40839,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -38471,26 +40911,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
@@ -38523,26 +40973,36 @@
   @SP
   A=M
   M=D
+  @SP
+  M=M+1
   @LCL
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @ARG
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THIS
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @THAT
   D=M
   @SP
-  AM=M+1
+  A=M
   M=D
+  @SP
+  M=M+1
   @SP
   D=M
   @5
