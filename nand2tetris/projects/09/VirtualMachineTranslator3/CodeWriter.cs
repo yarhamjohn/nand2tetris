@@ -27,8 +27,7 @@ public class CodeWriter
     {
         var bootstrap = new List<string>
         {
-            "",
-            "// Initialise SP",
+            // Initialise SP
             "  @256",
             "  D=A",
             "  @SP",
@@ -46,8 +45,7 @@ public class CodeWriter
     private static IEnumerable<string> InfiniteLoop() =>
         new List<string>
         {
-            "",
-            "// infinite loop",
+            // infinite loop
             "(END)",
             "  @END",
             "  0;JMP"
@@ -56,24 +54,23 @@ public class CodeWriter
     private static IEnumerable<string> FunctionReturn() =>
         new List<string>
         {
-            "",
-            "// function return",
+            // function return
             "(FUNCTION_RETURN)",
 
-            "// Store the start of the local stack (i.e. 'frame') in a temp variable",
+            // Store the start of the local stack (i.e. 'frame') in a temp variable
             "  @LCL",
             "  D=M",
             "  @R13",
             "  M=D",
             
-            "// Store the return address in a temp variable",
+            // Store the return address in a temp variable
             "  @5",
             "  A=D-A",
             "  D=M",
             "  @R14",
             "  M=D",
             
-            "// Store the return value in the first argument (i.e. top of caller stack)",
+            // Store the return value in the first argument (i.e. top of caller stack)
             "  @SP",
             "  AM=M-1",
             "  D=M",
@@ -81,41 +78,41 @@ public class CodeWriter
             "  A=M",
             "  M=D",
             
-            "// Restore the caller's stack pointer (one after the return value)",
+            // Restore the caller's stack pointer (one after the return value)
             "  @ARG",
             "  D=M+1",
             "  @SP",
             "  M=D",
             
-            "// Restore the caller's THAT segment",
+            // Restore the caller's THAT segment
             "  @R13",
             "  AM=M-1",
             "  D=M",
             "  @THAT",
             "  M=D",
             
-            "// Restore the caller's THIS segment",
+            // Restore the caller's THIS segment
             "  @R13",
             "  AM=M-1",
             "  D=M",
             "  @THIS",
             "  M=D",
             
-            "// Restore the caller's ARG segment",
+            // Restore the caller's ARG segment
             "  @R13",
             "  AM=M-1",
             "  D=M",
             "  @ARG",
             "  M=D",
             
-            "// Restore the caller's LCL segment",
+            // Restore the caller's LCL segment
             "  @R13",
             "  AM=M-1",
             "  D=M",
             "  @LCL",
             "  M=D",
             
-            "// Jump to the return address",
+            // Jump to the return address
             "  @R14",
             "  A=M",
             "  0;JMP"
