@@ -33,11 +33,9 @@ public class CCall : ICommand
             "  @R14",
             "  M=D",
             
-            // Provide the goto function address
+            // Provide the goto function address (only persist in R15 in the main function to reduce line count)
             $"  @{_functionName}",
             "  D=A",
-            "  @R15",
-            "  M=D",
             
             // Jump to call function
             "  @CALL_FUNCTION",

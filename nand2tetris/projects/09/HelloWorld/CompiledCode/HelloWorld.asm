@@ -2,21 +2,6 @@
   D=A
   @SP
   M=D
-  @0
-  D=A
-  @R13
-  M=D
-  @Sys.init$ret.0
-  D=A
-  @R14
-  M=D
-  @Sys.init
-  D=A
-  @R15
-  M=D
-  @CALL_FUNCTION
-  0;JMP
-(Sys.init$ret.0)
 (CALL_FUNCTION)
   @R14
   D=M
@@ -101,6 +86,21 @@
   @RETURN_ADDRESS
   A=M
   0;JMP
+  @0
+  D=A
+  @R13
+  M=D
+  @Sys.init$ret.0
+  D=A
+  @R14
+  M=D
+  @Sys.init
+  D=A
+  @R15
+  M=D
+  @CALL_FUNCTION
+  0;JMP
+(Sys.init$ret.0)
   (Array.new)
   @SP
   A=M

@@ -33,11 +33,11 @@ public class CodeWriter
             "  M=D"
         };
 
-        var sysCall = new CCall("Sys.init", 0, 0);
-        bootstrap.AddRange(sysCall.Translate(0).ToList());
-
         bootstrap.AddRange(FunctionCall());
         bootstrap.AddRange(FunctionReturn());
+        
+        var sysCall = new CCall("Sys.init", 0, 0);
+        bootstrap.AddRange(sysCall.Translate(0).ToList());
 
         return bootstrap;
     }
@@ -57,6 +57,10 @@ public class CodeWriter
             // call {_functionName} {_numArgs}
             "(CALL_FUNCTION)",
 
+            // The goto function address is stored in D so move to @R15 
+            "  @R15",
+            "  M=D",
+            
             // push return address onto stack
             "  @R14",
             "  D=M",
