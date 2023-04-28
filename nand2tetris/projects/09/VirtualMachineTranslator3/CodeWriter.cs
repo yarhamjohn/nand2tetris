@@ -15,7 +15,6 @@ public class CodeWriter
         for (var i = 0; i < _commands.Count; i++)
         {
             result.AddRange(_commands[i].Translate(i));
-            result.Add("");
         }
         
         result.AddRange(InfiniteLoop());
@@ -93,21 +92,21 @@ public class CodeWriter
             
             // Restore the caller's THIS segment
             "  @R13",
-            "  AM=M-1",
+            "  AM=D-1",
             "  D=M",
             "  @THIS",
             "  M=D",
             
             // Restore the caller's ARG segment
             "  @R13",
-            "  AM=M-1",
+            "  AM=D-1",
             "  D=M",
             "  @ARG",
             "  M=D",
             
             // Restore the caller's LCL segment
             "  @R13",
-            "  AM=M-1",
+            "  AM=D-1",
             "  D=M",
             "  @LCL",
             "  M=D",
