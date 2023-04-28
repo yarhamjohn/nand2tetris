@@ -36,6 +36,7 @@ public class CodeWriter
         var sysCall = new CCall("Sys.init", 0, 0);
         bootstrap.AddRange(sysCall.Translate(0).ToList());
 
+        bootstrap.AddRange(FunctionCall());
         bootstrap.AddRange(FunctionReturn());
 
         return bootstrap;
@@ -50,6 +51,69 @@ public class CodeWriter
             "  0;JMP"
         };
 
+    private static IEnumerable<string> FunctionCall() =>
+        new List<string>
+        {
+            // call {_functionName} {_numArgs}
+            "(CALL_FUNCTION)",
+
+            // push return address onto stack
+            "  @R14",
+            "  D=M",
+            "  @SP",
+            "  A=M",
+            "  M=D",
+
+            // store the pointer to the caller's LCL to the stack
+            "  @LCL",
+            "  D=M",
+            "  @SP",
+            "  AM=M+1",
+            "  M=D",
+
+            // store the pointer to the caller's ARG to the stack
+            "  @ARG",
+            "  D=M",
+            "  @SP",
+            "  AM=M+1",
+            "  M=D",
+
+            // store the pointer to the caller's THIS to the stack
+            "  @THIS",
+            "  D=M",
+            "  @SP",
+            "  AM=M+1",
+            "  M=D",
+
+            // store the pointer to the caller's THAT to the stack
+            "  @THAT",
+            "  D=M",
+            "  @SP",
+            "  AM=M+1",
+            "  M=D",
+
+            // set the callee ARG to point at the first arg passed to the function
+            "  @SP",
+            "  D=M",
+            "  @5",
+            "  D=D-A",
+            "  @R13",
+            "  D=D-M",
+            "  @ARG",
+            "  M=D",
+
+            // set the callee LCL point at the top of the stack
+            "  @SP",
+            "  D=M",
+            "  @LCL",
+            "  M=D",
+
+            // Jump back to call function
+            "  @R15",
+            "  A=M",
+            "  0;JMP"
+        };
+    
     private static IEnumerable<string> FunctionReturn() =>
         new List<string>
         {
@@ -59,14 +123,14 @@ public class CodeWriter
             // Store the start of the local stack (i.e. 'frame') in a temp variable
             "  @LCL",
             "  D=M",
-            "  @R13",
+            "  @FRAME_START",
             "  M=D",
             
             // Store the return address in a temp variable
             "  @5",
             "  A=D-A",
             "  D=M",
-            "  @R14",
+            "  @RETURN_ADDRESS",
             "  M=D",
             
             // Store the return value in the first argument (i.e. top of caller stack)
@@ -84,35 +148,35 @@ public class CodeWriter
             "  M=D",
             
             // Restore the caller's THAT segment
-            "  @R13",
+            "  @FRAME_START",
             "  AM=M-1",
             "  D=M",
             "  @THAT",
             "  M=D",
             
             // Restore the caller's THIS segment
-            "  @R13",
+            "  @FRAME_START",
             "  AM=D-1",
             "  D=M",
             "  @THIS",
             "  M=D",
             
             // Restore the caller's ARG segment
-            "  @R13",
+            "  @FRAME_START",
             "  AM=D-1",
             "  D=M",
             "  @ARG",
             "  M=D",
             
             // Restore the caller's LCL segment
-            "  @R13",
+            "  @FRAME_START",
             "  AM=D-1",
             "  D=M",
             "  @LCL",
             "  M=D",
             
             // Jump to the return address
-            "  @R14",
+            "  @RETURN_ADDRESS",
             "  A=M",
             "  0;JMP"
         };

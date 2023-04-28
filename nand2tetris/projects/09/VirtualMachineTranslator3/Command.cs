@@ -21,59 +21,30 @@ public class CCall : ICommand
     {
         var result = new List<string>
         {
-            // call {_functionName} {_numArgs}
+            // Store the number of args in temporary variable
+            $"  @{_numArgs}",
+            "  D=A",
+            "  @R13",
+            "  M=D",
             
-            // push return address onto stack
+            // Store the return address in a temporary variable
             $"  @{_functionName}$ret.{_callNum}",
             "  D=A",
-            "  @SP",
-            "  A=M",
+            "  @R14",
             "  M=D",
             
-            // store the pointer to the caller's LCL to the stack
-            "  @LCL",
-            "  D=M",
-            "  @SP",
-            "  AM=M+1",
+            // Jump to call function
+            "  @CALL_FUNCTION",
+            "  0;JMP",
+            
+            // Provide a return point
+            "  @CALL_FUNCTION_RETURN",
+            "  D=A",
+            "  @R15",
             "  M=D",
             
-            // store the pointer to the caller's ARG to the stack
-            "  @ARG",
-            "  D=M",
-            "  @SP",
-            "  AM=M+1",
-            "  M=D",
+            "(CALL_FUNCTION_RETURN)",
             
-            // store the pointer to the caller's THIS to the stack
-            "  @THIS",
-            "  D=M",
-            "  @SP",
-            "  AM=M+1",
-            "  M=D",
-            
-            // store the pointer to the caller's THAT to the stack
-            "  @THAT",
-            "  D=M",
-            "  @SP",
-            "  AM=M+1",
-            "  M=D",
-            
-            // set the callee ARG to point at the first arg passed to the function
-            "  @SP",
-            "  D=M",
-            "  @5",
-            "  D=D-A",
-            $"  @{_numArgs}",
-            "  D=D-A",
-            "  @ARG",
-            "  M=D",
-            
-            // set the callee LCL point at the top of the stack
-            "  @SP",
-            "  D=M",
-            "  @LCL",
-            "  M=D",
-
             // goto {_functionName}
             $"  @{_functionName}",
             "  0;JMP",
