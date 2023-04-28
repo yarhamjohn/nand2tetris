@@ -30,11 +30,46 @@ public class CodeWriter
             "  @256",
             "  D=A",
             "  @SP",
-            "  M=D"
+            "  M=D",
+            
+            // 41 lines in FunctionCall + 4 lines initialising SP + 4 lines here + 1 for next line
+            "  @50",
+            "  D=A",
+            "  @R15",
+            "  M=D",
         };
 
         bootstrap.AddRange(FunctionCall());
+        
+        // 42 lines in FunctionReturn + 49 from above + 8 here + 1 for next line
+        bootstrap.AddRange(
+            new List<string>
+            {
+                // Ensure LCL has value 5 to Ram[0] is the target or getting FunctionReturn jump
+                " @5",
+                " D=A",
+                "  @LCL",
+                "  M=D",
+                
+                // Ensure RAM[0] has line to jump to after FunctionReturn initialization
+                " @100",
+                " D=A",
+                " @0",
+                " M=D"
+            });
+        
         bootstrap.AddRange(FunctionReturn());
+
+        // Reset the SP to the start of the stack to deal with the rubbish caused by setting Call and Return methods
+        bootstrap.AddRange(
+            new List<string>
+            {
+                // re-initialise SP
+                "  @256",
+                "  D=A",
+                "  @SP",
+                "  M=D"
+            });
         
         var sysCall = new CCall("Sys.init", 0, 0);
         bootstrap.AddRange(sysCall.Translate(0).ToList());
@@ -127,14 +162,14 @@ public class CodeWriter
             // Store the start of the local stack (i.e. 'frame') in a temp variable
             "  @LCL",
             "  D=M",
-            "  @FRAME_START",
+            "  @13",
             "  M=D",
             
             // Store the return address in a temp variable
             "  @5",
             "  A=D-A",
             "  D=M",
-            "  @RETURN_ADDRESS",
+            "  @14",
             "  M=D",
             
             // Store the return value in the first argument (i.e. top of caller stack)
@@ -152,35 +187,35 @@ public class CodeWriter
             "  M=D",
             
             // Restore the caller's THAT segment
-            "  @FRAME_START",
+            "  @13",
             "  AM=M-1",
             "  D=M",
             "  @THAT",
             "  M=D",
             
             // Restore the caller's THIS segment
-            "  @FRAME_START",
-            "  AM=D-1",
+            "  @13",
+            "  AM=M-1",
             "  D=M",
             "  @THIS",
             "  M=D",
             
             // Restore the caller's ARG segment
-            "  @FRAME_START",
-            "  AM=D-1",
+            "  @13",
+            "  AM=M-1",
             "  D=M",
             "  @ARG",
             "  M=D",
             
             // Restore the caller's LCL segment
-            "  @FRAME_START",
-            "  AM=D-1",
+            "  @13",
+            "  AM=M-1",
             "  D=M",
             "  @LCL",
             "  M=D",
             
             // Jump to the return address
-            "  @RETURN_ADDRESS",
+            "  @14",
             "  A=M",
             "  0;JMP"
         };

@@ -83,17 +83,17 @@
   @THAT
   M=D
   @13
-  AM=D-1
+  AM=M-1
   D=M
   @THIS
   M=D
   @13
-  AM=D-1
+  AM=M-1
   D=M
   @ARG
   M=D
   @13
-  AM=D-1
+  AM=M-1
   D=M
   @LCL
   M=D

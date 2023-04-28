@@ -2,13 +2,7 @@
   D=A
   @SP
   M=D
-  @50
-  D=A
-  @R15
-  M=D
 (CALL_FUNCTION)
-  @R15
-  M=D
   @R14
   D=M
   @SP
@@ -49,23 +43,15 @@
   @R15
   A=M
   0;JMP
- @5
- D=A
-  @LCL
-  M=D
- @100
- D=A
- @0
- M=D
 (FUNCTION_RETURN)
   @LCL
   D=M
-  @13
+  @FRAME_START
   M=D
   @5
   A=D-A
   D=M
-  @14
+  @RETURN_ADDRESS
   M=D
   @SP
   AM=M-1
@@ -77,33 +63,29 @@
   D=M+1
   @SP
   M=D
-  @13
+  @FRAME_START
   AM=M-1
   D=M
   @THAT
   M=D
-  @13
+  @FRAME_START
   AM=D-1
   D=M
   @THIS
   M=D
-  @13
+  @FRAME_START
   AM=D-1
   D=M
   @ARG
   M=D
-  @13
+  @FRAME_START
   AM=D-1
   D=M
   @LCL
   M=D
-  @14
+  @RETURN_ADDRESS
   A=M
   0;JMP
-  @256
-  D=A
-  @SP
-  M=D
   @0
   D=A
   @R13
@@ -114,6 +96,8 @@
   M=D
   @Sys.init
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Sys.init$ret.0)
@@ -184,6 +168,8 @@
   M=D
   @Sys.error
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Sys.error$ret.0)
@@ -220,6 +206,8 @@
   M=D
   @Memory.alloc
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Memory.alloc$ret.0)
@@ -262,6 +250,8 @@
   M=D
   @Memory.deAlloc
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Memory.deAlloc$ret.0)
@@ -322,6 +312,8 @@
   M=D
   @Memory.peek
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Memory.peek$ret.0)
@@ -353,6 +345,8 @@
   M=D
   @Output.printChar
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.printChar$ret.0)
@@ -460,6 +454,8 @@
   M=D
   @Keyboard.keyPressed
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Keyboard.keyPressed$ret.0)
@@ -553,6 +549,8 @@
   M=D
   @String.backSpace
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (String.backSpace$ret.0)
@@ -566,6 +564,8 @@
   M=D
   @Output.printChar
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.printChar$ret.1)
@@ -601,6 +601,8 @@
   M=D
   @Output.printChar
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.printChar$ret.2)
@@ -660,6 +662,8 @@
   M=D
   @String.new
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (String.new$ret.0)
@@ -695,6 +699,8 @@
   M=D
   @Output.printString
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.printString$ret.0)
@@ -720,6 +726,8 @@
   M=D
   @String.newLine
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (String.newLine$ret.0)
@@ -745,6 +753,8 @@
   M=D
   @String.backSpace
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (String.backSpace$ret.1)
@@ -792,6 +802,8 @@
   M=D
   @Keyboard.readChar
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Keyboard.readChar$ret.0)
@@ -942,6 +954,8 @@
   M=D
   @String.eraseLastChar
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (String.eraseLastChar$ret.0)
@@ -990,6 +1004,8 @@
   M=D
   @String.appendChar
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (String.appendChar$ret.0)
@@ -1051,6 +1067,8 @@
   M=D
   @Keyboard.readLine
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Keyboard.readLine$ret.0)
@@ -1086,6 +1104,8 @@
   M=D
   @String.intValue
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (String.intValue$ret.0)
@@ -1121,6 +1141,8 @@
   M=D
   @String.dispose
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (String.dispose$ret.0)
@@ -1170,6 +1192,8 @@
   M=D
   @String.new
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (String.new$ret.1)
@@ -1190,6 +1214,8 @@
   M=D
   @String.appendChar
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (String.appendChar$ret.1)
@@ -1210,6 +1236,8 @@
   M=D
   @String.appendChar
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (String.appendChar$ret.2)
@@ -1230,6 +1258,8 @@
   M=D
   @String.appendChar
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (String.appendChar$ret.3)
@@ -1250,6 +1280,8 @@
   M=D
   @String.appendChar
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (String.appendChar$ret.4)
@@ -1270,6 +1302,8 @@
   M=D
   @String.appendChar
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (String.appendChar$ret.5)
@@ -1290,6 +1324,8 @@
   M=D
   @String.appendChar
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (String.appendChar$ret.6)
@@ -1310,6 +1346,8 @@
   M=D
   @String.appendChar
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (String.appendChar$ret.7)
@@ -1330,6 +1368,8 @@
   M=D
   @String.appendChar
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (String.appendChar$ret.8)
@@ -1350,6 +1390,8 @@
   M=D
   @String.appendChar
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (String.appendChar$ret.9)
@@ -1370,6 +1412,8 @@
   M=D
   @String.appendChar
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (String.appendChar$ret.10)
@@ -1390,6 +1434,8 @@
   M=D
   @String.appendChar
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (String.appendChar$ret.11)
@@ -1410,6 +1456,8 @@
   M=D
   @String.appendChar
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (String.appendChar$ret.12)
@@ -1423,6 +1471,8 @@
   M=D
   @Output.printString
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.printString$ret.1)
@@ -1448,6 +1498,8 @@
   M=D
   @Output.println
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.println$ret.0)
@@ -1496,6 +1548,8 @@
   M=D
   @Array.new
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Array.new$ret.0)
@@ -1521,6 +1575,8 @@
   M=D
   @Array.new
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Array.new$ret.1)
@@ -2130,6 +2186,8 @@
   M=D
   @Math.abs
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Math.abs$ret.0)
@@ -2165,6 +2223,8 @@
   M=D
   @Math.abs
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Math.abs$ret.1)
@@ -2753,6 +2813,8 @@
   M=D
   @Sys.error
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Sys.error$ret.1)
@@ -2971,6 +3033,8 @@
   M=D
   @Math.abs
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Math.abs$ret.2)
@@ -3033,6 +3097,8 @@
   M=D
   @Math.abs
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Math.abs$ret.3)
@@ -4032,6 +4098,8 @@
   M=D
   @Sys.error
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Sys.error$ret.2)
@@ -4207,6 +4275,8 @@
   M=D
   @Math.multiply
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Math.multiply$ret.0)
@@ -4907,6 +4977,8 @@
   M=D
   @Sys.error
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Sys.error$ret.3)
@@ -5866,6 +5938,8 @@
   M=D
   @Sys.error
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Sys.error$ret.4)
@@ -7407,6 +7481,8 @@
   M=D
   @String.new
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (String.new$ret.2)
@@ -7425,6 +7501,8 @@
   M=D
   @Output.initMap
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.initMap$ret.0)
@@ -7450,6 +7528,8 @@
   M=D
   @Output.createShiftedMap
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.createShiftedMap$ret.0)
@@ -7496,6 +7576,8 @@
   M=D
   @Array.new
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Array.new$ret.2)
@@ -7598,6 +7680,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.0)
@@ -7707,6 +7791,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.1)
@@ -7816,6 +7902,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.2)
@@ -7925,6 +8013,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.3)
@@ -8034,6 +8124,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.4)
@@ -8143,6 +8235,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.5)
@@ -8252,6 +8346,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.6)
@@ -8361,6 +8457,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.7)
@@ -8470,6 +8568,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.8)
@@ -8579,6 +8679,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.9)
@@ -8688,6 +8790,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.10)
@@ -8797,6 +8901,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.11)
@@ -8906,6 +9012,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.12)
@@ -9015,6 +9123,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.13)
@@ -9124,6 +9234,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.14)
@@ -9233,6 +9345,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.15)
@@ -9342,6 +9456,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.16)
@@ -9451,6 +9567,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.17)
@@ -9560,6 +9678,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.18)
@@ -9669,6 +9789,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.19)
@@ -9778,6 +9900,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.20)
@@ -9887,6 +10011,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.21)
@@ -9996,6 +10122,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.22)
@@ -10105,6 +10233,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.23)
@@ -10214,6 +10344,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.24)
@@ -10323,6 +10455,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.25)
@@ -10432,6 +10566,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.26)
@@ -10541,6 +10677,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.27)
@@ -10650,6 +10788,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.28)
@@ -10759,6 +10899,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.29)
@@ -10868,6 +11010,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.30)
@@ -10977,6 +11121,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.31)
@@ -11086,6 +11232,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.32)
@@ -11195,6 +11343,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.33)
@@ -11304,6 +11454,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.34)
@@ -11413,6 +11565,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.35)
@@ -11522,6 +11676,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.36)
@@ -11631,6 +11787,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.37)
@@ -11740,6 +11898,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.38)
@@ -11849,6 +12009,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.39)
@@ -11958,6 +12120,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.40)
@@ -12067,6 +12231,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.41)
@@ -12176,6 +12342,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.42)
@@ -12285,6 +12453,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.43)
@@ -12394,6 +12564,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.44)
@@ -12503,6 +12675,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.45)
@@ -12612,6 +12786,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.46)
@@ -12721,6 +12897,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.47)
@@ -12830,6 +13008,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.48)
@@ -12939,6 +13119,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.49)
@@ -13048,6 +13230,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.50)
@@ -13157,6 +13341,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.51)
@@ -13266,6 +13452,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.52)
@@ -13375,6 +13563,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.53)
@@ -13484,6 +13674,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.54)
@@ -13593,6 +13785,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.55)
@@ -13702,6 +13896,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.56)
@@ -13811,6 +14007,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.57)
@@ -13920,6 +14118,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.58)
@@ -14029,6 +14229,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.59)
@@ -14138,6 +14340,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.60)
@@ -14247,6 +14451,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.61)
@@ -14356,6 +14562,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.62)
@@ -14465,6 +14673,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.63)
@@ -14574,6 +14784,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.64)
@@ -14683,6 +14895,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.65)
@@ -14792,6 +15006,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.66)
@@ -14901,6 +15117,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.67)
@@ -15010,6 +15228,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.68)
@@ -15119,6 +15339,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.69)
@@ -15228,6 +15450,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.70)
@@ -15337,6 +15561,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.71)
@@ -15446,6 +15672,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.72)
@@ -15555,6 +15783,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.73)
@@ -15664,6 +15894,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.74)
@@ -15773,6 +16005,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.75)
@@ -15882,6 +16116,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.76)
@@ -15991,6 +16227,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.77)
@@ -16100,6 +16338,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.78)
@@ -16209,6 +16449,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.79)
@@ -16318,6 +16560,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.80)
@@ -16427,6 +16671,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.81)
@@ -16536,6 +16782,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.82)
@@ -16645,6 +16893,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.83)
@@ -16754,6 +17004,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.84)
@@ -16863,6 +17115,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.85)
@@ -16972,6 +17226,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.86)
@@ -17081,6 +17337,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.87)
@@ -17190,6 +17448,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.88)
@@ -17299,6 +17559,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.89)
@@ -17408,6 +17670,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.90)
@@ -17517,6 +17781,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.91)
@@ -17626,6 +17892,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.92)
@@ -17735,6 +18003,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.93)
@@ -17844,6 +18114,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.94)
@@ -17953,6 +18225,8 @@
   M=D
   @Output.create
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.create$ret.95)
@@ -18001,6 +18275,8 @@
   M=D
   @Array.new
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Array.new$ret.3)
@@ -18907,6 +19183,8 @@
   M=D
   @Array.new
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Array.new$ret.4)
@@ -19043,6 +19321,8 @@
   M=D
   @Array.new
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Array.new$ret.5)
@@ -19273,6 +19553,8 @@
   M=D
   @Math.multiply
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Math.multiply$ret.1)
@@ -19733,6 +20015,8 @@
   M=D
   @Output.getMap
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.getMap$ret.0)
@@ -20331,6 +20615,8 @@
   M=D
   @Sys.error
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Sys.error$ret.5)
@@ -20374,6 +20660,8 @@
   M=D
   @Math.divide
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Math.divide$ret.0)
@@ -20416,6 +20704,8 @@
   M=D
   @Math.multiply
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Math.multiply$ret.2)
@@ -20475,6 +20765,8 @@
   M=D
   @Math.multiply
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Math.multiply$ret.3)
@@ -20517,6 +20809,8 @@
   M=D
   @Output.drawChar
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.drawChar$ret.0)
@@ -20566,6 +20860,8 @@
   M=D
   @String.newLine
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (String.newLine$ret.1)
@@ -20604,6 +20900,8 @@
   M=D
   @Output.println
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.println$ret.1)
@@ -20642,6 +20940,8 @@
   M=D
   @String.backSpace
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (String.backSpace$ret.2)
@@ -20680,6 +20980,8 @@
   M=D
   @Output.backSpace
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.backSpace$ret.0)
@@ -20718,6 +21020,8 @@
   M=D
   @Output.drawChar
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.drawChar$ret.1)
@@ -20849,6 +21153,8 @@
   M=D
   @Output.println
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.println$ret.2)
@@ -20923,6 +21229,8 @@
   M=D
   @String.length
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (String.length$ret.0)
@@ -21014,6 +21322,8 @@
   M=D
   @String.charAt
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (String.charAt$ret.0)
@@ -21027,6 +21337,8 @@
   M=D
   @Output.printChar
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.printChar$ret.3)
@@ -21120,6 +21432,8 @@
   M=D
   @String.setInt
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (String.setInt$ret.0)
@@ -21152,6 +21466,8 @@
   M=D
   @Output.printString
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.printString$ret.2)
@@ -21552,6 +21868,8 @@
   M=D
   @Output.drawChar
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.drawChar$ret.2)
@@ -21627,6 +21945,8 @@
   M=D
   @Array.new
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Array.new$ret.6)
@@ -22595,6 +22915,8 @@
   M=D
   @Sys.error
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Sys.error$ret.6)
@@ -22638,6 +22960,8 @@
   M=D
   @Math.divide
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Math.divide$ret.1)
@@ -22690,6 +23014,8 @@
   M=D
   @Math.multiply
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Math.multiply$ret.4)
@@ -22737,6 +23063,8 @@
   M=D
   @Math.multiply
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Math.multiply$ret.5)
@@ -22824,6 +23152,8 @@
   M=D
   @Screen.updateLocation
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Screen.updateLocation$ret.0)
@@ -22901,6 +23231,8 @@
   M=D
   @Screen.drawPixel
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Screen.drawPixel$ret.0)
@@ -22949,6 +23281,8 @@
   M=D
   @Screen.drawPixel
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Screen.drawPixel$ret.1)
@@ -23177,6 +23511,8 @@
   M=D
   @Sys.error
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Sys.error$ret.7)
@@ -23228,6 +23564,8 @@
   M=D
   @Math.abs
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Math.abs$ret.4)
@@ -23278,6 +23616,8 @@
   M=D
   @Math.abs
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Math.abs$ret.5)
@@ -23940,6 +24280,8 @@
   M=D
   @Math.multiply
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Math.multiply$ret.6)
@@ -23997,6 +24339,8 @@
   M=D
   @Math.multiply
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Math.multiply$ret.7)
@@ -24054,6 +24398,8 @@
   M=D
   @Math.multiply
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Math.multiply$ret.8)
@@ -24109,6 +24455,8 @@
   M=D
   @Screen.drawConditional
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Screen.drawConditional$ret.0)
@@ -24454,6 +24802,8 @@
   M=D
   @Screen.drawConditional
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Screen.drawConditional$ret.1)
@@ -24764,6 +25114,8 @@
   M=D
   @Sys.error
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Sys.error$ret.8)
@@ -24807,6 +25159,8 @@
   M=D
   @Math.divide
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Math.divide$ret.2)
@@ -24859,6 +25213,8 @@
   M=D
   @Math.multiply
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Math.multiply$ret.9)
@@ -24906,6 +25262,8 @@
   M=D
   @Math.divide
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Math.divide$ret.3)
@@ -24958,6 +25316,8 @@
   M=D
   @Math.multiply
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Math.multiply$ret.10)
@@ -25142,6 +25502,8 @@
   M=D
   @Math.multiply
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Math.multiply$ret.11)
@@ -25382,6 +25744,8 @@
   M=D
   @Screen.updateLocation
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Screen.updateLocation$ret.1)
@@ -25430,6 +25794,8 @@
   M=D
   @Screen.updateLocation
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Screen.updateLocation$ret.2)
@@ -25555,6 +25921,8 @@
   M=D
   @Screen.updateLocation
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Screen.updateLocation$ret.3)
@@ -25637,6 +26005,8 @@
   M=D
   @Screen.updateLocation
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Screen.updateLocation$ret.4)
@@ -25805,6 +26175,8 @@
   M=D
   @Math.min
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Math.min$ret.0)
@@ -25850,6 +26222,8 @@
   M=D
   @Math.max
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Math.max$ret.0)
@@ -26057,6 +26431,8 @@
   M=D
   @Math.max
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Math.max$ret.1)
@@ -26099,6 +26475,8 @@
   M=D
   @Math.min
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Math.min$ret.1)
@@ -26141,6 +26519,8 @@
   M=D
   @Math.divide
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Math.divide$ret.4)
@@ -26193,6 +26573,8 @@
   M=D
   @Math.multiply
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Math.multiply$ret.12)
@@ -26240,6 +26622,8 @@
   M=D
   @Math.divide
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Math.divide$ret.5)
@@ -26292,6 +26676,8 @@
   M=D
   @Math.multiply
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Math.multiply$ret.13)
@@ -26476,6 +26862,8 @@
   M=D
   @Math.multiply
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Math.multiply$ret.14)
@@ -26667,6 +27055,8 @@
   M=D
   @Screen.updateLocation
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Screen.updateLocation$ret.5)
@@ -26715,6 +27105,8 @@
   M=D
   @Screen.updateLocation
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Screen.updateLocation$ret.6)
@@ -26840,6 +27232,8 @@
   M=D
   @Screen.updateLocation
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Screen.updateLocation$ret.7)
@@ -26922,6 +27316,8 @@
   M=D
   @Screen.updateLocation
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Screen.updateLocation$ret.8)
@@ -27038,6 +27434,8 @@
   M=D
   @Screen.drawHorizontal
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Screen.drawHorizontal$ret.0)
@@ -27138,6 +27536,8 @@
   M=D
   @Screen.drawHorizontal
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Screen.drawHorizontal$ret.1)
@@ -27238,6 +27638,8 @@
   M=D
   @Screen.drawHorizontal
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Screen.drawHorizontal$ret.2)
@@ -27338,6 +27740,8 @@
   M=D
   @Screen.drawHorizontal
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Screen.drawHorizontal$ret.3)
@@ -27549,6 +27953,8 @@
   M=D
   @Sys.error
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Sys.error$ret.9)
@@ -27801,6 +28207,8 @@
   M=D
   @Sys.error
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Sys.error$ret.10)
@@ -27923,6 +28331,8 @@
   M=D
   @Screen.drawSymetric
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Screen.drawSymetric$ret.0)
@@ -28063,6 +28473,8 @@
   M=D
   @Math.multiply
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Math.multiply$ret.15)
@@ -28150,6 +28562,8 @@
   M=D
   @Math.multiply
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Math.multiply$ret.16)
@@ -28301,6 +28715,8 @@
   M=D
   @Screen.drawSymetric
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Screen.drawSymetric$ret.1)
@@ -28350,6 +28766,8 @@
   M=D
   @Memory.alloc
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Memory.alloc$ret.1)
@@ -28417,6 +28835,8 @@
   M=D
   @Sys.error
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Sys.error$ret.11)
@@ -28495,6 +28915,8 @@
   M=D
   @Array.new
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Array.new$ret.7)
@@ -28643,6 +29065,8 @@
   M=D
   @Array.dispose
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Array.dispose$ret.0)
@@ -28676,6 +29100,8 @@
   M=D
   @Memory.deAlloc
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Memory.deAlloc$ret.1)
@@ -28895,6 +29321,8 @@
   M=D
   @Sys.error
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Sys.error$ret.12)
@@ -29116,6 +29544,8 @@
   M=D
   @Sys.error
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Sys.error$ret.13)
@@ -29297,6 +29727,8 @@
   M=D
   @Sys.error
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Sys.error$ret.14)
@@ -29509,6 +29941,8 @@
   M=D
   @Sys.error
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Sys.error$ret.15)
@@ -30041,6 +30475,8 @@
   M=D
   @Math.multiply
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Math.multiply$ret.17)
@@ -30252,6 +30688,8 @@
   M=D
   @Sys.error
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Sys.error$ret.16)
@@ -30285,6 +30723,8 @@
   M=D
   @Array.new
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Array.new$ret.8)
@@ -30482,6 +30922,8 @@
   M=D
   @Math.divide
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Math.divide$ret.6)
@@ -30566,6 +31008,8 @@
   M=D
   @Math.multiply
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Math.multiply$ret.18)
@@ -30863,6 +31307,8 @@
   M=D
   @Sys.error
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Sys.error$ret.17)
@@ -31265,6 +31711,8 @@
   M=D
   @Array.dispose
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Array.dispose$ret.1)
@@ -31346,6 +31794,8 @@
   M=D
   @Memory.init
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Memory.init$ret.0)
@@ -31371,6 +31821,8 @@
   M=D
   @Math.init
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Math.init$ret.0)
@@ -31396,6 +31848,8 @@
   M=D
   @Screen.init
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Screen.init$ret.0)
@@ -31421,6 +31875,8 @@
   M=D
   @Output.init
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.init$ret.0)
@@ -31446,6 +31902,8 @@
   M=D
   @Keyboard.init
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Keyboard.init$ret.0)
@@ -31471,6 +31929,8 @@
   M=D
   @Main.main
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Main.main$ret.0)
@@ -31496,6 +31956,8 @@
   M=D
   @Sys.halt
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Sys.halt$ret.0)
@@ -31622,6 +32084,8 @@
   M=D
   @Sys.error
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Sys.error$ret.18)
@@ -31848,6 +32312,8 @@
   M=D
   @Output.printChar
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.printChar$ret.4)
@@ -31880,6 +32346,8 @@
   M=D
   @Output.printChar
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.printChar$ret.5)
@@ -31912,6 +32380,8 @@
   M=D
   @Output.printChar
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.printChar$ret.6)
@@ -31947,6 +32417,8 @@
   M=D
   @Output.printInt
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Output.printInt$ret.0)
@@ -31972,6 +32444,8 @@
   M=D
   @Sys.halt
   D=A
+  @R15
+  M=D
   @CALL_FUNCTION
   0;JMP
 (Sys.halt$ret.1)

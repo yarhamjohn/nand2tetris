@@ -2,10 +2,6 @@
   D=A
   @SP
   M=D
-  @50
-  D=A
-  @R15
-  M=D
 (CALL_FUNCTION)
   @R15
   M=D
@@ -49,23 +45,15 @@
   @R15
   A=M
   0;JMP
- @5
- D=A
-  @LCL
-  M=D
- @100
- D=A
- @0
- M=D
 (FUNCTION_RETURN)
   @LCL
   D=M
-  @13
+  @FRAME_START
   M=D
   @5
   A=D-A
   D=M
-  @14
+  @RETURN_ADDRESS
   M=D
   @SP
   AM=M-1
@@ -77,33 +65,29 @@
   D=M+1
   @SP
   M=D
-  @13
+  @FRAME_START
   AM=M-1
   D=M
   @THAT
   M=D
-  @13
+  @FRAME_START
   AM=D-1
   D=M
   @THIS
   M=D
-  @13
+  @FRAME_START
   AM=D-1
   D=M
   @ARG
   M=D
-  @13
+  @FRAME_START
   AM=D-1
   D=M
   @LCL
   M=D
-  @14
+  @RETURN_ADDRESS
   A=M
   0;JMP
-  @256
-  D=A
-  @SP
-  M=D
   @0
   D=A
   @R13
