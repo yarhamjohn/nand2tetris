@@ -21,34 +21,28 @@ public class CCall : ICommand
     {
         var result = new List<string>
         {
-            // Store the number of args in temporary variable
+            // Provide the number of args
             $"  @{_numArgs}",
             "  D=A",
             "  @R13",
             "  M=D",
             
-            // Store the return address in a temporary variable
+            // Provide the return address
             $"  @{_functionName}$ret.{_callNum}",
             "  D=A",
             "  @R14",
             "  M=D",
             
-            // Jump to call function
-            "  @CALL_FUNCTION",
-            "  0;JMP",
-            
-            // Provide a return point
-            "  @CALL_FUNCTION_RETURN",
+            // Provide the goto function address
+            $"  @{_functionName}",
             "  D=A",
             "  @R15",
             "  M=D",
             
-            "(CALL_FUNCTION_RETURN)",
-            
-            // goto {_functionName}
-            $"  @{_functionName}",
+            // Jump to call function
+            "  @CALL_FUNCTION",
             "  0;JMP",
-            
+
             // create return address label
             $"({_functionName}$ret.{_callNum})"
         };

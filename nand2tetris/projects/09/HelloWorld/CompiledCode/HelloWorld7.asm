@@ -10,11 +10,14 @@
   D=A
   @R14
   M=D
-  @Sys.init
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Sys.init
   0;JMP
 (Sys.init$ret.0)
 (CALL_FUNCTION)
@@ -166,11 +169,14 @@
   D=A
   @R14
   M=D
-  @Sys.error
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Sys.error
   0;JMP
 (Sys.error$ret.0)
   @5
@@ -204,11 +210,14 @@
   D=A
   @R14
   M=D
-  @Memory.alloc
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Memory.alloc
   0;JMP
 (Memory.alloc$ret.0)
   @FUNCTION_RETURN
@@ -248,11 +257,14 @@
   D=A
   @R14
   M=D
-  @Memory.deAlloc
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Memory.deAlloc
   0;JMP
 (Memory.deAlloc$ret.0)
   @5
@@ -310,11 +322,14 @@
   D=A
   @R14
   M=D
-  @Memory.peek
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Memory.peek
   0;JMP
 (Memory.peek$ret.0)
   @FUNCTION_RETURN
@@ -343,11 +358,14 @@
   D=A
   @R14
   M=D
-  @Output.printChar
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.printChar
   0;JMP
 (Output.printChar$ret.0)
   @5
@@ -452,11 +470,14 @@
   D=A
   @R14
   M=D
-  @Keyboard.keyPressed
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Keyboard.keyPressed
   0;JMP
 (Keyboard.keyPressed$ret.0)
   @0
@@ -547,11 +568,14 @@
   D=A
   @R14
   M=D
-  @String.backSpace
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @String.backSpace
   0;JMP
 (String.backSpace$ret.0)
   @1
@@ -562,11 +586,14 @@
   D=A
   @R14
   M=D
-  @Output.printChar
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.printChar
   0;JMP
 (Output.printChar$ret.1)
   @5
@@ -599,11 +626,14 @@
   D=A
   @R14
   M=D
-  @Output.printChar
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.printChar
   0;JMP
 (Output.printChar$ret.2)
   @5
@@ -660,11 +690,14 @@
   D=A
   @R14
   M=D
-  @String.new
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @String.new
   0;JMP
 (String.new$ret.0)
   @3
@@ -697,11 +730,14 @@
   D=A
   @R14
   M=D
-  @Output.printString
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.printString
   0;JMP
 (Output.printString$ret.0)
   @5
@@ -724,11 +760,14 @@
   D=A
   @R14
   M=D
-  @String.newLine
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @String.newLine
   0;JMP
 (String.newLine$ret.0)
   @1
@@ -751,11 +790,14 @@
   D=A
   @R14
   M=D
-  @String.backSpace
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @String.backSpace
   0;JMP
 (String.backSpace$ret.1)
   @2
@@ -800,11 +842,14 @@
   D=A
   @R14
   M=D
-  @Keyboard.readChar
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Keyboard.readChar
   0;JMP
 (Keyboard.readChar$ret.0)
   @0
@@ -952,11 +997,14 @@
   D=A
   @R14
   M=D
-  @String.eraseLastChar
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @String.eraseLastChar
   0;JMP
 (String.eraseLastChar$ret.0)
   @5
@@ -1002,11 +1050,14 @@
   D=A
   @R14
   M=D
-  @String.appendChar
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @String.appendChar
   0;JMP
 (String.appendChar$ret.0)
   @3
@@ -1065,11 +1116,14 @@
   D=A
   @R14
   M=D
-  @Keyboard.readLine
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Keyboard.readLine
   0;JMP
 (Keyboard.readLine$ret.0)
   @0
@@ -1102,11 +1156,14 @@
   D=A
   @R14
   M=D
-  @String.intValue
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @String.intValue
   0;JMP
 (String.intValue$ret.0)
   @1
@@ -1139,11 +1196,14 @@
   D=A
   @R14
   M=D
-  @String.dispose
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @String.dispose
   0;JMP
 (String.dispose$ret.0)
   @5
@@ -1190,11 +1250,14 @@
   D=A
   @R14
   M=D
-  @String.new
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @String.new
   0;JMP
 (String.new$ret.1)
   @72
@@ -1212,11 +1275,14 @@
   D=A
   @R14
   M=D
-  @String.appendChar
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @String.appendChar
   0;JMP
 (String.appendChar$ret.1)
   @101
@@ -1234,11 +1300,14 @@
   D=A
   @R14
   M=D
-  @String.appendChar
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @String.appendChar
   0;JMP
 (String.appendChar$ret.2)
   @108
@@ -1256,11 +1325,14 @@
   D=A
   @R14
   M=D
-  @String.appendChar
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @String.appendChar
   0;JMP
 (String.appendChar$ret.3)
   @108
@@ -1278,11 +1350,14 @@
   D=A
   @R14
   M=D
-  @String.appendChar
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @String.appendChar
   0;JMP
 (String.appendChar$ret.4)
   @111
@@ -1300,11 +1375,14 @@
   D=A
   @R14
   M=D
-  @String.appendChar
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @String.appendChar
   0;JMP
 (String.appendChar$ret.5)
   @32
@@ -1322,11 +1400,14 @@
   D=A
   @R14
   M=D
-  @String.appendChar
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @String.appendChar
   0;JMP
 (String.appendChar$ret.6)
   @119
@@ -1344,11 +1425,14 @@
   D=A
   @R14
   M=D
-  @String.appendChar
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @String.appendChar
   0;JMP
 (String.appendChar$ret.7)
   @111
@@ -1366,11 +1450,14 @@
   D=A
   @R14
   M=D
-  @String.appendChar
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @String.appendChar
   0;JMP
 (String.appendChar$ret.8)
   @114
@@ -1388,11 +1475,14 @@
   D=A
   @R14
   M=D
-  @String.appendChar
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @String.appendChar
   0;JMP
 (String.appendChar$ret.9)
   @108
@@ -1410,11 +1500,14 @@
   D=A
   @R14
   M=D
-  @String.appendChar
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @String.appendChar
   0;JMP
 (String.appendChar$ret.10)
   @100
@@ -1432,11 +1525,14 @@
   D=A
   @R14
   M=D
-  @String.appendChar
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @String.appendChar
   0;JMP
 (String.appendChar$ret.11)
   @33
@@ -1454,11 +1550,14 @@
   D=A
   @R14
   M=D
-  @String.appendChar
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @String.appendChar
   0;JMP
 (String.appendChar$ret.12)
   @1
@@ -1469,11 +1568,14 @@
   D=A
   @R14
   M=D
-  @Output.printString
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.printString
   0;JMP
 (Output.printString$ret.1)
   @5
@@ -1496,11 +1598,14 @@
   D=A
   @R14
   M=D
-  @Output.println
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.println
   0;JMP
 (Output.println$ret.0)
   @5
@@ -1546,11 +1651,14 @@
   D=A
   @R14
   M=D
-  @Array.new
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Array.new
   0;JMP
 (Array.new$ret.0)
   @SP
@@ -1573,11 +1681,14 @@
   D=A
   @R14
   M=D
-  @Array.new
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Array.new
   0;JMP
 (Array.new$ret.1)
   @SP
@@ -2184,11 +2295,14 @@
   D=A
   @R14
   M=D
-  @Math.abs
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Math.abs
   0;JMP
 (Math.abs$ret.0)
   @0
@@ -2221,11 +2335,14 @@
   D=A
   @R14
   M=D
-  @Math.abs
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Math.abs
   0;JMP
 (Math.abs$ret.1)
   @1
@@ -2811,11 +2928,14 @@
   D=A
   @R14
   M=D
-  @Sys.error
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Sys.error
   0;JMP
 (Sys.error$ret.1)
   @5
@@ -3031,11 +3151,14 @@
   D=A
   @R14
   M=D
-  @Math.abs
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Math.abs
   0;JMP
 (Math.abs$ret.2)
   @5
@@ -3095,11 +3218,14 @@
   D=A
   @R14
   M=D
-  @Math.abs
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Math.abs
   0;JMP
 (Math.abs$ret.3)
   @0
@@ -4096,11 +4222,14 @@
   D=A
   @R14
   M=D
-  @Sys.error
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Sys.error
   0;JMP
 (Sys.error$ret.2)
   @5
@@ -4273,11 +4402,14 @@
   D=A
   @R14
   M=D
-  @Math.multiply
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Math.multiply
   0;JMP
 (Math.multiply$ret.0)
   @2
@@ -4975,11 +5107,14 @@
   D=A
   @R14
   M=D
-  @Sys.error
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Sys.error
   0;JMP
 (Sys.error$ret.3)
   @5
@@ -5936,11 +6071,14 @@
   D=A
   @R14
   M=D
-  @Sys.error
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Sys.error
   0;JMP
 (Sys.error$ret.4)
   @5
@@ -7479,11 +7617,14 @@
   D=A
   @R14
   M=D
-  @String.new
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @String.new
   0;JMP
 (String.new$ret.2)
   @SP
@@ -7499,11 +7640,14 @@
   D=A
   @R14
   M=D
-  @Output.initMap
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.initMap
   0;JMP
 (Output.initMap$ret.0)
   @5
@@ -7526,11 +7670,14 @@
   D=A
   @R14
   M=D
-  @Output.createShiftedMap
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.createShiftedMap
   0;JMP
 (Output.createShiftedMap$ret.0)
   @5
@@ -7574,11 +7721,14 @@
   D=A
   @R14
   M=D
-  @Array.new
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Array.new
   0;JMP
 (Array.new$ret.2)
   @SP
@@ -7678,11 +7828,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.0)
   @5
@@ -7789,11 +7942,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.1)
   @5
@@ -7900,11 +8056,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.2)
   @5
@@ -8011,11 +8170,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.3)
   @5
@@ -8122,11 +8284,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.4)
   @5
@@ -8233,11 +8398,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.5)
   @5
@@ -8344,11 +8512,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.6)
   @5
@@ -8455,11 +8626,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.7)
   @5
@@ -8566,11 +8740,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.8)
   @5
@@ -8677,11 +8854,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.9)
   @5
@@ -8788,11 +8968,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.10)
   @5
@@ -8899,11 +9082,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.11)
   @5
@@ -9010,11 +9196,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.12)
   @5
@@ -9121,11 +9310,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.13)
   @5
@@ -9232,11 +9424,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.14)
   @5
@@ -9343,11 +9538,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.15)
   @5
@@ -9454,11 +9652,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.16)
   @5
@@ -9565,11 +9766,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.17)
   @5
@@ -9676,11 +9880,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.18)
   @5
@@ -9787,11 +9994,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.19)
   @5
@@ -9898,11 +10108,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.20)
   @5
@@ -10009,11 +10222,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.21)
   @5
@@ -10120,11 +10336,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.22)
   @5
@@ -10231,11 +10450,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.23)
   @5
@@ -10342,11 +10564,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.24)
   @5
@@ -10453,11 +10678,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.25)
   @5
@@ -10564,11 +10792,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.26)
   @5
@@ -10675,11 +10906,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.27)
   @5
@@ -10786,11 +11020,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.28)
   @5
@@ -10897,11 +11134,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.29)
   @5
@@ -11008,11 +11248,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.30)
   @5
@@ -11119,11 +11362,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.31)
   @5
@@ -11230,11 +11476,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.32)
   @5
@@ -11341,11 +11590,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.33)
   @5
@@ -11452,11 +11704,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.34)
   @5
@@ -11563,11 +11818,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.35)
   @5
@@ -11674,11 +11932,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.36)
   @5
@@ -11785,11 +12046,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.37)
   @5
@@ -11896,11 +12160,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.38)
   @5
@@ -12007,11 +12274,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.39)
   @5
@@ -12118,11 +12388,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.40)
   @5
@@ -12229,11 +12502,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.41)
   @5
@@ -12340,11 +12616,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.42)
   @5
@@ -12451,11 +12730,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.43)
   @5
@@ -12562,11 +12844,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.44)
   @5
@@ -12673,11 +12958,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.45)
   @5
@@ -12784,11 +13072,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.46)
   @5
@@ -12895,11 +13186,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.47)
   @5
@@ -13006,11 +13300,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.48)
   @5
@@ -13117,11 +13414,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.49)
   @5
@@ -13228,11 +13528,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.50)
   @5
@@ -13339,11 +13642,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.51)
   @5
@@ -13450,11 +13756,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.52)
   @5
@@ -13561,11 +13870,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.53)
   @5
@@ -13672,11 +13984,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.54)
   @5
@@ -13783,11 +14098,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.55)
   @5
@@ -13894,11 +14212,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.56)
   @5
@@ -14005,11 +14326,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.57)
   @5
@@ -14116,11 +14440,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.58)
   @5
@@ -14227,11 +14554,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.59)
   @5
@@ -14338,11 +14668,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.60)
   @5
@@ -14449,11 +14782,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.61)
   @5
@@ -14560,11 +14896,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.62)
   @5
@@ -14671,11 +15010,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.63)
   @5
@@ -14782,11 +15124,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.64)
   @5
@@ -14893,11 +15238,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.65)
   @5
@@ -15004,11 +15352,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.66)
   @5
@@ -15115,11 +15466,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.67)
   @5
@@ -15226,11 +15580,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.68)
   @5
@@ -15337,11 +15694,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.69)
   @5
@@ -15448,11 +15808,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.70)
   @5
@@ -15559,11 +15922,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.71)
   @5
@@ -15670,11 +16036,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.72)
   @5
@@ -15781,11 +16150,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.73)
   @5
@@ -15892,11 +16264,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.74)
   @5
@@ -16003,11 +16378,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.75)
   @5
@@ -16114,11 +16492,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.76)
   @5
@@ -16225,11 +16606,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.77)
   @5
@@ -16336,11 +16720,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.78)
   @5
@@ -16447,11 +16834,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.79)
   @5
@@ -16558,11 +16948,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.80)
   @5
@@ -16669,11 +17062,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.81)
   @5
@@ -16780,11 +17176,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.82)
   @5
@@ -16891,11 +17290,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.83)
   @5
@@ -17002,11 +17404,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.84)
   @5
@@ -17113,11 +17518,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.85)
   @5
@@ -17224,11 +17632,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.86)
   @5
@@ -17335,11 +17746,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.87)
   @5
@@ -17446,11 +17860,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.88)
   @5
@@ -17557,11 +17974,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.89)
   @5
@@ -17668,11 +18088,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.90)
   @5
@@ -17779,11 +18202,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.91)
   @5
@@ -17890,11 +18316,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.92)
   @5
@@ -18001,11 +18430,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.93)
   @5
@@ -18112,11 +18544,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.94)
   @5
@@ -18223,11 +18658,14 @@
   D=A
   @R14
   M=D
-  @Output.create
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.create
   0;JMP
 (Output.create$ret.95)
   @5
@@ -18273,11 +18711,14 @@
   D=A
   @R14
   M=D
-  @Array.new
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Array.new
   0;JMP
 (Array.new$ret.3)
   @0
@@ -19181,11 +19622,14 @@
   D=A
   @R14
   M=D
-  @Array.new
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Array.new
   0;JMP
 (Array.new$ret.4)
   @SP
@@ -19319,11 +19763,14 @@
   D=A
   @R14
   M=D
-  @Array.new
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Array.new
   0;JMP
 (Array.new$ret.5)
   @1
@@ -19551,11 +19998,14 @@
   D=A
   @R14
   M=D
-  @Math.multiply
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Math.multiply
   0;JMP
 (Math.multiply$ret.1)
   @5
@@ -20013,11 +20463,14 @@
   D=A
   @R14
   M=D
-  @Output.getMap
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.getMap
   0;JMP
 (Output.getMap$ret.0)
   @2
@@ -20613,11 +21066,14 @@
   D=A
   @R14
   M=D
-  @Sys.error
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Sys.error
   0;JMP
 (Sys.error$ret.5)
   @5
@@ -20658,11 +21114,14 @@
   D=A
   @R14
   M=D
-  @Math.divide
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Math.divide
   0;JMP
 (Math.divide$ret.0)
   @SP
@@ -20702,11 +21161,14 @@
   D=A
   @R14
   M=D
-  @Math.multiply
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Math.multiply
   0;JMP
 (Math.multiply$ret.2)
   @SP
@@ -20763,11 +21225,14 @@
   D=A
   @R14
   M=D
-  @Math.multiply
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Math.multiply
   0;JMP
 (Math.multiply$ret.3)
   @SP
@@ -20807,11 +21272,14 @@
   D=A
   @R14
   M=D
-  @Output.drawChar
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.drawChar
   0;JMP
 (Output.drawChar$ret.0)
   @5
@@ -20858,11 +21326,14 @@
   D=A
   @R14
   M=D
-  @String.newLine
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @String.newLine
   0;JMP
 (String.newLine$ret.1)
   @SP
@@ -20898,11 +21369,14 @@
   D=A
   @R14
   M=D
-  @Output.println
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.println
   0;JMP
 (Output.println$ret.1)
   @5
@@ -20938,11 +21412,14 @@
   D=A
   @R14
   M=D
-  @String.backSpace
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @String.backSpace
   0;JMP
 (String.backSpace$ret.2)
   @SP
@@ -20978,11 +21455,14 @@
   D=A
   @R14
   M=D
-  @Output.backSpace
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.backSpace
   0;JMP
 (Output.backSpace$ret.0)
   @5
@@ -21018,11 +21498,14 @@
   D=A
   @R14
   M=D
-  @Output.drawChar
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.drawChar
   0;JMP
 (Output.drawChar$ret.1)
   @5
@@ -21151,11 +21634,14 @@
   D=A
   @R14
   M=D
-  @Output.println
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.println
   0;JMP
 (Output.println$ret.2)
   @5
@@ -21227,11 +21713,14 @@
   D=A
   @R14
   M=D
-  @String.length
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @String.length
   0;JMP
 (String.length$ret.0)
   @1
@@ -21320,11 +21809,14 @@
   D=A
   @R14
   M=D
-  @String.charAt
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @String.charAt
   0;JMP
 (String.charAt$ret.0)
   @1
@@ -21335,11 +21827,14 @@
   D=A
   @R14
   M=D
-  @Output.printChar
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.printChar
   0;JMP
 (Output.printChar$ret.3)
   @5
@@ -21430,11 +21925,14 @@
   D=A
   @R14
   M=D
-  @String.setInt
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @String.setInt
   0;JMP
 (String.setInt$ret.0)
   @5
@@ -21464,11 +21962,14 @@
   D=A
   @R14
   M=D
-  @Output.printString
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.printString
   0;JMP
 (Output.printString$ret.2)
   @5
@@ -21866,11 +22367,14 @@
   D=A
   @R14
   M=D
-  @Output.drawChar
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.drawChar
   0;JMP
 (Output.drawChar$ret.2)
   @5
@@ -21943,11 +22447,14 @@
   D=A
   @R14
   M=D
-  @Array.new
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Array.new
   0;JMP
 (Array.new$ret.6)
   @SP
@@ -22913,11 +23420,14 @@
   D=A
   @R14
   M=D
-  @Sys.error
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Sys.error
   0;JMP
 (Sys.error$ret.6)
   @5
@@ -22958,11 +23468,14 @@
   D=A
   @R14
   M=D
-  @Math.divide
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Math.divide
   0;JMP
 (Math.divide$ret.1)
   @0
@@ -23012,11 +23525,14 @@
   D=A
   @R14
   M=D
-  @Math.multiply
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Math.multiply
   0;JMP
 (Math.multiply$ret.4)
   @SP
@@ -23061,11 +23577,14 @@
   D=A
   @R14
   M=D
-  @Math.multiply
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Math.multiply
   0;JMP
 (Math.multiply$ret.5)
   @0
@@ -23150,11 +23669,14 @@
   D=A
   @R14
   M=D
-  @Screen.updateLocation
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Screen.updateLocation
   0;JMP
 (Screen.updateLocation$ret.0)
   @5
@@ -23229,11 +23751,14 @@
   D=A
   @R14
   M=D
-  @Screen.drawPixel
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Screen.drawPixel
   0;JMP
 (Screen.drawPixel$ret.0)
   @5
@@ -23279,11 +23804,14 @@
   D=A
   @R14
   M=D
-  @Screen.drawPixel
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Screen.drawPixel
   0;JMP
 (Screen.drawPixel$ret.1)
   @5
@@ -23509,11 +24037,14 @@
   D=A
   @R14
   M=D
-  @Sys.error
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Sys.error
   0;JMP
 (Sys.error$ret.7)
   @5
@@ -23562,11 +24093,14 @@
   D=A
   @R14
   M=D
-  @Math.abs
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Math.abs
   0;JMP
 (Math.abs$ret.4)
   @3
@@ -23614,11 +24148,14 @@
   D=A
   @R14
   M=D
-  @Math.abs
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Math.abs
   0;JMP
 (Math.abs$ret.5)
   @2
@@ -24278,11 +24815,14 @@
   D=A
   @R14
   M=D
-  @Math.multiply
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Math.multiply
   0;JMP
 (Math.multiply$ret.6)
   @3
@@ -24337,11 +24877,14 @@
   D=A
   @R14
   M=D
-  @Math.multiply
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Math.multiply
   0;JMP
 (Math.multiply$ret.7)
   @9
@@ -24396,11 +24939,14 @@
   D=A
   @R14
   M=D
-  @Math.multiply
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Math.multiply
   0;JMP
 (Math.multiply$ret.8)
   @10
@@ -24453,11 +24999,14 @@
   D=A
   @R14
   M=D
-  @Screen.drawConditional
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Screen.drawConditional
   0;JMP
 (Screen.drawConditional$ret.0)
   @5
@@ -24800,11 +25349,14 @@
   D=A
   @R14
   M=D
-  @Screen.drawConditional
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Screen.drawConditional
   0;JMP
 (Screen.drawConditional$ret.1)
   @5
@@ -25112,11 +25664,14 @@
   D=A
   @R14
   M=D
-  @Sys.error
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Sys.error
   0;JMP
 (Sys.error$ret.8)
   @5
@@ -25157,11 +25712,14 @@
   D=A
   @R14
   M=D
-  @Math.divide
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Math.divide
   0;JMP
 (Math.divide$ret.2)
   @3
@@ -25211,11 +25769,14 @@
   D=A
   @R14
   M=D
-  @Math.multiply
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Math.multiply
   0;JMP
 (Math.multiply$ret.9)
   @SP
@@ -25260,11 +25821,14 @@
   D=A
   @R14
   M=D
-  @Math.divide
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Math.divide
   0;JMP
 (Math.divide$ret.3)
   @4
@@ -25314,11 +25878,14 @@
   D=A
   @R14
   M=D
-  @Math.multiply
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Math.multiply
   0;JMP
 (Math.multiply$ret.10)
   @SP
@@ -25500,11 +26067,14 @@
   D=A
   @R14
   M=D
-  @Math.multiply
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Math.multiply
   0;JMP
 (Math.multiply$ret.11)
   @3
@@ -25742,11 +26312,14 @@
   D=A
   @R14
   M=D
-  @Screen.updateLocation
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Screen.updateLocation
   0;JMP
 (Screen.updateLocation$ret.1)
   @5
@@ -25792,11 +26365,14 @@
   D=A
   @R14
   M=D
-  @Screen.updateLocation
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Screen.updateLocation
   0;JMP
 (Screen.updateLocation$ret.2)
   @5
@@ -25919,11 +26495,14 @@
   D=A
   @R14
   M=D
-  @Screen.updateLocation
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Screen.updateLocation
   0;JMP
 (Screen.updateLocation$ret.3)
   @5
@@ -26003,11 +26582,14 @@
   D=A
   @R14
   M=D
-  @Screen.updateLocation
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Screen.updateLocation
   0;JMP
 (Screen.updateLocation$ret.4)
   @5
@@ -26173,11 +26755,14 @@
   D=A
   @R14
   M=D
-  @Math.min
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Math.min
   0;JMP
 (Math.min$ret.0)
   @7
@@ -26220,11 +26805,14 @@
   D=A
   @R14
   M=D
-  @Math.max
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Math.max
   0;JMP
 (Math.max$ret.0)
   @8
@@ -26429,11 +27017,14 @@
   D=A
   @R14
   M=D
-  @Math.max
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Math.max
   0;JMP
 (Math.max$ret.1)
   @7
@@ -26473,11 +27064,14 @@
   D=A
   @R14
   M=D
-  @Math.min
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Math.min
   0;JMP
 (Math.min$ret.1)
   @8
@@ -26517,11 +27111,14 @@
   D=A
   @R14
   M=D
-  @Math.divide
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Math.divide
   0;JMP
 (Math.divide$ret.4)
   @1
@@ -26571,11 +27168,14 @@
   D=A
   @R14
   M=D
-  @Math.multiply
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Math.multiply
   0;JMP
 (Math.multiply$ret.12)
   @SP
@@ -26620,11 +27220,14 @@
   D=A
   @R14
   M=D
-  @Math.divide
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Math.divide
   0;JMP
 (Math.divide$ret.5)
   @2
@@ -26674,11 +27277,14 @@
   D=A
   @R14
   M=D
-  @Math.multiply
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Math.multiply
   0;JMP
 (Math.multiply$ret.13)
   @SP
@@ -26860,11 +27466,14 @@
   D=A
   @R14
   M=D
-  @Math.multiply
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Math.multiply
   0;JMP
 (Math.multiply$ret.14)
   @1
@@ -27053,11 +27662,14 @@
   D=A
   @R14
   M=D
-  @Screen.updateLocation
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Screen.updateLocation
   0;JMP
 (Screen.updateLocation$ret.5)
   @5
@@ -27103,11 +27715,14 @@
   D=A
   @R14
   M=D
-  @Screen.updateLocation
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Screen.updateLocation
   0;JMP
 (Screen.updateLocation$ret.6)
   @5
@@ -27230,11 +27845,14 @@
   D=A
   @R14
   M=D
-  @Screen.updateLocation
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Screen.updateLocation
   0;JMP
 (Screen.updateLocation$ret.7)
   @5
@@ -27314,11 +27932,14 @@
   D=A
   @R14
   M=D
-  @Screen.updateLocation
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Screen.updateLocation
   0;JMP
 (Screen.updateLocation$ret.8)
   @5
@@ -27432,11 +28053,14 @@
   D=A
   @R14
   M=D
-  @Screen.drawHorizontal
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Screen.drawHorizontal
   0;JMP
 (Screen.drawHorizontal$ret.0)
   @5
@@ -27534,11 +28158,14 @@
   D=A
   @R14
   M=D
-  @Screen.drawHorizontal
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Screen.drawHorizontal
   0;JMP
 (Screen.drawHorizontal$ret.1)
   @5
@@ -27636,11 +28263,14 @@
   D=A
   @R14
   M=D
-  @Screen.drawHorizontal
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Screen.drawHorizontal
   0;JMP
 (Screen.drawHorizontal$ret.2)
   @5
@@ -27738,11 +28368,14 @@
   D=A
   @R14
   M=D
-  @Screen.drawHorizontal
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Screen.drawHorizontal
   0;JMP
 (Screen.drawHorizontal$ret.3)
   @5
@@ -27951,11 +28584,14 @@
   D=A
   @R14
   M=D
-  @Sys.error
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Sys.error
   0;JMP
 (Sys.error$ret.9)
   @5
@@ -28205,11 +28841,14 @@
   D=A
   @R14
   M=D
-  @Sys.error
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Sys.error
   0;JMP
 (Sys.error$ret.10)
   @5
@@ -28329,11 +28968,14 @@
   D=A
   @R14
   M=D
-  @Screen.drawSymetric
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Screen.drawSymetric
   0;JMP
 (Screen.drawSymetric$ret.0)
   @5
@@ -28471,11 +29113,14 @@
   D=A
   @R14
   M=D
-  @Math.multiply
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Math.multiply
   0;JMP
 (Math.multiply$ret.15)
   @SP
@@ -28560,11 +29205,14 @@
   D=A
   @R14
   M=D
-  @Math.multiply
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Math.multiply
   0;JMP
 (Math.multiply$ret.16)
   @SP
@@ -28713,11 +29361,14 @@
   D=A
   @R14
   M=D
-  @Screen.drawSymetric
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Screen.drawSymetric
   0;JMP
 (Screen.drawSymetric$ret.1)
   @5
@@ -28764,11 +29415,14 @@
   D=A
   @R14
   M=D
-  @Memory.alloc
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Memory.alloc
   0;JMP
 (Memory.alloc$ret.1)
   @SP
@@ -28833,11 +29487,14 @@
   D=A
   @R14
   M=D
-  @Sys.error
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Sys.error
   0;JMP
 (Sys.error$ret.11)
   @5
@@ -28913,11 +29570,14 @@
   D=A
   @R14
   M=D
-  @Array.new
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Array.new
   0;JMP
 (Array.new$ret.7)
   @1
@@ -29063,11 +29723,14 @@
   D=A
   @R14
   M=D
-  @Array.dispose
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Array.dispose
   0;JMP
 (Array.dispose$ret.0)
   @5
@@ -29098,11 +29761,14 @@
   D=A
   @R14
   M=D
-  @Memory.deAlloc
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Memory.deAlloc
   0;JMP
 (Memory.deAlloc$ret.1)
   @5
@@ -29319,11 +29985,14 @@
   D=A
   @R14
   M=D
-  @Sys.error
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Sys.error
   0;JMP
 (Sys.error$ret.12)
   @5
@@ -29542,11 +30211,14 @@
   D=A
   @R14
   M=D
-  @Sys.error
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Sys.error
   0;JMP
 (Sys.error$ret.13)
   @5
@@ -29725,11 +30397,14 @@
   D=A
   @R14
   M=D
-  @Sys.error
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Sys.error
   0;JMP
 (Sys.error$ret.14)
   @5
@@ -29939,11 +30614,14 @@
   D=A
   @R14
   M=D
-  @Sys.error
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Sys.error
   0;JMP
 (Sys.error$ret.15)
   @5
@@ -30473,11 +31151,14 @@
   D=A
   @R14
   M=D
-  @Math.multiply
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Math.multiply
   0;JMP
 (Math.multiply$ret.17)
   @2
@@ -30686,11 +31367,14 @@
   D=A
   @R14
   M=D
-  @Sys.error
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Sys.error
   0;JMP
 (Sys.error$ret.16)
   @5
@@ -30721,11 +31405,14 @@
   D=A
   @R14
   M=D
-  @Array.new
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Array.new
   0;JMP
 (Array.new$ret.8)
   @2
@@ -30920,11 +31607,14 @@
   D=A
   @R14
   M=D
-  @Math.divide
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Math.divide
   0;JMP
 (Math.divide$ret.6)
   @1
@@ -31006,11 +31696,14 @@
   D=A
   @R14
   M=D
-  @Math.multiply
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Math.multiply
   0;JMP
 (Math.multiply$ret.18)
   @SP
@@ -31305,11 +31998,14 @@
   D=A
   @R14
   M=D
-  @Sys.error
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Sys.error
   0;JMP
 (Sys.error$ret.17)
   @5
@@ -31709,11 +32405,14 @@
   D=A
   @R14
   M=D
-  @Array.dispose
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Array.dispose
   0;JMP
 (Array.dispose$ret.1)
   @5
@@ -31792,11 +32491,14 @@
   D=A
   @R14
   M=D
-  @Memory.init
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Memory.init
   0;JMP
 (Memory.init$ret.0)
   @5
@@ -31819,11 +32521,14 @@
   D=A
   @R14
   M=D
-  @Math.init
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Math.init
   0;JMP
 (Math.init$ret.0)
   @5
@@ -31846,11 +32551,14 @@
   D=A
   @R14
   M=D
-  @Screen.init
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Screen.init
   0;JMP
 (Screen.init$ret.0)
   @5
@@ -31873,11 +32581,14 @@
   D=A
   @R14
   M=D
-  @Output.init
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.init
   0;JMP
 (Output.init$ret.0)
   @5
@@ -31900,11 +32611,14 @@
   D=A
   @R14
   M=D
-  @Keyboard.init
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Keyboard.init
   0;JMP
 (Keyboard.init$ret.0)
   @5
@@ -31927,11 +32641,14 @@
   D=A
   @R14
   M=D
-  @Main.main
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Main.main
   0;JMP
 (Main.main$ret.0)
   @5
@@ -31954,11 +32671,14 @@
   D=A
   @R14
   M=D
-  @Sys.halt
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Sys.halt
   0;JMP
 (Sys.halt$ret.0)
   @5
@@ -32082,11 +32802,14 @@
   D=A
   @R14
   M=D
-  @Sys.error
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Sys.error
   0;JMP
 (Sys.error$ret.18)
   @5
@@ -32310,11 +33033,14 @@
   D=A
   @R14
   M=D
-  @Output.printChar
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.printChar
   0;JMP
 (Output.printChar$ret.4)
   @5
@@ -32344,11 +33070,14 @@
   D=A
   @R14
   M=D
-  @Output.printChar
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.printChar
   0;JMP
 (Output.printChar$ret.5)
   @5
@@ -32378,11 +33107,14 @@
   D=A
   @R14
   M=D
-  @Output.printChar
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.printChar
   0;JMP
 (Output.printChar$ret.6)
   @5
@@ -32415,11 +33147,14 @@
   D=A
   @R14
   M=D
-  @Output.printInt
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Output.printInt
   0;JMP
 (Output.printInt$ret.0)
   @5
@@ -32442,11 +33177,14 @@
   D=A
   @R14
   M=D
-  @Sys.halt
+  @CALL_FUNCTION
+  0;JMP
+  @CALL_FUNCTION_RETURN
   D=A
   @R15
   M=D
-  @CALL_FUNCTION
+(CALL_FUNCTION_RETURN)
+  @Sys.halt
   0;JMP
 (Sys.halt$ret.1)
   @5
