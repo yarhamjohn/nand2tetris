@@ -35,6 +35,9 @@ public class Parser
     private List<ICommand> ParseCommands(string[] input, string fileName)
     {
         var commands = new List<ICommand>();
+
+        var currentFunctionName = "";
+        
         foreach (var line in input)
         {
             var chunks = line.Split(" ");
@@ -43,10 +46,10 @@ public class Parser
             switch (firstChunk)
             {
                 case "push":
-                    commands.Add(new CPush(GetSegment(chunks[1]), Convert.ToInt32(chunks[2]), fileName));
+                    commands.Add(new CPush(fileName, GetSegment(chunks[1]), Convert.ToInt32(chunks[2])));
                     break;
                 case "pop":
-                    commands.Add(new CPop(GetSegment(chunks[1]), Convert.ToInt32(chunks[2]), fileName));
+                    commands.Add(new CPop(fileName, GetSegment(chunks[1]), Convert.ToInt32(chunks[2])));
                     break;
                 case "add":
                     commands.Add(new CAdd());
@@ -76,16 +79,17 @@ public class Parser
                     commands.Add(new CNot());
                     break;
                 case "label":
-                    commands.Add(new CLabel(chunks[1]));
+                    commands.Add(new CLabel(currentFunctionName, chunks[1]));
                     break;
                 case "if-goto":
-                    commands.Add(new CIfGoto(chunks[1]));
+                    commands.Add(new CIfGoto(currentFunctionName,chunks[1]));
                     break;
                 case "goto":
-                    commands.Add(new CGoto(chunks[1]));
+                    commands.Add(new CGoto(currentFunctionName, chunks[1]));
                     break;
                 case "function":
-                    commands.Add(new CFunction(chunks[1], Convert.ToInt32(chunks[2])));
+                    currentFunctionName = chunks[1];
+                    commands.Add(new CFunction(currentFunctionName, Convert.ToInt32(chunks[2])));
                     break;
                 case "return":
                     commands.Add(new CReturn());
@@ -127,7 +131,7 @@ public class Parser
             "constant" => "constant",
             "static" => "static",
             "pointer" => "pointer",
-            "temp" => "TEMP",
+            "temp" => "temp",
             _ => throw new Exception("Invalid segment")
         };
     }

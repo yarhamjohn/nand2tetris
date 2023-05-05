@@ -21,27 +21,29 @@ public class CCall : ICommand
     {
         var result = new List<string>
         {
-            // Provide the number of args
+            // Stash the number of args for the function being called
             $"  @{_numArgs}",
             "  D=A",
             "  @R13",
             "  M=D",
             
-            // Provide the return address
+            // Stash the return address of the function being called
             $"  @{_functionName}$ret.{_callNum}",
             "  D=A",
             "  @R14",
             "  M=D",
             
-            // Provide the goto function address (only persist in R15 in the main function to reduce line count)
+            // Stash the address of the function being called
             $"  @{_functionName}",
             "  D=A",
+            "  @R15",
+            "  M=D",
             
-            // Jump to call function
+            // Jump to generic call function
             "  @CALL_FUNCTION",
             "  0;JMP",
 
-            // create return address label
+            // create return address label for function being called
             $"({_functionName}$ret.{_callNum})"
         };
 
@@ -64,11 +66,19 @@ public class CFunction : ICommand
     {
         var result = new List<string>
         {
-            // function {_functionName} {_numLocalVars}
-            $"  ({_functionName})",
-            "  @SP",
-            "  A=M",
+            $"  ({_functionName})"
         };
+
+        if (_numLocalVars == 0)
+        {
+            return result;
+        }
+        
+        result.AddRange(new List<string>
+        {
+            "  @SP",
+            "  A=M"
+        });
 
         for (var i = 0; i < _numLocalVars; i++)
         {
@@ -80,10 +90,12 @@ public class CFunction : ICommand
             });
         }
 
-        result.AddRange(new List<string> 
+        result.AddRange(new List<string>
         {
+            // Ensure the SP now points to the next space
+            "  D=A",
             "  @SP",
-            "  M=A"
+            "  M=D"
         });
 
         return result;
@@ -96,7 +108,6 @@ public class CReturn : ICommand
     {
         return new List<string>
         {
-            // return
             "  @FUNCTION_RETURN",
             "  0;JMP"
         };
@@ -105,10 +116,12 @@ public class CReturn : ICommand
 
 public class CLabel : ICommand
 {
+    private readonly string _functionName;
     private readonly string _label;
 
-    public CLabel(string label)
+    public CLabel(string functionName, string label)
     {
+        _functionName = functionName;
         _label = label;
     }
 
@@ -116,18 +129,19 @@ public class CLabel : ICommand
     {
         return new List<string>
         {
-            // label {_label}
-            $"  ({_label})"
+            $"  ({_functionName}${_label})"
         };
     }
 }
 
 public class CIfGoto : ICommand
 {
+    private readonly string _functionName;
     private readonly string _label;
 
-    public CIfGoto(string label)
+    public CIfGoto(string functionName, string label)
     {
+        _functionName = functionName;
         _label = label;
     }
 
@@ -135,11 +149,10 @@ public class CIfGoto : ICommand
     {
         return new List<string>
         {
-            // if-goto {_label}
             "  @SP",
             "  AM=M-1",
             "  D=M",
-            $"  @{_label}",
+            $"  @{_functionName}${_label}",
             "  D;JNE"
         };
     }
@@ -147,10 +160,12 @@ public class CIfGoto : ICommand
 
 public class CGoto : ICommand
 {
+    private readonly string _functionName;
     private readonly string _label;
 
-    public CGoto(string label)
+    public CGoto(string functionName, string label)
     {
+        _functionName = functionName;
         _label = label;
     }
 
@@ -158,8 +173,7 @@ public class CGoto : ICommand
     {
         return new List<string>
         {
-            // goto {_label}
-            $"  @{_label}",
+            $"  @{_functionName}${_label}",
             "  0;JMP"
         };
     }
@@ -171,7 +185,7 @@ public class CPush : ICommand
     private readonly int _value;
     private readonly string _fileName;
 
-    public CPush(string target, int value, string fileName)
+    public CPush(string fileName, string target, int value)
     {
         _target = target;
         _value = value;
@@ -183,7 +197,6 @@ public class CPush : ICommand
         {
             "constant" => new List<string>
             {
-                // push {_target} {_value}
                 $"  @{_value}",
                 "  D=A",
                 "  @SP",
@@ -194,7 +207,6 @@ public class CPush : ICommand
             },
             "pointer" => new List<string>
             {
-                // push {_target} {_value}
                 $"  @{(_value == 0 ? "THIS" : "THAT")}",
                 "  D=M",
                 "  @SP",
@@ -205,8 +217,17 @@ public class CPush : ICommand
             },
             "static" => new List<string>
             {
-                // push {_target} {_value}
                 $"  @{_fileName}.{_value}",
+                "  D=M",
+                "  @SP",
+                "  A=M",
+                "  M=D",
+                "  @SP",
+                "  M=M+1"
+            },
+            "temp" => new List<string>
+            {
+                $"  @{_value + 5}",
                 "  D=M",
                 "  @SP",
                 "  A=M",
@@ -216,8 +237,7 @@ public class CPush : ICommand
             },
             _ => new List<string>
             {
-                // push {_target} {_value}
-                $"  @{(_target == "TEMP" ? _value + 5 : _value)}",
+                $"  @{_value}",
                 "  D=A",
                 $"  @{_target}",
                 "  A=M+D",
@@ -237,7 +257,7 @@ public class CPop : ICommand
     private readonly int _value;
     private readonly string _fileName;
 
-    public CPop(string target, int value, string fileName)
+    public CPop(string fileName, string target, int value)
     {
         _target = target;
         _value = value;
@@ -249,7 +269,6 @@ public class CPop : ICommand
         {
             "pointer" => new List<string>
             {
-                // pop {_target} {_value}
                 "  @SP",
                 "  AM=M-1",
                 "  D=M",
@@ -258,18 +277,25 @@ public class CPop : ICommand
             },
             "static" => new List<string>
             {
-                // pop {_target} {_value}
                 "  @SP",
                 "  AM=M-1",
                 "  D=M",
                 $"  @{_fileName}.{_value}",
                 "  M=D"
             },
+            "temp" => new List<string>
+            {
+                "  @SP",
+                "  AM=M-1",
+                "  D=M",
+                $"  @{_value + 5}",
+                "  M=D"
+            },
             _ =>
                 new List<string>
                 {
-                    // pop {_target} {_value}
-                    $"  @{(_target == "TEMP" ? _value + 5 : _value)}",
+                    // _target contains a pointer to the start of the segment
+                    $"  @{_value}",
                     "  D=A",
                     $"  @{_target}",
                     "  D=M+D",
@@ -289,7 +315,6 @@ public class CAdd : ICommand {
     public IEnumerable<string> Translate(int _) =>
         new List<string>
         {
-            // add
             "  @SP",
             "  AM=M-1",
             "  D=M",
@@ -302,7 +327,6 @@ public class CSub : ICommand {
     public IEnumerable<string> Translate(int _) =>
         new List<string>
         {
-            // sub
             "  @SP",
             "  AM=M-1",
             "  D=M",
@@ -315,7 +339,6 @@ public class CEq : ICommand {
     public IEnumerable<string> Translate(int index) =>
         new List<string>
         {
-            // eq
             "  @SP",
             "  AM=M-1",
             "  D=M",
@@ -344,7 +367,6 @@ public class CLt : ICommand {
     public IEnumerable<string> Translate(int index) =>
         new List<string>
         {
-            // lt
             "  @SP",
             "  AM=M-1",
             "  D=M",
@@ -373,7 +395,6 @@ public class CGt : ICommand {
     public IEnumerable<string> Translate(int index) =>
         new List<string>
         {
-            // gt
             "  @SP",
             "  AM=M-1",
             "  D=M",
@@ -402,7 +423,6 @@ public class CNeg : ICommand {
     public IEnumerable<string> Translate(int _) =>
         new List<string>
         {
-            // neg
             "  @SP",
             "  A=M-1",
             "  M=-M"
@@ -413,7 +433,6 @@ public class CAnd : ICommand {
     public IEnumerable<string> Translate(int _) =>
         new List<string>
         {
-            // and
             "  @SP",
             "  AM=M-1",
             "  D=M",
@@ -426,7 +445,6 @@ public class COr : ICommand {
     public IEnumerable<string> Translate(int _) =>
         new List<string>
         {
-            // or
             "  @SP",
             "  AM=M-1",
             "  D=M",
@@ -439,7 +457,6 @@ public class CNot : ICommand {
     public IEnumerable<string> Translate(int _) =>
         new List<string>
         {
-            // not
             "  @SP",
             "  A=M-1",
             "  M=!M"

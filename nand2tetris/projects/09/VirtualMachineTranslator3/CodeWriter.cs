@@ -32,30 +32,30 @@ public class CodeWriter
             "  @SP",
             "  M=D",
             
-            // 41 lines in FunctionCall + 4 lines initialising SP + 4 lines here + 1 for next line
-            "  @50",
+            // Lines in FunctionCall + lines initialising SP + lines here + 1 for next line
+            "  @58",
             "  D=A",
             "  @R15",
-            "  M=D",
+            "  M=D"
         };
 
         bootstrap.AddRange(FunctionCall());
         
-        // 42 lines in FunctionReturn + 49 from above + 8 here + 1 for next line
+        // Lines in FunctionReturn + lines from previous bootstrap + lines here + 1 for next line
         bootstrap.AddRange(
             new List<string>
             {
                 // Ensure LCL has value 5 to Ram[0] is the target or getting FunctionReturn jump
-                " @5",
-                " D=A",
+                "  @5",
+                "  D=A",
                 "  @LCL",
                 "  M=D",
                 
                 // Ensure RAM[0] has line to jump to after FunctionReturn initialization
-                " @100",
-                " D=A",
-                " @0",
-                " M=D"
+                "  @108",
+                "  D=A",
+                "  @0",
+                "  M=D"
             });
         
         bootstrap.AddRange(FunctionReturn());
@@ -92,44 +92,50 @@ public class CodeWriter
             // call {_functionName} {_numArgs}
             "(CALL_FUNCTION)",
 
-            // The goto function address is stored in D so move to @R15 
-            "  @R15",
-            "  M=D",
-            
             // push return address onto stack
             "  @R14",
             "  D=M",
             "  @SP",
             "  A=M",
             "  M=D",
+            "  @SP",
+            "  M=M+1",
 
             // store the pointer to the caller's LCL to the stack
             "  @LCL",
             "  D=M",
             "  @SP",
-            "  AM=M+1",
+            "  A=M",
             "  M=D",
+            "  @SP",
+            "  M=M+1",
 
             // store the pointer to the caller's ARG to the stack
             "  @ARG",
             "  D=M",
             "  @SP",
-            "  AM=M+1",
+            "  A=M",
             "  M=D",
+            "  @SP",
+            "  M=M+1",
 
             // store the pointer to the caller's THIS to the stack
             "  @THIS",
             "  D=M",
             "  @SP",
-            "  AM=M+1",
+            "  A=M",
             "  M=D",
+            "  @SP",
+            "  M=M+1",
 
             // store the pointer to the caller's THAT to the stack
             "  @THAT",
             "  D=M",
             "  @SP",
-            "  AM=M+1",
+            "  A=M",
             "  M=D",
+            "  @SP",
+            "  M=M+1",
 
             // set the callee ARG to point at the first arg passed to the function
             "  @SP",
@@ -147,7 +153,7 @@ public class CodeWriter
             "  @LCL",
             "  M=D",
 
-            // Jump back to call function
+            // jump to function being called
             "  @R15",
             "  A=M",
             "  0;JMP"
