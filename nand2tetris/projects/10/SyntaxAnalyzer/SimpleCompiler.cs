@@ -1,4 +1,6 @@
-﻿namespace SyntaxAnalyzer;
+﻿using System.Text.Json;
+
+namespace SyntaxAnalyzer;
 
 public class SimpleCompiler
 {
@@ -7,7 +9,7 @@ public class SimpleCompiler
         var output = new List<string> {"<tokens>"};
         output.AddRange(tokens.Select(token =>
         {
-            var tokenType = token.Type.ToString().ToLower();
+            var tokenType = JsonNamingPolicy.CamelCase.ConvertName(token.Type.ToString());
             return "<" + tokenType + "> " + token.Value + " </" + tokenType + ">";
         }));
         output.Add("</tokens>");

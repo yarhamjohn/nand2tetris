@@ -39,11 +39,33 @@ public class IdentifierToken : IToken
     }
 }
 
+public class StringConstantToken : IToken
+{
+    public TokenType Type => TokenType.StringConstant;
+    public string Value { get; }
+
+    public StringConstantToken(string value)
+    {
+        Value = value;
+    }
+}
+
+public class IntegerConstantToken : IToken
+{
+    public TokenType Type => TokenType.IntegerConstant;
+    public string Value { get; }
+
+    public IntegerConstantToken(string value)
+    {
+        Value = value;
+    }
+}
+
 public enum TokenType
 {
     Keyword,
     Symbol,
     Identifier,
-    IntConst,
-    StringConst
+    IntegerConstant,
+    StringConstant
 }

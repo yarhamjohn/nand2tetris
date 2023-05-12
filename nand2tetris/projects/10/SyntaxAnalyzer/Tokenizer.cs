@@ -28,8 +28,20 @@ public abstract class Tokenizer
 
             var isSymbol = Symbols.Contains(currentLetter);
             var isWhiteSpace = currentLetter == " ";
+            var inStringConstant = currentWord.Length > 0 && currentWord.ToString().First() == '"';
 
             if (!isWhiteSpace && !isSymbol)
+            {
+                currentWord.Append(currentLetter);
+
+                var isClosingQuoteMark = currentWord.Length > 1 && currentLetter == "\"";
+                if (isClosingQuoteMark)
+                {
+                    tokens.Add(new StringConstantToken(currentWord.ToString().Replace("\"", "")));
+                    currentWord.Clear();
+                }
+            }
+            else if (inStringConstant)
             {
                 currentWord.Append(currentLetter);
             }
