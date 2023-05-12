@@ -1,4 +1,4 @@
-namespace VirtualMachineTranslator2;
+namespace VirtualMachineTranslator3;
 
 public class Parser
 {
@@ -7,15 +7,7 @@ public class Parser
     
     public Parser(string path)
     {
-        _paths = File.Exists(path) ? new[] { path } : Directory.GetFiles(path, "*.vm");// GetFilesInDirectory(path);
-    }
-
-    private static string[] GetFilesInDirectory(string path)
-    {
-        var allFiles = Directory.GetFiles(path, "*.vm");
-        var startFile = new [] {allFiles.Single(x => x.Contains("Sys.vm")) };
-
-        return startFile.Concat(allFiles.Except(startFile)).ToArray();
+        _paths = File.Exists(path) ? new[] { path } : Directory.GetFiles(path, "*.vm");
     }
 
     public List<ICommand> Parse() => _paths.SelectMany(ParseFile).ToList();

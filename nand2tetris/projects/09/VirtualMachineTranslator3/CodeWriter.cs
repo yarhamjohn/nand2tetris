@@ -1,4 +1,4 @@
-namespace VirtualMachineTranslator2;
+namespace VirtualMachineTranslator3;
 
 public class CodeWriter
 {

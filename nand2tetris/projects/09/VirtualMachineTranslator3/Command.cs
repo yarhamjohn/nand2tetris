@@ -1,4 +1,4 @@
-﻿namespace VirtualMachineTranslator2;
+﻿namespace VirtualMachineTranslator3;
 
 public interface ICommand {
     public IEnumerable<string> Translate(int index);
