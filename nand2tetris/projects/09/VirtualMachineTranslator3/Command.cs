@@ -33,11 +33,9 @@ public class CCall : ICommand
             "  @R14",
             "  M=D",
             
-            // Stash the address of the function being called
+            // Stash the address of the function being called in D (assigned to @R15 in the generic call function)
             $"  @{_functionName}",
             "  D=A",
-            "  @R15",
-            "  M=D",
             
             // Jump to generic call function
             "  @CALL_FUNCTION",
@@ -192,48 +190,29 @@ public class CPush : ICommand
         _fileName = fileName;
     }
     
-    public IEnumerable<string> Translate(int _) =>
-        _target switch
+    public IEnumerable<string> Translate(int _)
+    {
+        var result = _target switch
         {
             "constant" => new List<string>
             {
                 $"  @{_value}",
-                "  D=A",
-                "  @SP",
-                "  A=M",
-                "  M=D",
-                "  @SP",
-                "  M=M+1"
+                "  D=A"
             },
             "pointer" => new List<string>
             {
                 $"  @{(_value == 0 ? "THIS" : "THAT")}",
-                "  D=M",
-                "  @SP",
-                "  A=M",
-                "  M=D",
-                "  @SP",
-                "  M=M+1"
+                "  D=M"
             },
             "static" => new List<string>
             {
                 $"  @{_fileName}.{_value}",
-                "  D=M",
-                "  @SP",
-                "  A=M",
-                "  M=D",
-                "  @SP",
-                "  M=M+1"
+                "  D=M"
             },
             "temp" => new List<string>
             {
                 $"  @{_value + 5}",
-                "  D=M",
-                "  @SP",
-                "  A=M",
-                "  M=D",
-                "  @SP",
-                "  M=M+1"
+                "  D=M"
             },
             _ => new List<string>
             {
@@ -241,14 +220,21 @@ public class CPush : ICommand
                 "  D=A",
                 $"  @{_target}",
                 "  A=M+D",
-                "  D=M",
-                "  @SP",
-                "  A=M",
-                "  M=D",
-                "  @SP",
-                "  M=M+1"
+                "  D=M"
             }
         };
+
+        result.AddRange(
+            new List<string>
+            {
+                "  @SP",
+                "  M=M+1",
+                "  A=M-1",
+                "  M=D"
+            });
+
+        return result;
+    }
 }
 
 public class CPop : ICommand

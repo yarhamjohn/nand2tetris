@@ -34,9 +34,7 @@ public class CodeWriter
             
             // Lines in FunctionCall + lines initialising SP + lines here + 1 for next line
             "  @58",
-            "  D=A",
-            "  @R15",
-            "  M=D"
+            "  D=A"
         };
 
         bootstrap.AddRange(FunctionCall());
@@ -92,6 +90,10 @@ public class CodeWriter
             // call {_functionName} {_numArgs}
             "(CALL_FUNCTION)",
 
+            // Relies on D being set appropriately by the caller
+            "  @R15",
+            "  M=D",
+            
             // push return address onto stack
             "  @R14",
             "  D=M",
