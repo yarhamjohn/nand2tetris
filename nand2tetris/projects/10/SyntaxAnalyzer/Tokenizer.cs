@@ -1,141 +1,71 @@
-﻿namespace SyntaxAnalyzer;
+﻿using System.Text;
 
-public class Tokenizer
+namespace SyntaxAnalyzer;
+
+public abstract class Tokenizer
 {
-    public IEnumerable<IToken> Tokenize(string filePath)
+    private static List<string> Keywords => new()
     {
-        return ParseFile(filePath).SelectMany(Parse);
-    }
+        "class", "constructor", "function", "method", "field", "static", "var", "int", "char", "boolean",
+        "void", "true", "false", "null", "this", "let", "do", "if", "else", "while", "return"
+    };
 
-    private IEnumerable<IToken> Parse(string line)
+    private static List<string> Symbols => new()
+        { "{", "}", "(", ")", "[", "]", ".", ",", ";", "+", "-", "*", "/", "&", "|", "<", ">", "=", "~" };
+
+    public static IEnumerable<IToken> Tokenize(string filePath) => CleanFile(filePath).SelectMany(TokenizeLines);
+
+    private static IEnumerable<IToken> TokenizeLines(string line)
     {
         var tokens = new List<IToken>();
-        
-        if (line.StartsWith("class"))
-        {
-            tokens.Add(new KeywordToken("class"));
-            
-            var className = line.Split(" ")[1];
-            tokens.Add(new IdentifierToken(className));
-            
-            tokens.Add(new SymbolToken("{"));
-        }
 
-        if (line.StartsWith("function"))
-        {
-            tokens.Add(new KeywordToken("function"));
-            
-            var returnType = line.Split(" ")[1];
-            tokens.Add(new KeywordToken(returnType));
-            
-            var functionName = line.Split(" ")[2].Split("(")[0];
-            tokens.Add(new IdentifierToken(functionName));
-            
-            tokens.Add(new SymbolToken("("));
-            
-            // TODO handle parameters
-            
-            tokens.Add(new SymbolToken(")"));
-            tokens.Add(new SymbolToken("{"));
-        }
-        
-        if (line.StartsWith("do"))
-        {
-            tokens.Add(new KeywordToken("do"));
-            
-            var identifier = line.Split(" ")[1].Split(".")[0];
-            tokens.Add(new IdentifierToken(identifier));
-            
-            tokens.Add(new SymbolToken("."));
-            
-            var functionName = line.Split(" ")[1].Split(".")[1].Split("(")[0];
-            tokens.Add(new IdentifierToken(functionName));
-            tokens.Add(new SymbolToken("("));
-            
-            // TODO handle parameters
-            
-            tokens.Add(new SymbolToken(")"));
-            tokens.Add(new SymbolToken(";"));
-        }
-        
-        if (line.StartsWith("let"))
-        {
-            tokens.Add(new KeywordToken("let"));
-            
-            var identifierName = line.Split(" ")[1];
-            tokens.Add(new IdentifierToken(identifierName));
-            
-            tokens.Add(new SymbolToken("="));
-            
-            var value = line.Split(" ")[3].Split(";")[0];
-            tokens.Add(new IdentifierToken(value));
-            
-            tokens.Add(new SymbolToken(";"));
-        }
-        
-        if (line.StartsWith("var") || line.StartsWith("static"))
-        {
-            tokens.Add(new KeywordToken(line.Split(" ")[0]));
+        var currentPosition = 0;
+        var currentWord = new StringBuilder();
 
-            var identifierType = line.Split(" ")[1];
-            if (IsKeyword(identifierType))
+        while (currentPosition < line.Length)
+        {
+            var currentLetter = line[currentPosition].ToString();
+
+            var isSymbol = Symbols.Contains(currentLetter);
+            var isWhiteSpace = currentLetter == " ";
+
+            if (!isWhiteSpace && !isSymbol)
             {
-                tokens.Add(new KeywordToken(identifierType));
+                currentWord.Append(currentLetter);
             }
             else
             {
-                tokens.Add(new IdentifierToken(identifierType));
+                if (currentWord.Length > 0)
+                {
+                    var word = currentWord.ToString();
+                    if (Keywords.Contains(word))
+                    {
+                        tokens.Add(new KeywordToken(word));
+                    }
+                    else
+                    {
+                        tokens.Add(new IdentifierToken(word));
+                    }
+
+                    currentWord.Clear();
+                }
+
+                if (isSymbol)
+                {
+                    tokens.Add(new SymbolToken(currentLetter));
+                }
             }
 
-            var identifierName = line.Split(" ")[2].Split(";")[0];
-            tokens.Add(new IdentifierToken(identifierName));
-            
-            tokens.Add(new SymbolToken(";"));
-        }
-
-        if (line.StartsWith("if"))
-        {
-            tokens.Add(new KeywordToken("if"));
-            tokens.Add(new SymbolToken("("));
-            
-            var identifierName = line.Split("(")[1].Split(")")[0];
-            tokens.Add(new IdentifierToken(identifierName));
-            
-            tokens.Add(new SymbolToken(")"));
-            tokens.Add(new SymbolToken("{"));
-        }
-
-        if (line == "else {")
-        {
-            tokens.Add(new KeywordToken("else"));
-            tokens.Add(new SymbolToken("{"));
-        }
-        
-        if (line == "return;")
-        {
-            tokens.Add(new KeywordToken("return"));
-            tokens.Add(new SymbolToken(";"));
-        }
-        
-        if (line.StartsWith("}"))
-        {
-            tokens.Add(new SymbolToken("}"));
+            currentPosition++;
         }
 
         return tokens;
     }
 
-    private IEnumerable<string> ParseFile(string filePath) =>
+    private static IEnumerable<string> CleanFile(string filePath) =>
         File.ReadAllLines(filePath)
-        .Where(line => !string.IsNullOrWhiteSpace(line))
-        .Where(line => !line.Trim().StartsWith("//"))
-        .Select(x => x.Split("//").First().Trim())
-        .ToArray();
-
-    private bool IsKeyword(string s)
-    {
-        return s is "class" or "constructor" or "function" or "method" or "field" or "static" or "var" or "int"
-            or "char" or "boolean" or "void" or "true" or "false" or "null" or "this" or "let" or "do" or "if" or "else"
-            or "while" or "return";
-    }
+            .Where(line => !string.IsNullOrWhiteSpace(line))
+            .Where(line => !line.Trim().StartsWith("//"))
+            .Where(line => !line.Trim().StartsWith("/*"))
+            .Select(x => x.Split("//").First().Trim());
 }
