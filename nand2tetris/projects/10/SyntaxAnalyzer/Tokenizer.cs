@@ -10,8 +10,12 @@ public abstract class Tokenizer
         "void", "true", "false", "null", "this", "let", "do", "if", "else", "while", "return"
     };
 
-    private static List<string> Symbols => new()
-        { "{", "}", "(", ")", "[", "]", ".", ",", ";", "+", "-", "*", "/", "&", "|", "<", ">", "=", "~" };
+    private static Dictionary<string, string> Symbols => new()
+        {
+            {"{", "{"}, {"}", "}"}, {"(", "("}, {")", ")"}, {"[", "["}, {"]", "]"}, {".", "."},
+            {",", ","}, {";", ";"}, {"+", "+"}, {"-", "-"}, {"*", "*"}, {"/", "/"}, {"&", "&amp"},
+            {"|", "|"}, {"<", "&lt;"}, {">", "&gt;"}, {"=", "="}, {"~", "~"}
+        };
 
     public static IEnumerable<IToken> Tokenize(string filePath) => CleanFile(filePath).SelectMany(TokenizeLines);
 
@@ -26,7 +30,7 @@ public abstract class Tokenizer
         {
             var currentLetter = line[currentPosition].ToString();
 
-            var isSymbol = Symbols.Contains(currentLetter);
+            var isSymbol = Symbols.ContainsKey(currentLetter);
             var isWhiteSpace = currentLetter == " ";
             var inStringConstant = currentWord.Length > 0 && currentWord.ToString().First() == '"';
 
@@ -54,6 +58,10 @@ public abstract class Tokenizer
                     {
                         tokens.Add(new KeywordToken(word));
                     }
+                    else if (int.TryParse(word, out _))
+                    {
+                        tokens.Add(new IntegerConstantToken(word));
+                    }
                     else
                     {
                         tokens.Add(new IdentifierToken(word));
@@ -64,7 +72,7 @@ public abstract class Tokenizer
 
                 if (isSymbol)
                 {
-                    tokens.Add(new SymbolToken(currentLetter));
+                    tokens.Add(new SymbolToken(Symbols[currentLetter]));
                 }
             }
 
