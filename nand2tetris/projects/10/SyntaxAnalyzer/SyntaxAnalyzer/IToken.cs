@@ -6,7 +6,7 @@ public interface IToken
     public string Value { get; }
 }
 
-public class KeywordToken : IToken
+public record KeywordToken : IToken
 {
     public TokenType Type => TokenType.Keyword;
     public string Value { get; }
@@ -17,7 +17,7 @@ public class KeywordToken : IToken
     }
 }
 
-public class SymbolToken : IToken
+public record SymbolToken : IToken
 {
     public TokenType Type => TokenType.Symbol;
     public string Value { get; }
@@ -28,7 +28,7 @@ public class SymbolToken : IToken
     }
 }
 
-public class IdentifierToken : IToken
+public record IdentifierToken : IToken
 {
     public TokenType Type => TokenType.Identifier;
     public string Value { get; }
@@ -39,7 +39,7 @@ public class IdentifierToken : IToken
     }
 }
 
-public class StringConstantToken : IToken
+public record StringConstantToken : IToken
 {
     public TokenType Type => TokenType.StringConstant;
     public string Value { get; }
@@ -50,7 +50,7 @@ public class StringConstantToken : IToken
     }
 }
 
-public class IntegerConstantToken : IToken
+public record IntegerConstantToken : IToken
 {
     public TokenType Type => TokenType.IntegerConstant;
     public string Value { get; }

@@ -11,7 +11,7 @@ var filePaths = File.Exists(path) ? new[] { path } : Directory.GetFiles(path, "*
 
 foreach (var file in filePaths)
 {
-    var tokens = Tokenizer.Tokenize(file);
+    var tokens = Tokenizer.Tokenize(File.ReadAllLines(file));
     var output = new SimpleCompiler().Compile(tokens);
 
     File.WriteAllLines(GetOutputPath(file), output);

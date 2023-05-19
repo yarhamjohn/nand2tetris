@@ -13,13 +13,56 @@ public abstract class Tokenizer
     private static Dictionary<string, string> Symbols => new()
         {
             {"{", "{"}, {"}", "}"}, {"(", "("}, {")", ")"}, {"[", "["}, {"]", "]"}, {".", "."},
-            {",", ","}, {";", ";"}, {"+", "+"}, {"-", "-"}, {"*", "*"}, {"/", "/"}, {"&", "&amp"},
+            {",", ","}, {";", ";"}, {"+", "+"}, {"-", "-"}, {"*", "*"}, {"/", "/"}, {"&", "&amp;"},
             {"|", "|"}, {"<", "&lt;"}, {">", "&gt;"}, {"=", "="}, {"~", "~"}
         };
 
-    public static IEnumerable<IToken> Tokenize(string filePath) => CleanFile(filePath).SelectMany(TokenizeLines);
+    public static IEnumerable<IToken> Tokenize(IEnumerable<string> lines)
+    {
+        var inMultiLineComment = false;
+        var tokens = new List<IEnumerable<IToken>>();
+        
+        foreach (var line in lines.Select(l => l.Trim()))
+        {
+            // Start of multi-line comment
+            if (line.StartsWith("/*"))
+            {
+                // Multi-line comment is single line
+                if (line.EndsWith("*/"))
+                {
+                    continue;
+                }
 
-    private static IEnumerable<IToken> TokenizeLines(string line)
+                inMultiLineComment = true;
+                continue;
+            }
+            
+            // single line comment
+            if (line.StartsWith("//"))
+            {
+                continue;
+            }
+            
+            // continuation of a multi line comment
+            if (inMultiLineComment)
+            {
+                // end of multi line comment reached
+                if (line.EndsWith("*/"))
+                {
+                    inMultiLineComment = false;
+                }
+
+                continue;
+            }
+
+            // Remove commented ends of lines
+            tokens.Add(TokenizeLine(line.Split("//")[0].Trim()));
+        }
+
+        return tokens.SelectMany(x => x);
+    }
+
+    private static IEnumerable<IToken> TokenizeLine(string line)
     {
         var tokens = new List<IToken>();
 
@@ -93,11 +136,4 @@ public abstract class Tokenizer
 
         return tokens;
     }
-
-    private static IEnumerable<string> CleanFile(string filePath) =>
-        File.ReadAllLines(filePath)
-            .Where(line => !string.IsNullOrWhiteSpace(line))
-            .Where(line => !line.Trim().StartsWith("//"))
-            .Where(line => !line.Trim().StartsWith("/*"))
-            .Select(x => x.Split("//").First().Trim());
 }
