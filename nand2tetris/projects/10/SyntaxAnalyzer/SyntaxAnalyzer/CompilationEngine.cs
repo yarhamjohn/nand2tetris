@@ -4,7 +4,7 @@ public class CompilationEngine
 {
     public readonly List<string> Compilation = new();
 
-    private readonly List<string> _ops = new() { "+", "-", "*", "/", "&", "|", "<", ">" };
+    private readonly List<string> _ops = new() { "+", "-", "*", "/", "&amp;", "|", "&lt;", "&gt;", "=" };
     private readonly List<string> _unaryOps = new() { "-", "~" };
     private readonly IToken[] _tokens;
     private int _indentLevel;
@@ -135,7 +135,7 @@ public class CompilationEngine
             AddToken(); // unaryOp
             CompileTerm(); // term
         }
-        else if (_tokens[_currentToken + 2].Value is "(" or ".")
+        else if (_tokens[_currentToken + 1].Value is "(" or ".")
         {
             CompileSubroutineCall(); // subroutineCall
         }
