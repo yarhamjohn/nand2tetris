@@ -2,477 +2,436 @@
 
 public class CompilationEngine
 {
+    public readonly List<string> Compilation = new();
 
-    
-    public IEnumerable<string> Compile(IToken[] tokens, int indentLevel)
+    private readonly List<string> _ops = new() { "+", "-", "*", "/", "&", "|", "<", ">" };
+    private readonly List<string> _unaryOps = new() { "-", "~" };
+    private readonly IToken[] _tokens;
+    private int _indentLevel;
+    private int _currentToken;
+
+    public CompilationEngine(IEnumerable<IToken> tokens)
     {
-        List<string> result = new();
-        
-        foreach (var token in tokens)
+        _tokens = tokens.ToArray();
+    }
+
+    public void Compile()
+    {
+        // We know the first token is always 'class' and there is
+        // only one class per file
+        switch (_tokens[_currentToken].Value)
         {
-            switch (token.Value)
-            {
-                case "class":
-                    result.Add($"{"".PadLeft(indentLevel * 2)}<class>");
-                    result.AddRange(CompileClass(tokens, indentLevel + 1));
-                    result.Add($"{"".PadLeft(indentLevel * 2)}</class>");
-                    break;
-                case "static" or "field":
-                    result.Add($"{"".PadLeft(indentLevel * 2)}<classVarDec>");
-                    result.AddRange(CompileClassVarDec(tokens, indentLevel + 1));
-                    result.Add($"{"".PadLeft(indentLevel * 2)}</classVarDec>");
-                    break;
-                case "method" or "function" or "constructor":
-                    result.Add($"{"".PadLeft(indentLevel * 2)}<subroutineDec>");
-                    result.AddRange(CompileSubroutineDec(tokens, indentLevel + 1));
-                    result.Add($"{"".PadLeft(indentLevel * 2)}</subroutineDec>");
-                    break;
-                case "var":
-                    result.Add($"{"".PadLeft(indentLevel * 2)}<varDec>");
-                    result.AddRange(CompileVarDec(tokens, indentLevel + 1));
-                    result.Add($"{"".PadLeft(indentLevel * 2)}</varDec>");
-                    break;
-                case "let":
-                    result.Add($"{"".PadLeft(indentLevel * 2)}<letStatement>");
-                    result.AddRange(CompileLetStatement(tokens, indentLevel + 1));
-                    result.Add($"{"".PadLeft(indentLevel * 2)}</letStatement>");
-                    break;
-                case "do":
-                    result.Add($"{"".PadLeft(indentLevel * 2)}<doStatement>");
-                    result.AddRange(CompileDoStatement(tokens, indentLevel + 1));
-                    result.Add($"{"".PadLeft(indentLevel * 2)}</doStatement>");
-                    break;
-                case "if":
-                    result.Add($"{"".PadLeft(indentLevel * 2)}<ifStatement>");
-                    result.AddRange(CompileIfStatement(tokens, indentLevel + 1));
-                    result.Add($"{"".PadLeft(indentLevel * 2)}</ifStatement>");
-                    break;
-                case "while":
-                    result.Add($"{"".PadLeft(indentLevel * 2)}<whileStatement>");
-                    result.AddRange(CompileWhileStatement(tokens, indentLevel + 1));
-                    result.Add($"{"".PadLeft(indentLevel * 2)}</whileStatement>");
-                    break;
-                case "return":
-                    result.Add($"{"".PadLeft(indentLevel * 2)}<returnStatement>");
-                    result.AddRange(CompileReturnStatement(tokens, indentLevel + 1));
-                    result.Add($"{"".PadLeft(indentLevel * 2)}</returnStatement>");
-                    break;
-            }
-        }
-
-        return result;
-    }
-
-    private IEnumerable<string> CompileDoStatement(IToken[] tokens, int indentLevel)
-    {
-        throw new NotImplementedException();
-    }
-
-    private IEnumerable<string> CompileLetStatement(IToken[] tokens, int indentLevel)
-    {
-        throw new NotImplementedException();
-    }
-
-    private IEnumerable<string> CompileIfStatement(IToken[] tokens, int indentLevel)
-    {
-        throw new NotImplementedException();
-    }
-
-    private IEnumerable<string> CompileWhileStatement(IToken[] tokens, int indentLevel)
-    {
-        throw new NotImplementedException();
-    }
-
-    private IEnumerable<string> CompileReturnStatement(IToken[] tokens, int indentLevel)
-    {
-        var result = new List<string>
-        {
-            KeywordLine(tokens[0], indentLevel),
-            SymbolLine(tokens[1], indentLevel)
-        };
-        
-        result.AddRange(Compile(tokens[2..], indentLevel - 1));
-
-        return result;
-    }
-
-    private IEnumerable<string> CompileVarDec(IToken[] tokens, int indentLevel)
-    {
-        var result = new List<string>
-        {
-            KeywordLine(tokens[0], indentLevel),
-            IdentifierLine(tokens[1], indentLevel),
-            IdentifierLine(tokens[2], indentLevel),
-            SymbolLine(tokens[3], indentLevel)
-        };
-        
-        result.AddRange(Compile(tokens[3..], indentLevel - 1));
-
-        return result;
-    }
-
-    private IEnumerable<string> CompileClass(IToken[] tokens, int indentLevel)
-    {
-        var result = new List<string>
-        {
-            KeywordLine(tokens[0], indentLevel),
-            IdentifierLine(tokens[1], indentLevel),
-            SymbolLine(tokens[2], indentLevel)
-        };
-        
-        result.AddRange(Compile(tokens[3..], indentLevel - 1));
-
-        return result;
-    }
-
-    private IEnumerable<string> CompileClassVarDec(IToken[] tokens, int indentLevel)
-    {
-        var result = new List<string>
-        {
-            KeywordLine(tokens[0], indentLevel),
-            KeywordLine(tokens[1], indentLevel),
-            IdentifierLine(tokens[2], indentLevel),
-            SymbolLine(tokens[3], indentLevel)
-        };
-        
-        result.AddRange(Compile(tokens[4..], indentLevel - 1));
-
-        return result;
-    }
-    
-    private IEnumerable<string> CompileSubroutineDec(IToken[] tokens, int indentLevel)
-    {
-        var result = new List<string>
-        {
-            KeywordLine(tokens[0], indentLevel),
-            KeywordLine(tokens[1], indentLevel),
-            IdentifierLine(tokens[2], indentLevel),
-        };
-        
-        
-        
-        result.Add(SymbolLine(tokens[3], indentLevel)); // Opening parenthesis
-        result.Add($"{"".PadLeft(indentLevel * 2)}<parameterList>");
-        
-        var (parameterList, remainingTokens) = CompileParameterList(tokens[4..], indentLevel);
-        result.AddRange(parameterList);
-        
-        result.Add($"{"".PadLeft(indentLevel * 2)}</parameterList>");
-        result.Add(SymbolLine(remainingTokens[0], indentLevel)); // Closing parenthesis
-
-        
-        
-        result.Add($"{"".PadLeft(indentLevel * 2)}<subroutineBody>");
-        result.Add(SymbolLine(remainingTokens[0], indentLevel + 1));
-
-        var (subRoutineBody, remainingTokens2) = CompileSubroutineBody(remainingTokens[1..], indentLevel + 1);
-        result.AddRange(subRoutineBody);
-        
-        result.Add(SymbolLine(remainingTokens2[0], indentLevel + 1));
-        result.Add($"{"".PadLeft(indentLevel * 2)}</subroutineBody>");
-
-        
-        
-        // Sub routine declaration complete
-        result.AddRange(Compile(remainingTokens2[1..], indentLevel - 1));
-
-        return result;
-    }
-
-    private (IEnumerable<string> subRoutineBody, IToken[] remainingTokens2) CompileSubroutineBody(IToken[] tokens, int indentLevel)
-    {
-        throw new NotImplementedException();
-    }
-
-    private (IEnumerable<string> parameterList, IToken[] remainingTokens) CompileParameterList(IToken[] tokens, int indentLevel)
-    {
-        var result = new List<string>();
-        
-        var currentIndex = 0;
-        if (tokens[currentIndex].Value == ")")
-        {
-            return (result, tokens);
-        }
-
-        while (true)
-        {
-            result.Add(KeywordLine(tokens[currentIndex], indentLevel + 1));
-            result.Add(IdentifierLine(tokens[currentIndex + 1], indentLevel + 1));
-
-            if (tokens[currentIndex + 2].Value == ")")
-            {
+            case "class":
+                CompileClass();
                 break;
-            }
+            case "static" or "field":
+                CompileClassVarDec();
+                break;
+            case "method" or "function" or "constructor":
+                CompileSubroutine();
+                break;
+            case "var":
+                CompileVarDec();
+                break;
+            case "return":
+                CompileReturnStatement();
+                break;
+            case "do":
+                CompileDoStatement();
+                break;
+            case "let":
+                CompileLetStatement();
+                break;
+            case "while":
+                CompileWhileStatement();
+                break;
+            case "if":
+                CompileIfStatement();
+                break;
+            default:
+                throw new InvalidOperationException(_tokens[_currentToken].Value);
+        }
+    }
+
+    /**
+     * 'if' '(' expression ')' '{' statements '}' ('else' '{' statements '}')?
+     */
+    private void CompileIfStatement()
+    {
+        Compilation.Add(WithIndent("<ifStatement>"));
+        _indentLevel++;
+        
+        AddToken(); // if
+        AddToken(); // (
+
+        CompileExpression(); // expression
+        
+        AddToken(); // )
+        AddToken(); // {
+
+        CompileStatements(); // statements
+        
+        AddToken(); // }
+
+        if (_tokens[_currentToken].Value == "else")
+        {
+            AddToken(); // else
+            AddToken(); // {
             
-            result.Add(SymbolLine(tokens[currentIndex + 2], indentLevel + 1));
-            currentIndex += 3;
+            CompileStatements(); // statements;
+
+            AddToken(); // }
         }
         
-        return (result, tokens[(currentIndex + 3)..]);
+        _indentLevel--;
+        Compilation.Add(WithIndent("</ifStatement>"));
     }
 
-    private static string KeywordLine(IToken token, int indentLevel)
-    {
-        return $"{"".PadLeft(indentLevel * 2)}<keyword> {token.Value} </keyword>";
-    }
-    
-    private static string IdentifierLine(IToken token, int indentLevel)
-    {
-        return $"{"".PadLeft(indentLevel * 2)}<identifier> {token.Value} </identifier>";
-    }
-    
-    private static string SymbolLine(IToken token, int indentLevel)
-    {
-        return $"{"".PadLeft(indentLevel * 2)}<symbol> {token.Value} </symbol>";
-    }
-}
-
-
-public class Test
-{
-    public void CompileClass()
-    {
-
-    }
-
-    /*
-     * ('static' | 'field') type varName (',' varName)* ;'
+    /**
+     * term (op term)*
      */
-    public IEnumerable<string> CompileClassVarDec(IToken[] tokens, int indentLevel)
+    private void CompileExpression()
     {
-        var result = new List<string>();
-        
-        result.Add("<classVarDec>");
-        
-        /*
-         * Add var
-         * static | field
-         */
-        result.Add($"{"".PadLeft(indentLevel * 2)}<keyword> {tokens[0].Value} </keyword>");
+        Compilation.Add(WithIndent("<expression>"));
+        _indentLevel++;
 
-        /*
-         * Add type:
-         * Keyword (int | boolean | char) or Identifier (className)
-         */
-        result.Add(tokens[1].Type is TokenType.Identifier
-            ? $"{"".PadLeft(indentLevel * 2)}<identifier> {tokens[1].Value} </identifier>"
-            : $"{"".PadLeft(indentLevel * 2)}<keyword> {tokens[1].Value} </keyword>");
-        
-        /*
-         * Add comma-separated varNames
-         * There is always at least 1 varName
-         */
-        var currentToken = 2;
-        while (tokens[currentToken].Value != ";")
+        CompileTerm(); // term
+
+        while (_ops.Contains(_tokens[_currentToken].Value))
         {
-            result.Add(CompileIdentifier(tokens[currentToken], indentLevel));
-            currentToken++;
-
-            if (tokens[currentToken].Value == ",")
-            {
-                result.Add($"{"".PadLeft(indentLevel * 2)}<symbol> {tokens[currentToken].Value} </symbol>");
-                currentToken++;
-            }
+            AddToken(); // op
+            CompileTerm(); // term
         }
-        
-        /*
-         * Add closing semicolon
-         */
-        result.Add($"{"".PadLeft(indentLevel * 2)}<symbol> {tokens[currentToken].Value} </symbol>");
 
-        result.Add("</classVarDec>");
-
-        return result;
+        _indentLevel--;
+        Compilation.Add(WithIndent("</expression>"));
     }
 
-    /*
-     * 'var' type varName (',' varName)* ';'
+    /**
+     * integerConstant | stringConstant | keywordConstant | varName |
+     * varName '[' expression ']' | '(' expression ')' | (unaryOp term) |
+     * subroutineCall
      */
-    public IEnumerable<string> CompileVarDev(IToken[] tokens, int indentLevel)
+    private void CompileTerm()
     {
-        var result = new List<string>();
-        
-        result.Add("<varDec>");
-        
-        /*
-         * Add var
-         * var
-         */
-        result.Add($"{"".PadLeft(indentLevel * 2)}<keyword> {tokens[0].Value} </keyword>");
+        Compilation.Add(WithIndent("<term>"));
+        _indentLevel++;
 
-        /*
-         * Add type:
-         * Keyword (int | boolean | char) or Identifier (className)
-         */
-        result.Add(tokens[1].Type is TokenType.Identifier
-            ? $"{"".PadLeft(indentLevel * 2)}<identifier> {tokens[1].Value} </identifier>"
-            : $"{"".PadLeft(indentLevel * 2)}<keyword> {tokens[1].Value} </keyword>");
-        
-        /*
-         * Add comma-separated varNames
-         * There is always at least 1 varName
-         */
-        var currentToken = 2;
-        while (tokens[currentToken].Value != ";")
+        if (_tokens[_currentToken + 1].Value == "[")
         {
-            result.Add(CompileIdentifier(tokens[currentToken], indentLevel));
-            currentToken++;
-
-            if (tokens[currentToken].Value == ",")
-            {
-                result.Add($"{"".PadLeft(indentLevel * 2)}<symbol> {tokens[currentToken].Value} </symbol>");
-                currentToken++;
-            }
+            AddToken(); // varName
+            AddToken(); // [
+            CompileExpression(); // expression
+            AddToken(); // ]
+        }
+        else if (_tokens[_currentToken].Value == "(")
+        {
+            AddToken(); // (
+            CompileExpression(); // expression
+            AddToken(); // )
+        }
+        else if (_unaryOps.Contains(_tokens[_currentToken].Value))
+        {
+            AddToken(); // unaryOp
+            CompileTerm(); // term
+        }
+        else if (_tokens[_currentToken + 2].Value is "(" or ".")
+        {
+            CompileSubroutineCall(); // subroutineCall
+        }
+        else
+        {
+            AddToken(); // integerConstant | stringConstant | keywordConstant | varName
         }
         
-        /*
-         * Add closing semicolon
-         */
-        result.Add($"{"".PadLeft(indentLevel * 2)}<symbol> {tokens[currentToken].Value} </symbol>");
-
-        result.Add("</varDec>");
-
-        return result;
+        _indentLevel--;
+        Compilation.Add(WithIndent("</term>"));
     }
 
-    /*
-     * statement*
+    private void CompileStatements()
+    {
+        Compilation.Add(WithIndent("<statements>"));
+        _indentLevel++;
+
+        while (_tokens[_currentToken].Value != "}")
+        {
+            Compile();
+        }
+
+        _indentLevel--;
+        Compilation.Add(WithIndent("</statements>"));
+    }
+
+    /**
+     * 'while' '(' expression ')' '{' statements '}'
      */
-    public IEnumerable<string> CompileStatements(IToken[] tokens, int indentLevel)
+    private void CompileWhileStatement()
     {
-        var result = new List<string>();
+        Compilation.Add(WithIndent("<whileStatement>"));
+        _indentLevel++;
         
-        // There are no statements so return empty list
-        if (tokens[0].Value == "}")
-        {
-            return result;
-        }
+        AddToken(); // while
+        AddToken(); // (
+        CompileExpression(); // expression
+        AddToken(); // )
+        AddToken(); // {
 
-        var currentToken = 0;
-        while (true)
-        {
-        }
+        CompileStatements(); // statements
+        
+        AddToken(); // }
 
-        return result;
+        _indentLevel--;
+        Compilation.Add(WithIndent("</whileStatement>"));
     }
 
-    /*
-     * letStatement | doStatement | ifStatement | whileStatement | returnStatement
+    /**
+     * 'let' varName ('[' expression ']')? '=' expression ';'
      */
-    public IEnumerable<string> CompileStatement(IToken[] tokens, int indentLevel)
+    private void CompileLetStatement()
     {
-        return tokens[0].Value switch
+        Compilation.Add(WithIndent("<letStatement>"));
+        _indentLevel++;
+        
+        AddToken(); // let
+        AddToken(); // varName
+
+        if (_tokens[_currentToken].Value == "[")
         {
-            "let" => CompileLetStatement(tokens, indentLevel),
-            "do" => CompileDoStatement(tokens, indentLevel),
-            "if" => CompileIfStatement(tokens, indentLevel),
-            "while" => CompileWhileStatement(tokens, indentLevel),
-            "return" => CompileReturnStatement(tokens, indentLevel),
-            _ => throw new ArgumentOutOfRangeException(tokens[0].Value, "Not a valid statement type.")
-        };
+            AddToken(); // [
+            CompileExpression(); // expression
+            AddToken(); //]
+        }
+
+        AddToken(); // =
+        CompileExpression(); // expression
+        AddToken(); // ;
+
+        _indentLevel--;
+        Compilation.Add(WithIndent("</letStatement>"));
     }
 
-    public IEnumerable<string> CompileLetStatement(IToken[] tokens, int indentLevel)
-    {
-        throw new NotImplementedException();
-    }
-
-    /*
+    /**
      * 'do' subroutineCall ';'
      */
-    public IEnumerable<string> CompileDoStatement(IToken[] tokens, int indentLevel)
+    private void CompileDoStatement()
     {
-        var result = new List<string>();
-        
-        result.Add($"{"".PadLeft(indentLevel * 2)}<doStatement>");
-        
-        result.Add(CompileKeyword(tokens[0], indentLevel + 1));
+        Compilation.Add(WithIndent("<doStatement>"));
+        _indentLevel++;
 
-        var (compileSubRoutineCall, tokensUsed) = CompileSubRoutineCall(tokens[1..], indentLevel + 1);
-        result.AddRange(compileSubRoutineCall);
+        AddToken(); // do
+        CompileSubroutineCall();
+        AddToken(); // ;
 
-        result.Add(CompileSymbol(tokens[tokensUsed + 1], indentLevel + 1));
-        
-        result.Add($"{"".PadLeft(indentLevel * 2)}</doStatement>");
-
-        return result;
+        _indentLevel--;
+        Compilation.Add(WithIndent("</doStatement>"));
     }
 
-    /*
-     * subroutineName '(' expressionList ')' | (className | varName) '.' subroutineName '(' expressionList ')'
-     *
-     * returns number of tokens used
+    /**
+     * subroutineName '(' expressionList ')' | (className|varName) '.' subroutineName '(' expressionList ')'
      */
-    public (IEnumerable<string>, int) CompileSubRoutineCall(IToken[] tokens, int indentLevel)
+    private void CompileSubroutineCall()
     {
-        var result = new List<string>();
-        var currentToken = 0;
-        
-        result.Add(CompileIdentifier(tokens[currentToken], indentLevel));
-        currentToken++;
-
-        if (tokens[currentToken].Value == ".")
+        if (_tokens[_currentToken + 1].Value == ".")
         {
-            result.Add(CompileSymbol(tokens[currentToken], indentLevel));
-            currentToken++;
-            
-            result.Add(CompileIdentifier(tokens[currentToken], indentLevel));
-            currentToken++;
+            AddToken(); // (className|varName)
+            AddToken(); // .
+        }
+        
+        AddToken(); // subroutineName
+        AddToken(); // (
+        CompileExpressionList(); // expressionList
+        AddToken(); // )
+    }
+
+    /**
+     * (expression (',' expression)* )?
+     */
+    private void CompileExpressionList()
+    {
+        Compilation.Add(WithIndent("<expressionList>"));
+        _indentLevel++;
+
+        if (_tokens[_currentToken].Value != ")")
+        {
+            CompileExpression(); // expression
+
+            while (_tokens[_currentToken].Value != ")")
+            {
+                AddToken(); // '
+                CompileExpression(); // expression
+            }
         }
 
-        result.Add(CompileSymbol(tokens[currentToken], indentLevel));
-        currentToken++;
-        
-        // TODO add expression support
-            
-        result.Add(CompileSymbol(tokens[currentToken], indentLevel));
-        currentToken++;
-        
-        return (result, currentToken);
+        _indentLevel--;
+        Compilation.Add(WithIndent("</expressionList>"));
     }
 
-    public IEnumerable<string> CompileIfStatement(IToken[] tokens, int indentLevel)
-    {
-        throw new NotImplementedException();
-    }
-
-    public IEnumerable<string> CompileWhileStatement(IToken[] tokens, int indentLevel)
-    {
-        throw new NotImplementedException();
-    }
-
-    /*
+    /**
      * 'return' expression? ';'
      */
-    public IEnumerable<string> CompileReturnStatement(IToken[] tokens, int indentLevel)
+    private void CompileReturnStatement()
     {
-        var result = new List<string>();
+        Compilation.Add(WithIndent("<returnStatement>"));
+        _indentLevel++;
         
-        result.Add($"{"".PadLeft(indentLevel * 2)}<returnStatement>");
-        
-        result.Add(CompileKeyword(tokens[0], indentLevel + 1));
-        
-        // TODO add expression support
+        AddToken(); // return
 
-        result.Add(CompileSymbol(tokens[1], indentLevel + 1));
+        if (_tokens[_currentToken].Value != ";")
+        {
+            CompileExpression(); // expression
+        }
+
+        AddToken(); // ;
         
-        result.Add($"{"".PadLeft(indentLevel * 2)}</returnStatement>");
-
-        return result;
+        _indentLevel--;
+        Compilation.Add(WithIndent("</returnStatement>"));
     }
 
-    public string CompileIdentifier(IToken currentToken, int indentLevel)
+    /**
+     * 'var' type varName (',' varName)* ';'
+     */
+    private void CompileVarDec()
     {
-        return $"{"".PadLeft(indentLevel * 2)}<identifier> {currentToken.Value} </identifier>";
+        Compilation.Add(WithIndent("<varDec>"));
+        _indentLevel++;
+        
+        AddToken(); // 'var'
+        AddToken(); // type
+        AddToken(); // varName
+
+        while (_tokens[_currentToken].Value != ";")
+        {
+            AddToken(); // ,
+            AddToken(); // varName
+        }
+
+        AddToken(); // ;
+        
+        _indentLevel--;
+        Compilation.Add(WithIndent("</varDec>"));
     }
-    
-    public string CompileKeyword(IToken currentToken, int indentLevel)
+
+    /**
+     * subroutineDec:
+     * ('constructor'|'function'|'method') ('void'|type) subroutineName '(' parameterList ')' subroutineBody
+     */
+    private void CompileSubroutine()
     {
-        return $"{"".PadLeft(indentLevel * 2)}<keyword> {currentToken.Value} </keyword>";
+        Compilation.Add(WithIndent("<subroutineDec>"));
+        _indentLevel++;
+        
+        AddToken(); // ('constructor'|'function'|'method')
+        AddToken(); // ('void'|type)
+        AddToken(); // subroutineName
+        AddToken(); // (
+        CompileParameterList();
+        AddToken(); // )
+        CompileSubroutineBody();
+
+        _indentLevel--;
+        Compilation.Add(WithIndent("</subroutineDec>"));
     }
-    
-    public string CompileSymbol(IToken currentToken, int indentLevel)
+
+    /**
+     * '{' varDec* statements '}'
+     */
+    private void CompileSubroutineBody()
     {
-        return $"{"".PadLeft(indentLevel * 2)}<symbol> {currentToken.Value} </symbol>";
+        Compilation.Add(WithIndent("<subroutineBody>"));
+        _indentLevel++;
+        
+        AddToken(); // {
+
+        while (_tokens[_currentToken].Value == "var")
+        {
+            Compile(); // varDec
+        }
+        
+        CompileStatements(); // statements
+
+        AddToken(); // }
+
+        _indentLevel--;
+        Compilation.Add(WithIndent("</subroutineBody>"));
     }
+
+    /**
+     * ( (type varName) (',' type varName)* )?
+     */
+    private void CompileParameterList()
+    {
+        Compilation.Add(WithIndent("<parameterList>"));
+        _indentLevel++;
+
+        if (_tokens[_currentToken].Value != ")")
+        {
+            AddToken(); // type
+            AddToken(); // varName
+
+            while (_tokens[_currentToken].Value != ")")
+            {
+                AddToken(); // ,
+                AddToken(); // type
+                AddToken(); // varName
+            }
+        }
+
+        _indentLevel--;
+        Compilation.Add(WithIndent("</parameterList>"));
+    }
+
+    /**
+     * ('static'|'field') type varName (',' varName)* ';'
+     */
+    private void CompileClassVarDec()
+    {
+        Compilation.Add(WithIndent("<classVarDec>"));
+        _indentLevel++;
+        
+        AddToken(); // ('static'|'field')
+        AddToken(); // type
+        AddToken(); // varName
+
+        while (_tokens[_currentToken].Value == ",")
+        {
+            AddToken(); // ,
+            AddToken(); // varName
+        }
+        
+        AddToken(); // ;
+
+        _indentLevel--;
+        Compilation.Add(WithIndent("</classVarDec>"));
+    }
+
+    /**
+     * 'class' className '{' classVarDec* subroutineDec* '}'
+     */
+    private void CompileClass()
+    {
+        Compilation.Add(WithIndent("<class>"));
+        _indentLevel++;
+        
+        AddToken(); // class
+        AddToken(); // className
+        AddToken(); // {
+
+        while (_tokens[_currentToken].Value != "}")
+        {
+            Compile(); // classVarDec* subroutineDec*
+        }
+        
+        AddToken(); // }
+
+        _indentLevel--;
+        Compilation.Add(WithIndent("</class>"));
+    }
+
+    private void AddToken()
+    {
+        Compilation.Add(WithIndent(_tokens[_currentToken].ToString()));
+        _currentToken++;
+    }
+
+    private string WithIndent(string? line) => $"{"".PadLeft(_indentLevel * 2)}{line}";
 }

@@ -21,7 +21,8 @@ foreach (var file in filePaths)
     // var output = new SimpleCompiler().Compile(tokens);
     
     // Part two - full compilation
-    var output = new CompilationEngine().Compile(tokens.ToArray(), 0);
+    var compilationEngine = new CompilationEngine(tokens);
+    compilationEngine.Compile();
 
-    File.WriteAllLines(GetOutputPath(file), output);
+    File.WriteAllLines(GetOutputPath(file), compilationEngine.Compilation);
 }

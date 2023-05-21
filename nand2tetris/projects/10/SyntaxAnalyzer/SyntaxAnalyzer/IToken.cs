@@ -6,58 +6,53 @@ public interface IToken
     public string Value { get; }
 }
 
-public record KeywordToken : IToken
+public record KeywordToken(string Value) : IToken
 {
     public TokenType Type => TokenType.Keyword;
-    public string Value { get; }
 
-    public KeywordToken(string value)
+    public override string ToString()
     {
-        Value = value;
+        return $"<keyword> {Value} </keyword>";
     }
 }
 
-public record SymbolToken : IToken
+public record SymbolToken(string Value) : IToken
 {
     public TokenType Type => TokenType.Symbol;
-    public string Value { get; }
 
-    public SymbolToken(string value)
+    public override string ToString()
     {
-        Value = value;
+        return $"<symbol> {Value} </symbol>";
     }
 }
 
-public record IdentifierToken : IToken
+public record IdentifierToken(string Value) : IToken
 {
     public TokenType Type => TokenType.Identifier;
-    public string Value { get; }
-
-    public IdentifierToken(string value)
+    
+    public override string ToString()
     {
-        Value = value;
+        return $"<identifier> {Value} </identifier>";
     }
 }
 
-public record StringConstantToken : IToken
+public record StringConstantToken(string Value) : IToken
 {
     public TokenType Type => TokenType.StringConstant;
-    public string Value { get; }
-
-    public StringConstantToken(string value)
+    
+    public override string ToString()
     {
-        Value = value;
+        return $"<stringConstant> {Value} </stringConstant>";
     }
 }
 
-public record IntegerConstantToken : IToken
+public record IntegerConstantToken(string Value) : IToken
 {
     public TokenType Type => TokenType.IntegerConstant;
-    public string Value { get; }
-
-    public IntegerConstantToken(string value)
+    
+    public override string ToString()
     {
-        Value = value;
+        return $"<integerConstant> {Value} </integerConstant>";
     }
 }
 
