@@ -25,7 +25,7 @@ public class CompilationEngine
     /**
      * 'if' '(' expression ')' '{' statements '}' ('else' '{' statements '}')?
      */
-    private void CompileIfStatement(SymbolTable subroutineSymbolTable)
+    private void CompileIfStatement(SubroutineSymbolTable subroutineSymbolTable)
     {
         var elseLabel = $"L_{_labelNum}";
         _labelNum++;
@@ -51,11 +51,18 @@ public class CompilationEngine
         // Add else section label to be skipped to if expression is false
         Compilation.Add($"label {elseLabel}");
         
-        GetToken(); // else
-        GetToken(); // {
-        CompileStatements(subroutineSymbolTable); // statements;
-        GetToken(); // }
-        
+        var elseToken = GetToken(); // else (or there is no else)
+        if (elseToken.Value == "else")
+        {
+            GetToken(); // {
+            CompileStatements(subroutineSymbolTable); // statements;
+            GetToken(); // }
+        }
+        else
+        {
+            _currentToken--; // put token back
+        }
+
         // Provide continuation label
         Compilation.Add($"label {ifLabel}");
     }
@@ -63,7 +70,7 @@ public class CompilationEngine
     /**
      * term (op term)*
      */
-    private void CompileExpression(SymbolTable subroutineSymbolTable)
+    private void CompileExpression(SubroutineSymbolTable subroutineSymbolTable)
     {
         CompileTerm(subroutineSymbolTable); // term
 
@@ -131,7 +138,7 @@ public class CompilationEngine
      * varName '[' expression ']' | '(' expression ')' | (unaryOp term) |
      * subroutineCall
      */
-    private void CompileTerm(SymbolTable subroutineSymbolTable)
+    private void CompileTerm(SubroutineSymbolTable subroutineSymbolTable)
     {
         if (_tokens[_currentToken + 1].Value == "[")
         {
@@ -198,12 +205,12 @@ public class CompilationEngine
             else
             {
                 var symbol = subroutineSymbolTable.GetSymbol(token.Value);
-                Compilation.Add($"push {symbol.Kind} {symbol.Index}");
+                Compilation.Add($"push {(symbol.Kind == "field" ? "this" : symbol.Kind)} {symbol.Index}");
             }
         }
     }
 
-    private void CompileStatements(SymbolTable subroutineSymbolTable)
+    private void CompileStatements(SubroutineSymbolTable subroutineSymbolTable)
     {
         while (_tokens[_currentToken].Value != "}")
         {
@@ -233,7 +240,7 @@ public class CompilationEngine
     /**
      * 'while' '(' expression ')' '{' statements '}'
      */
-    private void CompileWhileStatement(SymbolTable subroutineSymbolTable)
+    private void CompileWhileStatement(SubroutineSymbolTable subroutineSymbolTable)
     {
         var startLabel = $"L_{_labelNum}";
         _labelNum++;
@@ -265,7 +272,7 @@ public class CompilationEngine
     /**
      * 'let' varName ('[' expression ']')? '=' expression ';'
      */
-    private void CompileLetStatement(SymbolTable subroutineSymbolTable)
+    private void CompileLetStatement(SubroutineSymbolTable subroutineSymbolTable)
     {
         GetToken(); // let
         var name = GetToken(); // varName
@@ -282,15 +289,15 @@ public class CompilationEngine
         CompileExpression(subroutineSymbolTable); // expression
         GetToken(); // ;
 
-        // pop the top of the stack (result from expression into the target location (defined earlier in CompileVarDec)
+        // pop the top of the stack (result from expression into the target location (defined earlier in CompileVarDec))
         var target = subroutineSymbolTable.GetSymbol(name.Value);
-        Compilation.Add($"pop {target.Kind} {target.Index}");
+        Compilation.Add($"pop {(target.Kind == "field" ? "this" : target.Kind)} {target.Index}");
     }
 
     /**
      * 'do' subroutineCall ';'
      */
-    private void CompileDoStatement(SymbolTable subroutineSymbolTable)
+    private void CompileDoStatement(SubroutineSymbolTable subroutineSymbolTable)
     {
         GetToken(); // do
         CompileSubroutineCall(subroutineSymbolTable); // leaves the result on the top of the stack
@@ -303,41 +310,62 @@ public class CompilationEngine
     /**
      * subroutineName '(' expressionList ')' | (className|varName) '.' subroutineName '(' expressionList ')'
      */
-    private void CompileSubroutineCall(SymbolTable subroutineSymbolTable)
+    private void CompileSubroutineCall(SubroutineSymbolTable subroutineSymbolTable)
     {
         Symbol? symbol;
-        var name = "this";
+        
         // push the location of the current object onto the stack
         if (_tokens[_currentToken + 1].Value == ".")
         {
-            name = GetToken().Value; // (className|varName)
+            var name = GetToken().Value;
             GetToken(); // .
 
             symbol = subroutineSymbolTable.GetSymbol(name);
-            if (symbol is not null) // assume name.Value is a var name
+            if (symbol is not null) // assume name.Value is a var name rather than a built in type
             {
-                Compilation.Add($"push {symbol.Kind} {symbol.Index}");
+                Compilation.Add($"push {(symbol.Kind == "field" ? "this" : symbol.Kind)} {symbol.Index}");
             }
 
+            var subroutineName = GetToken(); // subroutineName
+            GetToken(); // (
+            var numExpressions = CompileExpressionList(subroutineSymbolTable); // expressionList
+            GetToken(); // )
+            
+            Compilation.Add($"call {symbol?.Type ?? name}.{subroutineName.Value} {(symbol?.Kind is "field" or "local" ? numExpressions + 1 : numExpressions)}");
         }
         else
         {
-            symbol = subroutineSymbolTable.GetSymbol("this");
-            Compilation.Add($"push {symbol.Kind} {symbol.Index}"); // must be a method in the current object
-        }
-        
-        var subroutineName = GetToken(); // subroutineName
-        GetToken(); // (
-        var numExpressions = CompileExpressionList(subroutineSymbolTable); // expressionList
-        GetToken(); // )
+            // Calling a local method
+            if (subroutineSymbolTable.GetObjectKind() == "constructor")
+            {
+                Compilation.Add("push pointer 0"); // equivalent to pushing this
+                
+                var subroutineName = GetToken(); // subroutineName
+                GetToken(); // (
+                var numExpressions = CompileExpressionList(subroutineSymbolTable); // expressionList
+                GetToken(); // )
             
-        Compilation.Add($"call {symbol?.Type ?? name}.{subroutineName.Value} {numExpressions}");
+                Compilation.Add($"call {subroutineSymbolTable.GetClassName()}.{subroutineName.Value} {numExpressions + 1}");
+            }
+            else
+            {
+                symbol = subroutineSymbolTable.GetSymbol("this"); // nested method call so this should be defined
+                Compilation.Add($"push {symbol.Kind} {symbol.Index}");
+                
+                var subroutineName = GetToken(); // subroutineName
+                GetToken(); // (
+                var numExpressions = CompileExpressionList(subroutineSymbolTable); // expressionList
+                GetToken(); // )
+            
+                Compilation.Add($"call {symbol.Type}.{subroutineName.Value} {numExpressions + 1}");
+            }
+        }
     }
 
     /**
      * (expression (',' expression)* )?
      */
-    private int CompileExpressionList(SymbolTable subroutineSymbolTable)
+    private int CompileExpressionList(SubroutineSymbolTable subroutineSymbolTable)
     {
         var numExpressions = 0;
         if (_tokens[_currentToken].Value != ")")
@@ -359,7 +387,7 @@ public class CompilationEngine
     /**
      * 'return' expression? ';'
      */
-    private void CompileReturnStatement(SymbolTable subroutineSymbolTable)
+    private void CompileReturnStatement(SubroutineSymbolTable subroutineSymbolTable)
     {
         GetToken(); // return
 
@@ -367,16 +395,8 @@ public class CompilationEngine
         {
             CompileExpression(subroutineSymbolTable); // expression?
         }
-
-        if (subroutineSymbolTable.GetObjectKind() == "constructor")
+        else
         {
-            // Ensure the base address of the newly constructed object is returned to the caller at the top of the stack
-            Compilation.Add("push pointer 0");
-        }
-
-        if (subroutineSymbolTable.GetObjectType() == "void")
-        {
-            // Follow convention for returning from methods with void return type
             Compilation.Add("push constant 0");
         }
 
@@ -388,7 +408,7 @@ public class CompilationEngine
     /**
      * 'var' type varName (',' varName)* ';'
      */
-    private void CompileVarDec(SymbolTable subroutineSymbolTable)
+    private void CompileVarDec(SubroutineSymbolTable subroutineSymbolTable)
     {
         GetToken(); // 'var'
         var type = GetToken(); // type
@@ -411,13 +431,13 @@ public class CompilationEngine
      * subroutineDec:
      * ('constructor'|'function'|'method') ('void'|type) subroutineName '(' parameterList ')' subroutineBody
      */
-    private void CompileSubroutine(SymbolTable classSymbolTable)
+    private void CompileSubroutine(ClassSymbolTable classSymbolTable)
     {
         var kind = GetToken(); // ('constructor'|'function'|'method')
         var type = GetToken(); // ('void'|type)
         var name = GetToken(); // subroutineName
 
-        var subroutineSymbolTable = new SymbolTable(name.Value, type.Value, kind.Value);
+        var subroutineSymbolTable = new SubroutineSymbolTable(name.Value, type.Value, kind.Value, classSymbolTable);
 
         if (kind.Value == "method")
         {
@@ -433,7 +453,7 @@ public class CompilationEngine
     /**
      * '{' varDec* statements '}'
      */
-    private void CompileSubroutineBody(SymbolTable classSymbolTable, SymbolTable subroutineSymbolTable)
+    private void CompileSubroutineBody(ClassSymbolTable classSymbolTable, SubroutineSymbolTable subroutineSymbolTable)
     {
         GetToken(); // {
 
@@ -469,7 +489,7 @@ public class CompilationEngine
     /**
      * ( (type varName) (',' type varName)* )?
      */
-    private void CompileParameterList(SymbolTable subroutineSymbolTable)
+    private void CompileParameterList(SubroutineSymbolTable subroutineSymbolTable)
     {
         if (_tokens[_currentToken].Value != ")")
         {
@@ -492,7 +512,7 @@ public class CompilationEngine
     /**
      * ('static'|'field') type varName (',' varName)* ';'
      */
-    private void CompileClassVarDec(SymbolTable classSymbolTable)
+    private void CompileClassVarDec(ClassSymbolTable classSymbolTable)
     {
         var kind = GetToken(); // ('static'|'field')
         var type = GetToken(); // type
@@ -519,7 +539,7 @@ public class CompilationEngine
         var name = GetToken(); // className
         GetToken(); // {
 
-        var symbolTable = new SymbolTable(name.Value, type.Value, type.Value);
+        var symbolTable = new ClassSymbolTable(name.Value, type.Value, type.Value);
 
         while (_tokens[_currentToken].Value is "static" or "field")
         {
