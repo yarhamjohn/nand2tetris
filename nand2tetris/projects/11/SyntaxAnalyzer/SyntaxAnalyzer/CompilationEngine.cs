@@ -1,6 +1,4 @@
-﻿using System.Net.Sockets;
-
-namespace SyntaxAnalyzer;
+﻿namespace SyntaxAnalyzer;
 
 public class CompilationEngine
 {
@@ -9,7 +7,6 @@ public class CompilationEngine
     private readonly List<string> _ops = new() { "+", "-", "*", "/", "&amp;", "|", "&lt;", "&gt;", "=" };
     private readonly List<string> _unaryOps = new() { "-", "~" };
     private readonly IToken[] _tokens;
-    private int _indentLevel;
     private int _currentToken;
     private int _labelNum;
 
@@ -52,7 +49,7 @@ public class CompilationEngine
         Compilation.Add($"goto {ifLabel}");
         
         // Add else section label to be skipped to if expression is false
-        Compilation.Add($"{elseLabel}");
+        Compilation.Add($"label {elseLabel}");
         
         GetToken(); // else
         GetToken(); // {
@@ -60,7 +57,7 @@ public class CompilationEngine
         GetToken(); // }
         
         // Provide continuation label
-        Compilation.Add($"{ifLabel}");
+        Compilation.Add($"label {ifLabel}");
     }
 
     /**
@@ -95,21 +92,23 @@ public class CompilationEngine
             case "/":
                 Compilation.Add("call Math.divide 2");
                 break;
-            case "&":
+            case "&amp;":
                 Compilation.Add("and");
                 break;
             case "|":
                 Compilation.Add("or");
                 break;
-            case "<":
+            case "&lt;":
                 Compilation.Add("lt");
                 break;
-            case ">":
+            case "&gt;":
                 Compilation.Add("gt");
                 break;
             case "=":
                 Compilation.Add("eq");
                 break;
+            default:
+                throw new Exception($"Not a valid op: {op}");
         }
     }
     
@@ -136,6 +135,7 @@ public class CompilationEngine
     {
         if (_tokens[_currentToken + 1].Value == "[")
         {
+            // TODO: handle arrays
             GetToken(); // varName
             GetToken(); // [
             CompileExpression(subroutineSymbolTable); // expression
@@ -176,9 +176,29 @@ public class CompilationEngine
             {
                 Compilation.Add($"push constant {token.Value}");
             }
+            else if (token is KeywordToken keywordToken)
+            {
+                switch (keywordToken.Value)
+                {
+                    case "true":
+                        Compilation.Add("push constant 0");
+                        Compilation.Add("not");
+                        break;
+                    case "false":
+                        Compilation.Add("push constant 0");
+                        break;
+                    case "null":
+                        Compilation.Add("push constant 0");
+                        break;
+                    case "this":
+                        Compilation.Add("push pointer 0");
+                        break;
+                }
+            }
             else
             {
-                Compilation.Add($"push {token.Value}");
+                var symbol = subroutineSymbolTable.GetSymbol(token.Value);
+                Compilation.Add($"push {symbol.Kind} {symbol.Index}");
             }
         }
     }
@@ -239,7 +259,7 @@ public class CompilationEngine
         Compilation.Add($"goto {startLabel}");
 
         // add end label for while loop exit
-        Compilation.Add($"{endLabel}");
+        Compilation.Add($"label {endLabel}");
     }
 
     /**
@@ -401,7 +421,7 @@ public class CompilationEngine
 
         if (kind.Value == "method")
         {
-            subroutineSymbolTable.Add("this", classSymbolTable.GetObjectName(), "arg");
+            subroutineSymbolTable.Add("this", classSymbolTable.GetObjectName(), "argument");
         }
         
         GetToken(); // (
@@ -424,7 +444,7 @@ public class CompilationEngine
         
         Compilation.Add(
             $"function {classSymbolTable.GetObjectName()}.{subroutineSymbolTable.GetObjectName()}" +
-            $" {subroutineSymbolTable.NumDefined("var")}");
+            $" {subroutineSymbolTable.NumDefined("local")}");
 
         if (subroutineSymbolTable.GetObjectKind() == "method")
         {
@@ -456,7 +476,7 @@ public class CompilationEngine
             var type = GetToken(); // type
             var name = GetToken(); // varName
             
-            subroutineSymbolTable.Add(name.Value, type.Value, "arg");
+            subroutineSymbolTable.Add(name.Value, type.Value, "argument");
 
             while (_tokens[_currentToken].Value != ")")
             {
@@ -464,7 +484,7 @@ public class CompilationEngine
                 var nextType = GetToken(); // type
                 var nextName = GetToken(); // varName
                 
-                subroutineSymbolTable.Add(nextName.Value, nextType.Value, "arg");
+                subroutineSymbolTable.Add(nextName.Value, nextType.Value, "argument");
             }
         }
     }
@@ -520,6 +540,4 @@ public class CompilationEngine
         _currentToken++;
         return token;
     }
-
-    private string WithIndent(string? line) => $"{"".PadLeft(_indentLevel * 2)}{line}";
 }
