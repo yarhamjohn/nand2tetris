@@ -21,63 +21,18 @@ public class CompilationEngine
         // only one class per file
         CompileClass();
     }
-    
-    /**
-     * 'if' '(' expression ')' '{' statements '}' ('else' '{' statements '}')?
-     */
-    private void CompileIfStatement(SubroutineSymbolTable subroutineSymbolTable)
-    {
-        var elseLabel = $"L_{_labelNum}";
-        _labelNum++;
-        var ifLabel = $"L_{_labelNum}";
-        _labelNum++;
-        
-        GetToken(); // if
-        GetToken(); // (
-        CompileExpression(subroutineSymbolTable); // expression
-        GetToken(); // )
-        
-        // if expression is not true, go to else statement
-        Compilation.Add("not");
-        Compilation.Add($"if-goto {elseLabel}");
-        
-        GetToken(); // {
-        CompileStatements(subroutineSymbolTable); // statements
-        GetToken(); // }
-        
-        // Skip else section since if statements were executed
-        Compilation.Add($"goto {ifLabel}");
-        
-        // Add else section label to be skipped to if expression is false
-        Compilation.Add($"label {elseLabel}");
-        
-        var elseToken = GetToken(); // else (or there is no else)
-        if (elseToken.Value == "else")
-        {
-            GetToken(); // {
-            CompileStatements(subroutineSymbolTable); // statements;
-            GetToken(); // }
-        }
-        else
-        {
-            _currentToken--; // put token back
-        }
-
-        // Provide continuation label
-        Compilation.Add($"label {ifLabel}");
-    }
 
     /**
      * term (op term)*
      */
-    private void CompileExpression(SubroutineSymbolTable subroutineSymbolTable)
+    private void CompileExpression(SymbolTable symbolTable)
     {
-        CompileTerm(subroutineSymbolTable); // term
+        CompileTerm(symbolTable); // term
 
         while (_ops.Contains(_tokens[_currentToken].Value))
         {
             var op = GetToken(); // op
-            CompileTerm(subroutineSymbolTable); // term
+            CompileTerm(symbolTable); // term
             
             AddOpToCompilation(op);
         }
@@ -138,98 +93,103 @@ public class CompilationEngine
      * varName '[' expression ']' | '(' expression ')' | (unaryOp term) |
      * subroutineCall
      */
-    private void CompileTerm(SubroutineSymbolTable subroutineSymbolTable)
+    private void CompileTerm(SymbolTable symbolTable)
     {
         if (_tokens[_currentToken + 1].Value == "[")
         {
             // TODO: handle arrays
             GetToken(); // varName
             GetToken(); // [
-            CompileExpression(subroutineSymbolTable); // expression
+            CompileExpression(symbolTable); // expression
             GetToken(); // ]
         }
         else if (_tokens[_currentToken].Value == "(")
         {
             GetToken(); // (
-            CompileExpression(subroutineSymbolTable); // expression
+            CompileExpression(symbolTable); // expression
             GetToken(); // )
         }
         else if (_unaryOps.Contains(_tokens[_currentToken].Value))
         {
             var op = GetToken(); // unaryOp
-            CompileTerm(subroutineSymbolTable); // term
+            CompileTerm(symbolTable); // term
             AddUnaryOpToCompilation(op);
         }
         else if (_tokens[_currentToken + 1].Value is "(" or ".")
         {
-            CompileSubroutineCall(subroutineSymbolTable); // subroutineCall
+            CompileSubroutineCall(symbolTable); // subroutineCall
         }
         else
         {
             var token = GetToken(); // integerConstant | stringConstant | keywordConstant | varName
-            if (token is StringConstantToken)
+            switch (token)
             {
-                var stringLength = token.Value.Length;
-                Compilation.Add($"push {stringLength}");
-                Compilation.Add("call String.new 1");
+                case StringConstantToken:
+                {
+                    var stringLength = token.Value.Length;
+                    Compilation.Add($"push {stringLength}");
+                    Compilation.Add("call String.new 1");
 
-                foreach (int c in token.Value)
-                {
-                    Compilation.Add($"push {c}");
-                    Compilation.Add("call String.appendChar 1");
+                    foreach (int c in token.Value)
+                    {
+                        Compilation.Add($"push {c}");
+                        Compilation.Add("call String.appendChar 1");
+                    }
+
+                    break;
                 }
-            }
-            else if (token is IntegerConstantToken)
-            {
-                Compilation.Add($"push constant {token.Value}");
-            }
-            else if (token is KeywordToken keywordToken)
-            {
-                switch (keywordToken.Value)
+                case IntegerConstantToken:
+                    Compilation.Add($"push constant {token.Value}");
+                    break;
+                case KeywordToken keywordToken:
+                    switch (keywordToken.Value)
+                    {
+                        case "true":
+                            Compilation.Add("push constant 0");
+                            Compilation.Add("not");
+                            break;
+                        case "false":
+                            Compilation.Add("push constant 0");
+                            break;
+                        case "null":
+                            Compilation.Add("push constant 0");
+                            break;
+                        case "this":
+                            Compilation.Add("push pointer 0");
+                            break;
+                    }
+
+                    break;
+                default:
                 {
-                    case "true":
-                        Compilation.Add("push constant 0");
-                        Compilation.Add("not");
-                        break;
-                    case "false":
-                        Compilation.Add("push constant 0");
-                        break;
-                    case "null":
-                        Compilation.Add("push constant 0");
-                        break;
-                    case "this":
-                        Compilation.Add("push pointer 0");
-                        break;
+                    var symbol = symbolTable.GetSymbol(token.Value);
+                    Compilation.Add($"push {symbol.Kind} {symbol.Index}");
+                    break;
                 }
-            }
-            else
-            {
-                var symbol = subroutineSymbolTable.GetSymbol(token.Value);
-                Compilation.Add($"push {(symbol.Kind == "field" ? "this" : symbol.Kind)} {symbol.Index}");
             }
         }
     }
 
-    private void CompileStatements(SubroutineSymbolTable subroutineSymbolTable)
+    private void CompileStatements(SymbolTable symbolTable)
     {
         while (_tokens[_currentToken].Value != "}")
         {
             switch (_tokens[_currentToken].Value)
             {
                 case "return":
-                    CompileReturnStatement(subroutineSymbolTable);
+                    CompileReturnStatement(symbolTable);
                     break;
                 case "do":
-                    CompileDoStatement(subroutineSymbolTable);
+                    CompileDoStatement(symbolTable);
                     break;
                 case "let":
-                    CompileLetStatement(subroutineSymbolTable);
+                    CompileLetStatement(symbolTable);
                     break;
                 case "while":
-                    CompileWhileStatement(subroutineSymbolTable);
+                    CompileWhileStatement(symbolTable);
                     break;
                 case "if":
-                    CompileIfStatement(subroutineSymbolTable);
+                    CompileIfStatement(symbolTable);
                     break;
                 default:
                     throw new InvalidOperationException(_tokens[_currentToken].Value);
@@ -238,9 +198,54 @@ public class CompilationEngine
     }
 
     /**
+     * 'if' '(' expression ')' '{' statements '}' ('else' '{' statements '}')?
+     */
+    private void CompileIfStatement(SymbolTable symbolTable)
+    {
+        var elseLabel = $"L_{_labelNum}";
+        _labelNum++;
+        var ifLabel = $"L_{_labelNum}";
+        _labelNum++;
+        
+        GetToken(); // if
+        GetToken(); // (
+        CompileExpression(symbolTable); // expression
+        GetToken(); // )
+        
+        // if expression is not true, go to else statement
+        Compilation.Add("not");
+        Compilation.Add($"if-goto {elseLabel}");
+        
+        GetToken(); // {
+        CompileStatements(symbolTable); // statements
+        GetToken(); // }
+        
+        // Skip else section since if statements were executed
+        Compilation.Add($"goto {ifLabel}");
+        
+        // Add else section label to be skipped to if expression is false
+        Compilation.Add($"label {elseLabel}");
+        
+        var elseToken = GetToken(); // else (or there is no else)
+        if (elseToken.Value == "else")
+        {
+            GetToken(); // {
+            CompileStatements(symbolTable); // statements;
+            GetToken(); // }
+        }
+        else
+        {
+            _currentToken--; // put token back
+        }
+
+        // Provide continuation label
+        Compilation.Add($"label {ifLabel}");
+    }
+
+    /**
      * 'while' '(' expression ')' '{' statements '}'
      */
-    private void CompileWhileStatement(SubroutineSymbolTable subroutineSymbolTable)
+    private void CompileWhileStatement(SymbolTable symbolTable)
     {
         var startLabel = $"L_{_labelNum}";
         _labelNum++;
@@ -251,7 +256,7 @@ public class CompilationEngine
         
         GetToken(); // while
         GetToken(); // (
-        CompileExpression(subroutineSymbolTable); // expression
+        CompileExpression(symbolTable); // expression
         GetToken(); // )
         
         // if expression is not true, exit while loop
@@ -259,7 +264,7 @@ public class CompilationEngine
         Compilation.Add($"if-goto {endLabel}");
         
         GetToken(); // {
-        CompileStatements(subroutineSymbolTable); // statements
+        CompileStatements(symbolTable); // statements
         GetToken(); // }
 
         // restart loop
@@ -272,7 +277,7 @@ public class CompilationEngine
     /**
      * 'let' varName ('[' expression ']')? '=' expression ';'
      */
-    private void CompileLetStatement(SubroutineSymbolTable subroutineSymbolTable)
+    private void CompileLetStatement(SymbolTable symbolTable)
     {
         GetToken(); // let
         var name = GetToken(); // varName
@@ -281,26 +286,26 @@ public class CompilationEngine
         if (_tokens[_currentToken].Value == "[")
         {
             GetToken(); // [
-            CompileExpression(subroutineSymbolTable); // expression
+            CompileExpression(symbolTable); // expression
             GetToken(); //]
         }
 
         GetToken(); // =
-        CompileExpression(subroutineSymbolTable); // expression
+        CompileExpression(symbolTable); // expression
         GetToken(); // ;
 
         // pop the top of the stack (result from expression into the target location (defined earlier in CompileVarDec))
-        var target = subroutineSymbolTable.GetSymbol(name.Value);
-        Compilation.Add($"pop {(target.Kind == "field" ? "this" : target.Kind)} {target.Index}");
+        var target = symbolTable.GetSymbol(name.Value);
+        Compilation.Add($"pop {target.Kind} {target.Index}");
     }
 
     /**
      * 'do' subroutineCall ';'
      */
-    private void CompileDoStatement(SubroutineSymbolTable subroutineSymbolTable)
+    private void CompileDoStatement(SymbolTable symbolTable)
     {
         GetToken(); // do
-        CompileSubroutineCall(subroutineSymbolTable); // leaves the result on the top of the stack
+        CompileSubroutineCall(symbolTable); // leaves the result on the top of the stack
         GetToken(); // ;
 
         // Ditches the result of the do statement since we never store it
@@ -310,51 +315,61 @@ public class CompilationEngine
     /**
      * subroutineName '(' expressionList ')' | (className|varName) '.' subroutineName '(' expressionList ')'
      */
-    private void CompileSubroutineCall(SubroutineSymbolTable subroutineSymbolTable)
+    private void CompileSubroutineCall(SymbolTable symbolTable)
     {
         Symbol? symbol;
         
         // push the location of the current object onto the stack
         if (_tokens[_currentToken + 1].Value == ".")
         {
-            var name = GetToken().Value;
+            var name = GetToken().Value; // className|varName
             GetToken(); // .
 
-            symbol = subroutineSymbolTable.GetSymbol(name);
-            if (symbol is not null) // assume name.Value is a var name rather than a built in type
+            symbol = symbolTable.GetSymbol(name);
+            if (symbol is not null)
             {
-                Compilation.Add($"push {(symbol.Kind == "field" ? "this" : symbol.Kind)} {symbol.Index}");
+                // name is a varName (rather than a className)
+                Compilation.Add($"push {symbol.Kind} {symbol.Index}");
             }
 
             var subroutineName = GetToken(); // subroutineName
             GetToken(); // (
-            var numExpressions = CompileExpressionList(subroutineSymbolTable); // expressionList
+            var numExpressions = CompileExpressionList(symbolTable); // expressionList
             GetToken(); // )
-            
-            Compilation.Add($"call {symbol?.Type ?? name}.{subroutineName.Value} {(symbol?.Kind is "field" or "local" ? numExpressions + 1 : numExpressions)}");
+
+            if (symbol is not null)
+            {
+                // name is a varName so use its associated Type (i.e. class name).
+                // TODO: do I need this and local? - symbol.Kind is "this" or "local" ? numExpressions + 1 : numExpressions
+                Compilation.Add($"call {symbol.Type}.{subroutineName.Value} {numExpressions + 1}");
+            }
+            else
+            {
+                // name is a class name, so just use it and don't add the the extra argument
+                Compilation.Add($"call {name}.{subroutineName.Value} {numExpressions}");
+            }
         }
-        else
+        else // Calling a local method
         {
-            // Calling a local method
-            if (subroutineSymbolTable.GetObjectKind() == "constructor")
+            if (symbolTable.GetSubroutineKind() == "constructor")
             {
                 Compilation.Add("push pointer 0"); // equivalent to pushing this
                 
                 var subroutineName = GetToken(); // subroutineName
                 GetToken(); // (
-                var numExpressions = CompileExpressionList(subroutineSymbolTable); // expressionList
+                var numExpressions = CompileExpressionList(symbolTable); // expressionList
                 GetToken(); // )
             
-                Compilation.Add($"call {subroutineSymbolTable.GetClassName()}.{subroutineName.Value} {numExpressions + 1}");
+                Compilation.Add($"call {symbolTable.GetClassName()}.{subroutineName.Value} {numExpressions + 1}");
             }
             else
             {
-                symbol = subroutineSymbolTable.GetSymbol("this"); // nested method call so this should be defined
+                symbol = symbolTable.GetSymbol("this"); // nested method call so this should be defined
                 Compilation.Add($"push {symbol.Kind} {symbol.Index}");
                 
                 var subroutineName = GetToken(); // subroutineName
                 GetToken(); // (
-                var numExpressions = CompileExpressionList(subroutineSymbolTable); // expressionList
+                var numExpressions = CompileExpressionList(symbolTable); // expressionList
                 GetToken(); // )
             
                 Compilation.Add($"call {symbol.Type}.{subroutineName.Value} {numExpressions + 1}");
@@ -365,18 +380,18 @@ public class CompilationEngine
     /**
      * (expression (',' expression)* )?
      */
-    private int CompileExpressionList(SubroutineSymbolTable subroutineSymbolTable)
+    private int CompileExpressionList(SymbolTable symbolTable)
     {
         var numExpressions = 0;
         if (_tokens[_currentToken].Value != ")")
         {
-            CompileExpression(subroutineSymbolTable); // expression
+            CompileExpression(symbolTable); // expression
             numExpressions++;
             
             while (_tokens[_currentToken].Value != ")")
             {
                 GetToken(); // '
-                CompileExpression(subroutineSymbolTable); // expression
+                CompileExpression(symbolTable); // expression
                 numExpressions++;
             }
         }
@@ -387,13 +402,13 @@ public class CompilationEngine
     /**
      * 'return' expression? ';'
      */
-    private void CompileReturnStatement(SubroutineSymbolTable subroutineSymbolTable)
+    private void CompileReturnStatement(SymbolTable symbolTable)
     {
         GetToken(); // return
 
         if (_tokens[_currentToken].Value != ";")
         {
-            CompileExpression(subroutineSymbolTable); // expression?
+            CompileExpression(symbolTable); // expression?
         }
         else
         {
@@ -408,20 +423,20 @@ public class CompilationEngine
     /**
      * 'var' type varName (',' varName)* ';'
      */
-    private void CompileVarDec(SubroutineSymbolTable subroutineSymbolTable)
+    private void CompileVarDec(SymbolTable symbolTable)
     {
         GetToken(); // 'var'
         var type = GetToken(); // type
         var name = GetToken(); // varName
         
-        subroutineSymbolTable.Add(name.Value, type.Value, "local");
+        symbolTable.AddVar(name.Value, type.Value);
 
         while (_tokens[_currentToken].Value != ";")
         {
             GetToken(); // ,
             var nextName = GetToken(); // varName
             
-            subroutineSymbolTable.Add(nextName.Value, type.Value, "local");
+            symbolTable.AddVar(nextName.Value, type.Value);
         }
 
         GetToken(); // ;
@@ -431,57 +446,51 @@ public class CompilationEngine
      * subroutineDec:
      * ('constructor'|'function'|'method') ('void'|type) subroutineName '(' parameterList ')' subroutineBody
      */
-    private void CompileSubroutine(ClassSymbolTable classSymbolTable)
+    private void CompileSubroutine(SymbolTable symbolTable)
     {
         var kind = GetToken(); // ('constructor'|'function'|'method')
         var type = GetToken(); // ('void'|type)
         var name = GetToken(); // subroutineName
 
-        var subroutineSymbolTable = new SubroutineSymbolTable(name.Value, type.Value, kind.Value, classSymbolTable);
-
-        if (kind.Value == "method")
-        {
-            subroutineSymbolTable.Add("this", classSymbolTable.GetObjectName(), "argument");
-        }
+        symbolTable.CreateSubroutineSymbolTable(kind.Value);
         
         GetToken(); // (
-        CompileParameterList(subroutineSymbolTable);
+        CompileParameterList(symbolTable);
         GetToken(); // )
-        CompileSubroutineBody(classSymbolTable, subroutineSymbolTable);
+        CompileSubroutineBody(symbolTable, name.Value);
     }
 
     /**
      * '{' varDec* statements '}'
      */
-    private void CompileSubroutineBody(ClassSymbolTable classSymbolTable, SubroutineSymbolTable subroutineSymbolTable)
+    private void CompileSubroutineBody(SymbolTable symbolTable, string subroutineName)
     {
         GetToken(); // {
 
         while (_tokens[_currentToken].Value == "var")
         {
-            CompileVarDec(subroutineSymbolTable); // varDec*
+            CompileVarDec(symbolTable); // varDec*
         }
         
-        Compilation.Add(
-            $"function {classSymbolTable.GetObjectName()}.{subroutineSymbolTable.GetObjectName()}" +
-            $" {subroutineSymbolTable.NumDefined("local")}");
+        Compilation.Add($"function {symbolTable.GetClassName()}.{subroutineName} {symbolTable.NumDefined("var")}");
 
-        if (subroutineSymbolTable.GetObjectKind() == "method")
+        if (symbolTable.GetSubroutineKind() == "method")
         {
-            // Sets the 'this' memory segment to the base address of the object on which the method was called
-            Compilation.Add("push argument 0"); // set in CompileSubroutine as first entry in SymbolTable
+            // Sets the 'this' memory segment (initialized when creating the subroutine symbol table)
+            // to the base address of the object on which the method was called
+            Compilation.Add("push argument 0");
             Compilation.Add("pop pointer 0");    
         }
 
-        if (subroutineSymbolTable.GetObjectKind() == "constructor")
+        if (symbolTable.GetSubroutineKind() == "constructor")
         {
             // allocates the appropriate memory block and sets the 'this' segment to the base address of the block
-            Compilation.Add($"push constant {classSymbolTable.NumDefined("field")}");
+            Compilation.Add($"push constant {symbolTable.NumDefined("field")}");
             Compilation.Add("call Memory.alloc 1"); // returns the base address
             Compilation.Add("pop pointer 0");
         }
         
-        CompileStatements(subroutineSymbolTable); // statements
+        CompileStatements(symbolTable); // statements
 
         GetToken(); // }
     }
@@ -489,14 +498,14 @@ public class CompilationEngine
     /**
      * ( (type varName) (',' type varName)* )?
      */
-    private void CompileParameterList(SubroutineSymbolTable subroutineSymbolTable)
+    private void CompileParameterList(SymbolTable symbolTable)
     {
         if (_tokens[_currentToken].Value != ")")
         {
             var type = GetToken(); // type
             var name = GetToken(); // varName
             
-            subroutineSymbolTable.Add(name.Value, type.Value, "argument");
+            symbolTable.AddParameter(name.Value, type.Value);
 
             while (_tokens[_currentToken].Value != ")")
             {
@@ -504,7 +513,7 @@ public class CompilationEngine
                 var nextType = GetToken(); // type
                 var nextName = GetToken(); // varName
                 
-                subroutineSymbolTable.Add(nextName.Value, nextType.Value, "argument");
+                symbolTable.AddParameter(nextName.Value, nextType.Value);
             }
         }
     }
@@ -512,19 +521,19 @@ public class CompilationEngine
     /**
      * ('static'|'field') type varName (',' varName)* ';'
      */
-    private void CompileClassVarDec(ClassSymbolTable classSymbolTable)
+    private void CompileClassVarDec(SymbolTable symbolTable)
     {
         var kind = GetToken(); // ('static'|'field')
         var type = GetToken(); // type
         var name = GetToken(); // varName
 
-        classSymbolTable.Add(name.Value, type.Value, kind.Value);
+        symbolTable.AddClassVar(name.Value, type.Value, kind.Value);
 
         while (_tokens[_currentToken].Value == ",")
         {
             GetToken(); // ,
             var nextName = GetToken(); // varName
-            classSymbolTable.Add(nextName.Value, type.Value, kind.Value);
+            symbolTable.AddClassVar(nextName.Value, type.Value, kind.Value);
         }
         
         GetToken(); // ;
@@ -535,11 +544,11 @@ public class CompilationEngine
      */
     private void CompileClass()
     {
-        var type = GetToken(); // class
+        GetToken(); // class
         var name = GetToken(); // className
         GetToken(); // {
 
-        var symbolTable = new ClassSymbolTable(name.Value, type.Value, type.Value);
+        var symbolTable = new SymbolTable(name.Value);
 
         while (_tokens[_currentToken].Value is "static" or "field")
         {
