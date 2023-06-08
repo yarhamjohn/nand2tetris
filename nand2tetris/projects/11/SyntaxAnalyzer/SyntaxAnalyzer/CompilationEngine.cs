@@ -97,10 +97,20 @@ public class CompilationEngine
     {
         if (_tokens[_currentToken + 1].Value == "[")
         {
-            // TODO: handle arrays
-            GetToken(); // varName
+            var name = GetToken(); // varName
             GetToken(); // [
+
             CompileExpression(symbolTable); // expression
+
+            var target = symbolTable.GetSymbol(name.Value);
+            Compilation.Add($"push {target.Kind} {target.Index}"); // push base index of array
+            
+            Compilation.Add("add"); // add to base index of array
+            
+            Compilation.Add("pop pointer 1"); // store target address in THAT
+            
+            Compilation.Add("push that 0"); // push value at target address onto stack
+            
             GetToken(); // ]
         }
         else if (_tokens[_currentToken].Value == "(")
@@ -127,13 +137,13 @@ public class CompilationEngine
                 case StringConstantToken:
                 {
                     var stringLength = token.Value.Length;
-                    Compilation.Add($"push {stringLength}");
+                    Compilation.Add($"push constant {stringLength}");
                     Compilation.Add("call String.new 1");
 
                     foreach (int c in token.Value)
                     {
-                        Compilation.Add($"push {c}");
-                        Compilation.Add("call String.appendChar 1");
+                        Compilation.Add($"push constant {c}");
+                        Compilation.Add("call String.appendChar 2");
                     }
 
                     break;
@@ -280,23 +290,46 @@ public class CompilationEngine
     private void CompileLetStatement(SymbolTable symbolTable)
     {
         GetToken(); // let
-        var name = GetToken(); // varName
 
-        // TODO handle arrays
+        var name = GetToken().Value; // varName
+        var target = symbolTable.GetSymbol(name);
+
         if (_tokens[_currentToken].Value == "[")
         {
+            Compilation.Add($"push {target.Kind} {target.Index}"); // push array base index onto stack
+            
             GetToken(); // [
+            
             CompileExpression(symbolTable); // expression
-            GetToken(); //]
+            
+            Compilation.Add("add"); // add expression result to base index of array
+
+            GetToken(); // ]
+            
+            GetToken(); // =
+
+            CompileExpression(symbolTable); // expression
+
+            Compilation.Add("pop temp 0"); // save the result of the right side expression
+
+            Compilation.Add("pop pointer 1"); // store target address of left side in THAT
+
+            Compilation.Add("push temp 0"); // put the right side expression back on the stack
+
+            Compilation.Add("pop that 0"); // store the result in the left side target address
+
+            GetToken(); // ;
         }
+        else
+        {
+            GetToken(); // =
 
-        GetToken(); // =
-        CompileExpression(symbolTable); // expression
-        GetToken(); // ;
+            CompileExpression(symbolTable); // expression
 
-        // pop the top of the stack (result from expression into the target location (defined earlier in CompileVarDec))
-        var target = symbolTable.GetSymbol(name.Value);
-        Compilation.Add($"pop {target.Kind} {target.Index}");
+            GetToken(); // ;
+            
+            Compilation.Add($"pop {target.Kind} {target.Index}"); // pop expression result into index of varName
+        }
     }
 
     /**
