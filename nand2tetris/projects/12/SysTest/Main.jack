@@ -26,6 +26,35 @@ class Main {
         do Output.println();
         do Output.printString("Time is up. Make sure that 2 seconds elapsed.");
         
+        do Sys.wait(1000);
+
+        do Main.errorTest();
+
+        return;
+    }
+
+    /** Tests the error method of the Sys class. */
+    function void errorTest() {
+        var char key;
+
+        do Screen.clearScreen();
+        do Output.moveCursor(0, 0);
+
+        do Output.printString("Error test:");
+        do Output.println();
+        do Output.printString("Press any key. After 2 seconds, an error will be printed:");
+
+        while (key = 0) {
+	        let key = Keyboard.keyPressed();
+        }
+        while (~(key = 0)) {
+            let key = Keyboard.keyPressed();
+        }
+        
+        do Sys.wait(2000);
+
+        do Sys.error(23);
+
         return;
     }
 }
