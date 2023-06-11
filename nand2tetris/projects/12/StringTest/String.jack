@@ -110,46 +110,49 @@ class String {
         var int i;
         var char t;
 
-        let result = intToString(val);
-        
-        let charArray = Array.new(result.length());
+        if (val < 0) {
+            let result = positiveIntToString((val * -1));
+            let charArray = Array.new(result.length() + 1);
 
-        let i = 0;
-        while (i < result.length()) {
-            let charArray[i] = result.charAt(i);
-            let i = i + 1;
+            let charArray.appendChar(45); // ascii for "-"
+            let i = 1;
+
+            while (i < result.length() + 1) {
+                let charArray[i] = result.charAt(i - 1);
+                let i = i + 1;
+            }
+
+            let maxLength = result.length() + 1;
+            let currentLength = result.length() + 1;
         }
+        else {
+            let result = positiveIntToString(val);
+            let charArray = Array.new(result.length());
+            let i = 0;
 
-        let maxLength = result.length();
-        let currentLength = result.length();
+            while (i < result.length()) {
+                let charArray[i] = result.charAt(i);
+                let i = i + 1;
+            }
+
+            let maxLength = result.length();
+            let currentLength = result.length();
+        }
 
         return;
     }
 
-    method String intToString(int val) {
+    method String positiveIntToString(int val) {
         var int lastDigit;
         var char c;
         var String result;
 
-        if (val < 0) {
-            let lastDigit = (val * -1) - (((val * -1) / 10) * 10); // take advantage of rounding during division
-            let c = (lastDigit + 48);
-        }
-        else {
-            let lastDigit = val - ((val / 10) * 10); // take advantage of rounding during division
-            let c = (lastDigit + 48);
-        }
+        let lastDigit = val - ((val / 10) * 10); // take advantage of rounding during division
+        let c = (lastDigit + 48);
 
         if (val < 10) {
-            if (val < 0) {
-                let result = String.new(2);
-                do result.appendChar("-");
-                do result.appendChar(c);
-            }
-            else {
-                let result = String.new(1);
-                do result.appendChar(c);
-            }
+            let result = String.new(1);
+            do result.appendChar(c);
             return result;
         }
         else {
