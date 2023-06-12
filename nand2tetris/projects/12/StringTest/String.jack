@@ -98,10 +98,35 @@ class String {
         return;
     }
 
-    /** Returns the integer value of this string, 
-     *  until a non-digit character is detected. */
+    /** Returns the integer value of this string, until a non-digit character is detected. */
     method int intValue() {
-        return 0;
+        var int i, c, result;
+        var boolean isNeg;
+
+        let result = 0;
+        let i = 0;
+        
+        if (charAt(0) = 45) { // ascii for "-"
+            let isNeg = true;
+            let i = 1;
+        }
+        else {
+            let isNeg = false;
+            let i = 0;
+        }
+
+        while (i < currentLength) {
+            let c = charAt(i) - 48;
+            let result = result * 10 + c;
+            let i = i + 1;
+        }
+
+        if (isNeg) {
+            return result * -1;
+        }
+        else {
+            return result;
+        }
     }
 
     /** Sets this string to hold a representation of the given value. */
@@ -114,10 +139,10 @@ class String {
             let result = positiveIntToString((val * -1));
             let charArray = Array.new(result.length() + 1);
 
-            let charArray.appendChar(45); // ascii for "-"
+            let charArray[0] = 45; // ascii for "-"
             let i = 1;
 
-            while (i < result.length() + 1) {
+            while (i < (result.length() + 1)) {
                 let charArray[i] = result.charAt(i - 1);
                 let i = i + 1;
             }
@@ -156,7 +181,7 @@ class String {
             return result;
         }
         else {
-            let result = intToString(val / 10);
+            let result = positiveIntToString(val / 10);
             do result.appendChar(c);
             return result;
         }
