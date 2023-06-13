@@ -14,6 +14,7 @@ class Screen {
 
     /** Initializes the Screen. */
     function void init() {
+        let color = true;
         return;
     }
 
@@ -32,54 +33,80 @@ class Screen {
 
     /** Draws the (x,y) pixel, using the current color. */
     function void drawPixel(int x, int y) {
-        var int address, val, val2, mask;
+        var int address, val, val2, bitLocation, i, mask;
 
+        // Each address in memory is a 16 bit number representing 16 pixels.
+        // There are 512 pixels in a row, so there are 32 addresses per row.
+        // There are 256 rows, so there are 8192 addresses total.
+        // y * 32 gives the row number, and x / 16 gives the address in that row.
         let address = 16834 + (y * 32) + (x / 16);
-        do Output.printInt(address);
-        do Output.printString(" ");
 
         let val = Memory.peek(address);
 
-        do Output.printInt(val);
-        do Output.printString(" ");
+        // Equivalent to x % 16
+        // Note bits are counted from LSB to MSB (i.e. right to left)
+        // so a bitLocation of 0 is the rightmost bit
+        let bitLocation = x & 15;
+        let mask = 1;
+        let i = 0;
 
-        let mask = x & 15;
-        do Output.printInt(mask);
-        do Output.printString(" ");
+        while (i < bitLocation) {
+            // raise the mask to the next power of 2
+            // so if bitLocation is 3, mask will be 8 (0000000000001000)
+            let mask = mask * 2;
+            let i = i + 1;
+        }
 
-        let val2 = val | 1024;
-        do Output.printInt(val2);
-        do Output.printString(" ");
-
-        let val2 = val & ~1024;
-        do Output.printInt(val2);
+        /*
+          if we want a black pixel, use or
+          0000000000101000 - val
+          0000000000010000 - mask
+          0000000000111000 - or
         
-        do Memory.poke(address, 30);
+          if we want a white pixel, use not on the mask then and
+          0000000000111000 - val
+          0000000000010000 - mask
+          1111111111101111 - not
+          0000000000101000 - and (same as original val)
+        */
+        if (color) {
+            let val = val | mask;
+        }
+        else {
+            let val = val & ~mask;
+        }
+
+        do Memory.poke(address, val);
 
         return;
     }
 
     /** Draws a line from pixel (x1,y1) to pixel (x2,y2), using the current color. */
     function void drawLine(int x1, int y1, int x2, int y2) {
-        var int x, y, dx, dy, a, b, diff;
+        var int x, y, dx, dy, a, b, diff, newx, newy;
         var boolean flag;
 
         if (x1 > x2) {
             let x = x2;
-        }
-        else {
-            let x = x1;
-        }
-
-        if (y1 > y2) {
             let y = y2;
         }
         else {
+            let x = x1;
             let y = y1;
         }
 
         let dx = Math.abs(x1 - x2);
         let dy = Math.abs(y1 - y2);
+
+        if (dx = 0) {
+            do Screen.drawVerticalLine(x1, y1, y2);
+            return;
+        }
+
+        if (dy = 0) {
+            do Screen.drawHorizontalLine(x1, x2, y1);
+            return;
+        }
 
         let a = 0;
         let b = 0;
@@ -87,7 +114,28 @@ class Screen {
 
         let flag = true;
         while (flag) {
-            do Screen.drawPixel(x + a, y + b);
+            if (x1 > x2) {
+                if (y1 > y2) {
+                    let newx = x + a;
+                    let newy = y + b;
+                }
+                else {
+                    let newx = x + a;
+                    let newy = y - b;
+                }
+            }
+            else {
+                if (y1 > y2) {
+                    let newx = x + a;
+                    let newy = y - b;
+                }
+                else {
+                    let newx = x + a;
+                    let newy = y + b;
+                }
+            }
+
+            do Screen.drawPixel(newx, newy);
 
             if (diff < 0) {
                 let a = a + 1;
@@ -98,13 +146,55 @@ class Screen {
                 let diff = diff - dx;
             }
 
-            if (dx > a) {
+            if (dx < a) {
                 let flag = false;
             }
 
-            if (dy > b) {
+            if (dy < b) {
                 let flag = false;
             }
+        }
+
+        return;
+    }
+
+    function void drawHorizontalLine(int x1, int x2, int y) {
+        var int i, x, dx;
+
+        if (x1 < x2) {
+            let x = x1;
+        }
+        else {
+            let x = x2;
+        }
+
+        let dx = Math.abs(x1 - x2);
+
+        let i = 0;
+        while (i < (dx + 1)) {
+            do Screen.drawPixel(x + i, y);
+            let i = i + 1;
+        }
+
+        return;
+    }
+
+    function void drawVerticalLine(int x, int y1, int y2) {
+        var int i, y, dy;
+
+        if (y1 < y2) {
+            let y = y1;
+        }
+        else {
+            let y = y2;
+        }
+
+        let dy = Math.abs(y1 - y2);
+
+        let i = 0;
+        while (i < (dy + 1)) {
+            do Screen.drawPixel(x, y + i);
+            let i = i + 1;
         }
 
         return;
