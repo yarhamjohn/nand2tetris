@@ -16,7 +16,7 @@
  */
 class Output {
     // Cursor position
-    static int row, col;
+    static int cursor_x, cursor_y;
 
     // Character map for displaying characters
     static Array charMaps;
@@ -25,8 +25,8 @@ class Output {
     function void init() {
         do Output.initMap();
 
-        let row = 0;
-        let col = 0;
+        let cursor_x = 0;
+        let cursor_y = 0;
 
         return;
     }
@@ -79,7 +79,7 @@ class Output {
         do Output.create(64,30,51,51,59,59,59,27,3,30,0,0);  // @
         do Output.create(63,30,51,51,24,12,12,0,12,12,0,0);  // ?
 
-        do Output.create(65,0,0,0,0,0,0,0,0,0,0,0);          // A ** TO BE FILLED **
+        do Output.create(65,8,28,54,99,99,99,127,99,99,0,0); // A ** TO BE FILLED **
         do Output.create(66,31,51,51,51,31,51,51,51,31,0,0); // B
         do Output.create(67,28,54,35,3,3,3,35,54,28,0,0);    // C
         do Output.create(68,15,27,51,51,51,51,51,27,15,0,0); // D
@@ -145,15 +145,15 @@ class Output {
         do Output.create(125,7,12,12,12,56,12,12,12,7,0,0);    // }
         do Output.create(126,38,45,25,0,0,0,0,0,0,0,0);        // ~
 
-	return;
+	    return;
     }
 
     // Creates the character map array of the given character index, using the given values.
     function void create(int index, int a, int b, int c, int d, int e,
                          int f, int g, int h, int i, int j, int k) {
-	var Array map;
+        var Array map;
 
-	let map = Array.new(11);
+        let map = Array.new(11);
         let charMaps[index] = map;
 
         let map[0] = a;
@@ -185,27 +185,10 @@ class Output {
      *  and erases the character displayed there. */
     function void moveCursor(int i, int j) {
         var Array map;
-        var int x, y, num;
+        var int x, y, num, mask, val, address, i;
 
-        let map = Output.getMap(48); // ascii for 0
-
-        let row = i;
-        let col = j;
-
-        let x = 0;
-        while (x < 11) { // height
-            let y = 0;
-            while (y < 8) { // width
-                let num = map[x];
-
-                do Screen.setColor(false);
-                do Screen.drawPixel(col * 8 + y, row * 11 + x);
-                do Screen.setColor(true);
-
-                let y = y + 1;
-            }
-            let x = x + 1;
-        }
+        let cursor_x = i;
+        let cursor_y = j;
 
         return;
     }
@@ -214,30 +197,55 @@ class Output {
      *  and advances the cursor one column forward. */
     function void printChar(char c) {
         var Array map;
-        var int x, y, num;
+        var int x, y, num, mask, val, address, i;
 
-        let map = Output.getMap(c);
+        let map = Output.getMap(c); // Array of 11 x 8-bit numbers
 
-        let x = 0;
-        while (x < 11) { // height
-            let y = 0;
-            while (y < 8) { // width
-                let num = map[x];
+        // Each address in memory is a 16 bit number representing 16 pixels.
+        // There are 512 pixels in a row, so there are 32 addresses per row.
+        // There are 256 rows, so there are 8192 addresses total.
+        // y * 32 * 11 (height of char) gives the row number, and
+        // x / 2 ( x / 16 * 8 (width of char)) gives the address in that row.
+        let address = 16384 + (cursor_x * 11 * 32) + (cursor_y / 2);
+        
 
-                do Screen.drawPixel(col * 8 + y, row * 11 + x);
-                let y = y + 1;
+        let i = 0;
+        while (i < 11) {
+            // The address points at a 16-bit word but the char is 8-bits,
+            // so two chars fit in one address. If the cursor target column
+            // is even, then the char is in the first half of the word. 
+            if (cursor_y & 1 = 0) {
+                // Replace the entire address with the specified map.
+                do Memory.poke(address + (32 * i), map[i]);
             }
-            let x = x + 1;
+            else {
+                let val = Memory.peek(address + (32 * i));
+
+                // Calculate the new entire address by persisting the existing (left-side)
+                // val along with the new right-side (calculable by multiplying the map by 256)
+
+                // Doing val & (-1 & 255) sets the right-side of the address to 0
+                // 0010000011000000
+                // 1111111100000000 AND
+                // 0010000000000000
+
+                // After which we can or with the new right-side value (map[i] * 256) 
+                // 0000000000001100
+                // 0010000000001100
+                do Memory.poke(address + (32 * i), val & (-1 & 255) | (map[i] * 256));
+            }
+
+            let i = i + 1;
         }
 
-        if (col < 63) {
+        if (cursor_y < 63) {
             // Not in last column of current row
-            do Output.moveCursor(row, col + 1);
+            do Output.moveCursor(cursor_x, cursor_y + 1);
         }
         else {
-            if (col < 22) {
+            if (cursor_x < 22) {
                 // In last column but not the last row
-                do Output.moveCursor(row + 1, 0);
+                do Output.moveCursor(cursor_x + 1, 0);
             }
             else {
                 // In last row and last column so return to (0, 0)
@@ -277,17 +285,27 @@ class Output {
 
     /** Advances the cursor to the beginning of the next line. */
     function void println() {
-        do Output.moveCursor(row + 1, 0);
+        do Output.moveCursor(cursor_x + 1, 0);
         return;
     }
 
     /** Moves the cursor one column back. */
     function void backSpace() {
-        if (col > 0) {
-            do Output.moveCursor(row, col - 1);
+        if (cursor_y > 0) {
+            do Output.moveCursor(cursor_x, cursor_y - 1);
         }
         else {
-            do Output.moveCursor(row, 0);
+            do Output.moveCursor(cursor_x, 0);
+        }
+
+        do Output.printChar(32); // Blank the character at the cursor location
+
+        // Handle the fact the cursor gets moved when printing a char
+        if (cursor_y > 0) {
+            do Output.moveCursor(cursor_x, cursor_y - 1);
+        }
+        else {
+            do Output.moveCursor(cursor_x, 0);
         }
 
         return;

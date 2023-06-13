@@ -39,7 +39,7 @@ class Screen {
         // There are 512 pixels in a row, so there are 32 addresses per row.
         // There are 256 rows, so there are 8192 addresses total.
         // y * 32 gives the row number, and x / 16 gives the address in that row.
-        let address = 16834 + (y * 32) + (x / 16);
+        let address = 16384 + (y * 32) + (x / 16);
 
         let val = Memory.peek(address);
 

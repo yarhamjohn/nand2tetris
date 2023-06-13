@@ -13,7 +13,7 @@ pop static 0
 push constant 0
 return
 function Screen.drawPixel 6
-push constant 16834
+push constant 16384
 push argument 1
 push constant 32
 call Math.multiply 2
