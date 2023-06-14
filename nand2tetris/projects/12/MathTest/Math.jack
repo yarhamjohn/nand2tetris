@@ -12,26 +12,26 @@ class Math {
 
     /** Initializes the library. */
     function void init() {
-        var int i;
         let twoToThe = Array.new(16);
-        while (i < 16) {
-            let twoToThe[i] = Math.pow(2, i);
-            let i = i + 1;
-        }
+
+        let twoToThe[0] = 1;
+        let twoToThe[1] = 2;
+        let twoToThe[2] = 4;
+        let twoToThe[3] = 8;
+        let twoToThe[4] = 16;
+        let twoToThe[5] = 32;
+        let twoToThe[6] = 64;
+        let twoToThe[7] = 128;
+        let twoToThe[8] = 256;
+        let twoToThe[9] = 512;
+        let twoToThe[10] = 1024;
+        let twoToThe[11] = 2048;
+        let twoToThe[12] = 4096;
+        let twoToThe[13] = 8192;
+        let twoToThe[14] = 16384;
+        let twoToThe[15] = 16384 + 16384;
+
         return;
-    }
-
-    function int pow(int base, int exp) {
-        var int j, sum;
-
-        let sum = 1; // 2^0 is 1 so skip this step
-        let j = 1;
-        while (j < exp) {
-            let sum = sum * 2;
-            let j = j + 1;
-        }
-
-        return sum;
     }
 
     /** Returns the absolute value of x. */
@@ -61,7 +61,7 @@ class Math {
                 let sum = sum + shiftedx;
             }
             
-            let shiftedx = shiftedx * 2;
+            let shiftedx = shiftedx + shiftedx;
 
             let i = i + 1;
         }
@@ -71,13 +71,7 @@ class Math {
 
     /** Returns true if the ith bit of val is 1 */
     function boolean bit(int val, int i) {
-        var String s;
-
-        let s = String.new(16);
-        do s.setInt(val);
-
-
-        return s.charAt(i) = 49; // ascii for 1
+        return val & twoToThe[i] = twoToThe[i]; // ~((val & twoToThe[i]) = 0);
     }
 
     /** Returns the integer part of x/y.
@@ -86,12 +80,48 @@ class Math {
      *  the Jack expressions x/y and divide(x,y) return the same value.
      */
     function int divide(int x, int y) {
-        return 0;
+        var int sum, absx, absy;
+
+        let absx = Math.abs(x);
+        let absy = Math.abs(y);
+
+        if (absy > absx) {
+            return 0; // drop the remainder
+        }
+
+        let sum = Math.divide(absx, absy + absy);
+
+        if (absx - (2 * sum * absy) < absy) {
+            let sum = sum + sum;
+        } else {
+            let sum = sum + sum + 1;
+        }
+
+        if (x < 0) {
+            return sum * -1;
+        }
+        else {
+            return sum;
+        }
     }
 
     /** Returns the integer part of the square root of x. */
     function int sqrt(int x) {
-        return 0;
+        var int j, y, t;
+
+        let y = 0;
+        let j = 7;
+        
+        while (j > -1) {
+            let t = ((y + twoToThe[j]) * (y + twoToThe[j])) - 1;
+            if (t < x & t > 0) {
+                let y = y + (twoToThe[j]);
+            }
+
+            let j = j - 1;
+        }
+
+        return y;
     }
 
     /** Returns the greater number. */
