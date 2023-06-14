@@ -207,32 +207,44 @@ class Output {
         // y * 32 * 11 (height of char) gives the row number, and
         // x / 2 ( x / 16 * 8 (width of char)) gives the address in that row.
         let address = 16384 + (cursor_x * 11 * 32) + (cursor_y / 2);
-        
 
         let i = 0;
         while (i < 11) {
+            let val = Memory.peek(address + (32 * i));
+
             // The address points at a 16-bit word but the char is 8-bits,
             // so two chars fit in one address. If the cursor target column
             // is even, then the char is in the first half of the word. 
             if (cursor_y & 1 = 0) {
-                // Replace the entire address with the specified map.
-                do Memory.poke(address + (32 * i), map[i]);
+                // Calculate the new entire address by persisting the existing (right-side)
+                // val along with the new left-side
+
+                // Doing val & ~255 sets the left-side of the address to 0
+                // 0010000011000000 address
+                // 1111111100000000 255 (LSB -> MSB)
+                // 0000000011111111 ~255
+                // 0000000011000000 cleared left-side
+
+                // After which we can | with the new left-side value (map[i]) 
+                // 0011000000000000 new right-side
+                // 0011000011000000 result
+                do Memory.poke(address + (32 * i), (val & ~255) | map[i]);
             }
             else {
-                let val = Memory.peek(address + (32 * i));
 
                 // Calculate the new entire address by persisting the existing (left-side)
-                // val along with the new right-side (calculable by multiplying the map by 256)
+                // val along with the new right-side which can be calculated by doing a 
+                // bitwise shift of 8 - calculable by multiplying the map by 256 (2^8).
 
-                // Doing val & (-1 & 255) sets the right-side of the address to 0
-                // 0010000011000000
-                // 1111111100000000 AND
-                // 0010000000000000
+                // Doing val & 255 sets the right-side of the address to 0
+                // 0010000011000000 address
+                // 1111111100000000 255 (LSB -> MSB)
+                // 0010000000000000 cleared right-side
 
-                // After which we can or with the new right-side value (map[i] * 256) 
-                // 0000000000001100
-                // 0010000000001100
-                do Memory.poke(address + (32 * i), val & (-1 & 255) | (map[i] * 256));
+                // After which we can | with the new right-side value (map[i] * 256) 
+                // 0000000000001100 new right-side
+                // 0010000000001100 result
+                do Memory.poke(address + (32 * i), val & 255 | (map[i] * 256));
             }
 
             let i = i + 1;

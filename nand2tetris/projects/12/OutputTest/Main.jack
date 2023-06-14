@@ -37,6 +37,16 @@ class Main {
         do Output.backSpace();
         do Output.printInt(6789);
         
+        do Output.println();
+        do Output.printInt(12);
+        do Output.moveCursor(6, 0);
+        do Output.printInt(3);
+
+        do Output.println();
+        do Output.printInt(56);
+        do Output.moveCursor(7, 0);
+        do Output.printInt(78);
+
         return;
     }
 }
