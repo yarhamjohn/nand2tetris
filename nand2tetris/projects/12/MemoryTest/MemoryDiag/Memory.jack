@@ -1,0 +1,106 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/12/Memory.jack
+
+/**
+ * This library provides two services: direct access to the computer's main
+ * memory (RAM), and allocation and recycling of memory blocks. The Hack RAM
+ * consists of 32,768 words, each holding a 16-bit binary number.
+ */ 
+class Memory {
+    static Array freeBlocks, ram;
+    static int heapBase, length, next;
+
+    /** Initializes the class. */
+    function void init() {
+        let heapBase = 2048; // Base address of the heap in Jack
+        let ram = 0; // Set up for peek/poke operations on arbitrary RAM addresses
+
+        let length = 0; // Index of the available block length in the free list
+        let next = 1; // Index of the next available block address in the free list
+
+        let freeBlocks = heapBase; // Base address of the free list
+
+        // Each block has two values stored in its "header"
+        let freeBlocks[length] = 16834 - heapBase; // Number of 16-bit words available for allocation in the block
+        let freeBlocks[next] = null; // Pointer to the next available block
+
+        return;
+    }
+
+    /** Returns the RAM value at the given address. */
+    function int peek(int address) {
+        return ram[address];
+    }
+
+    /** Sets the RAM value at the given address to the given value. */
+    function void poke(int address, int value) {
+        let ram[address] = value;
+        return;
+    }
+
+    /** Finds an available RAM block of the given size and returns
+     *  a reference to its base address. */
+    function int alloc(int size) {
+        var Array prevBlock, nextBlock, block;
+
+        let block = freeBlocks; // Start with first block
+
+        let prevBlock = 0; // Keep track of the previously checked available block
+
+        // Find the first block that is large enough to hold the requested size
+        while (block[length] < size) {
+            let prevBlock = block; // mark the current block as the previous
+            let block = block[next]; // and move to the next block
+
+            if (block = null) { // If we've reached the end of the list
+                return null; // return null to indicate that no block was found
+            }
+        }
+
+        // If we get here, we've found a block that is large enough to hold the requested size
+        let nextBlock = block + 2 + size; // calculate the address of the next block (inc header of current block)
+
+        // Next block address could be the start of an existing, allocated block
+        // or it could be a gap between the current block and the next allocated block (or the end of the heap)
+        // It can't be past the start of another block because we checked this above
+
+        // if is the start of an existing, allocated block, the "next" will not be null
+        // in this case, set the next block to be the address of "next" (which must be the next empty block)
+        // otherwise, set the next block length to be block - 2 - size and set the next pointer 
+
+        // If the next block is available and the last block
+        if (nextBlock[next] = null) {
+            let nextBlock[length] = block[length] - 2 - size; // calculate the size of the next block
+            let nextBlock[next] = block[next]; // move the next block pointer from the current to the next block
+        }
+        else {
+            let nextBlock = nextBlock[next]; // move to the next block
+        }
+
+        let block[length] = size; // set the size of the current block
+        let block[next] = nextBlock; // set the next block pointer of the current block
+
+        if (prevBlock = 0) { // If the first block reached was big enough
+            let freeBlocks = nextBlock; // set the next block to be the first available block
+        } else {
+            let prevBlock[next] = nextBlock; // otherwise, replace the previous available block's next pointer
+        }
+
+        return block + 2; // Return the address of the first available word in the block (after the header)
+    }
+
+    /** De-allocates the given object (cast as an array) by making
+     *  it available for future allocations. */
+    function void deAlloc(Array o) {
+        var Array block;
+
+        let block = o - 2; // Get the block to deallocate
+
+        let block[next] = freeBlocks; // Set the next pointer of the block to the first available block
+        let freeBlocks = block; // Set the first available block as the block being deallocate
+        
+        return;
+    }    
+}
